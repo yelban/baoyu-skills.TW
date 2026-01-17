@@ -5,140 +5,149 @@ description: Generate professional slide deck images from content. Creates compr
 
 # Slide Deck Generator
 
-Transform content into professional slide deck with comprehensive outlines and generated slide images.
+Transform content into professional slide deck images with flexible style options.
 
 ## Usage
 
 ```bash
-# From markdown file
-/baoyu-slide-deck path/to/article.md
+# Auto-select style based on content
+/baoyu-slide-deck path/to/content.md
 
-# With style preference
-/baoyu-slide-deck path/to/article.md --style corporate
-/baoyu-slide-deck path/to/article.md --style playful
-/baoyu-slide-deck path/to/article.md --style technical
+# Specify a style
+/baoyu-slide-deck path/to/content.md --style sketch-notes
+/baoyu-slide-deck path/to/content.md --style minimal
 
-# With audience specification
-/baoyu-slide-deck path/to/article.md --audience beginners
-/baoyu-slide-deck path/to/article.md --audience executives
+# Target specific audience
+/baoyu-slide-deck path/to/content.md --audience executives
 
-# With language
-/baoyu-slide-deck path/to/article.md --lang zh
-/baoyu-slide-deck path/to/article.md --lang en
+# Set output language
+/baoyu-slide-deck path/to/content.md --lang zh
 
-# Outline only (no image generation)
-/baoyu-slide-deck path/to/article.md --outline-only
+# Limit slide count
+/baoyu-slide-deck path/to/content.md --slides 10
+
+# Generate outline only (skip image generation)
+/baoyu-slide-deck path/to/content.md --outline-only
 
 # Direct content input
 /baoyu-slide-deck
 [paste content]
+
+# Combine options
+/baoyu-slide-deck path/to/content.md --style storytelling --audience experts --slides 15
 ```
 
 ## Options
 
 | Option | Description |
 |--------|-------------|
-| `--style <name>` | Visual style preset (see Style Gallery) |
-| `--audience <type>` | Target audience level |
-| `--lang <code>` | Output language (en, zh, etc.) |
-| `--slides <number>` | Target slide count (max 20) |
+| `--style <name>` | Visual style (see Style Gallery) |
+| `--audience <type>` | Target audience: beginners, intermediate, experts, executives, general |
+| `--lang <code>` | Output language for prompts and slides (en, zh, ja, etc.) |
+| `--slides <number>` | Target slide count |
 | `--outline-only` | Generate outline only, skip image generation |
 
 ## Style Gallery
 
-| Style | Description |
-|-------|-------------|
-| `editorial` (Default) | Clean, sophisticated, minimalist |
-| `corporate` | Professional, trustworthy, polished |
-| `technical` | Precise, data-driven, analytical |
-| `playful` | Bold, energetic, engaging |
-| `minimal` | Ultra-clean, zen-like, focused |
-| `storytelling` | Narrative-driven, cinematic, immersive |
-| `warm` | Cozy, healing, hand-drawn illustration style |
-| `retro-flat` | Flat vector illustration with retro palette |
-| `notion` | Minimalist hand-drawn line art, intellectual |
+| Style | Description | Best For |
+|-------|-------------|----------|
+| `sketch-notes` | Hand-drawn sketch notes, warm & friendly | Educational, tutorials, knowledge sharing |
+| `blueprint` | Technical blueprint, precise & analytical | Architecture, system design, data analysis |
+| `bold-editorial` | Magazine editorial, high-impact & dynamic | Product launches, marketing, keynotes |
+| `vector-illustration` | Flat vector with black outlines, retro & cute | Creative proposals, children's content, brand showcases |
+| `minimal` | Ultra-clean, maximum whitespace | Executive briefings, keynotes, premium brands |
+| `storytelling` | Cinematic, full-bleed visuals | Narratives, case studies, emotional impact |
+| `warm` | Soft gradients, wellness aesthetic | Lifestyle, wellness, personal development |
+| `notion` (Default) | SaaS dashboard, clean data focus | Product demos, SaaS, productivity tools |
+| `corporate` | Navy/gold, professional business | Investor decks, client proposals, quarterly reports |
+| `playful` | Vibrant colors, dynamic rounded shapes | Workshops, training, creative pitches |
 
 Detailed style definitions: `references/styles/<style>.md`
 
 ## Auto Style Selection
 
-When no `--style` is specified, analyze content for style signals:
-
 | Content Signals | Selected Style |
-|----------------|----------------|
-| AI, coding, tech, digital, algorithm, data | `technical` |
-| Business, strategy, investment, corporate | `corporate` |
-| Personal story, journey, narrative, emotion | `storytelling` |
-| Simple, zen, focus, essential, one idea | `minimal` |
-| Fun, creative, workshop, educational | `playful` |
-| Research, analysis, thought leadership | `editorial` |
-| Wellness, healing, cozy, self-care, lifestyle, comfort | `warm` |
-| Tutorial, explainer, how-to, beginner, product, guide | `retro-flat` |
-| Knowledge, concept, productivity, SaaS, notion, intellectual | `notion` |
+|-----------------|----------------|
+| tutorial, learn, education, guide, intro, beginner | `sketch-notes` |
+| architecture, system, data, analysis, technical, engineering | `blueprint` |
+| launch, marketing, brand, keynote, impact, showcase | `bold-editorial` |
+| creative, children, kids, cute, illustration, retro | `vector-illustration` |
+| executive, minimal, clean, simple, elegant | `minimal` |
+| story, journey, case study, narrative, emotional | `storytelling` |
+| wellness, lifestyle, personal, growth, mindfulness | `warm` |
+| saas, product, dashboard, metrics, productivity | `notion` |
+| investor, quarterly, business, corporate, proposal, client | `corporate` |
+| workshop, training, fun, playful, energetic, team | `playful` |
+| Default | `notion` |
 
-## Audience Presets
+## Design Philosophy
 
-| Audience | Approach |
-|----------|----------|
-| `beginners` | Step-by-step, more context, simpler visuals |
-| `intermediate` | Balanced detail, some assumed knowledge |
-| `experts` | Dense information, technical depth, less hand-holding |
-| `executives` | High-level insights, key metrics, strategic focus |
-| `general` | Accessible language, broad appeal, clear takeaways |
+This deck is designed for **reading and sharing**, not live presentation:
+- Each slide must be **self-explanatory** without verbal commentary
+- Structure content for **logical flow** when scrolling
+- Include **all necessary context** within each slide
+- Optimize for **social media sharing** and offline reading
 
 ## File Management
 
-### With Article Path
+### With Content Path
+
+Save to `slide-deck/` subdirectory in the same folder as the content:
 
 ```
-path/to/
-├── article.md
+content-dir/
+├── source-content.md
 └── slide-deck/
     ├── outline.md
     ├── prompts/
-    │   ├── 01-cover.md
-    │   ├── 02-content-1.md
+    │   ├── 01-slide-cover.md
+    │   ├── 02-slide-{slug}.md
     │   └── ...
-    ├── 01-cover.png
-    ├── 02-content-1.png
+    ├── 01-slide-cover.png
+    ├── 02-slide-{slug}.png
     └── ...
 ```
 
-### Without Article Path
+### Without Content Path
+
+Save to `slide-outputs/YYYY-MM-DD/[topic-slug]/`:
 
 ```
-./baoyu-slide-deck-outputs/YYYY-MM-DD/[topic-slug]/
-├── outline.md
-├── prompts/
-│   ├── 01-cover.md
-│   └── ...
-├── 01-cover.png
-└── ...
+slide-outputs/
+└── 2026-01-17/
+    └── ai-future-trends/
+        ├── outline.md
+        ├── prompts/
+        │   ├── 01-slide-cover.md
+        │   └── ...
+        ├── 01-slide-cover.png
+        └── ...
 ```
 
 ## Workflow
 
-### Step 1: Analyze Content & Select Style
+### Step 1: Analyze Content & Determine Settings
 
-1. Read source content
-2. If `--style` specified, use that style
-3. Otherwise, analyze content for style signals
-4. Extract key information:
-   - Core narrative and key messages
-   - Important data points and statistics
-   - Logical flow and structure
-   - Target audience signals
+1. Read source material
+2. **Style selection**:
+   - If `--style` specified, use that style
+   - Otherwise, scan for style signals and auto-select
+3. **Language detection**:
+   - If `--lang` specified, use that language for all prompts and slide text
+   - Otherwise, detect language from source material
+   - If uncertain (mixed languages or unclear), ask user to confirm
+4. **Slide count**:
+   - If `--slides` specified, use that count
+   - Otherwise, dynamic based on content structure
 
-### Step 2: Generate Outline
+### Step 2: Generate Outline with Style Instructions
 
-Create outline with `STYLE_INSTRUCTIONS` block and slide specifications.
-
-**Outline Format**:
+Create outline with structured STYLE_INSTRUCTIONS block:
 
 ```markdown
-# Slide Deck Outline: [Topic]
+# Slide Deck Outline
 
-**Source**: [source file or "Direct input"]
+**Topic**: [topic description]
 **Style**: [selected style]
 **Audience**: [target audience]
 **Language**: [output language]
@@ -148,159 +157,220 @@ Create outline with `STYLE_INSTRUCTIONS` block and slide specifications.
 ---
 
 <STYLE_INSTRUCTIONS>
-Design Aesthetic: [Overall style description]
-Background Color: [Description and Hex Code]
-Primary Font: [Font name for Headlines]
-Secondary Font: [Font name for Body copy]
+Design Aesthetic: [2-3 sentence description from style file]
+
+Background:
+  Color: [Name] ([Hex])
+  Texture: [description]
+
+Typography:
+  Primary Font: [detailed description for image generation]
+  Secondary Font: [detailed description for image generation]
+
 Color Palette:
-  Primary Text Color: [Hex Code]
-  Primary Accent Color: [Hex Code]
-Visual Elements: [Lines, shapes, imagery style, etc.]
+  Primary Text: [Name] ([Hex]) - [usage]
+  Background: [Name] ([Hex]) - [usage]
+  Accent 1: [Name] ([Hex]) - [usage]
+  Accent 2: [Name] ([Hex]) - [usage]
+
+Visual Elements:
+  - [element 1 with rendering guidance]
+  - [element 2 with rendering guidance]
+  - ...
+
+Style Rules:
+  Do: [guidelines from style file]
+  Don't: [anti-patterns from style file]
 </STYLE_INSTRUCTIONS>
 
 ---
 
-## Slide 1: [Descriptive Title]
+## Slide 1 of N
 
-**Position**: Cover
-**Filename**: 01-cover.png
+**Type**: Cover
+**Filename**: 01-slide-cover.png
 
 // NARRATIVE GOAL
-[Storytelling purpose within the overall arc]
+[What this slide achieves in the story arc]
 
 // KEY CONTENT
-Headline: [Main message - narrative, not "Title: Subtitle" format]
-Sub-headline: [Supporting context]
-Body:
-- [Key point 1 with specific data from source]
-- [Key point 2 with specific data from source]
+Headline: [main title]
+Sub-headline: [supporting tagline]
 
 // VISUAL
-[Detailed description of imagery, charts, graphics, or abstract visuals]
+[Detailed visual description - specific elements, composition, mood]
 
 // LAYOUT
-[Composition, hierarchy, spatial arrangement, focus points]
+[Composition, hierarchy, spatial arrangement]
 
 ---
 
-## Slide 2: [First Content]
+## Slide 2 of N
+
+**Type**: Content
+**Filename**: 02-slide-{slug}.png
+
+// NARRATIVE GOAL
+[What this slide achieves in the story arc]
+
+// KEY CONTENT
+Headline: [main message - narrative, not label]
+Sub-headline: [supporting context]
+Body:
+- [point 1 with specific detail]
+- [point 2 with specific detail]
+- [point 3 with specific detail]
+
+// VISUAL
+[Detailed visual description]
+
+// LAYOUT
+[Composition, hierarchy, spatial arrangement]
+
+---
 ...
 
-## Slide N: [Back Cover]
-...
+## Slide N of N
+
+**Type**: Back Cover
+**Filename**: {NN}-slide-back-cover.png
+
+// NARRATIVE GOAL
+[Meaningful closing - not just "thank you"]
+
+// KEY CONTENT
+Headline: [memorable closing statement or call-to-action]
+Body: [optional summary points or next steps]
+
+// VISUAL
+[Visual that reinforces the core message]
+
+// LAYOUT
+[Clean, impactful composition]
 ```
-
-**Required Slide Structure**:
-1. **Slide 1**: Cover Slide (poster-style, heroic typography)
-2. **Slides 2-N-1**: Content slides (consistent internal style)
-3. **Slide N**: Back Cover (closing statement, not "Thank You")
 
 ### Step 3: Save Outline
 
-Save outline as `outline.md` in target directory.
+Save outline as `outline.md` in the output directory.
 
-If `--outline-only` flag is set, stop here.
+If `--outline-only` is specified, stop here.
 
-### Step 4: Create Prompt Files
+### Step 4: Generate Prompts
 
-For each slide, create a style-specific prompt file.
+Create prompt file per slide in `prompts/` directory:
 
-**Prompt Format**:
-
-```markdown
-Slide theme: [slide title]
-Style: [style name]
-Position: [cover/content/back-cover]
-
-Visual composition:
-- Main visual: [style-appropriate description from VISUAL section]
-- Layout: [from LAYOUT section]
-- Decorative elements: [style-specific decorations]
-
-Color scheme:
-- Background: [style background color]
-- Primary text: [style text color]
-- Accent: [style accent color]
-
-Text content:
-- Headline: [headline text]
-- Sub-headline: [sub-headline if any]
-- Body points: [bullet points if any]
-
-Style notes: [specific style characteristics to emphasize]
-```
+1. Read `references/base-prompt.md`
+2. Combine with style-specific instructions from outline
+3. Add slide-specific content from outline
+4. Save as `01-slide-cover.md`, `02-slide-{slug}.md`, etc.
 
 ### Step 5: Generate Images
+
+**Image Generation Skill Selection**:
+1. Check available image generation skills
+2. If multiple skills available, ask user to choose
 
 **Session Management**:
 If the image generation skill supports `--sessionId`:
 1. Generate a unique session ID at the start (e.g., `slides-{topic-slug}-{timestamp}`)
-2. Use the same session ID for all slides
-3. This ensures visual consistency (color scheme, style, typography) across all slides
+2. Use the same session ID for all slides in the series
+3. This ensures style consistency across all generated slides
 
-For each slide, generate using:
+**Generation Flow**:
+1. Call selected image generation skill with prompt file, output path, and session ID
+2. Confirm generation success
+3. Report progress: "Generated X/N"
+4. Continue to next
+
+### Step 6: Merge to PPTX
+
+After all images are generated, merge them into a PowerPoint file:
 
 ```bash
-# With session support
-/baoyu-gemini-web --promptfiles [SKILL_ROOT]/skills/baoyu-slide-deck/prompts/system.md [TARGET_DIR]/prompts/01-cover.md --image [TARGET_DIR]/01-cover.png --sessionId slides-topic-20260117
+npx -y bun skills/baoyu-slide-deck/scripts/merge-to-pptx.ts <slide-deck-dir>
 ```
 
-Generation flow:
-1. Generate images sequentially with the same session ID
-2. After each image, output progress: "Generated X/N"
-3. On failure, auto-retry once
-4. If retry fails, log reason, continue to next
+This creates `{topic-slug}.pptx` in the slide deck directory with:
+- All images as full-bleed 16:9 slides
+- Prompt content added as speaker notes (from `prompts/` directory)
 
-### Step 6: Completion Report
+### Step 7: Output Summary
 
 ```
-Slide Deck Generated!
+Slide Deck Complete!
 
 Topic: [topic]
 Style: [style name]
-Audience: [audience]
+Audience: [audience type]
 Location: [directory path]
 Slides: N total
 
-- 01-cover.png ✓ Cover
-- 02-content-1.png ✓ Content
-- 03-content-2.png ✓ Content
+- 01-slide-cover.png ✓ Cover
+- 02-slide-intro.png ✓ Content
+- 03-slide-main-point.png ✓ Content
 - ...
-- 0N-back-cover.png ✓ Back Cover
+- {NN}-slide-back-cover.png ✓ Back Cover
 
 Outline: outline.md
-
-[If any failures]
-Failed:
-- 0X-slide-name.png: [failure reason]
+PPTX: {topic-slug}.pptx
 ```
+
+## Content Rules
+
+1. **Respect reader attention** - 
+2. **Data traceability** - All statistics must include source attribution
+3. **Self-contained prompts** - Every detail in the image prompt, no external references
+4. **No placeholders** - Every element must be fully specified
+
+## Style Rules
+
+1. **Narrative headlines** - Headlines tell the story, not label the content
+   - Bad: "Key Statistics"
+   - Good: "Usage doubled in 6 months"
+
+2. **Avoid AI clichés** - No "dive into", "explore", "journey", "let's"
+
+3. **Meaningful back cover** - Not just "Thank you"
+   - Include call-to-action, key takeaway, or memorable closing
+
+4. **Consistent visual language** - Same icons, colors, layouts throughout
+
+## Slide Structure
+
+1. **Cover (Slide 1)**: Title, visual hook, topic introduction
+2. **Content (Middle)**: Key points, data, explanations - dynamic count based on content
+3. **Back Cover (Final)**: Summary, call-to-action, or memorable closing
+
+## Key Specifications
+
+- **Aspect Ratio**: 16:9 (landscape)
+- **Slide Count**: Dynamic based on content
+- **Required Slides**: Cover + Back Cover minimum
+- **No slide numbers, footers, or logos**
+- **Language**: Priority order: `--lang` option → source material language → ask user if uncertain
+- **Tone**: Direct, confident language (avoid AI-sounding phrases)
+
+## Style Reference Details
+
+| Style | Description |
+|-------|-------------|
+| `sketch-notes` | Hand-drawn feel, soft brush strokes, warm off-white background, conceptual icons |
+| `blueprint` | Technical schematics, grid texture, precise lines, engineering blue tones |
+| `bold-editorial` | High contrast, bold typography, dark backgrounds, magazine-level impact |
+| `vector-illustration` | Flat vector, black outlines, retro colors, toy model aesthetic |
+| `minimal` | Maximum whitespace, single accent color, clean sans-serif, zen-like |
+| `storytelling` | Full-bleed imagery, cinematic compositions, emotional photography |
+| `warm` | Soft gradients, rounded shapes, wellness palette, approachable |
+| `notion` | Dashboard aesthetic, clean data viz, SaaS-inspired, productivity focus |
+| `corporate` | Navy/gold palette, structured layouts, professional iconography, business polish |
+| `playful` | Vibrant coral/teal/yellow, rounded shapes, dynamic layouts, energetic |
+
+Full style specifications: `references/styles/<style>.md`
 
 ## Notes
 
-### Design Philosophy
-- Deck is designed for **reading and sharing**, not live presentation
-- Structure should be self-explanatory without a presenter
-- Include enough context for visuals to be understood standalone
-- Err on the side of audience having **more expertise** than expected
-
-### Content Rules
-- Maximum 20 slides per deck
-- Every data point must trace to source material
-- All details in prompts - image generator has no access to source
-
-### Style Rules
-- Avoid AI-generated clichés ("It wasn't just X, it was Y")
-- Use narrative headlines, not "Title: Subtitle" format
-- Cover and Back Cover should be visually distinct (poster-style)
-- Back Cover should be meaningful closure, not "Thank You" or "Questions?"
-
-### Prohibited
-- Never include photorealistic images of prominent individuals
-- Never include placeholder slides for author name, date, etc.
-
-### Image Generation
 - Image generation typically takes 10-30 seconds per slide
 - Auto-retry once on generation failure
-- Use cartoon alternatives for sensitive public figures
-- Output language matches content language
-- Maintain style consistency across all slides
+- Use stylized alternatives for sensitive public figures
+- Output language matches input content language (or `--lang`)
+- Maintain style consistency across all slides in deck

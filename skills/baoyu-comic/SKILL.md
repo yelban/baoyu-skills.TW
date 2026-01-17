@@ -19,7 +19,7 @@ Create original knowledge comics with multiple visual styles.
 
 | Option | Values |
 |--------|--------|
-| `--style` | classic (default), dramatic, warm, tech, sepia, vibrant, ohmsha |
+| `--style` | classic (default), dramatic, warm, tech, sepia, vibrant, ohmsha, realistic |
 | `--layout` | standard (default), cinematic, dense, splash, mixed, webtoon |
 
 Style × Layout can be freely combined.
@@ -33,6 +33,7 @@ Style × Layout can be freely combined.
 | Pre-1950, classical, ancient | sepia | cinematic |
 | Personal story, mentor | warm | standard |
 | Conflict, breakthrough | dramatic | splash |
+| Wine, food, business, lifestyle, professional | realistic | cinematic |
 | Biography, balanced | classic | mixed |
 
 ## File Structure

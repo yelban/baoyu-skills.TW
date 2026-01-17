@@ -149,7 +149,22 @@ Generate professional slide deck images from content. Creates comprehensive outl
 /baoyu-slide-deck path/to/article.md --lang zh
 ```
 
-Available styles: `editorial` (default), `corporate`, `technical`, `playful`, `minimal`, `storytelling`, `warm`, `retro-flat`, `notion`
+**Styles** (visual aesthetics):
+
+| Style | Description | Best For |
+|-------|-------------|----------|
+| `notion` (default) | SaaS dashboard aesthetic with clean data focus, card-based layouts | Product demos, SaaS, productivity tools, B2B |
+| `sketch-notes` | Hand-drawn feel with soft brush strokes, warm off-white background | Educational, tutorials, knowledge sharing |
+| `blueprint` | Technical schematics with grid texture, engineering precision | Architecture, system design, data analysis |
+| `bold-editorial` | High-impact magazine style, bold typography, dark backgrounds | Product launches, marketing, keynotes |
+| `vector-illustration` | Flat vector with black outlines, retro soft colors, toy model aesthetic | Creative proposals, children's content, explainers |
+| `minimal` | Ultra-clean with maximum whitespace, single accent color, zen-like | Executive briefings, keynotes, premium brands |
+| `storytelling` | Cinematic full-bleed visuals, emotional photography | Case studies, narratives, customer journeys |
+| `warm` | Soft gradients, rounded shapes, wellness palette | Lifestyle, wellness, personal development |
+| `corporate` | Navy/gold palette, structured layouts, professional iconography | Investor decks, client proposals, quarterly reports |
+| `playful` | Vibrant coral/teal/yellow, rounded shapes, dynamic layouts | Workshops, training, creative pitches |
+
+After generation, slides are automatically merged into a `.pptx` file for easy sharing.
 
 ### baoyu-comic
 
@@ -172,15 +187,17 @@ Knowledge comic creator supporting multiple styles (Logicomix/Ligne Claire, Ohms
 ```
 
 **Styles** (visual aesthetics):
-| Style | Description | Best for |
+
+| Style | Description | Best For |
 |-------|-------------|----------|
-| `classic` | Traditional Ligne Claire, balanced | Biographies, balanced narratives |
-| `dramatic` | High contrast, intense | Breakthroughs, conflicts |
-| `warm` | Nostalgic, personal | Personal stories, mentorship |
-| `tech` | Modern, digital | Computing history, AI stories |
-| `sepia` | Historical, archival | Pre-1950s, classical science |
-| `vibrant` | Energetic, engaging | Science basics, young audience |
-| `ohmsha` | Manga guide style, visual metaphors | Tutorials, complex concepts (ML, physics) |
+| `classic` (default) | Traditional Ligne Claire with clean uniform outlines, flat colors, detailed backgrounds | Biographies, balanced narratives, educational content |
+| `dramatic` | High contrast with heavy shadows, intense expressions, angular compositions | Pivotal discoveries, conflicts, climactic scenes |
+| `warm` | Soft edges, golden tones, cozy interiors with nostalgic feel | Personal stories, childhood scenes, mentorship |
+| `tech` | Precise geometric lines, circuit motifs, neon accents on dark backgrounds | Computing history, AI stories, modern tech |
+| `sepia` | Vintage illustration style with aged paper effect, period-accurate details | Pre-1950s stories, classical science, historical figures |
+| `vibrant` | Energetic lines with weight variation, bright colors, dynamic poses | Science explanations, "aha" moments, young audience |
+| `ohmsha` | Manga guide style with visual metaphors, gadgets, student/mentor dynamic | Technical tutorials, complex concepts (ML, physics) |
+| `realistic` | Full-color realistic manga with digital painting, smooth gradients, accurate proportions | Wine, food, business, lifestyle, professional topics |
 
 **Layouts** (panel arrangement):
 | Layout | Panels/Page | Best for |
