@@ -46,6 +46,9 @@ for README_FILE in "README.md" "README.zh.md"; do
         # 替換 repo 路徑（GitHub repo）
         sed -i '' 's|jimliu/baoyu-skills|yelban/baoyu-skills.TW|g' "$README_FILE"
 
+        # 替換快速安裝命令（npx add-skill -> npx skills add）
+        sed -i '' 's|npx add-skill|npx skills add|g' "$README_FILE"
+
         # 替換 marketplace 名稱（@baoyu-skills 格式）
         sed -i '' 's|@baoyu-skills|@baoyu-skills-tw|g' "$README_FILE"
 

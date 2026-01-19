@@ -2,7 +2,7 @@
 
 > **📌 這是繁體中文（台灣）在地化同步版本**
 >
-> 上游：[JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) | 維護者：[@yelban](https://github.com/yelban)
+> 上游：[JimLiu/baoyu-skills](https://github.com/yelban/baoyu-skills.TW) | 維護者：[@yelban](https://github.com/yelban)
 >
 > 所有內容已使用 OpenCC s2twp 轉換為繁體中文（台灣正體）。
 
@@ -21,7 +21,7 @@
 ### 快速安裝（推薦）
 
 ```bash
-npx add-skill yelban/baoyu-skills.TW
+npx skills add yelban/baoyu-skills.TW
 ```
 
 ### 註冊外掛市場
@@ -45,9 +45,9 @@ npx add-skill yelban/baoyu-skills.TW
 
 ```bash
 # 安裝指定外掛
-/plugin install content-skills@baoyu-skills-tw
-/plugin install ai-generation-skills@baoyu-skills-tw
-/plugin install utility-skills@baoyu-skills-tw
+/plugin install content-skills@baoyu-skills-tw-tw
+/plugin install ai-generation-skills@baoyu-skills-tw-tw
+/plugin install utility-skills@baoyu-skills-tw-tw
 ```
 
 **方式三：告訴 Agent**

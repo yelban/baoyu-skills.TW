@@ -2,7 +2,7 @@
 
 > **📌 This is the Traditional Chinese (Taiwan) localized fork**
 >
-> Upstream: [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) | Maintainer: [@yelban](https://github.com/yelban)
+> Upstream: [JimLiu/baoyu-skills](https://github.com/yelban/baoyu-skills.TW) | Maintainer: [@yelban](https://github.com/yelban)
 >
 > All content has been converted to Traditional Chinese (Taiwan) using OpenCC s2twp.
 
@@ -21,7 +21,7 @@ Skills shared by Baoyu for improving daily work efficiency with Claude Code.
 ### Quick Install (Recommended)
 
 ```bash
-npx add-skill yelban/baoyu-skills.TW
+npx skills add yelban/baoyu-skills.TW
 ```
 
 ### Register as Plugin Marketplace
@@ -45,9 +45,9 @@ Run the following command in Claude Code:
 
 ```bash
 # Install specific plugin
-/plugin install content-skills@baoyu-skills-tw
-/plugin install ai-generation-skills@baoyu-skills-tw
-/plugin install utility-skills@baoyu-skills-tw
+/plugin install content-skills@baoyu-skills-tw-tw
+/plugin install ai-generation-skills@baoyu-skills-tw-tw
+/plugin install utility-skills@baoyu-skills-tw-tw
 ```
 
 **Option 3: Ask the Agent**
