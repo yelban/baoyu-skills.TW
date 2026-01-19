@@ -99,7 +99,7 @@ Define characters before generating:
 | Role | Default | Traits |
 |------|---------|--------|
 | Student (Role A) | 大雄 | Confused, asks basic but crucial questions, represents reader |
-| Mentor (Role B) | 哆啦A梦 | Knowledgeable, patient, uses gadgets as technical metaphors |
+| Mentor (Role B) | 哆啦A夢 | Knowledgeable, patient, uses gadgets as technical metaphors |
 | Antagonist (Role C, optional) | 胖虎 | Represents misunderstanding, or "noise" in the data |
 
 ## Best For

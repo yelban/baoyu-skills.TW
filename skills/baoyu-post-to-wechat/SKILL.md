@@ -1,9 +1,9 @@
 ---
 name: baoyu-post-to-wechat
-description: Post content to WeChat Official Account (微信公众号). Supports both article posting (文章) and image-text posting (图文).
+description: Post content to WeChat Official Account (微信公眾號). Supports both article posting (文章) and image-text posting (圖文).
 ---
 
-# Post to WeChat Official Account (微信公众号)
+# Post to WeChat Official Account (微信公眾號)
 
 Post content to WeChat Official Account using Chrome CDP automation.
 
@@ -19,7 +19,7 @@ Post content to WeChat Official Account using Chrome CDP automation.
 **Script Reference**:
 | Script | Purpose |
 |--------|---------|
-| `scripts/wechat-browser.ts` | Image-text posts (图文) |
+| `scripts/wechat-browser.ts` | Image-text posts (圖文) |
 | `scripts/wechat-article.ts` | Full article posting (文章) |
 | `scripts/md-to-wechat.ts` | Markdown → WeChat HTML conversion |
 | `scripts/copy-to-clipboard.ts` | Copy content to clipboard |
@@ -27,14 +27,14 @@ Post content to WeChat Official Account using Chrome CDP automation.
 
 ## Quick Usage
 
-### Image-Text (图文) - Multiple images with title/content
+### Image-Text (圖文) - Multiple images with title/content
 
 ```bash
 # From markdown file and image directory
 npx -y bun ${SKILL_DIR}/scripts/wechat-browser.ts --markdown article.md --images ./images/
 
 # With explicit parameters
-npx -y bun ${SKILL_DIR}/scripts/wechat-browser.ts --title "标题" --content "内容" --image img1.png --image img2.png --submit
+npx -y bun ${SKILL_DIR}/scripts/wechat-browser.ts --title "標題" --content "內容" --image img1.png --image img2.png --submit
 ```
 
 ### Article (文章) - Full markdown with formatting

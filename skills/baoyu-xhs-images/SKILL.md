@@ -1,6 +1,6 @@
 ---
 name: baoyu-xhs-images
-description: Xiaohongshu (Little Red Book) infographic series generator with multiple style options. Breaks down content into 1-10 cartoon-style infographics. Use when user asks to create "小红书图片", "XHS images", or "RedNote infographics".
+description: Xiaohongshu (Little Red Book) infographic series generator with multiple style options. Breaks down content into 1-10 cartoon-style infographics. Use when user asks to create "小紅書圖片", "XHS images", or "RedNote infographics".
 ---
 
 # Xiaohongshu Infographic Series Generator
@@ -113,7 +113,7 @@ xhs-images/{topic-slug}/
 
 **Slug Generation**:
 1. Extract main topic from content (2-4 words, kebab-case)
-2. Example: "AI工具推荐" → `ai-tools-recommend`
+2. Example: "AI工具推薦" → `ai-tools-recommend`
 
 **Conflict Resolution**:
 If `xhs-images/{topic-slug}/` already exists:
@@ -137,10 +137,10 @@ Read source content, save it if needed, and perform deep analysis.
    - If user pastes content: save to `source.md` in target directory
 2. Read source content
 3. **Deep analysis** following `references/analysis-framework.md`:
-   - Content type classification (种草/干货/测评/教程/避坑...)
-   - Hook analysis (爆款标题潜力)
+   - Content type classification (種草/乾貨/測評/教程/避坑...)
+   - Hook analysis (爆款標題潛力)
    - Target audience identification
-   - Engagement potential (收藏/分享/评论)
+   - Engagement potential (收藏/分享/評論)
    - Visual opportunity mapping
    - Swipe flow design
 4. Detect source language
@@ -188,10 +188,10 @@ Based on analysis, create three distinct style variants.
 
 ```
 Question 1 (Style): Which style variant?
-- A: tech + dense (Recommended) - 专业科技感，适合干货
-- B: notion + list - 清爽知识卡片
-- C: minimal + balanced - 简约高端风格
-- Custom: 自定义风格描述
+- A: tech + dense (Recommended) - 專業科技感，適合乾貨
+- B: notion + list - 清爽知識卡片
+- C: minimal + balanced - 簡約高階風格
+- Custom: 自定義風格描述
 
 Question 2 (Layout) - only if relevant:
 - Keep variant default (Recommended)

@@ -24,7 +24,7 @@ High information density, knowledge card style
 
 ## Best For
 
-Summary cards, cheat sheets, comprehensive guides, 干货总结
+Summary cards, cheat sheets, comprehensive guides, 乾貨總結
 
 ## Best Style Pairings
 

@@ -5,225 +5,225 @@
 ## 1.7.0 - 2026-01-19
 
 ### 新功能
-- `baoyu-comic`：新增 `shoujo`（少女漫画）风格——经典少女漫画风格，大眼睛闪亮高光、花朵星星装饰、柔和粉紫色调。适合恋爱、青春成长、友情、情感故事。
+- `baoyu-comic`：新增 `shoujo`（少女漫畫）風格——經典少女漫畫風格，大眼睛閃亮高光、花朵星星裝飾、柔和粉紫色調。適合戀愛、青春成長、友情、情感故事。
 
 ## 1.6.0 - 2026-01-19
 
 ### 新功能
-- `baoyu-cover-image`：新增 `flat-doodle`（扁平涂鸦）风格——粗黑色轮廓线、明亮粉彩色、简单扁平形状、可爱圆润比例。适合生产力、SaaS、工作流内容。
-- `baoyu-article-illustrator`：新增 `flat-doodle`（扁平涂鸦）风格——同样的视觉风格用于文章插图。
+- `baoyu-cover-image`：新增 `flat-doodle`（扁平塗鴉）風格——粗黑色輪廓線、明亮粉彩色、簡單扁平形狀、可愛圓潤比例。適合生產力、SaaS、工作流內容。
+- `baoyu-article-illustrator`：新增 `flat-doodle`（扁平塗鴉）風格——同樣的視覺風格用於文章插圖。
 
 ## 1.5.0 - 2026-01-19
 
 ### 新功能
-- `baoyu-article-illustrator`：风格库扩展至 20 种——将风格定义提取到 `references/styles/` 目录，新增 11 种风格（`blueprint`（蓝图）、`chalkboard`（黑板）、`editorial`（杂志信息图）、`fantasy-animation`（奇幻动画）、`flat`（扁平矢量）、`intuition-machine`（技术简报）、`pixel-art`（像素艺术）、`retro`（复古）、`scientific`（科学图解）、`sketch-notes`（手绘笔记）、`vector-illustration`（矢量插画）、`vintage`（复古文献）、`watercolor`（水彩））。
+- `baoyu-article-illustrator`：風格庫擴充套件至 20 種——將風格定義提取到 `references/styles/` 目錄，新增 11 種風格（`blueprint`（藍圖）、`chalkboard`（黑板）、`editorial`（雜誌資訊圖）、`fantasy-animation`（奇幻動畫）、`flat`（扁平向量）、`intuition-machine`（技術簡報）、`pixel-art`（畫素藝術）、`retro`（復古）、`scientific`（科學圖解）、`sketch-notes`（手繪筆記）、`vector-illustration`（向量插畫）、`vintage`（復古文獻）、`watercolor`（水彩））。
 
-### 破坏性变更
-- `baoyu-article-illustrator`：移除 `tech`、`bold`、`isometric` 风格。
-- `baoyu-cover-image`：移除 `bold` 风格（大胆编辑内容改用 `bold-editorial` 风格）。
+### 破壞性變更
+- `baoyu-article-illustrator`：移除 `tech`、`bold`、`isometric` 風格。
+- `baoyu-cover-image`：移除 `bold` 風格（大膽編輯內容改用 `bold-editorial` 風格）。
 
-### 文档
-- `README.md`、`README.zh.md`：新增 article-illustrator 风格预览图库（20 种风格）。
+### 文件
+- `README.md`、`README.zh.md`：新增 article-illustrator 風格預覽相簿（20 種風格）。
 
 ## 1.4.2 - 2026-01-19
 
-### 文档
-- `baoyu-danger-gemini-web`：添加支持的浏览器列表（Chrome、Chromium、Edge）和代理配置指南。
+### 文件
+- `baoyu-danger-gemini-web`：新增支援的瀏覽器列表（Chrome、Chromium、Edge）和代理配置指南。
 
 ## 1.4.1 - 2026-01-18
 
-### 修复
-- `baoyu-post-to-x`：支持 X Articles 多语言 UI 选择器（感谢 [@ianchenx](https://github.com/ianchenx) 贡献）。
+### 修復
+- `baoyu-post-to-x`：支援 X Articles 多語言 UI 選擇器（感謝 [@ianchenx](https://github.com/ianchenx) 貢獻）。
 
 ## 1.4.0 - 2026-01-18
 
 ### 新功能
-- `baoyu-cover-image`：风格库从 8 个扩展至 19 个，新增 12 种风格——`blueprint`（蓝图）、`bold-editorial`（大胆编辑）、`chalkboard`（黑板）、`dark-atmospheric`（暗黑氛围）、`editorial-infographic`（杂志信息图）、`fantasy-animation`（奇幻动画）、`intuition-machine`（技术简报）、`notion`（Notion 风格）、`pixel-art`（像素艺术）、`sketch-notes`（手绘笔记）、`vector-illustration`（矢量插画）、`vintage`（复古文献）、`watercolor`（水彩）。
-- `baoyu-slide-deck`：新增 `chalkboard`（黑板）风格——黑色黑板背景配彩色粉笔绘画，适合教育和教程内容。
+- `baoyu-cover-image`：風格庫從 8 個擴充套件至 19 個，新增 12 種風格——`blueprint`（藍圖）、`bold-editorial`（大膽編輯）、`chalkboard`（黑板）、`dark-atmospheric`（暗黑氛圍）、`editorial-infographic`（雜誌資訊圖）、`fantasy-animation`（奇幻動畫）、`intuition-machine`（技術簡報）、`notion`（Notion 風格）、`pixel-art`（畫素藝術）、`sketch-notes`（手繪筆記）、`vector-illustration`（向量插畫）、`vintage`（復古文獻）、`watercolor`（水彩）。
+- `baoyu-slide-deck`：新增 `chalkboard`（黑板）風格——黑色黑板背景配彩色粉筆繪畫，適合教育和教程內容。
 
-### 破坏性变更
-- `baoyu-cover-image`：移除 `tech` 风格（技术内容改用 `blueprint` 或 `editorial-infographic` 风格）。
+### 破壞性變更
+- `baoyu-cover-image`：移除 `tech` 風格（技術內容改用 `blueprint` 或 `editorial-infographic` 風格）。
 
-### 文档
-- `README.md`、`README.zh.md`：更新 cover-image 和 slide-deck 风格预览截图。
+### 文件
+- `README.md`、`README.zh.md`：更新 cover-image 和 slide-deck 風格預覽截圖。
 
 ## 1.3.0 - 2026-01-18
 
 ### 新功能
-- `baoyu-comic`：新增 `wuxia` 武侠风格——港漫武侠风格，水墨笔触、动态打斗、气功特效。适用于武侠、仙侠、中国历史小说。
-- `baoyu-comic`：README 新增风格和布局预览截图（8 种风格 + 6 种布局）。
+- `baoyu-comic`：新增 `wuxia` 武俠風格——港漫武俠風格，水墨筆觸、動態打鬥、氣功特效。適用於武俠、仙俠、中國歷史小說。
+- `baoyu-comic`：README 新增風格和佈局預覽截圖（8 種風格 + 6 種佈局）。
 
-### 重构
-- `baoyu-comic`：移除 `tech` 风格（技术内容改用 `ohmsha` 风格）。
+### 重構
+- `baoyu-comic`：移除 `tech` 風格（技術內容改用 `ohmsha` 風格）。
 
 ## 1.2.0 - 2026-01-18
 
 ### 新功能
-- Session 独立输出目录：每次生成创建独立目录（`<skill-suffix>/<topic-slug>/`），即使是同一源文件也会新建目录。目录冲突时追加时间戳。
-- 多源文件支持：源文件现以 `source-{slug}.{ext}` 命名，支持多个输入（文本、图片、会话中的文件）。
+- Session 獨立輸出目錄：每次生成建立獨立目錄（`<skill-suffix>/<topic-slug>/`），即使是同一原始檔也會新建目錄。目錄衝突時追加時間戳。
+- 多原始檔支援：原始檔現以 `source-{slug}.{ext}` 命名，支援多個輸入（文字、圖片、會話中的檔案）。
 
-### 文档
-- `CLAUDE.md`：更新 Output Path Convention，采用新的 session 独立目录结构和多源文件命名规范。
-- 多个技能：更新文件管理部分，反映新的目录和源文件规范。
+### 文件
+- `CLAUDE.md`：更新 Output Path Convention，採用新的 session 獨立目錄結構和多原始檔命名規範。
+- 多個技能：更新檔案管理部分，反映新的目錄和原始檔規範。
   - `baoyu-slide-deck`、`baoyu-article-illustrator`、`baoyu-cover-image`、`baoyu-xhs-images`、`baoyu-comic`
 
 ## 1.1.0 - 2026-01-18
 
 ### 新功能
-- `baoyu-compress-image`：新增跨平台图片压缩技能。默认转换为 WebP 格式，支持 PNG 转 PNG。自动选择系统工具（sips、cwebp、ImageMagick），Sharp 作为兜底方案。
+- `baoyu-compress-image`：新增跨平臺圖片壓縮技能。預設轉換為 WebP 格式，支援 PNG 轉 PNG。自動選擇系統工具（sips、cwebp、ImageMagick），Sharp 作為兜底方案。
 
-### 重构
-- Marketplace 结构重组：将插件分为三大类——`content-skills`（内容技能）、`ai-generation-skills`（AI 生成技能）和 `utility-skills`（工具技能），便于管理和发现。
+### 重構
+- Marketplace 結構重組：將外掛分為三大類——`content-skills`（內容技能）、`ai-generation-skills`（AI 生成技能）和 `utility-skills`（工具技能），便於管理和發現。
 
-### 文档
-- `CLAUDE.md`、`README.md`、`README.zh.md`：更新技能架构文档，反映新的三类分组结构。
+### 文件
+- `CLAUDE.md`、`README.md`、`README.zh.md`：更新技能架構文件，反映新的三類分組結構。
 
 ## 1.0.1 - 2026-01-18
 
-### 重构
-- 代码结构优化，提升可读性和可维护性。
-- `baoyu-slide-deck`：统一风格参考文件格式。
+### 重構
+- 程式碼結構最佳化，提升可讀性和可維護性。
+- `baoyu-slide-deck`：統一風格參考檔案格式。
 
 ### 其他
-- 截图：从 PNG 转换为 WebP 格式，减小文件体积；新增新风格的截图。
+- 截圖：從 PNG 轉換為 WebP 格式，減小檔案體積；新增新風格的截圖。
 
 ## 1.0.0 - 2026-01-18
 
 ### 新功能
-- `baoyu-danger-x-to-markdown`：新增技能，将 X/Twitter 帖子和线程转换为 Markdown 格式。
+- `baoyu-danger-x-to-markdown`：新增技能，將 X/Twitter 帖子和執行緒轉換為 Markdown 格式。
 
-### 破坏性变更
-- `baoyu-gemini-web` 重命名为 `baoyu-danger-gemini-web`，以提示使用逆向工程 API 的潜在风险。
+### 破壞性變更
+- `baoyu-gemini-web` 重新命名為 `baoyu-danger-gemini-web`，以提示使用逆向工程 API 的潛在風險。
 
 ## 0.11.0 - 2026-01-18
 
 ### 新功能
-- `baoyu-danger-gemini-web`：新增 Disclaimer 同意检查流程——首次使用前需用户确认接受，同意状态按平台持久化存储。
+- `baoyu-danger-gemini-web`：新增 Disclaimer 同意檢查流程——首次使用前需使用者確認接受，同意狀態按平臺持久化儲存。
 
 ## 0.10.0 - 2026-01-18
 
 ### 新功能
-- `baoyu-slide-deck`：风格库从 10 个扩展至 15 个，新增 8 种风格——`dark-atmospheric`（暗黑氛围）、`editorial-infographic`（杂志信息图）、`fantasy-animation`（奇幻动画）、`intuition-machine`（技术简报）、`pixel-art`（像素艺术）、`scientific`（科学图解）、`vintage`（复古文献）、`watercolor`（水彩手绘）。
+- `baoyu-slide-deck`：風格庫從 10 個擴充套件至 15 個，新增 8 種風格——`dark-atmospheric`（暗黑氛圍）、`editorial-infographic`（雜誌資訊圖）、`fantasy-animation`（奇幻動畫）、`intuition-machine`（技術簡報）、`pixel-art`（畫素藝術）、`scientific`（科學圖解）、`vintage`（復古文獻）、`watercolor`（水彩手繪）。
 
-### 破坏性变更
-- `baoyu-slide-deck`：移除 3 种风格（`playful`、`storytelling`、`warm`）；默认风格从 `notion` 改为 `blueprint`。
+### 破壞性變更
+- `baoyu-slide-deck`：移除 3 種風格（`playful`、`storytelling`、`warm`）；預設風格從 `notion` 改為 `blueprint`。
 
 ## 0.9.0 - 2026-01-17
 
 ### 新功能
-- 扩展支持：所有技能现支持通过 `EXTEND.md` 文件自定义。检查 `.baoyu-skills/<skill-name>/EXTEND.md`（项目级）或 `~/.baoyu-skills/<skill-name>/EXTEND.md`（用户级）配置自定义样式与设置。
+- 擴充套件支援：所有技能現支援透過 `EXTEND.md` 檔案自定義。檢查 `.baoyu-skills/<skill-name>/EXTEND.md`（專案級）或 `~/.baoyu-skills/<skill-name>/EXTEND.md`（使用者級）配置自定義樣式與設定。
 
 ### 其他
-- `.gitignore`：添加 `.baoyu-skills/` 目录忽略，存放用户扩展文件。
+- `.gitignore`：新增 `.baoyu-skills/` 目錄忽略，存放使用者擴充套件檔案。
 
 ## 0.8.2 - 2026-01-17
 
-### 重构
-- `baoyu-danger-gemini-web`：重组脚本架构——将模块文件移至 `gemini-webapi/` 子目录，并更新 SKILL.md 使用 `${SKILL_DIR}` 路径引用。
+### 重構
+- `baoyu-danger-gemini-web`：重組指令碼架構——將模組檔案移至 `gemini-webapi/` 子目錄，並更新 SKILL.md 使用 `${SKILL_DIR}` 路徑引用。
 
 ## 0.8.1 - 2026-01-17
 
-### 重构
-- `baoyu-danger-gemini-web`：重构脚本架构——将 10 个分散的脚本文件整合为结构化的 `gemini-webapi/` 模块（gemini_webapi Python 库的 TypeScript 移植版）。
+### 重構
+- `baoyu-danger-gemini-web`：重構指令碼架構——將 10 個分散的指令碼檔案整合為結構化的 `gemini-webapi/` 模組（gemini_webapi Python 庫的 TypeScript 移植版）。
 
 ## 0.8.0 - 2026-01-17
 
 ### 新功能
-- `baoyu-xhs-images`：新增内容分析框架（`analysis-framework.md`、`outline-template.md`），提供结构化内容拆解与大纲生成方案。
+- `baoyu-xhs-images`：新增內容分析框架（`analysis-framework.md`、`outline-template.md`），提供結構化內容拆解與大綱生成方案。
 
-### 文档
-- `CLAUDE.md`：新增 Output Path Convention（目录结构、备份规则）和 Image Naming Convention（文件命名格式、slug 规则），统一图片生成输出规范。
-- 多个技能：更新文件管理规范，采用统一目录结构（`[source-name-no-ext]/<skill-suffix>/`）。
+### 文件
+- `CLAUDE.md`：新增 Output Path Convention（目錄結構、備份規則）和 Image Naming Convention（檔案命名格式、slug 規則），統一圖片生成輸出規範。
+- 多個技能：更新檔案管理規範，採用統一目錄結構（`[source-name-no-ext]/<skill-suffix>/`）。
   - `baoyu-article-illustrator`、`baoyu-comic`、`baoyu-cover-image`、`baoyu-slide-deck`、`baoyu-xhs-images`
 
 ## 0.7.0 - 2026-01-17
 
 ### 新功能
-- `baoyu-comic`：新增 `--aspect`（3:4、4:3、16:9）和 `--lang` 选项；引入多变体分镜工作流（时间线、主题、人物视角），支持用户选择最佳方案。
+- `baoyu-comic`：新增 `--aspect`（3:4、4:3、16:9）和 `--lang` 選項；引入多變體分鏡工作流（時間線、主題、人物視角），支援使用者選擇最佳方案。
 
-### 增强
-- `baoyu-comic`：新增 `analysis-framework.md` 和 `storyboard-template.md`，提供结构化内容分析与变体生成框架。
-- `baoyu-slide-deck`：新增 `analysis-framework.md`、`content-rules.md`、`modification-guide.md`、`outline-template.md` 参考文档，提升大纲质量。
-- `baoyu-article-illustrator`、`baoyu-cover-image`、`baoyu-xhs-images`：SKILL.md 文档增强，工作流程更清晰。
+### 增強
+- `baoyu-comic`：新增 `analysis-framework.md` 和 `storyboard-template.md`，提供結構化內容分析與變體生成框架。
+- `baoyu-slide-deck`：新增 `analysis-framework.md`、`content-rules.md`、`modification-guide.md`、`outline-template.md` 參考文件，提升大綱質量。
+- `baoyu-article-illustrator`、`baoyu-cover-image`、`baoyu-xhs-images`：SKILL.md 文件增強，工作流程更清晰。
 
-### 文档
-- 多个技能：重构 SKILL.md 结构，将详细内容移至 `references/` 目录，便于维护。
-- `baoyu-slide-deck`：精简 SKILL.md，整合风格描述。
+### 文件
+- 多個技能：重構 SKILL.md 結構，將詳細內容移至 `references/` 目錄，便於維護。
+- `baoyu-slide-deck`：精簡 SKILL.md，整合風格描述。
 
 ## 0.6.1 - 2026-01-17
 
-- `baoyu-slide-deck`：新增 `scripts/merge-to-pdf.ts`，可将生成的 slide 图片一键合并为 PDF；文档补充导出步骤与产物命名（pptx/pdf）。
-- `baoyu-comic`：新增 `scripts/merge-to-pdf.ts`，将封面/分页图片合并为 PDF；补充角色参考（图片/文本）处理说明。
-- 文档规范：在 `CLAUDE.md` 中补充“Script Directory”模板；`baoyu-danger-gemini-web` / `baoyu-slide-deck` / `baoyu-comic` 文档统一用 `${SKILL_DIR}` 引用脚本路径，方便 agent 在任意安装目录运行。
+- `baoyu-slide-deck`：新增 `scripts/merge-to-pdf.ts`，可將生成的 slide 圖片一鍵合併為 PDF；文件補充匯出步驟與產物命名（pptx/pdf）。
+- `baoyu-comic`：新增 `scripts/merge-to-pdf.ts`，將封面/分頁圖片合併為 PDF；補充角色參考（圖片/文字）處理說明。
+- 文件規範：在 `CLAUDE.md` 中補充“Script Directory”模板；`baoyu-danger-gemini-web` / `baoyu-slide-deck` / `baoyu-comic` 文件統一用 `${SKILL_DIR}` 引用指令碼路徑，方便 agent 在任意安裝目錄執行。
 
 ## 0.6.0 - 2026-01-17
 
-- `baoyu-slide-deck`：新增 `scripts/merge-to-pptx.ts`，将生成的 slide 图片合并为 PPTX，并可把 `prompts/` 写入 speaker notes。
-- `baoyu-slide-deck`：风格库重组与扩充（新增 `blueprint` / `bold-editorial` / `sketch-notes` / `vector-illustration`，并调整/替换部分旧风格定义）。
-- `baoyu-comic`：新增 `realistic` 风格参考文件。
-- 文档：README / README.zh 同步更新技能说明与用法示例。
+- `baoyu-slide-deck`：新增 `scripts/merge-to-pptx.ts`，將生成的 slide 圖片合併為 PPTX，並可把 `prompts/` 寫入 speaker notes。
+- `baoyu-slide-deck`：風格庫重組與擴充（新增 `blueprint` / `bold-editorial` / `sketch-notes` / `vector-illustration`，並調整/替換部分舊風格定義）。
+- `baoyu-comic`：新增 `realistic` 風格參考檔案。
+- 文件：README / README.zh 同步更新技能說明與用法示例。
 
 ## 0.5.3 - 2026-01-17
 
-- `baoyu-post-to-x`（X Articles）：插图占位符替换更稳定——选中占位符增加重试与校验，改用 Backspace 删除并确认删除后再粘贴图片，降低插图错位/替换失败概率。
+- `baoyu-post-to-x`（X Articles）：插圖佔位符替換更穩定——選中佔位符增加重試與校驗，改用 Backspace 刪除並確認刪除後再貼上圖片，降低插圖錯位/替換失敗機率。
 
 ## 0.5.2 - 2026-01-16
 
-- `baoyu-danger-gemini-web`：新增 `--sessionId`（本地持久化会话，支持 `--list-sessions`），用于多轮对话/多图生成保持上下文一致。
-- `baoyu-danger-gemini-web`：新增 `--reference/--ref` 传入参考图片（vision 输入），并增强超时与 cookie 失效自动恢复逻辑。
-- `baoyu-xhs-images` / `baoyu-slide-deck` / `baoyu-comic`：文档补充 session 约定（整套图使用同一 `sessionId`，增强风格一致性）。
+- `baoyu-danger-gemini-web`：新增 `--sessionId`（本地持久化會話，支援 `--list-sessions`），用於多輪對話/多圖生成保持上下文一致。
+- `baoyu-danger-gemini-web`：新增 `--reference/--ref` 傳入參考圖片（vision 輸入），並增強超時與 cookie 失效自動恢復邏輯。
+- `baoyu-xhs-images` / `baoyu-slide-deck` / `baoyu-comic`：文件補充 session 約定（整套圖使用同一 `sessionId`，增強風格一致性）。
 
 ## 0.5.1 - 2026-01-16
 
-- `baoyu-comic`：补齐创作模板与参考（角色模板、Ohmsha 教学漫画指南、大纲模板），更适合从“设定 → 分镜 → 生成”快速落地。
+- `baoyu-comic`：補齊創作模板與參考（角色模板、Ohmsha 教學漫畫指南、大綱模板），更適合從“設定 → 分鏡 → 生成”快速落地。
 
 ## 0.5.0 - 2026-01-16
 
-- 新增 `baoyu-comic`：知识漫画生成器，支持 `style × layout` 组合，并提供风格/布局参考文件用于稳定出图。
-- `baoyu-xhs-images`：将 Style/Layout 的细节从 SKILL.md 拆分到 `references/styles/*` 与 `references/layouts/*`，并将基础提示词迁移到 `references/base-prompt.md`，便于维护和复用。
-- `baoyu-slide-deck` / `baoyu-cover-image`：同样将基础提示词与风格拆分到 `references/`，降低 SKILL.md 复杂度，便于扩展更多风格。
-- 文档：README / README.zh 更新技能清单与用法示例。
+- 新增 `baoyu-comic`：知識漫畫生成器，支援 `style × layout` 組合，並提供風格/佈局參考檔案用於穩定出圖。
+- `baoyu-xhs-images`：將 Style/Layout 的細節從 SKILL.md 拆分到 `references/styles/*` 與 `references/layouts/*`，並將基礎提示詞遷移到 `references/base-prompt.md`，便於維護和複用。
+- `baoyu-slide-deck` / `baoyu-cover-image`：同樣將基礎提示詞與風格拆分到 `references/`，降低 SKILL.md 複雜度，便於擴充套件更多風格。
+- 文件：README / README.zh 更新技能清單與用法示例。
 
 ## 0.4.2 - 2026-01-15
 
-- `baoyu-danger-gemini-web`：描述信息更新，明确其作为 `cover-image` / `xhs-images` / `article-illustrator` 等技能的图片生成后端。
+- `baoyu-danger-gemini-web`：描述資訊更新，明確其作為 `cover-image` / `xhs-images` / `article-illustrator` 等技能的圖片生成後端。
 
 ## 0.4.1 - 2026-01-15
 
-- `baoyu-post-to-x` / `baoyu-post-to-wechat`：新增 `scripts/paste-from-clipboard.ts`，通过系统级 Cmd/Ctrl+V 发送“真实粘贴”按键，规避 CDP 合成事件在站点侧被忽略的问题。
-- `baoyu-post-to-x`：补充 X Articles/普通推文的操作文档（`references/articles.md`、`references/regular-posts.md`），并将发图流程改为优先使用“真实粘贴”（保留 CDP 兜底）。
-- `baoyu-post-to-wechat`：文档补充脚本目录说明与 `${SKILL_DIR}` 路径写法，便于 agent 可靠定位脚本。
-- 文档：新增插件更新流程截图 `screenshots/update-plugins.png`。
+- `baoyu-post-to-x` / `baoyu-post-to-wechat`：新增 `scripts/paste-from-clipboard.ts`，透過系統級 Cmd/Ctrl+V 傳送“真實貼上”按鍵，規避 CDP 合成事件在站點側被忽略的問題。
+- `baoyu-post-to-x`：補充 X Articles/普通推文的操作文件（`references/articles.md`、`references/regular-posts.md`），並將發圖流程改為優先使用“真實貼上”（保留 CDP 兜底）。
+- `baoyu-post-to-wechat`：文件補充指令碼目錄說明與 `${SKILL_DIR}` 路徑寫法，便於 agent 可靠定位指令碼。
+- 文件：新增外掛更新流程截圖 `screenshots/update-plugins.png`。
 
 ## 0.4.0 - 2026-01-15
 
-- 技能命名统一加 `baoyu-` 前缀：目录结构、marketplace 清单与文档示例命令同步更新，减少与其它插件技能的命名冲突。
+- 技能命名統一加 `baoyu-` 字首：目錄結構、marketplace 清單與文件示例命令同步更新，減少與其它外掛技能的命名衝突。
 
 ## 0.3.1 - 2026-01-15
 
-- `xhs-images`：升级为 Style × Layout 二维系统（新增 `--layout`、自动布局选择与 Notion 风格），文档示例更完整。
-- `article-illustrator` / `slide-deck` / `cover-image`：文档改为“选择可用的图片生成技能”而非强绑定 `gemini-web`，并补充 Notion 风格相关说明。
-- 工程化：`.gitignore` 增加 `.DS_Store` 忽略；README / README.zh 同步调整。
+- `xhs-images`：升級為 Style × Layout 二維繫統（新增 `--layout`、自動佈局選擇與 Notion 風格），文件示例更完整。
+- `article-illustrator` / `slide-deck` / `cover-image`：文件改為“選擇可用的圖片生成技能”而非強繫結 `gemini-web`，並補充 Notion 風格相關說明。
+- 工程化：`.gitignore` 增加 `.DS_Store` 忽略；README / README.zh 同步調整。
 
 ## 0.3.0 - 2026-01-14
 
-- 新增 `post-to-wechat`：基于 Chrome CDP 自动化发布公众号图文/文章，包含 Markdown → 微信 HTML 转换与多主题样式支持。
-- 新增 `CLAUDE.md`：补充仓库结构、运行方式与添加新技能的约定，方便协作与二次开发。
-- 文档：README / README.zh 更新安装、更新与使用说明。
+- 新增 `post-to-wechat`：基於 Chrome CDP 自動化釋出公眾號圖文/文章，包含 Markdown → 微信 HTML 轉換與多主題樣式支援。
+- 新增 `CLAUDE.md`：補充倉庫結構、執行方式與新增新技能的約定，方便協作與二次開發。
+- 文件：README / README.zh 更新安裝、更新與使用說明。
 
 ## 0.2.0 - 2026-01-13
 
-- 新增技能：`post-to-x`（真实 Chrome/CDP 自动化发布推文与 X Articles）、`article-illustrator`（文章智能插图规划）、`cover-image`（文章封面图生成）、`slide-deck`（幻灯片大纲与图片生成）。
-- `xhs-images`：新增 `--style` 多风格与自动风格选择，并更新基础提示词（例如语言随内容、强调手绘信息图等）。
-- 文档：新增 `README.zh.md`，并完善 README 与 `.gitignore`。
+- 新增技能：`post-to-x`（真實 Chrome/CDP 自動化釋出推文與 X Articles）、`article-illustrator`（文章智慧插圖規劃）、`cover-image`（文章封面圖生成）、`slide-deck`（幻燈片大綱與圖片生成）。
+- `xhs-images`：新增 `--style` 多風格與自動風格選擇，並更新基礎提示詞（例如語言隨內容、強調手繪資訊圖等）。
+- 文件：新增 `README.zh.md`，並完善 README 與 `.gitignore`。
 
 ## 0.1.1 - 2026-01-13
 
-- marketplace 结构重构：引入 `metadata`（含 `version`），插件名调整为 `content-skills` 并显式列出可安装 skills；移除旧 `.claude-plugin/plugin.json`。
-- 新增 `xhs-images`：小红书信息图系列生成技能（拆解内容、生成 outline 与提示词）。
-- `gemini-web`：新增 `--promptfiles`，支持从多个文件拼接 prompt（便于 system/content 分离）。
-- 文档：新增 `README.md`。
+- marketplace 結構重構：引入 `metadata`（含 `version`），外掛名調整為 `content-skills` 並顯式列出可安裝 skills；移除舊 `.claude-plugin/plugin.json`。
+- 新增 `xhs-images`：小紅書資訊圖系列生成技能（拆解內容、生成 outline 與提示詞）。
+- `gemini-web`：新增 `--promptfiles`，支援從多個檔案拼接 prompt（便於 system/content 分離）。
+- 文件：新增 `README.md`。
 
 ## 0.1.0 - 2026-01-13
 
-- 初始发布：提供 `.claude-plugin/marketplace.json` 与 `gemini-web`（文本/图片生成、cookie 登录与缓存流程）。
+- 初始釋出：提供 `.claude-plugin/marketplace.json` 與 `gemini-web`（文字/圖片生成、cookie 登入與快取流程）。

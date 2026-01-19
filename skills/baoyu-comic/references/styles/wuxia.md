@@ -1,6 +1,6 @@
 # wuxia
 
-Hong Kong martial arts comic style (港漫武侠风格)
+Hong Kong martial arts comic style (港漫武俠風格)
 
 ## Style Guidelines
 

@@ -10,7 +10,7 @@ Automate the release process for baoyu-skills plugin: analyze changes, update ch
 ## When to Use
 
 Trigger this skill when user requests:
-- "release", "发布", "create release", "new version"
+- "release", "釋出", "create release", "new version"
 - "bump version", "update version"
 - "prepare release"
 

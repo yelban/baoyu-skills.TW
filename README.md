@@ -96,7 +96,7 @@ Xiaohongshu (RedNote) infographic series generator. Breaks down content into 1-1
 /baoyu-xhs-images posts/ai-future/article.md --style tech --layout list
 
 # Direct content input
-/baoyu-xhs-images 今日星座运势
+/baoyu-xhs-images 今日星座運勢
 ```
 
 **Styles** (visual aesthetics): `cute` (default), `fresh`, `tech`, `warm`, `bold`, `minimal`, `retro`, `pop`, `notion`
@@ -359,14 +359,14 @@ Post content and articles to X (Twitter). Supports regular posts with images and
 
 #### baoyu-post-to-wechat
 
-Post content to WeChat Official Account (微信公众号). Two modes available:
+Post content to WeChat Official Account (微信公眾號). Two modes available:
 
-**Image-Text (图文)** - Multiple images with short title/content:
+**Image-Text (圖文)** - Multiple images with short title/content:
 
 ```bash
-/baoyu-post-to-wechat 图文 --markdown article.md --images ./photos/
-/baoyu-post-to-wechat 图文 --markdown article.md --image img1.png --image img2.png --image img3.png
-/baoyu-post-to-wechat 图文 --title "标题" --content "内容" --image img1.png --submit
+/baoyu-post-to-wechat 圖文 --markdown article.md --images ./photos/
+/baoyu-post-to-wechat 圖文 --markdown article.md --image img1.png --image img2.png --image img3.png
+/baoyu-post-to-wechat 圖文 --title "標題" --content "內容" --image img1.png --submit
 ```
 
 **Article (文章)** - Full markdown/HTML with rich formatting:

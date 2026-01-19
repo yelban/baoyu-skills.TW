@@ -1,6 +1,6 @@
 ---
 name: baoyu-comic
-description: Knowledge comic creator supporting multiple styles (Logicomix/Ligne Claire, Ohmsha manga guide). Creates original educational comics with detailed panel layouts and sequential image generation. Use when user asks to create "知识漫画", "教育漫画", "biography comic", "tutorial comic", or "Logicomix-style comic".
+description: Knowledge comic creator supporting multiple styles (Logicomix/Ligne Claire, Ohmsha manga guide). Creates original educational comics with detailed panel layouts and sequential image generation. Use when user asks to create "知識漫畫", "教育漫畫", "biography comic", "tutorial comic", or "Logicomix-style comic".
 ---
 
 # Knowledge Comic Creator
@@ -380,9 +380,9 @@ Examples:
 Additional requirements for educational manga:
 - **Default: Use Doraemon characters directly** - No need to create new characters
   - 大雄 (Nobita): Student role, curious learner
-  - 哆啦A梦 (Doraemon): Mentor role, explains concepts with gadgets
+  - 哆啦A夢 (Doraemon): Mentor role, explains concepts with gadgets
   - 胖虎 (Gian): Antagonist/challenge role, represents obstacles or misconceptions
-  - 静香 (Shizuka): Supporting role, asks clarifying questions
+  - 靜香 (Shizuka): Supporting role, asks clarifying questions
 - Custom characters only if explicitly requested: `--characters "Student:小明,Mentor:教授"`
 - Must use visual metaphors (gadgets, action scenes) - NO talking heads
 - Page titles: narrative style, not "Page X: Topic"

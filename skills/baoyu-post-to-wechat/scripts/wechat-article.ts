@@ -384,7 +384,7 @@ Options:
   --html <path>      HTML file to paste (alternative to --content)
   --markdown <path>  Markdown file to convert and post (recommended)
   --theme <name>     Theme for markdown (default, grace, simple)
-  --author <name>    Author name (default: 宝玉)
+  --author <name>    Author name (default: 寶玉)
   --summary <text>   Article summary
   --image <path>     Content image, can repeat (only with --content)
   --submit           Save as draft
@@ -393,8 +393,8 @@ Options:
 Examples:
   npx -y bun wechat-article.ts --markdown article.md
   npx -y bun wechat-article.ts --markdown article.md --theme grace --submit
-  npx -y bun wechat-article.ts --title "标题" --content "内容" --image img.png
-  npx -y bun wechat-article.ts --title "标题" --html article.html --submit
+  npx -y bun wechat-article.ts --title "標題" --content "內容" --image img.png
+  npx -y bun wechat-article.ts --title "標題" --html article.html --submit
 
 Markdown mode:
   Images in markdown are converted to placeholders. After pasting HTML,

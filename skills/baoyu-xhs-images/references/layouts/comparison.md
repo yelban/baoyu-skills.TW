@@ -24,7 +24,7 @@ Side-by-side contrast layout
 
 ## Best For
 
-Comparisons, transformations, decision helpers, 对比图
+Comparisons, transformations, decision helpers, 對比圖
 
 ## Best Style Pairings
 
