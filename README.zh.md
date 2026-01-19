@@ -1,4 +1,11 @@
-# baoyu-skills
+# baoyu-skills-tw
+
+> **📌 這是繁體中文（台灣）在地化同步版本**
+>
+> 上游：[JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) | 維護者：[@yelban](https://github.com/yelban)
+>
+> 所有內容已使用 OpenCC s2twp 轉換為繁體中文（台灣正體）。
+
 
 [English](./README.md) | 中文
 
@@ -14,7 +21,7 @@
 ### 快速安裝（推薦）
 
 ```bash
-npx add-skill jimliu/baoyu-skills
+npx add-skill yelban/baoyu-skills.TW
 ```
 
 ### 註冊外掛市場
@@ -22,7 +29,7 @@ npx add-skill jimliu/baoyu-skills
 在 Claude Code 中執行：
 
 ```bash
-/plugin marketplace add jimliu/baoyu-skills
+/plugin marketplace add yelban/baoyu-skills.TW
 ```
 
 ### 安裝技能
@@ -38,16 +45,16 @@ npx add-skill jimliu/baoyu-skills
 
 ```bash
 # 安裝指定外掛
-/plugin install content-skills@baoyu-skills
-/plugin install ai-generation-skills@baoyu-skills
-/plugin install utility-skills@baoyu-skills
+/plugin install content-skills@baoyu-skills-tw
+/plugin install ai-generation-skills@baoyu-skills-tw
+/plugin install utility-skills@baoyu-skills-tw
 ```
 
 **方式三：告訴 Agent**
 
 直接告訴 Claude Code：
 
-> 請幫我安裝 github.com/JimLiu/baoyu-skills 中的 Skills
+> 請幫我安裝 github.com/yelban/baoyu-skills.TW 中的 Skills
 
 ### 可用外掛
 
@@ -441,16 +448,16 @@ AI 驅動的生成後端。
 所有技能支援透過 `EXTEND.md` 檔案自定義。建立擴充套件檔案可覆蓋預設樣式、新增自定義配置或定義個人預設。
 
 **擴充套件路徑**（按優先順序檢查）：
-1. `.baoyu-skills/<skill-name>/EXTEND.md` - 專案級（團隊/專案特定設定）
-2. `~/.baoyu-skills/<skill-name>/EXTEND.md` - 使用者級（個人偏好設定）
+1. `.baoyu-skills-tw/<skill-name>/EXTEND.md` - 專案級（團隊/專案特定設定）
+2. `~/.baoyu-skills-tw/<skill-name>/EXTEND.md` - 使用者級（個人偏好設定）
 
 **示例**：為 `baoyu-cover-image` 自定義品牌配色：
 
 ```bash
-mkdir -p .baoyu-skills/baoyu-cover-image
+mkdir -p .baoyu-skills-tw/baoyu-cover-image
 ```
 
-然後建立 `.baoyu-skills/baoyu-cover-image/EXTEND.md`：
+然後建立 `.baoyu-skills-tw/baoyu-cover-image/EXTEND.md`：
 
 ```markdown
 ## 自定義風格

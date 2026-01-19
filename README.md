@@ -1,4 +1,11 @@
-# baoyu-skills
+# baoyu-skills-tw
+
+> **📌 This is the Traditional Chinese (Taiwan) localized fork**
+>
+> Upstream: [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) | Maintainer: [@yelban](https://github.com/yelban)
+>
+> All content has been converted to Traditional Chinese (Taiwan) using OpenCC s2twp.
+
 
 English | [中文](./README.zh.md)
 
@@ -14,7 +21,7 @@ Skills shared by Baoyu for improving daily work efficiency with Claude Code.
 ### Quick Install (Recommended)
 
 ```bash
-npx add-skill jimliu/baoyu-skills
+npx add-skill yelban/baoyu-skills.TW
 ```
 
 ### Register as Plugin Marketplace
@@ -22,7 +29,7 @@ npx add-skill jimliu/baoyu-skills
 Run the following command in Claude Code:
 
 ```bash
-/plugin marketplace add jimliu/baoyu-skills
+/plugin marketplace add yelban/baoyu-skills.TW
 ```
 
 ### Install Skills
@@ -30,7 +37,7 @@ Run the following command in Claude Code:
 **Option 1: Via Browse UI**
 
 1. Select **Browse and install plugins**
-2. Select **baoyu-skills**
+2. Select **baoyu-skills-tw**
 3. Select the plugin(s) you want to install
 4. Select **Install now**
 
@@ -38,16 +45,16 @@ Run the following command in Claude Code:
 
 ```bash
 # Install specific plugin
-/plugin install content-skills@baoyu-skills
-/plugin install ai-generation-skills@baoyu-skills
-/plugin install utility-skills@baoyu-skills
+/plugin install content-skills@baoyu-skills-tw
+/plugin install ai-generation-skills@baoyu-skills-tw
+/plugin install utility-skills@baoyu-skills-tw
 ```
 
 **Option 3: Ask the Agent**
 
 Simply tell Claude Code:
 
-> Please install Skills from github.com/JimLiu/baoyu-skills
+> Please install Skills from github.com/yelban/baoyu-skills.TW
 
 ### Available Plugins
 
@@ -63,7 +70,7 @@ To update skills to the latest version:
 
 1. Run `/plugin` in Claude Code
 2. Switch to **Marketplaces** tab (use arrow keys or Tab)
-3. Select **baoyu-skills**
+3. Select **baoyu-skills-tw**
 4. Choose **Update marketplace**
 
 You can also **Enable auto-update** to get the latest versions automatically.
@@ -441,16 +448,16 @@ Compress images to reduce file size while maintaining quality.
 All skills support customization via `EXTEND.md` files. Create an extension file to override default styles, add custom configurations, or define your own presets.
 
 **Extension paths** (checked in priority order):
-1. `.baoyu-skills/<skill-name>/EXTEND.md` - Project-level (for team/project-specific settings)
-2. `~/.baoyu-skills/<skill-name>/EXTEND.md` - User-level (for personal preferences)
+1. `.baoyu-skills-tw/<skill-name>/EXTEND.md` - Project-level (for team/project-specific settings)
+2. `~/.baoyu-skills-tw/<skill-name>/EXTEND.md` - User-level (for personal preferences)
 
 **Example**: To customize `baoyu-cover-image` with your brand colors:
 
 ```bash
-mkdir -p .baoyu-skills/baoyu-cover-image
+mkdir -p .baoyu-skills-tw/baoyu-cover-image
 ```
 
-Then create `.baoyu-skills/baoyu-cover-image/EXTEND.md`:
+Then create `.baoyu-skills-tw/baoyu-cover-image/EXTEND.md`:
 
 ```markdown
 ## Custom Styles
