@@ -45,9 +45,9 @@ npx skills add yelban/baoyu-skills.TW
 
 ```bash
 # 安裝指定外掛
-/plugin install content-skills@baoyu-skills-tw-tw
-/plugin install ai-generation-skills@baoyu-skills-tw-tw
-/plugin install utility-skills@baoyu-skills-tw-tw
+/plugin install content-skills@baoyu-skills-tw
+/plugin install ai-generation-skills@baoyu-skills-tw
+/plugin install utility-skills@baoyu-skills-tw
 ```
 
 **方式三：告訴 Agent**
