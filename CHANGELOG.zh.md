@@ -2,6 +2,23 @@
 
 [English](./CHANGELOG.md) | 中文
 
+## 1.13.0-tw - 2026-01-22
+
+### 本地化
+- 同步上游 v1.8.0 - v1.13.0 並轉換為繁體中文（台灣）
+- 所有文件和介面文字已轉換為繁體中文
+
+### 新功能（來自上游）
+- `baoyu-infographic`：新增資訊圖表生成技能
+- `baoyu-image-gen`：基於 AI SDK 的圖片生成，支援 OpenAI/Google API
+- `baoyu-url-to-markdown`：透過 Chrome CDP 將 URL 轉換為 Markdown
+- `baoyu-post-to-x`：影片發布和引用推文功能
+- `baoyu-xhs-images`：黑板風格、風格預覽圖
+
+### 修復（來自上游）
+- `baoyu-post-to-x`：使用 CDP Input.insertText 確保文字輸入可靠性
+- `baoyu-post-to-x`：改進影片就緒偵測
+
 ## 1.13.0 - 2026-01-21
 
 ### 新功能

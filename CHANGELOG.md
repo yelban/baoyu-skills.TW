@@ -2,6 +2,23 @@
 
 English | [中文](./CHANGELOG.zh.md)
 
+## 1.13.0-tw - 2026-01-22
+
+### Localization
+- Synced upstream v1.8.0 - v1.13.0 with Traditional Chinese (Taiwan) localization
+- All documentation and UI text converted to Traditional Chinese
+
+### Features (from upstream)
+- `baoyu-infographic`: new skill for generating infographics
+- `baoyu-image-gen`: AI SDK-based image generation with OpenAI/Google APIs
+- `baoyu-url-to-markdown`: URL to Markdown converter via Chrome CDP
+- `baoyu-post-to-x`: video posting and quote tweet support
+- `baoyu-xhs-images`: chalkboard style, style preview images
+
+### Fixes (from upstream)
+- `baoyu-post-to-x`: use CDP Input.insertText for reliable text insertion
+- `baoyu-post-to-x`: improve video ready detection
+
 ## 1.13.0 - 2026-01-21
 
 ### Features
