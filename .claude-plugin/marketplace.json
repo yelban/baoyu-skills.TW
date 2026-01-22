@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Skills shared by Baoyu (繁體中文版)",
-    "version": "1.7.0"
+    "version": "1.13.0"
   },
   "plugins": [
     {
@@ -21,7 +21,8 @@
         "./skills/baoyu-article-illustrator",
         "./skills/baoyu-cover-image",
         "./skills/baoyu-slide-deck",
-        "./skills/baoyu-comic"
+        "./skills/baoyu-comic",
+        "./skills/baoyu-infographic"
       ]
     },
     {
@@ -30,7 +31,8 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/baoyu-danger-gemini-web"
+        "./skills/baoyu-danger-gemini-web",
+        "./skills/baoyu-image-gen"
       ]
     },
     {
@@ -40,7 +42,8 @@
       "strict": false,
       "skills": [
         "./skills/baoyu-danger-x-to-markdown",
-        "./skills/baoyu-compress-image"
+        "./skills/baoyu-compress-image",
+        "./skills/baoyu-url-to-markdown"
       ]
     }
   ],

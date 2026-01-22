@@ -1,11 +1,11 @@
 ---
 name: baoyu-post-to-x
-description: Post content and articles to X (Twitter). Supports regular posts with images and X Articles (long-form Markdown). Uses real Chrome with CDP to bypass anti-automation.
+description: Post content and articles to X (Twitter). Supports regular posts with images/videos and X Articles (long-form Markdown). Uses real Chrome with CDP to bypass anti-automation.
 ---
 
 # Post to X (Twitter)
 
-Post content, images, and long-form articles to X using real Chrome browser (bypasses anti-bot detection).
+Post content, images, videos, and long-form articles to X using real Chrome browser (bypasses anti-bot detection).
 
 ## Script Directory
 
@@ -20,6 +20,8 @@ Post content, images, and long-form articles to X using real Chrome browser (byp
 | Script | Purpose |
 |--------|---------|
 | `scripts/x-browser.ts` | Regular posts (text + images) |
+| `scripts/x-video.ts` | Video posts (text + video) |
+| `scripts/x-quote.ts` | Quote tweet with comment |
 | `scripts/x-article.ts` | Long-form article publishing (Markdown) |
 | `scripts/md-to-html.ts` | Markdown → HTML conversion |
 | `scripts/copy-to-clipboard.ts` | Copy content to clipboard |
@@ -57,6 +59,56 @@ npx -y bun ${SKILL_DIR}/scripts/x-browser.ts "Hello!" --image ./photo.png --subm
 |-----------|-------------|
 | `<text>` | Post content (positional argument) |
 | `--image <path>` | Image file path (can be repeated, max 4) |
+| `--submit` | Actually post (default: preview only) |
+| `--profile <dir>` | Custom Chrome profile directory |
+
+---
+
+## Video Posts
+
+Text + video file (MP4, MOV, WebM).
+
+```bash
+# Preview mode (doesn't post)
+npx -y bun ${SKILL_DIR}/scripts/x-video.ts "Check out this video!" --video ./clip.mp4
+
+# Actually post
+npx -y bun ${SKILL_DIR}/scripts/x-video.ts "Amazing content" --video ./demo.mp4 --submit
+```
+
+**Parameters**:
+| Parameter | Description |
+|-----------|-------------|
+| `<text>` | Post content (positional argument) |
+| `--video <path>` | Video file path (required) |
+| `--submit` | Actually post (default: preview only) |
+| `--profile <dir>` | Custom Chrome profile directory |
+
+**Video Limits**:
+- Regular accounts: 140 seconds max
+- X Premium: up to 60 minutes
+- Supported formats: MP4, MOV, WebM
+- Processing time: 30-60 seconds depending on file size
+
+---
+
+## Quote Tweets
+
+Quote an existing tweet with your comment - a way to share content while giving credit to the original creator.
+
+```bash
+# Preview mode (doesn't post)
+npx -y bun ${SKILL_DIR}/scripts/x-quote.ts https://x.com/user/status/123456789 "Great insight!"
+
+# Actually post
+npx -y bun ${SKILL_DIR}/scripts/x-quote.ts https://x.com/user/status/123456789 "I agree!" --submit
+```
+
+**Parameters**:
+| Parameter | Description |
+|-----------|-------------|
+| `<tweet-url>` | URL of the tweet to quote (positional argument) |
+| `<comment>` | Your comment text (positional argument, optional) |
 | `--submit` | Actually post (default: preview only) |
 | `--profile <dir>` | Custom Chrome profile directory |
 

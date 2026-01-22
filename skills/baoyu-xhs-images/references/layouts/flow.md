@@ -27,4 +27,4 @@ Processes, timelines, cause-effect chains, workflows
 
 ## Best Style Pairings
 
-tech (process diagrams), notion (simple flows), fresh (organic flows)
+notion (process diagrams), chalkboard (educational flows), fresh (organic flows)

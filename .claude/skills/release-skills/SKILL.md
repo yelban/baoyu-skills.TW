@@ -1,11 +1,24 @@
 ---
 name: release-skills
-description: Release workflow for baoyu-skills plugin. This skill should be used when the user wants to create a new release version. It analyzes changes since the last version tag, updates changelogs (EN/CN), bumps the version in marketplace.json, commits changes, and creates a version tag. Supports dry-run mode and breaking change detection.
+description: Release workflow for baoyu-skills plugin. Use when user says "release", "发布", "push", "推送", "new version", "新版本", "bump version", "更新版本", or wants to publish changes to remote. Analyzes changes since last tag, updates CHANGELOG (EN/CN), bumps marketplace.json version, commits, and creates version tag. MUST be used before any git push with uncommitted skill changes.
 ---
 
 # Release Skills
 
 Automate the release process for baoyu-skills plugin: analyze changes, update changelogs, bump version, commit, and tag.
+
+## CRITICAL: Mandatory Release Checklist
+
+**NEVER skip these steps when releasing:**
+
+1. ✅ Update `CHANGELOG.md` (English)
+2. ✅ Update `CHANGELOG.zh.md` (Chinese)
+3. ✅ Update `marketplace.json` version
+4. ✅ Update `README.md` / `README.zh.md` if needed
+5. ✅ Commit all changes together
+6. ✅ Create version tag
+
+**If user says "直接 push" or "just push" - STILL follow all steps above first!**
 
 ## When to Use
 
@@ -13,6 +26,7 @@ Trigger this skill when user requests:
 - "release", "釋出", "create release", "new version"
 - "bump version", "update version"
 - "prepare release"
+- "push to remote" (with uncommitted changes)
 
 ## Workflow
 

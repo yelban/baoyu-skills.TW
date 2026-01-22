@@ -67,6 +67,7 @@ Sub-headline: [supporting tagline]
 [Detailed visual description - specific elements, composition, mood]
 
 // LAYOUT
+Layout: [optional: layout name from gallery, e.g., title-hero]
 [Composition, hierarchy, spatial arrangement]
 ```
 
@@ -93,6 +94,7 @@ Body:
 [Detailed visual description]
 
 // LAYOUT
+Layout: [optional: layout name from gallery]
 [Composition, hierarchy, spatial arrangement]
 ```
 
@@ -115,6 +117,7 @@ Body: [optional summary points or next steps]
 [Visual that reinforces the core message]
 
 // LAYOUT
+Layout: [optional: layout name from gallery]
 [Clean, impactful composition]
 ```
 

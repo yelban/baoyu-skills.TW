@@ -60,9 +60,9 @@ Simply tell Claude Code:
 
 | Plugin | Description | Skills |
 |--------|-------------|--------|
-| **content-skills** | Content generation and publishing | [xhs-images](#baoyu-xhs-images), [cover-image](#baoyu-cover-image), [slide-deck](#baoyu-slide-deck), [comic](#baoyu-comic), [article-illustrator](#baoyu-article-illustrator), [post-to-x](#baoyu-post-to-x), [post-to-wechat](#baoyu-post-to-wechat) |
-| **ai-generation-skills** | AI-powered generation backends | [danger-gemini-web](#baoyu-danger-gemini-web) |
-| **utility-skills** | Utility tools for content processing | [danger-x-to-markdown](#baoyu-danger-x-to-markdown), [compress-image](#baoyu-compress-image) |
+| **content-skills** | Content generation and publishing | [xhs-images](#baoyu-xhs-images), [infographic](#baoyu-infographic), [cover-image](#baoyu-cover-image), [slide-deck](#baoyu-slide-deck), [comic](#baoyu-comic), [article-illustrator](#baoyu-article-illustrator), [post-to-x](#baoyu-post-to-x), [post-to-wechat](#baoyu-post-to-wechat) |
+| **ai-generation-skills** | AI-powered generation backends | [image-gen](#baoyu-image-gen), [danger-gemini-web](#baoyu-danger-gemini-web) |
+| **utility-skills** | Utility tools for content processing | [url-to-markdown](#baoyu-url-to-markdown), [danger-x-to-markdown](#baoyu-danger-x-to-markdown), [compress-image](#baoyu-compress-image) |
 
 ## Update Skills
 
@@ -106,7 +106,18 @@ Xiaohongshu (RedNote) infographic series generator. Breaks down content into 1-1
 /baoyu-xhs-images 今日星座運勢
 ```
 
-**Styles** (visual aesthetics): `cute` (default), `fresh`, `tech`, `warm`, `bold`, `minimal`, `retro`, `pop`, `notion`
+**Styles** (visual aesthetics): `cute` (default), `fresh`, `warm`, `bold`, `minimal`, `retro`, `pop`, `notion`, `chalkboard`
+
+**Style Previews**:
+
+| | | |
+|:---:|:---:|:---:|
+| ![cute](./screenshots/xhs-images-styles/cute.webp) | ![fresh](./screenshots/xhs-images-styles/fresh.webp) | ![warm](./screenshots/xhs-images-styles/warm.webp) |
+| cute | fresh | warm |
+| ![bold](./screenshots/xhs-images-styles/bold.webp) | ![minimal](./screenshots/xhs-images-styles/minimal.webp) | ![retro](./screenshots/xhs-images-styles/retro.webp) |
+| bold | minimal | retro |
+| ![pop](./screenshots/xhs-images-styles/pop.webp) | ![notion](./screenshots/xhs-images-styles/notion.webp) | ![chalkboard](./screenshots/xhs-images-styles/chalkboard.webp) |
+| pop | notion | chalkboard |
 
 **Layouts** (information density):
 | Layout | Density | Best for |
@@ -117,6 +128,127 @@ Xiaohongshu (RedNote) infographic series generator. Breaks down content into 1-1
 | `list` | 4-7 items | Checklists, rankings |
 | `comparison` | 2 sides | Before/after, pros/cons |
 | `flow` | 3-6 steps | Processes, timelines |
+
+**Layout Previews**:
+
+| | | |
+|:---:|:---:|:---:|
+| ![sparse](./screenshots/xhs-images-layouts/sparse.webp) | ![balanced](./screenshots/xhs-images-layouts/balanced.webp) | ![dense](./screenshots/xhs-images-layouts/dense.webp) |
+| sparse | balanced | dense |
+| ![list](./screenshots/xhs-images-layouts/list.webp) | ![comparison](./screenshots/xhs-images-layouts/comparison.webp) | ![flow](./screenshots/xhs-images-layouts/flow.webp) |
+| list | comparison | flow |
+
+#### baoyu-infographic
+
+Generate professional infographics with 20 layout types and 17 visual styles. Analyzes content, recommends layout×style combinations, and generates publication-ready infographics.
+
+```bash
+# Auto-recommend combinations based on content
+/baoyu-infographic path/to/content.md
+
+# Specify layout
+/baoyu-infographic path/to/content.md --layout pyramid
+
+# Specify style (default: craft-handmade)
+/baoyu-infographic path/to/content.md --style technical-schematic
+
+# Specify both
+/baoyu-infographic path/to/content.md --layout funnel --style corporate-memphis
+
+# With aspect ratio
+/baoyu-infographic path/to/content.md --aspect portrait
+```
+
+**Options**:
+| Option | Description |
+|--------|-------------|
+| `--layout <name>` | Information layout (20 options) |
+| `--style <name>` | Visual style (17 options, default: craft-handmade) |
+| `--aspect <ratio>` | landscape (16:9), portrait (9:16), square (1:1) |
+| `--lang <code>` | Output language (en, zh, ja, etc.) |
+
+**Layouts** (information structure):
+
+| Layout | Best For |
+|--------|----------|
+| `bridge` | Problem-solution, gap-crossing |
+| `circular-flow` | Cycles, recurring processes |
+| `comparison-table` | Multi-factor comparisons |
+| `do-dont` | Correct vs incorrect practices |
+| `equation` | Formula breakdown, input-output |
+| `feature-list` | Product features, bullet points |
+| `fishbone` | Root cause analysis |
+| `funnel` | Conversion processes, filtering |
+| `grid-cards` | Multiple topics, overview |
+| `iceberg` | Surface vs hidden aspects |
+| `journey-path` | Customer journey, milestones |
+| `layers-stack` | Technology stack, layers |
+| `mind-map` | Brainstorming, idea mapping |
+| `nested-circles` | Levels of influence, scope |
+| `priority-quadrants` | Eisenhower matrix, 2x2 |
+| `pyramid` | Hierarchy, Maslow's needs |
+| `scale-balance` | Pros vs cons, weighing |
+| `timeline-horizontal` | History, chronological events |
+| `tree-hierarchy` | Org charts, taxonomy |
+| `venn` | Overlapping concepts |
+
+**Layout Previews**:
+
+| | | |
+|:---:|:---:|:---:|
+| ![bridge](./screenshots/infographic-layouts/bridge.webp) | ![circular-flow](./screenshots/infographic-layouts/circular-flow.webp) | ![comparison-table](./screenshots/infographic-layouts/comparison-table.webp) |
+| bridge | circular-flow | comparison-table |
+| ![do-dont](./screenshots/infographic-layouts/do-dont.webp) | ![equation](./screenshots/infographic-layouts/equation.webp) | ![feature-list](./screenshots/infographic-layouts/feature-list.webp) |
+| do-dont | equation | feature-list |
+| ![fishbone](./screenshots/infographic-layouts/fishbone.webp) | ![funnel](./screenshots/infographic-layouts/funnel.webp) | ![grid-cards](./screenshots/infographic-layouts/grid-cards.webp) |
+| fishbone | funnel | grid-cards |
+| ![iceberg](./screenshots/infographic-layouts/iceberg.webp) | ![journey-path](./screenshots/infographic-layouts/journey-path.webp) | ![layers-stack](./screenshots/infographic-layouts/layers-stack.webp) |
+| iceberg | journey-path | layers-stack |
+| ![mind-map](./screenshots/infographic-layouts/mind-map.webp) | ![nested-circles](./screenshots/infographic-layouts/nested-circles.webp) | ![priority-quadrants](./screenshots/infographic-layouts/priority-quadrants.webp) |
+| mind-map | nested-circles | priority-quadrants |
+| ![pyramid](./screenshots/infographic-layouts/pyramid.webp) | ![scale-balance](./screenshots/infographic-layouts/scale-balance.webp) | ![timeline-horizontal](./screenshots/infographic-layouts/timeline-horizontal.webp) |
+| pyramid | scale-balance | timeline-horizontal |
+| ![tree-hierarchy](./screenshots/infographic-layouts/tree-hierarchy.webp) | ![venn](./screenshots/infographic-layouts/venn.webp) | |
+| tree-hierarchy | venn | |
+
+**Styles** (visual aesthetics):
+
+| Style | Description |
+|-------|-------------|
+| `craft-handmade` (Default) | Hand-drawn illustration, paper craft aesthetic |
+| `claymation` | 3D clay figures, playful stop-motion |
+| `kawaii` | Japanese cute, big eyes, pastel colors |
+| `storybook-watercolor` | Soft painted illustrations, whimsical |
+| `chalkboard` | Colorful chalk on black board |
+| `cyberpunk-neon` | Neon glow on dark, futuristic |
+| `bold-graphic` | Comic style, halftone dots, high contrast |
+| `aged-academia` | Vintage science, sepia sketches |
+| `corporate-memphis` | Flat vector people, vibrant fills |
+| `technical-schematic` | Blueprint, isometric 3D, engineering |
+| `origami` | Folded paper forms, geometric |
+| `pixel-art` | Retro 8-bit, nostalgic gaming |
+| `ui-wireframe` | Grayscale boxes, interface mockup |
+| `subway-map` | Transit diagram, colored lines |
+| `ikea-manual` | Minimal line art, assembly style |
+| `knolling` | Organized flat-lay, top-down |
+| `lego-brick` | Toy brick construction, playful |
+
+**Style Previews**:
+
+| | | |
+|:---:|:---:|:---:|
+| ![craft-handmade](./screenshots/infographic-styles/craft-handmade.webp) | ![claymation](./screenshots/infographic-styles/claymation.webp) | ![kawaii](./screenshots/infographic-styles/kawaii.webp) |
+| craft-handmade | claymation | kawaii |
+| ![storybook-watercolor](./screenshots/infographic-styles/storybook-watercolor.webp) | ![chalkboard](./screenshots/infographic-styles/chalkboard.webp) | ![cyberpunk-neon](./screenshots/infographic-styles/cyberpunk-neon.webp) |
+| storybook-watercolor | chalkboard | cyberpunk-neon |
+| ![bold-graphic](./screenshots/infographic-styles/bold-graphic.webp) | ![aged-academia](./screenshots/infographic-styles/aged-academia.webp) | ![corporate-memphis](./screenshots/infographic-styles/corporate-memphis.webp) |
+| bold-graphic | aged-academia | corporate-memphis |
+| ![technical-schematic](./screenshots/infographic-styles/technical-schematic.webp) | ![origami](./screenshots/infographic-styles/origami.webp) | ![pixel-art](./screenshots/infographic-styles/pixel-art.webp) |
+| technical-schematic | origami | pixel-art |
+| ![ui-wireframe](./screenshots/infographic-styles/ui-wireframe.webp) | ![subway-map](./screenshots/infographic-styles/subway-map.webp) | ![ikea-manual](./screenshots/infographic-styles/ikea-manual.webp) |
+| ui-wireframe | subway-map | ikea-manual |
+| ![knolling](./screenshots/infographic-styles/knolling.webp) | ![lego-brick](./screenshots/infographic-styles/lego-brick.webp) | |
+| knolling | lego-brick | |
 
 #### baoyu-cover-image
 
@@ -390,6 +522,55 @@ Prerequisites: Google Chrome installed. First run requires QR code login (sessio
 
 AI-powered generation backends.
 
+#### baoyu-image-gen
+
+AI SDK-based image generation using official OpenAI and Google APIs. Supports text-to-image, reference images, aspect ratios, and quality presets.
+
+```bash
+# Basic generation (auto-detect provider)
+/baoyu-image-gen --prompt "A cute cat" --image cat.png
+
+# With aspect ratio
+/baoyu-image-gen --prompt "A landscape" --image landscape.png --ar 16:9
+
+# High quality (2k)
+/baoyu-image-gen --prompt "A banner" --image banner.png --quality 2k
+
+# Specific provider
+/baoyu-image-gen --prompt "A cat" --image cat.png --provider openai
+
+# With reference images (Google multimodal only)
+/baoyu-image-gen --prompt "Make it blue" --image out.png --ref source.png
+```
+
+**Options**:
+| Option | Description |
+|--------|-------------|
+| `--prompt`, `-p` | Prompt text |
+| `--promptfiles` | Read prompt from files (concatenated) |
+| `--image` | Output image path (required) |
+| `--provider` | `google` or `openai` (default: google) |
+| `--model`, `-m` | Model ID |
+| `--ar` | Aspect ratio (e.g., `16:9`, `1:1`, `4:3`) |
+| `--size` | Size (e.g., `1024x1024`) |
+| `--quality` | `normal` or `2k` (default: normal) |
+| `--ref` | Reference images (Google multimodal only) |
+
+**Environment Variables** (see [Environment Configuration](#environment-configuration) for setup):
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `OPENAI_API_KEY` | OpenAI API key | - |
+| `GOOGLE_API_KEY` | Google API key | - |
+| `OPENAI_IMAGE_MODEL` | OpenAI model | `gpt-image-1.5` |
+| `GOOGLE_IMAGE_MODEL` | Google model | `gemini-3-pro-image-preview` |
+| `OPENAI_BASE_URL` | Custom OpenAI endpoint | - |
+| `GOOGLE_BASE_URL` | Custom Google endpoint | - |
+
+**Provider Auto-Selection**:
+1. If `--provider` specified → use it
+2. If only one API key available → use that provider
+3. If both available → default to Google
+
 #### baoyu-danger-gemini-web
 
 Interacts with Gemini Web to generate text and images.
@@ -411,6 +592,35 @@ Interacts with Gemini Web to generate text and images.
 ### Utility Skills
 
 Utility tools for content processing.
+
+#### baoyu-url-to-markdown
+
+Fetch any URL via Chrome CDP and convert to clean markdown. Supports two capture modes for different scenarios.
+
+```bash
+# Auto mode (default) - capture when page loads
+/baoyu-url-to-markdown https://example.com/article
+
+# Wait mode - for login-required pages
+/baoyu-url-to-markdown https://example.com/private --wait
+
+# Save to specific file
+/baoyu-url-to-markdown https://example.com/article -o output.md
+```
+
+**Capture Modes**:
+| Mode | Description | Best For |
+|------|-------------|----------|
+| Auto (default) | Captures immediately after page load | Public pages, static content |
+| Wait (`--wait`) | Waits for user signal before capture | Login-required, dynamic content |
+
+**Options**:
+| Option | Description |
+|--------|-------------|
+| `<url>` | URL to fetch |
+| `-o <path>` | Output file path |
+| `--wait` | Wait for user signal before capturing |
+| `--timeout <ms>` | Page load timeout (default: 30000) |
 
 #### baoyu-danger-x-to-markdown
 
@@ -441,6 +651,44 @@ Compress images to reduce file size while maintaining quality.
 ```bash
 /baoyu-compress-image path/to/image.png
 /baoyu-compress-image path/to/images/ --quality 80
+```
+
+## Environment Configuration
+
+Some skills require API keys or custom configuration. Environment variables can be set in `.env` files:
+
+**Load Priority** (higher priority overrides lower):
+1. CLI environment variables (e.g., `OPENAI_API_KEY=xxx /baoyu-image-gen ...`)
+2. `process.env` (system environment)
+3. `<cwd>/.baoyu-skills/.env` (project-level)
+4. `~/.baoyu-skills/.env` (user-level)
+
+**Setup**:
+
+```bash
+# Create user-level config directory
+mkdir -p ~/.baoyu-skills
+
+# Create .env file
+cat > ~/.baoyu-skills/.env << 'EOF'
+# OpenAI
+OPENAI_API_KEY=sk-xxx
+OPENAI_IMAGE_MODEL=gpt-image-1.5
+# OPENAI_BASE_URL=https://api.openai.com/v1
+
+# Google
+GOOGLE_API_KEY=xxx
+GOOGLE_IMAGE_MODEL=gemini-3-pro-image-preview
+# GOOGLE_BASE_URL=https://generativelanguage.googleapis.com/v1beta
+EOF
+```
+
+**Project-level config** (for team sharing):
+
+```bash
+mkdir -p .baoyu-skills
+# Add .baoyu-skills/.env to .gitignore to avoid committing secrets
+echo ".baoyu-skills/.env" >> .gitignore
 ```
 
 ## Customization

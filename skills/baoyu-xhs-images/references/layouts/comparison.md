@@ -28,4 +28,4 @@ Comparisons, transformations, decision helpers, 對比圖
 
 ## Best Style Pairings
 
-bold (dramatic contrast), tech (data comparison), warm (before/after stories)
+bold (dramatic contrast), notion (data comparison), warm (before/after stories)

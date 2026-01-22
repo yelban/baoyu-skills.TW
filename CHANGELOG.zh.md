@@ -2,6 +2,56 @@
 
 [English](./CHANGELOG.md) | 中文
 
+## 1.13.0 - 2026-01-21
+
+### 新功能
+- `baoyu-url-to-markdown`：新增 URL 转 Markdown 工具技能，通过 Chrome CDP 抓取任意网页并转换为干净的 Markdown 格式。支持两种抓取模式——自动模式（页面加载后立即抓取）和等待模式（用户控制抓取时机，适用于需要登录的页面）。
+
+### 改进
+- `baoyu-xhs-images`：更新风格推荐——将 `tech` 风格引用替换为 `notion` 和 `chalkboard`，用于技术和教育内容。
+
+## 1.12.0 - 2026-01-21
+
+### 重构
+- `baoyu-post-to-x`：提取公共工具函数到 `x-utils.ts`——将 `x-article.ts`、`x-browser.ts`、`x-quote.ts`、`x-video.ts` 中重复的 Chrome 检测、CDP 连接、剪贴板操作等功能整合为统一的可复用模块。
+
+## 1.11.0 - 2026-01-21
+
+### 新功能
+- `baoyu-image-gen`：新增基于 AI SDK 的图像生成技能，使用官方 OpenAI 和 Google API。支持文生图、参考图（Google 多模态）、宽高比和质量预设（`normal`、`2k`）。根据可用的 API 密钥自动选择服务商。
+- `baoyu-slide-deck`：新增布局库（Layout Gallery），包含 24 种布局类型——10 种幻灯片专用布局（`title-hero` 标题主图、`quote-callout` 引用突出、`key-stat` 关键数据、`split-screen` 分屏、`icon-grid` 图标网格、`two-columns` 双栏、`three-columns` 三栏、`image-caption` 图片说明、`agenda` 议程、`bullet-list` 要点列表）和 14 种信息图衍生布局（`linear-progression` 线性流程、`binary-comparison` 二元对比、`comparison-matrix` 对比矩阵、`hierarchical-layers` 层级、`hub-spoke` 中心辐射、`bento-grid` 便当盒、`funnel` 漏斗、`dashboard` 仪表盘、`venn-diagram` 韦恩图、`circular-flow` 循环流程、`winding-roadmap` 蜿蜒路线图、`tree-branching` 树状分支、`iceberg` 冰山、`bridge` 桥接）。
+
+### 文档
+- `README.md`、`README.zh.md`：新增 baoyu-image-gen 文档，包含用法示例、选项表和环境变量说明；新增环境配置章节，介绍 API 密钥设置方法。
+
+## 1.10.0 - 2026-01-21
+
+### 新功能
+- `baoyu-post-to-x`：新增视频发布支持——新增 `x-video.ts` 脚本，支持发布带视频的推文（MP4、MOV、WebM 格式）。支持预览模式，自动处理视频上传等待。
+
+## 1.9.0 - 2026-01-20
+
+### 新功能
+- `baoyu-xhs-images`：新增 `chalkboard`（黑板）风格——黑色黑板背景配彩色粉笔绘画，适合教育和教程内容。
+- `baoyu-comic`：新增 `chalkboard`（黑板）风格——黑色黑板上的教育粉笔画，适合教程、讲解和知识漫画。
+
+### 改进
+- `baoyu-article-illustrator`、`baoyu-cover-image`、`baoyu-infographic`：更新 `chalkboard` 风格，增强视觉指南。
+
+### 破坏性变更
+- `baoyu-xhs-images`：移除 `tech` 风格（技术内容改用 `minimal` 或 `notion` 风格）。
+
+### 文档
+- `README.md`、`README.zh.md`：新增 xhs-images 风格和布局预览图库（9 种风格、6 种布局）。
+
+## 1.8.0 - 2026-01-20
+
+### 新功能
+- `baoyu-infographic`：新增专业信息图生成技能，支持 20 种布局类型（bridge 桥接、circular-flow 循环流程、comparison-table 对比表、do-dont 正误对比、equation 公式分解、feature-list 特性列表、fishbone 鱼骨图、funnel 漏斗、grid-cards 网格卡片、iceberg 冰山、journey-path 旅程路径、layers-stack 层级堆叠、mind-map 思维导图、nested-circles 嵌套圆、priority-quadrants 优先象限、pyramid 金字塔、scale-balance 天平、timeline-horizontal 时间线、tree-hierarchy 树状层级、venn 韦恩图）和 17 种视觉风格。智能分析内容、推荐布局×风格组合，生成发布级信息图。
+
+### 修复
+- `baoyu-danger-gemini-web`：改进 cookie 验证逻辑，通过验证实际 Gemini 会话可用性而非仅检查 cookie 存在。
+
 ## 1.7.0 - 2026-01-19
 
 ### 新功能

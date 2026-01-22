@@ -5,8 +5,8 @@ Template for generating infographic series outlines.
 ## File Naming
 
 Outline files use style slug in the name:
-- `outline-style-tech.md` - Tech style variant
 - `outline-style-notion.md` - Notion style variant
+- `outline-style-chalkboard.md` - Chalkboard style variant
 - `outline-style-minimal.md` - Minimal style variant
 - `outline.md` - Final selected (copied from chosen variant)
 
@@ -43,7 +43,7 @@ NN-{type}-[slug].md (in prompts/)
 # Xiaohongshu Infographic Series Outline
 
 ---
-style: tech
+style: notion
 default_layout: dense
 image_count: 6
 generated: YYYY-MM-DD HH:mm
@@ -223,6 +223,6 @@ Three variants should differ meaningfully:
 | Audience | Primary target | Secondary target | Broader appeal |
 
 **Example for "AI工具推薦"**:
-- `outline-style-tech.md`: Tech + Dense - 專業極客風
-- `outline-style-notion.md`: Notion + List - 清爽知識卡片
+- `outline-style-notion.md`: Notion + Dense - 知識卡片風
+- `outline-style-notion-list.md`: Notion + List - 清爽知識卡片
 - `outline-style-cute.md`: Cute + Balanced - 可愛易讀風

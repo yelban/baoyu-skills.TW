@@ -28,4 +28,4 @@ Summary cards, cheat sheets, comprehensive guides, 乾貨總結
 
 ## Best Style Pairings
 
-tech, notion, minimal (clean styles prevent visual overload)
+notion, minimal, chalkboard (clean styles prevent visual overload)

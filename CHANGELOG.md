@@ -2,6 +2,56 @@
 
 English | [中文](./CHANGELOG.zh.md)
 
+## 1.13.0 - 2026-01-21
+
+### Features
+- `baoyu-url-to-markdown`: new utility skill for fetching any URL via Chrome CDP and converting to clean markdown. Supports two capture modes—auto (immediate capture on page load) and wait (user-controlled capture for login-required pages).
+
+### Improvements
+- `baoyu-xhs-images`: updates style recommendations—replaces `tech` references with `notion` and `chalkboard` for technical and educational content.
+
+## 1.12.0 - 2026-01-21
+
+### Refactor
+- `baoyu-post-to-x`: extracts shared utilities to `x-utils.ts`—consolidates Chrome detection, CDP connection, clipboard operations, and helper functions from `x-article.ts`, `x-browser.ts`, `x-quote.ts`, and `x-video.ts` into a single reusable module.
+
+## 1.11.0 - 2026-01-21
+
+### Features
+- `baoyu-image-gen`: new AI SDK-based image generation skill using official OpenAI and Google APIs. Supports text-to-image, reference images (Google multimodal), aspect ratios, and quality presets (`normal`, `2k`). Auto-detects provider based on available API keys.
+- `baoyu-slide-deck`: adds Layout Gallery with 24 layout types—10 slide-specific layouts (`title-hero`, `quote-callout`, `key-stat`, `split-screen`, `icon-grid`, `two-columns`, `three-columns`, `image-caption`, `agenda`, `bullet-list`) and 14 infographic-derived layouts (`linear-progression`, `binary-comparison`, `comparison-matrix`, `hierarchical-layers`, `hub-spoke`, `bento-grid`, `funnel`, `dashboard`, `venn-diagram`, `circular-flow`, `winding-roadmap`, `tree-branching`, `iceberg`, `bridge`).
+
+### Documentation
+- `README.md`, `README.zh.md`: adds baoyu-image-gen documentation with usage examples, options table, and environment variables; adds Environment Configuration section for API key setup.
+
+## 1.10.0 - 2026-01-21
+
+### Features
+- `baoyu-post-to-x`: adds video posting support—new `x-video.ts` script for posting text with video files (MP4, MOV, WebM). Supports preview mode and handles video processing timeouts.
+
+## 1.9.0 - 2026-01-20
+
+### Features
+- `baoyu-xhs-images`: adds `chalkboard` style—black chalkboard background with colorful chalk drawings for education and tutorial content.
+- `baoyu-comic`: adds `chalkboard` style—educational chalk drawings on black chalkboard for tutorials, explainers, and knowledge comics.
+
+### Improvements
+- `baoyu-article-illustrator`, `baoyu-cover-image`, `baoyu-infographic`: updates `chalkboard` style with enhanced visual guidelines.
+
+### Breaking Changes
+- `baoyu-xhs-images`: removes `tech` style (use `minimal` or `notion` for technical content).
+
+### Documentation
+- `README.md`, `README.zh.md`: adds style and layout preview galleries for xhs-images (9 styles, 6 layouts).
+
+## 1.8.0 - 2026-01-20
+
+### Features
+- `baoyu-infographic`: new skill for professional infographic generation with 20 layout types (bridge, circular-flow, comparison-table, do-dont, equation, feature-list, fishbone, funnel, grid-cards, iceberg, journey-path, layers-stack, mind-map, nested-circles, priority-quadrants, pyramid, scale-balance, timeline-horizontal, tree-hierarchy, venn) and 17 visual styles. Analyzes content, recommends layout×style combinations, and generates publication-ready infographics.
+
+### Fixes
+- `baoyu-danger-gemini-web`: improves cookie validation by verifying actual Gemini session readiness instead of just checking cookie presence.
+
 ## 1.7.0 - 2026-01-19
 
 ### Features

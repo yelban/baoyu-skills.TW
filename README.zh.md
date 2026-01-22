@@ -60,9 +60,9 @@ npx skills add yelban/baoyu-skills.TW
 
 | 外掛 | 說明 | 包含技能 |
 |------|------|----------|
-| **content-skills** | 內容生成和釋出 | [xhs-images](#baoyu-xhs-images), [cover-image](#baoyu-cover-image), [slide-deck](#baoyu-slide-deck), [comic](#baoyu-comic), [article-illustrator](#baoyu-article-illustrator), [post-to-x](#baoyu-post-to-x), [post-to-wechat](#baoyu-post-to-wechat) |
-| **ai-generation-skills** | AI 生成後端 | [danger-gemini-web](#baoyu-danger-gemini-web) |
-| **utility-skills** | 內容處理工具 | [danger-x-to-markdown](#baoyu-danger-x-to-markdown), [compress-image](#baoyu-compress-image) |
+| **content-skills** | 內容生成和釋出 | [xhs-images](#baoyu-xhs-images), [infographic](#baoyu-infographic), [cover-image](#baoyu-cover-image), [slide-deck](#baoyu-slide-deck), [comic](#baoyu-comic), [article-illustrator](#baoyu-article-illustrator), [post-to-x](#baoyu-post-to-x), [post-to-wechat](#baoyu-post-to-wechat) |
+| **ai-generation-skills** | AI 生成後端 | [image-gen](#baoyu-image-gen), [danger-gemini-web](#baoyu-danger-gemini-web) |
+| **utility-skills** | 內容處理工具 | [url-to-markdown](#baoyu-url-to-markdown), [danger-x-to-markdown](#baoyu-danger-x-to-markdown), [compress-image](#baoyu-compress-image) |
 
 ## 更新技能
 
@@ -106,7 +106,18 @@ npx skills add yelban/baoyu-skills.TW
 /baoyu-xhs-images 今日星座運勢
 ```
 
-**風格**（視覺美學）：`cute`（預設）、`fresh`、`tech`、`warm`、`bold`、`minimal`、`retro`、`pop`、`notion`
+**風格**（視覺美學）：`cute`（預設）、`fresh`、`warm`、`bold`、`minimal`、`retro`、`pop`、`notion`、`chalkboard`
+
+**風格預覽**：
+
+| | | |
+|:---:|:---:|:---:|
+| ![cute](./screenshots/xhs-images-styles/cute.webp) | ![fresh](./screenshots/xhs-images-styles/fresh.webp) | ![warm](./screenshots/xhs-images-styles/warm.webp) |
+| cute | fresh | warm |
+| ![bold](./screenshots/xhs-images-styles/bold.webp) | ![minimal](./screenshots/xhs-images-styles/minimal.webp) | ![retro](./screenshots/xhs-images-styles/retro.webp) |
+| bold | minimal | retro |
+| ![pop](./screenshots/xhs-images-styles/pop.webp) | ![notion](./screenshots/xhs-images-styles/notion.webp) | ![chalkboard](./screenshots/xhs-images-styles/chalkboard.webp) |
+| pop | notion | chalkboard |
 
 **佈局**（資訊密度）：
 | 佈局 | 密度 | 適用場景 |
@@ -117,6 +128,127 @@ npx skills add yelban/baoyu-skills.TW
 | `list` | 4-7 項 | 清單、排行 |
 | `comparison` | 雙欄 | 對比、優劣 |
 | `flow` | 3-6 步 | 流程、時間線 |
+
+**布局预览**：
+
+| | | |
+|:---:|:---:|:---:|
+| ![sparse](./screenshots/xhs-images-layouts/sparse.webp) | ![balanced](./screenshots/xhs-images-layouts/balanced.webp) | ![dense](./screenshots/xhs-images-layouts/dense.webp) |
+| sparse | balanced | dense |
+| ![list](./screenshots/xhs-images-layouts/list.webp) | ![comparison](./screenshots/xhs-images-layouts/comparison.webp) | ![flow](./screenshots/xhs-images-layouts/flow.webp) |
+| list | comparison | flow |
+
+#### baoyu-infographic
+
+专业信息图生成器，支持 20 种布局和 17 种视觉风格。分析内容后推荐布局×风格组合，生成可发布的信息图。
+
+```bash
+# 根据内容自动推荐组合
+/baoyu-infographic path/to/content.md
+
+# 指定布局
+/baoyu-infographic path/to/content.md --layout pyramid
+
+# 指定风格（默认：craft-handmade）
+/baoyu-infographic path/to/content.md --style technical-schematic
+
+# 同时指定布局和风格
+/baoyu-infographic path/to/content.md --layout funnel --style corporate-memphis
+
+# 指定比例
+/baoyu-infographic path/to/content.md --aspect portrait
+```
+
+**选项**：
+| 选项 | 说明 |
+|------|------|
+| `--layout <name>` | 信息布局（20 种选项） |
+| `--style <name>` | 视觉风格（17 种选项，默认：craft-handmade） |
+| `--aspect <ratio>` | landscape (16:9)、portrait (9:16)、square (1:1) |
+| `--lang <code>` | 输出语言（en、zh、ja 等） |
+
+**布局**（信息结构）：
+
+| 布局 | 适用场景 |
+|------|----------|
+| `bridge` | 问题→解决方案、跨越鸿沟 |
+| `circular-flow` | 循环、周期性流程 |
+| `comparison-table` | 多因素对比 |
+| `do-dont` | 正确 vs 错误做法 |
+| `equation` | 公式分解、输入→输出 |
+| `feature-list` | 产品功能、要点列表 |
+| `fishbone` | 根因分析、鱼骨图 |
+| `funnel` | 转化漏斗、筛选过程 |
+| `grid-cards` | 多主题概览、卡片网格 |
+| `iceberg` | 表面 vs 隐藏层面 |
+| `journey-path` | 用户旅程、里程碑 |
+| `layers-stack` | 技术栈、分层结构 |
+| `mind-map` | 头脑风暴、思维导图 |
+| `nested-circles` | 影响层级、范围圈 |
+| `priority-quadrants` | 四象限矩阵、优先级 |
+| `pyramid` | 层级金字塔、马斯洛需求 |
+| `scale-balance` | 利弊权衡、天平对比 |
+| `timeline-horizontal` | 历史、时间线事件 |
+| `tree-hierarchy` | 组织架构、分类树 |
+| `venn` | 重叠概念、韦恩图 |
+
+**布局预览**：
+
+| | | |
+|:---:|:---:|:---:|
+| ![bridge](./screenshots/infographic-layouts/bridge.webp) | ![circular-flow](./screenshots/infographic-layouts/circular-flow.webp) | ![comparison-table](./screenshots/infographic-layouts/comparison-table.webp) |
+| bridge | circular-flow | comparison-table |
+| ![do-dont](./screenshots/infographic-layouts/do-dont.webp) | ![equation](./screenshots/infographic-layouts/equation.webp) | ![feature-list](./screenshots/infographic-layouts/feature-list.webp) |
+| do-dont | equation | feature-list |
+| ![fishbone](./screenshots/infographic-layouts/fishbone.webp) | ![funnel](./screenshots/infographic-layouts/funnel.webp) | ![grid-cards](./screenshots/infographic-layouts/grid-cards.webp) |
+| fishbone | funnel | grid-cards |
+| ![iceberg](./screenshots/infographic-layouts/iceberg.webp) | ![journey-path](./screenshots/infographic-layouts/journey-path.webp) | ![layers-stack](./screenshots/infographic-layouts/layers-stack.webp) |
+| iceberg | journey-path | layers-stack |
+| ![mind-map](./screenshots/infographic-layouts/mind-map.webp) | ![nested-circles](./screenshots/infographic-layouts/nested-circles.webp) | ![priority-quadrants](./screenshots/infographic-layouts/priority-quadrants.webp) |
+| mind-map | nested-circles | priority-quadrants |
+| ![pyramid](./screenshots/infographic-layouts/pyramid.webp) | ![scale-balance](./screenshots/infographic-layouts/scale-balance.webp) | ![timeline-horizontal](./screenshots/infographic-layouts/timeline-horizontal.webp) |
+| pyramid | scale-balance | timeline-horizontal |
+| ![tree-hierarchy](./screenshots/infographic-layouts/tree-hierarchy.webp) | ![venn](./screenshots/infographic-layouts/venn.webp) | |
+| tree-hierarchy | venn | |
+
+**风格**（视觉美学）：
+
+| 风格 | 描述 |
+|------|------|
+| `craft-handmade`（默认） | 手绘插画、纸艺风格 |
+| `claymation` | 3D 黏土人物、定格动画感 |
+| `kawaii` | 日系可爱、大眼睛、粉彩色 |
+| `storybook-watercolor` | 柔和水彩、童话绘本 |
+| `chalkboard` | 彩色粉笔、黑板风格 |
+| `cyberpunk-neon` | 霓虹灯光、暗色未来感 |
+| `bold-graphic` | 漫画风格、网点、高对比 |
+| `aged-academia` | 复古科学、泛黄素描 |
+| `corporate-memphis` | 扁平矢量人物、鲜艳填充 |
+| `technical-schematic` | 蓝图、等距 3D、工程图 |
+| `origami` | 折纸形态、几何感 |
+| `pixel-art` | 复古 8-bit、怀旧游戏 |
+| `ui-wireframe` | 灰度框图、界面原型 |
+| `subway-map` | 地铁图、彩色线路 |
+| `ikea-manual` | 极简线条、组装说明风 |
+| `knolling` | 整齐平铺、俯视图 |
+| `lego-brick` | 乐高积木、童趣拼搭 |
+
+**风格预览**：
+
+| | | |
+|:---:|:---:|:---:|
+| ![craft-handmade](./screenshots/infographic-styles/craft-handmade.webp) | ![claymation](./screenshots/infographic-styles/claymation.webp) | ![kawaii](./screenshots/infographic-styles/kawaii.webp) |
+| craft-handmade | claymation | kawaii |
+| ![storybook-watercolor](./screenshots/infographic-styles/storybook-watercolor.webp) | ![chalkboard](./screenshots/infographic-styles/chalkboard.webp) | ![cyberpunk-neon](./screenshots/infographic-styles/cyberpunk-neon.webp) |
+| storybook-watercolor | chalkboard | cyberpunk-neon |
+| ![bold-graphic](./screenshots/infographic-styles/bold-graphic.webp) | ![aged-academia](./screenshots/infographic-styles/aged-academia.webp) | ![corporate-memphis](./screenshots/infographic-styles/corporate-memphis.webp) |
+| bold-graphic | aged-academia | corporate-memphis |
+| ![technical-schematic](./screenshots/infographic-styles/technical-schematic.webp) | ![origami](./screenshots/infographic-styles/origami.webp) | ![pixel-art](./screenshots/infographic-styles/pixel-art.webp) |
+| technical-schematic | origami | pixel-art |
+| ![ui-wireframe](./screenshots/infographic-styles/ui-wireframe.webp) | ![subway-map](./screenshots/infographic-styles/subway-map.webp) | ![ikea-manual](./screenshots/infographic-styles/ikea-manual.webp) |
+| ui-wireframe | subway-map | ikea-manual |
+| ![knolling](./screenshots/infographic-styles/knolling.webp) | ![lego-brick](./screenshots/infographic-styles/lego-brick.webp) | |
+| knolling | lego-brick | |
 
 #### baoyu-cover-image
 
@@ -390,6 +522,55 @@ npx skills add yelban/baoyu-skills.TW
 
 AI 驅動的生成後端。
 
+#### baoyu-image-gen
+
+基于 AI SDK 的图像生成，使用官方 OpenAI 和 Google API。支持文生图、参考图、宽高比和质量预设。
+
+```bash
+# 基础生成（自动检测服务商）
+/baoyu-image-gen --prompt "一只可爱的猫" --image cat.png
+
+# 指定宽高比
+/baoyu-image-gen --prompt "风景图" --image landscape.png --ar 16:9
+
+# 高质量（2k 分辨率）
+/baoyu-image-gen --prompt "横幅图" --image banner.png --quality 2k
+
+# 指定服务商
+/baoyu-image-gen --prompt "一只猫" --image cat.png --provider openai
+
+# 带参考图（仅 Google 多模态支持）
+/baoyu-image-gen --prompt "把它变成蓝色" --image out.png --ref source.png
+```
+
+**选项**：
+| 选项 | 说明 |
+|------|------|
+| `--prompt`, `-p` | 提示词文本 |
+| `--promptfiles` | 从文件读取提示词（多文件拼接） |
+| `--image` | 输出图片路径（必需） |
+| `--provider` | `google` 或 `openai`（默认：google） |
+| `--model`, `-m` | 模型 ID |
+| `--ar` | 宽高比（如 `16:9`、`1:1`、`4:3`） |
+| `--size` | 尺寸（如 `1024x1024`） |
+| `--quality` | `normal` 或 `2k`（默认：normal） |
+| `--ref` | 参考图片（仅 Google 多模态支持） |
+
+**环境变量**（配置方法见[环境配置](#环境配置)）：
+| 变量 | 说明 | 默认值 |
+|------|------|--------|
+| `OPENAI_API_KEY` | OpenAI API 密钥 | - |
+| `GOOGLE_API_KEY` | Google API 密钥 | - |
+| `OPENAI_IMAGE_MODEL` | OpenAI 模型 | `gpt-image-1.5` |
+| `GOOGLE_IMAGE_MODEL` | Google 模型 | `gemini-3-pro-image-preview` |
+| `OPENAI_BASE_URL` | 自定义 OpenAI 端点 | - |
+| `GOOGLE_BASE_URL` | 自定义 Google 端点 | - |
+
+**服务商自动选择**：
+1. 如果指定了 `--provider` → 使用指定的
+2. 如果只有一个 API 密钥 → 使用对应服务商
+3. 如果两个都有 → 默认使用 Google
+
 #### baoyu-danger-gemini-web
 
 與 Gemini Web 互動，生成文字和圖片。
@@ -411,6 +592,35 @@ AI 驅動的生成後端。
 ### 工具技能 (Utility Skills)
 
 內容處理工具。
+
+#### baoyu-url-to-markdown
+
+通过 Chrome CDP 抓取任意 URL 并转换为干净的 Markdown。支持两种抓取模式，适应不同场景。
+
+```bash
+# 自动模式（默认）- 页面加载后立即抓取
+/baoyu-url-to-markdown https://example.com/article
+
+# 等待模式 - 适用于需要登录的页面
+/baoyu-url-to-markdown https://example.com/private --wait
+
+# 保存到指定文件
+/baoyu-url-to-markdown https://example.com/article -o output.md
+```
+
+**抓取模式**：
+| 模式 | 说明 | 适用场景 |
+|------|------|----------|
+| 自动（默认） | 页面加载后立即抓取 | 公开页面、静态内容 |
+| 等待（`--wait`） | 等待用户信号后抓取 | 需登录页面、动态内容 |
+
+**选项**：
+| 选项 | 说明 |
+|------|------|
+| `<url>` | 要抓取的 URL |
+| `-o <path>` | 输出文件路径 |
+| `--wait` | 等待用户信号后抓取 |
+| `--timeout <ms>` | 页面加载超时（默认：30000） |
 
 #### baoyu-danger-x-to-markdown
 
@@ -441,6 +651,44 @@ AI 驅動的生成後端。
 ```bash
 /baoyu-compress-image path/to/image.png
 /baoyu-compress-image path/to/images/ --quality 80
+```
+
+## 環境設定
+
+部分技能需要 API 金鑰或自訂設定。環境變數可以在 `.env` 檔案中設定：
+
+**載入優先順序**（高優先順序覆蓋低優先順序）：
+1. 命令列環境變數（如 `OPENAI_API_KEY=xxx /baoyu-image-gen ...`）
+2. `process.env`（系統環境變數）
+3. `<cwd>/.baoyu-skills/.env`（專案級）
+4. `~/.baoyu-skills/.env`（使用者級）
+
+**設定方法**：
+
+```bash
+# 建立使用者級設定目錄
+mkdir -p ~/.baoyu-skills
+
+# 建立 .env 檔案
+cat > ~/.baoyu-skills/.env << 'EOF'
+# OpenAI
+OPENAI_API_KEY=sk-xxx
+OPENAI_IMAGE_MODEL=gpt-image-1.5
+# OPENAI_BASE_URL=https://api.openai.com/v1
+
+# Google
+GOOGLE_API_KEY=xxx
+GOOGLE_IMAGE_MODEL=gemini-3-pro-image-preview
+# GOOGLE_BASE_URL=https://generativelanguage.googleapis.com/v1beta
+EOF
+```
+
+**專案級設定**（團隊共享）：
+
+```bash
+mkdir -p .baoyu-skills
+# 將 .baoyu-skills/.env 加入 .gitignore 避免提交金鑰
+echo ".baoyu-skills/.env" >> .gitignore
 ```
 
 ## 自定義擴充套件

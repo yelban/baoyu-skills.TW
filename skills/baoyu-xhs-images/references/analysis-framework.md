@@ -25,9 +25,9 @@ Unlike other platforms, Xiaohongshu content must prioritize:
 | Type | Characteristics | Best Style | Best Layout |
 |------|----------------|------------|-------------|
 | 種草/安利 | Product recommendation, benefits focus | cute/fresh | balanced/list |
-| 乾貨分享 | Knowledge, tips, how-to | notion/tech | dense/list |
+| 乾貨分享 | Knowledge, tips, how-to | notion | dense/list |
 | 個人故事 | Personal experience, emotional | warm | balanced |
-| 測評對比 | Review, comparison, pros/cons | tech/bold | comparison |
+| 測評對比 | Review, comparison, pros/cons | bold/notion | comparison |
 | 教程步驟 | Step-by-step guide | fresh/notion | flow/list |
 | 避坑指南 | Warnings, mistakes to avoid | bold | list/comparison |
 | 清單合集 | Collections, recommendations | cute/minimal | list/dense |
@@ -55,10 +55,10 @@ Evaluate title/hook potential using these patterns:
 | Audience | Interests | Preferred Style | Content Focus |
 |----------|-----------|-----------------|---------------|
 | 學生黨 | 省錢、學習、校園 | cute/fresh | 平價、教程、學習方法 |
-| 打工人 | 效率、職場、減壓 | minimal/tech | 工具、技巧、摸魚 |
+| 打工人 | 效率、職場、減壓 | minimal/notion | 工具、技巧、摸魚 |
 | 寶媽 | 育兒、家居、省心 | warm/fresh | 實用、安全、經驗 |
 | 精緻女孩 | 美妝、穿搭、儀式感 | cute/retro | 好看、氛圍、品質 |
-| 技術宅 | 工具、效率、極客 | tech/notion | 深度、專業、新奇 |
+| 技術宅 | 工具、效率、極客 | notion/chalkboard | 深度、專業、新奇 |
 | 美食愛好者 | 探店、食譜、測評 | warm/pop | 好吃、簡單、顏值 |
 | 旅行達人 | 攻略、打卡、小眾 | fresh/retro | 省錢、避坑、拍照 |
 
@@ -165,7 +165,7 @@ recommended_image_count: 6
 
 ## Content Signals
 
-- "AI工具" → tech + dense
+- "AI工具" → notion + dense
 - "效率" → notion + list
 - "乾貨" → minimal + dense
 
@@ -180,7 +180,7 @@ recommended_image_count: 6
 
 ## Recommended Approaches
 
-1. **Tech + Dense** - 專業科技感，適合乾貨分享 (recommended)
+1. **Notion + Dense** - 知識卡片風格，適合乾貨分享 (recommended)
 2. **Notion + List** - 清爽知識卡片風格
 3. **Minimal + Balanced** - 簡約高階，適合職場人群
 ```

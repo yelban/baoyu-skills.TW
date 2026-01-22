@@ -78,6 +78,16 @@ npx -y bun skills/baoyu-danger-gemini-web/scripts/main.ts --promptfiles system.m
 
 `.claude-plugin/marketplace.json` defines plugin metadata and skill paths. Version follows semver.
 
+## Release Process
+
+**IMPORTANT**: When user requests release/发布/push, ALWAYS use `/release-skills` workflow.
+
+**Never skip**:
+1. `CHANGELOG.md` + `CHANGELOG.zh.md` - Both must be updated
+2. `marketplace.json` version bump
+3. `README.md` + `README.zh.md` if applicable
+4. All files committed together before tag
+
 ## Adding New Skills
 
 **IMPORTANT**: All skills MUST use `baoyu-` prefix to avoid conflicts when users import this plugin.
