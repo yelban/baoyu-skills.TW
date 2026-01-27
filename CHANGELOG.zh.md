@@ -2,6 +2,22 @@
 
 [English](./CHANGELOG.md) | 中文
 
+## 1.23.1-tw - 2026-01-27
+
+### 本地化
+- 同步上游 v1.14.0 - v1.23.1 並轉換為繁體中文（台灣）
+- 所有文件和介面文字已使用 OpenCC s2twp 轉換為繁體中文
+
+### 新功能（來自上游）
+- `baoyu-cover-image`：5D 調色盤×渲染系統（9 種配色 × 6 種渲染 = 54 種組合）
+- `baoyu-post-to-wechat`：主題選擇、HTML 預覽、Windows 相容性
+- `baoyu-article-illustrator`：imgs-subdir 輸出選項、風格選擇改進
+- `baoyu-image-gen`：平行生成文件
+
+### 修復（來自上游）
+- `baoyu-compress-image`：原檔重新命名為備份而非刪除
+- `baoyu-post-to-wechat`：Windows 相容性修復、回歸修復
+
 ## 1.23.1 - 2026-01-27
 
 ### 修復

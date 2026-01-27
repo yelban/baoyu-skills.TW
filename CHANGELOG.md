@@ -2,6 +2,22 @@
 
 English | [中文](./CHANGELOG.zh.md)
 
+## 1.23.1-tw - 2026-01-27
+
+### Localization
+- Synced upstream v1.14.0 - v1.23.1 with Traditional Chinese (Taiwan) localization
+- All documentation and UI text converted to Traditional Chinese using OpenCC s2twp
+
+### Features (from upstream)
+- `baoyu-cover-image`: 5D palette×rendering system (9 palettes × 6 renderings = 54 combinations)
+- `baoyu-post-to-wechat`: theme selection, HTML preview, Windows compatibility
+- `baoyu-article-illustrator`: imgs-subdir output option, style selection improvements
+- `baoyu-image-gen`: parallel generation documentation
+
+### Fixes (from upstream)
+- `baoyu-compress-image`: rename original as backup instead of deleting
+- `baoyu-post-to-wechat`: Windows compatibility fixes, regression fixes
+
 ## 1.23.1 - 2026-01-27
 
 ### Fixes
