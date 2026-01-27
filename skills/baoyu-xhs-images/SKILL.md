@@ -1,6 +1,6 @@
 ---
 name: baoyu-xhs-images
-description: Generates Xiaohongshu (Little Red Book) infographic series with 9 visual styles and 6 layouts. Breaks content into 1-10 cartoon-style images optimized for XHS engagement. Use when user mentions "小红书图片", "XHS images", "RedNote infographics", "小红书种草", or wants social media infographics for Chinese platforms.
+description: Generates Xiaohongshu (Little Red Book) infographic series with 9 visual styles and 6 layouts. Breaks content into 1-10 cartoon-style images optimized for XHS engagement. Use when user mentions "小紅書圖片", "XHS images", "RedNote infographics", "小紅書種草", or wants social media infographics for Chinese platforms.
 ---
 
 # Xiaohongshu Infographic Series Generator
@@ -94,7 +94,7 @@ Detailed layout definitions: `references/elements/canvas.md`
 
 Three differentiated outline strategies for different content goals:
 
-### Strategy A: Story-Driven (故事驱动型)
+### Strategy A: Story-Driven (故事驅動型)
 
 | Aspect | Description |
 |--------|-------------|
@@ -103,7 +103,7 @@ Three differentiated outline strategies for different content goals:
 | **Best for** | Reviews, personal shares, transformation stories |
 | **Structure** | Hook → Problem → Discovery → Experience → Conclusion |
 
-### Strategy B: Information-Dense (信息密集型)
+### Strategy B: Information-Dense (資訊密集型)
 
 | Aspect | Description |
 |--------|-------------|
@@ -112,7 +112,7 @@ Three differentiated outline strategies for different content goals:
 | **Best for** | Tutorials, comparisons, product reviews, checklists |
 | **Structure** | Core conclusion → Info card → Pros/Cons → Recommendation |
 
-### Strategy C: Visual-First (视觉优先型)
+### Strategy C: Visual-First (視覺優先型)
 
 | Aspect | Description |
 |--------|-------------|
@@ -144,7 +144,7 @@ xhs-images/{topic-slug}/
 
 **Slug Generation**:
 1. Extract main topic from content (2-4 words, kebab-case)
-2. Example: "AI工具推荐" → `ai-tools-recommend`
+2. Example: "AI工具推薦" → `ai-tools-recommend`
 
 **Conflict Resolution**:
 If `xhs-images/{topic-slug}/` already exists:
@@ -229,10 +229,10 @@ Read source content, save it if needed, and perform deep analysis.
    - If user pastes content: save to `source.md` in target directory
 2. Read source content
 3. **Deep analysis** following `references/workflows/analysis-framework.md`:
-   - Content type classification (种草/干货/测评/教程/避坑...)
-   - Hook analysis (爆款标题潜力)
+   - Content type classification (種草/乾貨/測評/教程/避坑...)
+   - Hook analysis (爆款標題潛力)
    - Target audience identification
-   - Engagement potential (收藏/分享/评论)
+   - Engagement potential (收藏/分享/評論)
    - Visual opportunity mapping
    - Swipe flow design
 4. Detect source language
@@ -288,7 +288,7 @@ image_count: 5
 
 ## P1 Cover
 **Type**: cover
-**Hook**: "入冬后脸不干了🥹终于找到对的面霜"
+**Hook**: "入冬後臉不幹了🥹終於找到對的面霜"
 **Visual**: Product hero shot with cozy winter atmosphere
 **Layout**: sparse
 

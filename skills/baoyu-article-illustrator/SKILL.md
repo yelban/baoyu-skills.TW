@@ -1,6 +1,6 @@
 ---
 name: baoyu-article-illustrator
-description: Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style two-dimension approach. Use when user asks to "illustrate article", "add images", "generate images for article", or "为文章配图".
+description: Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style two-dimension approach. Use when user asks to "illustrate article", "add images", "generate images for article", or "為文章配圖".
 ---
 
 # Article Illustrator
@@ -147,7 +147,7 @@ test -f "$HOME/.baoyu-skills/baoyu-article-illustrator/EXTEND.md" && echo "user"
 - Comparisons/contrasts
 - Framework/model proposed
 
-**CRITICAL**: If article uses metaphors (e.g., "电锯切西瓜"), do NOT illustrate literally. Visualize the **underlying concept**.
+**CRITICAL**: If article uses metaphors (e.g., "電鋸切西瓜"), do NOT illustrate literally. Visualize the **underlying concept**.
 
 **2.3 Identify Positions**
 

@@ -1,6 +1,6 @@
 ---
 name: release-skills
-description: Universal release workflow. Auto-detects version files and changelogs. Supports Node.js, Python, Rust, Claude Plugin, and generic projects. Use when user says "release", "发布", "new version", "bump version", "push", "推送".
+description: Universal release workflow. Auto-detects version files and changelogs. Supports Node.js, Python, Rust, Claude Plugin, and generic projects. Use when user says "release", "釋出", "new version", "bump version", "push", "推送".
 ---
 
 # Release Skills
@@ -125,11 +125,11 @@ For each detected changelog file:
 | Type | en | zh | ja | ko | de | fr | es |
 |------|----|----|----|----|----|----|-----|
 | feat | Features | 新功能 | 新機能 | 새로운 기능 | Funktionen | Fonctionnalités | Características |
-| fix | Fixes | 修复 | 修正 | 수정 | Fehlerbehebungen | Corrections | Correcciones |
-| docs | Documentation | 文档 | ドキュメント | 문서 | Dokumentation | Documentation | Documentación |
-| refactor | Refactor | 重构 | リファクタリング | 리팩토링 | Refactoring | Refactorisation | Refactorización |
-| perf | Performance | 性能优化 | パフォーマンス | 성능 | Leistung | Performance | Rendimiento |
-| breaking | Breaking Changes | 破坏性变更 | 破壊的変更 | 주요 변경사항 | Breaking Changes | Changements majeurs | Cambios importantes |
+| fix | Fixes | 修復 | 修正 | 수정 | Fehlerbehebungen | Corrections | Correcciones |
+| docs | Documentation | 文件 | ドキュメント | 문서 | Dokumentation | Documentation | Documentación |
+| refactor | Refactor | 重構 | リファクタリング | 리팩토링 | Refactoring | Refactorisation | Refactorización |
+| perf | Performance | 效能最佳化 | パフォーマンス | 성능 | Leistung | Performance | Rendimiento |
+| breaking | Breaking Changes | 破壞性變更 | 破壊的変更 | 주요 변경사항 | Breaking Changes | Changements majeurs | Cambios importantes |
 
 **Changelog Format**:
 
@@ -167,11 +167,11 @@ Chinese (CHANGELOG.zh.md):
 ## 1.3.0 - 2026-01-22
 
 ### 新功能
-- 新增用户认证模块
-- 支持 OAuth2 登录
+- 新增使用者認證模組
+- 支援 OAuth2 登入
 
-### 修复
-- 修复连接池内存泄漏问题
+### 修復
+- 修復連線池記憶體洩漏問題
 ```
 
 Japanese (CHANGELOG.ja.md):
@@ -426,9 +426,9 @@ Changelog preview (en):
 Changelog preview (zh):
   ## 1.3.0 - 2026-01-22
   ### 新功能
-  - 为 cover-image 添加水彩和极简风格
-  ### 修复
-  - 改进 comic 长对话的面板布局
+  - 為 cover-image 新增水彩和極簡風格
+  ### 修復
+  - 改進 comic 長對話的面板佈局
 
 Commits to create:
   1. feat(baoyu-cover-image): add watercolor and minimalist styles
@@ -451,7 +451,7 @@ No changes made. Run without --dry-run to execute.
 ## When to Use
 
 Trigger this skill when user requests:
-- "release", "发布", "create release", "new version", "新版本"
+- "release", "釋出", "create release", "new version", "新版本"
 - "bump version", "update version", "更新版本"
 - "prepare release"
 - "push to remote" (with uncommitted changes)

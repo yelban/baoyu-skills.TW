@@ -1,6 +1,6 @@
 # romantic
 
-浪漫基调 - Soft, beautiful, emotionally delicate
+浪漫基調 - Soft, beautiful, emotionally delicate
 
 ## Overview
 

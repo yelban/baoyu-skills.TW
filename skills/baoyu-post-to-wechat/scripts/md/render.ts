@@ -217,7 +217,7 @@ export function initRenderer(opts: IOpts = {}): RendererAPI {
     }
     return `
       <blockquote class="md-blockquote">
-        <p class="md-blockquote-p">字数 ${readingTimeResult?.words}，阅读大约需 ${Math.ceil(readingTimeResult?.minutes)} 分钟</p>
+        <p class="md-blockquote-p">字數 ${readingTimeResult?.words}，閱讀大約需 ${Math.ceil(readingTimeResult?.minutes)} 分鐘</p>
       </blockquote>
     `;
   }
@@ -228,7 +228,7 @@ export function initRenderer(opts: IOpts = {}): RendererAPI {
     }
 
     return (
-      styledContent("h4", "引用链接")
+      styledContent("h4", "引用連結")
       + styledContent("footnotes", buildFootnoteArray(footnotes), "p")
     );
   };

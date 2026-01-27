@@ -1,6 +1,6 @@
 ---
 name: baoyu-post-to-wechat
-description: Posts content to WeChat Official Account (微信公众号) via Chrome CDP automation. Supports article posting (文章) with full markdown formatting and image-text posting (图文) with multiple images. Use when user mentions "发布公众号", "post to wechat", "微信公众号", or "图文/文章".
+description: Posts content to WeChat Official Account (微信公眾號) via Chrome CDP automation. Supports article posting (文章) with full markdown formatting and image-text posting (圖文) with multiple images. Use when user mentions "釋出公眾號", "post to wechat", "微信公眾號", or "圖文/文章".
 ---
 
 # Post to WeChat Official Account
@@ -11,7 +11,7 @@ description: Posts content to WeChat Official Account (微信公众号) via Chro
 
 | Script | Purpose |
 |--------|---------|
-| `scripts/wechat-browser.ts` | Image-text posts (图文) |
+| `scripts/wechat-browser.ts` | Image-text posts (圖文) |
 | `scripts/wechat-article.ts` | Article posting (文章) |
 | `scripts/md-to-wechat.ts` | Markdown → WeChat HTML |
 
@@ -47,11 +47,11 @@ test -f "$HOME/.baoyu-skills/baoyu-post-to-wechat/EXTEND.md" && echo "user"
 
 ## Usage
 
-### Image-Text (图文)
+### Image-Text (圖文)
 
 ```bash
 npx -y bun ${SKILL_DIR}/scripts/wechat-browser.ts --markdown article.md --images ./images/
-npx -y bun ${SKILL_DIR}/scripts/wechat-browser.ts --title "标题" --content "内容" --image img.png --submit
+npx -y bun ${SKILL_DIR}/scripts/wechat-browser.ts --title "標題" --content "內容" --image img.png --submit
 ```
 
 ### Article (文章)
@@ -60,9 +60,9 @@ Before posting, ask user to choose a theme using AskUserQuestion:
 
 | Theme | Description |
 |-------|-------------|
-| `default` | 经典主题 - 传统排版，标题居中带底边，二级标题白字彩底 |
-| `grace` | 优雅主题 - 文字阴影，圆角卡片，精致引用块 (by @brzhang) |
-| `simple` | 简洁主题 - 现代极简风，不对称圆角，清爽留白 (by @okooo5km) |
+| `default` | 經典主題 - 傳統排版，標題居中帶底邊，二級標題白字彩底 |
+| `grace` | 優雅主題 - 文字陰影，圓角卡片，精緻引用塊 (by @brzhang) |
+| `simple` | 簡潔主題 - 現代極簡風，不對稱圓角，清爽留白 (by @okooo5km) |
 
 Default: `default`. If user has already specified a theme, skip the question.
 

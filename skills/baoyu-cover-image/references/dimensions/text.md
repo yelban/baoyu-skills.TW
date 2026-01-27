@@ -56,11 +56,11 @@ Single headline, maximum impact.
 
 | Hook Type | Examples (EN) | Examples (ZH) |
 |-----------|---------------|---------------|
-| Numbers | "3 Traps", "5 Keys" | "3个陷阱", "5个关键" |
-| Questions | "Why X?", "How?" | "为什么X?", "怎么做?" |
-| Contrasts | "A vs B", "Old→New" | "A还是B", "旧→新" |
-| Pain Points | "Stop X", "Never Do" | "别再X了", "千万别" |
-| Suspense | "Hidden X", "Secret" | "隐藏的X", "秘密" |
+| Numbers | "3 Traps", "5 Keys" | "3個陷阱", "5個關鍵" |
+| Questions | "Why X?", "How?" | "為什麼X?", "怎麼做?" |
+| Contrasts | "A vs B", "Old→New" | "A還是B", "舊→新" |
+| Pain Points | "Stop X", "Never Do" | "別再X了", "千萬別" |
+| Suspense | "Hidden X", "Secret" | "隱藏的X", "秘密" |
 
 ### title-subtitle
 
