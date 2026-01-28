@@ -79,34 +79,34 @@ export const COMMON_LANGUAGES: Record<string, LanguageFn> = {
 const HLJS_VERSION = `11.11.1`
 const HLJS_CDN_BASE = `https://cdn-doocs.oss-cn-shenzhen.aliyuncs.com/npm/highlightjs/${HLJS_VERSION}`
 
-// 缓存正在加载的语言
+// 快取正在載入的語言
 const loadingLanguages = new Map<string, Promise<void>>()
 
 /**
- * 生成语言包的 CDN URL
+ * 生成語言包的 CDN URL
  */
 function grammarUrlFor(language: string): string {
   return `${HLJS_CDN_BASE}/es/languages/${language}.min.js`
 }
 
 /**
- * 动态加载并注册语言
- * @param language 语言名称
- * @param hljs highlight.js 实例
+ * 動態載入並註冊語言
+ * @param language 語言名稱
+ * @param hljs highlight.js 例項
  */
 export async function loadAndRegisterLanguage(language: string, hljs: any): Promise<void> {
-  // 如果已经注册，直接返回
+  // 如果已經註冊，直接返回
   if (hljs.getLanguage(language)) {
     return
   }
 
-  // 如果正在加载，等待加载完成
+  // 如果正在載入，等待載入完成
   if (loadingLanguages.has(language)) {
     await loadingLanguages.get(language)
     return
   }
 
-  // 开始加载
+  // 開始載入
   const loadPromise = (async () => {
     try {
       const module = await import(/* @vite-ignore */ grammarUrlFor(language))
@@ -126,22 +126,22 @@ export async function loadAndRegisterLanguage(language: string, hljs: any): Prom
 }
 
 /**
- * 格式化高亮后的代码，处理空格和制表符
+ * 格式化高亮後的程式碼，處理空格和製表符
  */
 function formatHighlightedCode(html: string, preserveNewlines = false): string {
   let formatted = html
-  // 将 span 之间的空格移到 span 内部
+  // 將 span 之間的空格移到 span 內部
   formatted = formatted.replace(/(<span[^>]*>[^<]*<\/span>)(\s+)(<span[^>]*>[^<]*<\/span>)/g, (_: string, span1: string, spaces: string, span2: string) => span1 + span2.replace(/^(<span[^>]*>)/, `$1${spaces}`))
   formatted = formatted.replace(/(\s+)(<span[^>]*>)/g, (_: string, spaces: string, span: string) => span.replace(/^(<span[^>]*>)/, `$1${spaces}`))
-  // 替换制表符为4个空格
+  // 替換製表符為4個空格
   formatted = formatted.replace(/\t/g, `    `)
 
   if (preserveNewlines) {
-    // 替换换行符为 <br/>，并将空格转换为 &nbsp;
+    // 替換換行符為 <br/>，並將空格轉換為 &nbsp;
     formatted = formatted.replace(/\r\n/g, `<br/>`).replace(/\n/g, `<br/>`).replace(/(>[^<]+)|(^[^<]+)/g, (str: string) => str.replace(/\s/g, `&nbsp;`))
   }
   else {
-    // 只将空格转换为 &nbsp;
+    // 只將空格轉換為 &nbsp;
     formatted = formatted.replace(/(>[^<]+)|(^[^<]+)/g, (str: string) => str.replace(/\s/g, `&nbsp;`))
   }
 
@@ -149,12 +149,12 @@ function formatHighlightedCode(html: string, preserveNewlines = false): string {
 }
 
 /**
- * 高亮代码并格式化（支持行号）
- * @param text 原始代码文本
- * @param language 语言名称
- * @param hljs highlight.js 实例
- * @param showLineNumber 是否显示行号
- * @returns 格式化后的 HTML
+ * 高亮程式碼並格式化（支援行號）
+ * @param text 原始程式碼文字
+ * @param language 語言名稱
+ * @param hljs highlight.js 例項
+ * @param showLineNumber 是否顯示行號
+ * @returns 格式化後的 HTML
  */
 export function highlightAndFormatCode(text: string, language: string, hljs: any, showLineNumber: boolean): string {
   let highlighted = ``
@@ -206,10 +206,10 @@ export function highlightCodeBlock(codeBlock: Element, language: string, hljs: a
 }
 
 /**
- * 高亮 DOM 中待处理的代码块
- * 查找带有 data-language-pending 属性的代码块，动态加载语言后重新高亮
- * @param hljs highlight.js 实例
- * @param container 容器元素（可选，默认为 document）
+ * 高亮 DOM 中待處理的程式碼塊
+ * 查詢帶有 data-language-pending 屬性的程式碼塊，動態載入語言後重新高亮
+ * @param hljs highlight.js 例項
+ * @param container 容器元素（可選，預設為 document）
  */
 export function highlightPendingBlocks(hljs: any, container: Document | Element = document): void {
   const pendingBlocks = container.querySelectorAll(`code[data-language-pending]`)
@@ -220,15 +220,15 @@ export function highlightPendingBlocks(hljs: any, container: Document | Element 
       return
 
     if (hljs.getLanguage(language)) {
-      // 语言已加载，直接高亮
+      // 語言已載入，直接高亮
       highlightCodeBlock(codeBlock, language, hljs)
     }
     else {
-      // 动态加载语言后重新高亮
+      // 動態載入語言後重新高亮
       loadAndRegisterLanguage(language, hljs).then(() => {
         highlightCodeBlock(codeBlock, language, hljs)
       }).catch(() => {
-        // 加载失败，移除标记
+        // 載入失敗，移除標記
         codeBlock.removeAttribute(`data-language-pending`)
         codeBlock.removeAttribute(`data-raw-code`)
         codeBlock.removeAttribute(`data-show-line-number`)

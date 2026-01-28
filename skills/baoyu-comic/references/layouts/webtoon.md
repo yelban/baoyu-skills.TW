@@ -1,6 +1,6 @@
 # webtoon
 
-Vertical scrolling comic (竖版条漫)
+Vertical scrolling comic (豎版條漫)
 
 ## Panel Structure
 

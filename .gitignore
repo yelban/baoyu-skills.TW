@@ -152,3 +152,6 @@ slide-deck/
 infographic/
 illustrations/
 comic/
+
+# Backup files (local only)
+backups/

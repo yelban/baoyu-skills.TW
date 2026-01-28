@@ -54,7 +54,7 @@ Apply the specified rendering's characteristics:
 - Subtitle: Secondary, max 15 characters (if title-subtitle or text-rich)
 - Tags: 2-4 keyword badges (if text-rich)
 - Font style harmonizes with rendering style
-- **Engagement hooks**: Use numbers ("3个关键"), questions ("Why?"), contrasts ("A vs B"), pain points ("别再X了"), or suspense ("隐藏的X") for compelling titles
+- **Engagement hooks**: Use numbers ("3個關鍵"), questions ("Why?"), contrasts ("A vs B"), pain points ("別再X了"), or suspense ("隱藏的X") for compelling titles
 
 ## Composition Guidance
 

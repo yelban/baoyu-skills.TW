@@ -52,23 +52,23 @@ character_presets:
 
 | Value | 中文 | Description |
 |-------|------|-------------|
-| `ligne-claire` | 清线 | Uniform lines, flat colors, European comic tradition |
+| `ligne-claire` | 清線 | Uniform lines, flat colors, European comic tradition |
 | `manga` | 日漫 | Large eyes, manga conventions, expressive emotions |
-| `realistic` | 写实 | Digital painting, realistic proportions |
+| `realistic` | 寫實 | Digital painting, realistic proportions |
 | `ink-brush` | 水墨 | Chinese brush strokes, ink wash effects |
-| `chalk` | 粉笔 | Chalkboard aesthetic, hand-drawn warmth |
+| `chalk` | 粉筆 | Chalkboard aesthetic, hand-drawn warmth |
 
 ## Tone Options
 
 | Value | 中文 | Description |
 |-------|------|-------------|
 | `neutral` | 中性 | Balanced, rational, educational |
-| `warm` | 温馨 | Nostalgic, personal, comforting |
-| `dramatic` | 戏剧 | High contrast, intense, powerful |
+| `warm` | 溫馨 | Nostalgic, personal, comforting |
+| `dramatic` | 戲劇 | High contrast, intense, powerful |
 | `romantic` | 浪漫 | Soft, beautiful, decorative elements |
 | `energetic` | 活力 | Bright, dynamic, exciting |
-| `vintage` | 复古 | Historical, aged, period authenticity |
-| `action` | 动作 | Speed lines, impact effects, combat |
+| `vintage` | 復古 | Historical, aged, period authenticity |
+| `action` | 動作 | Speed lines, impact effects, combat |
 
 ## Position Options
 
@@ -126,14 +126,14 @@ character_presets:
     roles:
       learner: "小明"
       mentor: "教授"
-      challenge: "难题怪"
+      challenge: "難題怪"
       support: "小助手"
   - name: doraemon
     roles:
       learner: "大雄"
-      mentor: "哆啦A梦"
+      mentor: "哆啦A夢"
       challenge: "胖虎"
-      support: "静香"
+      support: "靜香"
 ---
 ```
 

@@ -69,7 +69,7 @@ Palette notes: [key characteristics from palette definition]
 
 When text level includes title:
 - Max 8 characters, punchy headline
-- Use engagement hooks: numbers ("3个陷阱"), questions ("Why X?"), contrasts ("A vs B"), pain points ("别再X了")
+- Use engagement hooks: numbers ("3個陷阱"), questions ("Why X?"), contrasts ("A vs B"), pain points ("別再X了")
 - Match confirmed language
 
 ## Watermark Application

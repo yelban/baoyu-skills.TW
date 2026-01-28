@@ -1,7 +1,7 @@
 import type { MarkedExtension } from 'marked'
 
 /**
- * marked 插件：支持 [TOC] 语法，自动生成嵌套目录
+ * marked 外掛：支援 [TOC] 語法，自動生成巢狀目錄
  */
 export function markedToc(): MarkedExtension {
   let headings: { text: string, depth: number, index: number }[] = []
@@ -26,7 +26,7 @@ export function markedToc(): MarkedExtension {
         name: `toc`,
         level: `block`,
         start(src) {
-          // 只匹配独立一行的 [TOC]，避免误伤
+          // 只匹配獨立一行的 [TOC]，避免誤傷
           const match = src.match(/^\s*\[TOC\]\s*$/m)
           return match ? match.index : undefined
         },
