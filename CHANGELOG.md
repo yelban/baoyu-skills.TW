@@ -2,6 +2,11 @@
 
 English | [中文](./CHANGELOG.zh.md)
 
+## 1.24.4 - 2026-01-28
+
+### Fixes
+- `baoyu-post-to-x`: fix Apply button click for cover image modal; add retry logic and wait for modal close.
+
 ## 1.24.3 - 2026-01-28
 
 ### Documentation
