@@ -352,7 +352,7 @@ Arguments:
   file                Markdown (.md) or HTML (.html) file
 
 Options:
-  --type <type>       Article type: news (文章, default) or newspic (图文)
+  --type <type>       Article type: news (文章, default) or newspic (圖文)
   --title <title>     Override title
   --author <name>     Author name (max 16 chars)
   --summary <text>    Article summary/digest (max 128 chars)
