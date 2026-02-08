@@ -55,7 +55,7 @@ function parseMarkdownFile(filePath: string): MarkdownMeta {
 function compressTitle(title: string, maxLen = 20): string {
   if (title.length <= maxLen) return title;
 
-  const prefixes = ['如何', '为什么', '什么是', '怎样', '怎么', '关于'];
+  const prefixes = ['如何', '為什麼', '什麼是', '怎樣', '怎麼', '關於'];
   let t = title;
   for (const p of prefixes) {
     if (t.startsWith(p) && t.length > maxLen) {
@@ -64,7 +64,7 @@ function compressTitle(title: string, maxLen = 20): string {
     }
   }
 
-  const fillers = ['的', '了', '在', '是', '和', '与', '以及', '或者', '或', '还是', '而且', '并且', '但是', '但', '因为', '所以', '如果', '那么', '虽然', '不过', '然而', '——', '…'];
+  const fillers = ['的', '了', '在', '是', '和', '與', '以及', '或者', '或', '還是', '而且', '並且', '但是', '但', '因為', '所以', '如果', '那麼', '雖然', '不過', '然而', '——', '…'];
   for (const f of fillers) {
     if (t.length <= maxLen) break;
     t = t.replace(new RegExp(f, 'g'), '');
@@ -397,7 +397,7 @@ export async function postToWeChat(options: WeChatBrowserOptions): Promise<void>
 
     await sleep(2000);
 
-    console.log('[wechat-browser] Looking for "图文" menu...');
+    console.log('[wechat-browser] Looking for "圖文" menu...');
     const menuResult = await cdp.send<{ result: { value: string } }>('Runtime.evaluate', {
       expression: `
         const menuItems = document.querySelectorAll('.new-creation__menu .new-creation__menu-item');
@@ -417,7 +417,7 @@ export async function postToWeChat(options: WeChatBrowserOptions): Promise<void>
     const initialIds = new Set(initialTargets.targetInfos.map(t => t.targetId));
     console.log(`[wechat-browser] Initial targets count: ${initialTargets.targetInfos.length}`);
 
-    console.log('[wechat-browser] Finding "图文" menu position...');
+    console.log('[wechat-browser] Finding "圖文" menu position...');
     const menuPos = await cdp.send<{ result: { value: string } }>('Runtime.evaluate', {
       expression: `
         (function() {
@@ -427,10 +427,10 @@ export async function postToWeChat(options: WeChatBrowserOptions): Promise<void>
             const title = item.querySelector('.new-creation__menu-title');
             const text = title?.textContent?.trim() || '';
             console.log('Menu item text:', text);
-            if (text === '图文') {
+            if (text === '圖文') {
               item.scrollIntoView({ block: 'center' });
               const rect = item.getBoundingClientRect();
-              console.log('Found 图文，rect:', JSON.stringify(rect));
+              console.log('Found 圖文，rect:', JSON.stringify(rect));
               return JSON.stringify({ x: rect.x + rect.width / 2, y: rect.y + rect.height / 2, width: rect.width, height: rect.height });
             }
           }
@@ -442,9 +442,9 @@ export async function postToWeChat(options: WeChatBrowserOptions): Promise<void>
     console.log(`[wechat-browser] Menu position: ${menuPos.result.value}`);
 
     const pos = menuPos.result.value !== 'null' ? JSON.parse(menuPos.result.value) : null;
-    if (!pos) throw new Error('图文 menu not found or not visible');
+    if (!pos) throw new Error('圖文 menu not found or not visible');
 
-    console.log('[wechat-browser] Clicking "图文" menu with mouse events...');
+    console.log('[wechat-browser] Clicking "圖文" menu with mouse events...');
     await cdp.send('Input.dispatchMouseEvent', {
       type: 'mousePressed',
       x: pos.x,
@@ -641,7 +641,7 @@ export async function postToWeChat(options: WeChatBrowserOptions): Promise<void>
 }
 
 function printUsage(): never {
-  console.log(`Post image-text (图文) to WeChat Official Account
+  console.log(`Post image-text (圖文) to WeChat Official Account
 
 Usage:
   npx -y bun wechat-browser.ts [options]
@@ -658,7 +658,7 @@ Options:
 
 Examples:
   npx -y bun wechat-browser.ts --markdown article.md --images ./photos/
-  npx -y bun wechat-browser.ts --title "测试" --content "内容" --image ./photo.png
+  npx -y bun wechat-browser.ts --title "測試" --content "內容" --image ./photo.png
   npx -y bun wechat-browser.ts --markdown article.md --images ./photos/ --submit
 `);
   process.exit(0);

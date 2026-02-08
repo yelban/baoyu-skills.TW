@@ -1,11 +1,11 @@
 {
-  "name": "baoyu-skills",
+  "name": "baoyu-skills-tw",
   "owner": {
-    "name": "Jim Liu (宝玉)",
+    "name": "Jim Liu (寶玉)",
     "email": "junminliu@gmail.com"
   },
   "metadata": {
-    "description": "Skills shared by Baoyu for improving daily work efficiency",
+    "description": "Skills shared by Baoyu (繁體中文版)",
     "version": "1.31.0"
   },
   "plugins": [
@@ -48,5 +48,9 @@
         "./skills/baoyu-markdown-to-html"
       ]
     }
-  ]
+  ],
+  "maintainer": {
+    "name": "yelban",
+    "note": "Traditional Chinese (Taiwan) fork"
+  }
 }
