@@ -1,8 +1,8 @@
-# Image-Text Posting (贴图发表, formerly 图文)
+# Image-Text Posting (貼圖發表, formerly 圖文)
 
 Post image-text messages with multiple images to WeChat Official Account.
 
-> **Note**: WeChat has renamed "图文" to "贴图" in the Official Account menu (as of 2026).
+> **Note**: WeChat has renamed "圖文" to "貼圖" in the Official Account menu (as of 2026).
 
 ## Usage
 
@@ -11,7 +11,7 @@ Post image-text messages with multiple images to WeChat Official Account.
 npx -y bun ./scripts/wechat-browser.ts --markdown source.md --images ./images/
 
 # Post with explicit title and content
-npx -y bun ./scripts/wechat-browser.ts --title "标题" --content "内容" --image img1.png --image img2.png
+npx -y bun ./scripts/wechat-browser.ts --title "標題" --content "內容" --image img1.png --image img2.png
 
 # Save as draft
 npx -y bun ./scripts/wechat-browser.ts --markdown source.md --images ./images/ --submit
@@ -36,19 +36,19 @@ When using `--markdown`, the script:
 1. **Parses frontmatter** for title and author:
    ```yaml
    ---
-   title: 文章标题
+   title: 文章標題
    author: 作者名
    ---
    ```
 
 2. **Falls back to H1** if no frontmatter title:
    ```markdown
-   # 这将成为标题
+   # 這將成為標題
    ```
 
 3. **Compresses title** to 20 characters if too long:
-   - Original: "如何在一天内彻底重塑你的人生"
-   - Compressed: "一天彻底重塑你的人生"
+   - Original: "如何在一天內徹底重塑你的人生"
+   - Compressed: "一天徹底重塑你的人生"
 
 4. **Extracts first paragraphs** as content (max 1000 chars)
 
@@ -75,11 +75,11 @@ User: /post-to-wechat --markdown ./article.md --images ./xhs-images/
 
 Claude:
 1. Parses markdown meta:
-   - Title: "如何在一天内彻底重塑你的人生" → "一天内重塑你的人生"
+   - Title: "如何在一天內徹底重塑你的人生" → "一天內重塑你的人生"
    - Author: from frontmatter or default
 2. Extracts content from first paragraphs
 3. Finds 7 images in xhs-images/
-4. Opens Chrome, navigates to WeChat "图文" editor
+4. Opens Chrome, navigates to WeChat "圖文" editor
 5. Uploads all images
 6. Fills title and content
 7. Reports: "Image-text posted with 7 images."

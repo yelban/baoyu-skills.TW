@@ -5,7 +5,7 @@ description: AI image generation with OpenAI, Google and DashScope APIs. Support
 
 # Image Generation (AI SDK)
 
-Official API-based image generation. Supports OpenAI, Google and DashScope (阿里通义万象) providers.
+Official API-based image generation. Supports OpenAI, Google and DashScope (阿里通義永珍) providers.
 
 ## Script Directory
 
@@ -69,8 +69,8 @@ npx -y bun ${SKILL_DIR}/scripts/main.ts --prompt "Make blue" --image out.png --p
 # Specific provider
 npx -y bun ${SKILL_DIR}/scripts/main.ts --prompt "A cat" --image out.png --provider openai
 
-# DashScope (阿里通义万象)
-npx -y bun ${SKILL_DIR}/scripts/main.ts --prompt "一只可爱的猫" --image out.png --provider dashscope
+# DashScope (阿里通義永珍)
+npx -y bun ${SKILL_DIR}/scripts/main.ts --prompt "一隻可愛的貓" --image out.png --provider dashscope
 ```
 
 ## Options
@@ -96,7 +96,7 @@ npx -y bun ${SKILL_DIR}/scripts/main.ts --prompt "一只可爱的猫" --image ou
 |----------|-------------|
 | `OPENAI_API_KEY` | OpenAI API key |
 | `GOOGLE_API_KEY` | Google API key |
-| `DASHSCOPE_API_KEY` | DashScope API key (阿里云) |
+| `DASHSCOPE_API_KEY` | DashScope API key (阿里雲) |
 | `OPENAI_IMAGE_MODEL` | OpenAI model override |
 | `GOOGLE_IMAGE_MODEL` | Google model override |
 | `DASHSCOPE_IMAGE_MODEL` | DashScope model override (default: z-image-turbo) |

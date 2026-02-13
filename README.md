@@ -1,4 +1,11 @@
-# baoyu-skills
+# baoyu-skills-tw
+
+> **📌 This is the Traditional Chinese (Taiwan) localized fork**
+>
+> Upstream: [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) | Maintainer: [@yelban](https://github.com/yelban)
+>
+> All content has been converted to Traditional Chinese (Taiwan) using OpenCC s2twp.
+
 
 English | [中文](./README.zh.md)
 
@@ -14,7 +21,7 @@ Skills shared by Baoyu for improving daily work efficiency with Claude Code.
 ### Quick Install (Recommended)
 
 ```bash
-npx skills add jimliu/baoyu-skills
+npx skills add yelban/baoyu-skills.TW
 ```
 
 ### Register as Plugin Marketplace
@@ -22,7 +29,7 @@ npx skills add jimliu/baoyu-skills
 Run the following command in Claude Code:
 
 ```bash
-/plugin marketplace add jimliu/baoyu-skills
+/plugin marketplace add yelban/baoyu-skills.TW
 ```
 
 ### Install Skills
@@ -30,7 +37,7 @@ Run the following command in Claude Code:
 **Option 1: Via Browse UI**
 
 1. Select **Browse and install plugins**
-2. Select **baoyu-skills**
+2. Select **baoyu-skills-tw**
 3. Select the plugin(s) you want to install
 4. Select **Install now**
 
@@ -38,16 +45,16 @@ Run the following command in Claude Code:
 
 ```bash
 # Install specific plugin
-/plugin install content-skills@baoyu-skills
-/plugin install ai-generation-skills@baoyu-skills
-/plugin install utility-skills@baoyu-skills
+/plugin install content-skills@baoyu-skills-tw
+/plugin install ai-generation-skills@baoyu-skills-tw
+/plugin install utility-skills@baoyu-skills-tw
 ```
 
 **Option 3: Ask the Agent**
 
 Simply tell Claude Code:
 
-> Please install Skills from github.com/JimLiu/baoyu-skills
+> Please install Skills from github.com/yelban/baoyu-skills.TW
 
 ### Available Plugins
 
@@ -63,7 +70,7 @@ To update skills to the latest version:
 
 1. Run `/plugin` in Claude Code
 2. Switch to **Marketplaces** tab (use arrow keys or Tab)
-3. Select **baoyu-skills**
+3. Select **baoyu-skills-tw**
 4. Choose **Update marketplace**
 
 You can also **Enable auto-update** to get the latest versions automatically.
@@ -96,7 +103,7 @@ Xiaohongshu (RedNote) infographic series generator. Breaks down content into 1-1
 /baoyu-xhs-images posts/ai-future/article.md --style tech --layout list
 
 # Direct content input
-/baoyu-xhs-images 今日星座运势
+/baoyu-xhs-images 今日星座運勢
 ```
 
 **Styles** (visual aesthetics): `cute` (default), `fresh`, `warm`, `bold`, `minimal`, `retro`, `pop`, `notion`, `chalkboard`
@@ -517,14 +524,14 @@ Post content and articles to X (Twitter). Supports regular posts with images and
 
 #### baoyu-post-to-wechat
 
-Post content to WeChat Official Account (微信公众号). Two modes available:
+Post content to WeChat Official Account (微信公眾號). Two modes available:
 
-**Image-Text (贴图)** - Multiple images with short title/content:
+**Image-Text (貼圖)** - Multiple images with short title/content:
 
 ```bash
-/baoyu-post-to-wechat 贴图 --markdown article.md --images ./photos/
-/baoyu-post-to-wechat 贴图 --markdown article.md --image img1.png --image img2.png --image img3.png
-/baoyu-post-to-wechat 贴图 --title "标题" --content "内容" --image img1.png --submit
+/baoyu-post-to-wechat 貼圖 --markdown article.md --images ./photos/
+/baoyu-post-to-wechat 貼圖 --markdown article.md --image img1.png --image img2.png --image img3.png
+/baoyu-post-to-wechat 貼圖 --title "標題" --content "內容" --image img1.png --submit
 ```
 
 **Article (文章)** - Full markdown/HTML with rich formatting:
@@ -545,14 +552,14 @@ Post content to WeChat Official Account (微信公众号). Two modes available:
 **API Configuration** (for faster publishing):
 
 ```bash
-# Add to .baoyu-skills/.env (project-level) or ~/.baoyu-skills/.env (user-level)
+# Add to .baoyu-skills-tw/.env (project-level) or ~/.baoyu-skills-tw/.env (user-level)
 WECHAT_APP_ID=your_app_id
 WECHAT_APP_SECRET=your_app_secret
 ```
 
 To obtain credentials:
 1. Visit https://developers.weixin.qq.com/platform/
-2. Go to: 我的业务 → 公众号 → 开发密钥
+2. Go to: 我的業務 → 公眾號 → 開發金鑰
 3. Create development key and copy AppID/AppSecret
 4. Add your machine's IP to the whitelist
 
@@ -580,7 +587,7 @@ AI SDK-based image generation using official OpenAI, Google and DashScope (Aliyu
 /baoyu-image-gen --prompt "A cat" --image cat.png --provider openai
 
 # DashScope (Aliyun Tongyi Wanxiang)
-/baoyu-image-gen --prompt "一只可爱的猫" --image cat.png --provider dashscope
+/baoyu-image-gen --prompt "一隻可愛的貓" --image cat.png --provider dashscope
 
 # With reference images (Google multimodal only)
 /baoyu-image-gen --prompt "Make it blue" --image out.png --ref source.png
@@ -746,8 +753,8 @@ Some skills require API keys or custom configuration. Environment variables can 
 **Load Priority** (higher priority overrides lower):
 1. CLI environment variables (e.g., `OPENAI_API_KEY=xxx /baoyu-image-gen ...`)
 2. `process.env` (system environment)
-3. `<cwd>/.baoyu-skills/.env` (project-level)
-4. `~/.baoyu-skills/.env` (user-level)
+3. `<cwd>/.baoyu-skills-tw/.env` (project-level)
+4. `~/.baoyu-skills-tw/.env` (user-level)
 
 **Setup**:
 
@@ -756,7 +763,7 @@ Some skills require API keys or custom configuration. Environment variables can 
 mkdir -p ~/.baoyu-skills
 
 # Create .env file
-cat > ~/.baoyu-skills/.env << 'EOF'
+cat > ~/.baoyu-skills-tw/.env << 'EOF'
 # OpenAI
 OPENAI_API_KEY=sk-xxx
 OPENAI_IMAGE_MODEL=gpt-image-1.5
@@ -778,8 +785,8 @@ EOF
 
 ```bash
 mkdir -p .baoyu-skills
-# Add .baoyu-skills/.env to .gitignore to avoid committing secrets
-echo ".baoyu-skills/.env" >> .gitignore
+# Add .baoyu-skills-tw/.env to .gitignore to avoid committing secrets
+echo ".baoyu-skills-tw/.env" >> .gitignore
 ```
 
 ## Customization
@@ -787,16 +794,16 @@ echo ".baoyu-skills/.env" >> .gitignore
 All skills support customization via `EXTEND.md` files. Create an extension file to override default styles, add custom configurations, or define your own presets.
 
 **Extension paths** (checked in priority order):
-1. `.baoyu-skills/<skill-name>/EXTEND.md` - Project-level (for team/project-specific settings)
-2. `~/.baoyu-skills/<skill-name>/EXTEND.md` - User-level (for personal preferences)
+1. `.baoyu-skills-tw/<skill-name>/EXTEND.md` - Project-level (for team/project-specific settings)
+2. `~/.baoyu-skills-tw/<skill-name>/EXTEND.md` - User-level (for personal preferences)
 
 **Example**: To customize `baoyu-cover-image` with your brand colors:
 
 ```bash
-mkdir -p .baoyu-skills/baoyu-cover-image
+mkdir -p .baoyu-skills-tw/baoyu-cover-image
 ```
 
-Then create `.baoyu-skills/baoyu-cover-image/EXTEND.md`:
+Then create `.baoyu-skills-tw/baoyu-cover-image/EXTEND.md`:
 
 ```markdown
 ## Custom Palettes

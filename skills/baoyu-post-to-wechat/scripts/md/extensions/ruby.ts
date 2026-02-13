@@ -1,19 +1,19 @@
 import type { MarkedExtension } from 'marked'
 
 /**
- * 注音/拼音标注扩展
+ * 注音/拼音標註擴充套件
  * https://talk.commonmark.org/t/proper-ruby-text-rb-syntax-support-in-markdown/2279
  * https://www.w3.org/TR/ruby/
  *
- * 支持的格式：
+ * 支援的格式：
  * 1. [文字]{注音}
  * 2. [文字]^(注音)
  *
  * 分隔符：
- * - `・` (中点)
- * - `．` (全角句点)
- * - `。` (中文句号)
- * - `-` (英文减号)
+ * - `・` (中點)
+ * - `．` (全形句點)
+ * - `。` (中文句號)
+ * - `-` (英文減號)
  */
 export function markedRuby(): MarkedExtension {
   return {
@@ -22,7 +22,7 @@ export function markedRuby(): MarkedExtension {
         name: `ruby`,
         level: `inline`,
         start(src: string) {
-          // 匹配以 [ 开头的格式
+          // 匹配以 [ 開頭的格式
           return src.match(/\[/)?.index
         },
         tokenizer(src: string) {
@@ -57,7 +57,7 @@ export function markedRuby(): MarkedExtension {
         renderer(token: any) {
           const { text, ruby, format } = token
 
-          // 检查是否有分隔符
+          // 檢查是否有分隔符
           const separatorRegex = /[・．。-]/g
           const hasSeparators = separatorRegex.test(ruby)
 
@@ -69,8 +69,8 @@ export function markedRuby(): MarkedExtension {
             const result = []
 
             if (textChars.length >= rubyParts.length) {
-              // 文字字符数量 >= 注音部分数量
-              // 按注音部分数量分割文字
+              // 文字字元數量 >= 注音部分數量
+              // 按注音部分數量分割文字
               let currentIndex = 0
 
               for (let i = 0; i < rubyParts.length; i++) {
@@ -78,14 +78,14 @@ export function markedRuby(): MarkedExtension {
                 const remainingChars = textChars.length - currentIndex
                 const remainingParts = rubyParts.length - i
 
-                // 计算当前部分应该包含多少个字符，默认为 1
+                // 計算當前部分應該包含多少個字元，預設為 1
                 let charCount = 1
                 if (remainingParts === 1) {
-                  // 最后一个部分，包含所有剩余字符
+                  // 最後一個部分，包含所有剩餘字元
                   charCount = remainingChars
                 }
 
-                // 提取当前部分的文字
+                // 提取當前部分的文字
                 const currentText = textChars.slice(currentIndex, currentIndex + charCount).join(``)
 
                 result.push(`<ruby data-text="${currentText}" data-ruby="${rubyPart}" data-format="${format}">${currentText}<rp>(</rp><rt>${rubyPart}</rt><rp>)</rp></ruby>`)
@@ -93,14 +93,14 @@ export function markedRuby(): MarkedExtension {
                 currentIndex += charCount
               }
 
-              // 处理剩余的字符
+              // 處理剩餘的字元
               if (currentIndex < textChars.length) {
                 result.push(textChars.slice(currentIndex).join(``))
               }
             }
             else {
-              // 文字字符数量 < 注音部分数量
-              // 每个字符对应一个注音部分，多余的注音被忽略
+              // 文字字元數量 < 注音部分數量
+              // 每個字元對應一個注音部分，多餘的注音被忽略
               for (let i = 0; i < textChars.length; i++) {
                 const char = textChars[i]
                 const rubyPart = rubyParts[i] || ``

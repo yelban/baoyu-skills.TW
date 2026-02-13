@@ -1,6 +1,6 @@
 ---
 name: baoyu-post-to-wechat
-description: Posts content to WeChat Official Account (微信公众号) via API or Chrome CDP. Supports article posting (文章) with HTML, markdown, or plain text input, and image-text posting (贴图, formerly 图文) with multiple images. Use when user mentions "发布公众号", "post to wechat", "微信公众号", or "贴图/图文/文章".
+description: Posts content to WeChat Official Account (微信公眾號) via API or Chrome CDP. Supports article posting (文章) with HTML, markdown, or plain text input, and image-text posting (貼圖, formerly 圖文) with multiple images. Use when user mentions "釋出公眾號", "post to wechat", "微信公眾號", or "貼圖/圖文/文章".
 ---
 
 # Post to WeChat Official Account
@@ -15,7 +15,7 @@ description: Posts content to WeChat Official Account (微信公众号) via API 
 
 | Script | Purpose |
 |--------|---------|
-| `scripts/wechat-browser.ts` | Image-text posts (图文) |
+| `scripts/wechat-browser.ts` | Image-text posts (圖文) |
 | `scripts/wechat-article.ts` | Article posting via browser (文章) |
 | `scripts/wechat-api.ts` | Article posting via API (文章) |
 
@@ -64,7 +64,7 @@ First-time setup: [references/config/first-time-setup.md](references/config/firs
 ```md
 default_theme: default
 default_publish_method: api
-default_author: 宝玉
+default_author: 寶玉
 need_open_comment: 1
 only_fans_can_comment: 0
 chrome_profile_path: /path/to/chrome/profile
@@ -76,13 +76,13 @@ chrome_profile_path: /path/to/chrome/profile
 3. EXTEND.md
 4. Skill defaults
 
-## Image-Text Posting (图文)
+## Image-Text Posting (圖文)
 
 For short posts with multiple images (up to 9):
 
 ```bash
 npx -y bun ${SKILL_DIR}/scripts/wechat-browser.ts --markdown article.md --images ./images/
-npx -y bun ${SKILL_DIR}/scripts/wechat-browser.ts --title "标题" --content "内容" --image img.png --submit
+npx -y bun ${SKILL_DIR}/scripts/wechat-browser.ts --title "標題" --content "內容" --image img.png --submit
 ```
 
 See [references/image-text-posting.md](references/image-text-posting.md) for details.
@@ -136,7 +136,7 @@ mkdir -p "$(pwd)/post-to-wechat/$(date +%Y-%m-%d)"
 
 **Slug Examples**:
 - "Understanding AI Models" → `understanding-ai-models`
-- "人工智能的未来" → `ai-future` (translate to English for slug)
+- "人工智慧的未來" → `ai-future` (translate to English for slug)
 
 ### Step 2: Check Markdown-to-HTML Skill
 
@@ -176,9 +176,9 @@ B) Continue - provide HTML file manually
 
 | Theme | Description |
 |-------|-------------|
-| `default` | 经典主题 - 传统排版，标题居中带底边，二级标题白字彩底 |
-| `grace` | 优雅主题 - 文字阴影，圆角卡片，精致引用块 |
-| `simple` | 简洁主题 - 现代极简风，不对称圆角，清爽留白 |
+| `default` | 經典主題 - 傳統排版，標題居中帶底邊，二級標題白字彩底 |
+| `grace` | 優雅主題 - 文字陰影，圓角卡片，精緻引用塊 |
+| `simple` | 簡潔主題 - 現代極簡風，不對稱圓角，清爽留白 |
 
 2. **Execute conversion** (using the discovered skill):
 
@@ -235,7 +235,7 @@ WeChat API credentials not found.
 
 To obtain credentials:
 1. Visit https://mp.weixin.qq.com
-2. Go to: 开发 → 基本配置
+2. Go to: 開發 → 基本配置
 3. Copy AppID and AppSecret
 
 Where to save?
@@ -297,7 +297,7 @@ Result:
 • media_id: [media_id]
 
 Next Steps:
-→ Manage drafts: https://mp.weixin.qq.com (登录后进入「内容管理」→「草稿箱」)
+→ Manage drafts: https://mp.weixin.qq.com (登入後進入「內容管理」→「草稿箱」)
 
 Files created:
 [• post-to-wechat/yyyy-MM-dd/slug.md (if plain text)]
