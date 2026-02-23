@@ -271,9 +271,9 @@ Create storyboard and character definitions using the confirmed style from Step 
 | Role | Character | Visual Description |
 |------|-----------|-------------------|
 | Student | 大雄 (Nobita) | Japanese boy, 10yo, round glasses, black hair parted in middle, yellow shirt, navy shorts |
-| Mentor | 哆啦A梦 (Doraemon) | Round blue robot cat, big white eyes, red nose, whiskers, white belly with 4D pocket, golden bell, no ears |
+| Mentor | 哆啦A夢 (Doraemon) | Round blue robot cat, big white eyes, red nose, whiskers, white belly with 4D pocket, golden bell, no ears |
 | Challenge | 胖虎 (Gian) | Stocky boy, rough features, small eyes, orange shirt |
-| Support | 静香 (Shizuka) | Cute girl, black short hair, pink dress, gentle expression |
+| Support | 靜香 (Shizuka) | Cute girl, black short hair, pink dress, gentle expression |
 
 These are the canonical ohmsha-style characters. Do NOT create custom characters for ohmsha unless explicitly requested.
 
@@ -448,7 +448,7 @@ When skill does NOT support reference images, create combined prompt files:
 ## Character Reference (maintain consistency)
 [Copy relevant sections from characters/characters.md here]
 - 大雄: Japanese boy, round glasses, yellow shirt, navy shorts...
-- 哆啦A梦: Round blue robot cat, white belly, red nose, golden bell...
+- 哆啦A夢: Round blue robot cat, white belly, red nose, golden bell...
 
 ## Page Content
 [Original page prompt here]

@@ -129,8 +129,8 @@ async function postToWeChat(options: WeChatOptions): Promise<void> {
   let snapshot = ab('snapshot');
   console.log(snapshot);
 
-  console.log('[wechat] Looking for "图文" menu...');
-  const tuWenRef = findElementByText(snapshot, '图文');
+  console.log('[wechat] Looking for "圖文" menu...');
+  const tuWenRef = findElementByText(snapshot, '圖文');
 
   if (!tuWenRef) {
     console.log('[wechat] Using eval to find and click menu...');
@@ -209,7 +209,7 @@ async function postToWeChat(options: WeChatOptions): Promise<void> {
 
   console.log('[wechat] Filling title...');
   snapshot = ab('snapshot -i');
-  const titleRef = findElementByText(snapshot, 'title') || findElementByText(snapshot, '标题');
+  const titleRef = findElementByText(snapshot, 'title') || findElementByText(snapshot, '標題');
 
   if (titleRef) {
     ab(`fill ${titleRef} "${title.replace(/"/g, '\\"')}"`);
@@ -247,7 +247,7 @@ async function postToWeChat(options: WeChatOptions): Promise<void> {
 
   if (submit) {
     console.log('[wechat] Saving as draft...');
-    const submitRef = findElementByText(snapshot, 'js_submit') || findElementByText(snapshot, '保存');
+    const submitRef = findElementByText(snapshot, 'js_submit') || findElementByText(snapshot, '儲存');
     if (submitRef) {
       ab(`click ${submitRef}`);
     } else {
@@ -282,8 +282,8 @@ Options:
   --help           Show this help
 
 Examples:
-  npx -y bun wechat-agent-browser.ts --title "测试" --content "内容" --image ./photo.png
-  npx -y bun wechat-agent-browser.ts --title "测试" --content "内容" --image a.png --image b.png --submit
+  npx -y bun wechat-agent-browser.ts --title "測試" --content "內容" --image ./photo.png
+  npx -y bun wechat-agent-browser.ts --title "測試" --content "內容" --image a.png --image b.png --submit
 `);
   process.exit(0);
 }

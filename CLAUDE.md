@@ -94,7 +94,7 @@ npx -y bun skills/baoyu-danger-gemini-web/scripts/main.ts --promptfiles system.m
 
 ## Release Process
 
-**IMPORTANT**: When user requests release/发布/push, ALWAYS use `/release-skills` workflow.
+**IMPORTANT**: When user requests release/釋出/push, ALWAYS use `/release-skills` workflow.
 
 **Never skip**:
 1. `CHANGELOG.md` + `CHANGELOG.zh.md` - Both must be updated
@@ -155,7 +155,7 @@ npx -y bun skills/baoyu-danger-gemini-web/scripts/main.ts --promptfiles system.m
 
 ```yaml
 # Good
-description: Generates Xiaohongshu infographic series from content. Use when user asks for "小红书图片", "XHS images", or "RedNote infographics".
+description: Generates Xiaohongshu infographic series from content. Use when user asks for "小紅書圖片", "XHS images", or "RedNote infographics".
 
 # Bad
 description: I can help you create Xiaohongshu images

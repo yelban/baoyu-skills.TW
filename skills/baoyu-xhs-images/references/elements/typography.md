@@ -17,7 +17,7 @@ Stylized text treatments for emphasis and visual appeal.
 | bubble | Rounded, inflated letterforms | Cute, playful content |
 | brush | Brush stroke texture | Artistic, dynamic |
 
-## Tags & Labels (标签)
+## Tags & Labels (標籤)
 
 Structured text containers.
 

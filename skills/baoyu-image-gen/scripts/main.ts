@@ -29,7 +29,7 @@ Environment variables:
   OPENAI_API_KEY            OpenAI API key
   GOOGLE_API_KEY            Google API key
   GEMINI_API_KEY            Gemini API key (alias for GOOGLE_API_KEY)
-  DASHSCOPE_API_KEY         DashScope API key (阿里云通义万象)
+  DASHSCOPE_API_KEY         DashScope API key (阿里雲通義永珍)
   OPENAI_IMAGE_MODEL        Default OpenAI model (gpt-image-1.5)
   GOOGLE_IMAGE_MODEL        Default Google model (gemini-3-pro-image-preview)
   DASHSCOPE_IMAGE_MODEL     Default DashScope model (z-image-turbo)

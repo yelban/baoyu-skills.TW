@@ -159,3 +159,6 @@ comic/
 *.ipr
 
 .claude/skills/baoyu-skill-evolution
+
+# Backup files (local only)
+backups/

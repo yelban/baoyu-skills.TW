@@ -34,7 +34,7 @@ description: Watermark configuration guide for baoyu-xhs-images
 |--------|---------|-------|
 | Handle | `@username` | Most common for XHS |
 | Text | `MyBrand` | Simple branding |
-| Chinese | `小红书:用户名` | Platform specific |
+| Chinese | `小紅書:使用者名稱` | Platform specific |
 | URL | `myblog.com` | Cross-platform |
 
 ## Best Practices

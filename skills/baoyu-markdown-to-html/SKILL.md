@@ -1,6 +1,6 @@
 ---
 name: baoyu-markdown-to-html
-description: Converts Markdown to styled HTML with WeChat-compatible themes. Supports code highlighting, math, PlantUML, footnotes, alerts, and infographics. Use when user asks for "markdown to html", "convert md to html", "md转html", or needs styled HTML output from markdown.
+description: Converts Markdown to styled HTML with WeChat-compatible themes. Supports code highlighting, math, PlantUML, footnotes, alerts, and infographics. Use when user asks for "markdown to html", "convert md to html", "md轉html", or needs styled HTML output from markdown.
 ---
 
 # Markdown to HTML Converter
@@ -74,9 +74,9 @@ Before converting, use AskUserQuestion to confirm the theme (unless user already
 
 | Theme | Description |
 |-------|-------------|
-| `default` (Recommended) | 经典主题 - 传统排版，标题居中带底边，二级标题白字彩底 |
-| `grace` | 优雅主题 - 文字阴影，圆角卡片，精致引用块 |
-| `simple` | 简洁主题 - 现代极简风，不对称圆角，清爽留白 |
+| `default` (Recommended) | 經典主題 - 傳統排版，標題居中帶底邊，二級標題白字彩底 |
+| `grace` | 優雅主題 - 文字陰影，圓角卡片，精緻引用塊 |
+| `simple` | 簡潔主題 - 現代極簡風，不對稱圓角，清爽留白 |
 
 ### Step 2: Convert
 
@@ -151,9 +151,9 @@ npx -y bun ${SKILL_DIR}/scripts/main.ts article.md --title "My Article"
 
 | Theme | Description |
 |-------|-------------|
-| `default` | 经典主题 - 传统排版，标题居中带底边，二级标题白字彩底 |
-| `grace` | 优雅主题 - 文字阴影，圆角卡片，精致引用块 (by @brzhang) |
-| `simple` | 简洁主题 - 现代极简风，不对称圆角，清爽留白 (by @okooo5km) |
+| `default` | 經典主題 - 傳統排版，標題居中帶底邊，二級標題白字彩底 |
+| `grace` | 優雅主題 - 文字陰影，圓角卡片，精緻引用塊 (by @brzhang) |
+| `simple` | 簡潔主題 - 現代極簡風，不對稱圓角，清爽留白 (by @okooo5km) |
 
 ## Supported Markdown Features
 

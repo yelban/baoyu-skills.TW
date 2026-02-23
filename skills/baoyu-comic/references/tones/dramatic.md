@@ -1,6 +1,6 @@
 # dramatic
 
-戏剧基调 - High contrast, intense, powerful moments
+戲劇基調 - High contrast, intense, powerful moments
 
 ## Overview
 
