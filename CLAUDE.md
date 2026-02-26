@@ -102,6 +102,34 @@ npx -y bun skills/baoyu-danger-gemini-web/scripts/main.ts --promptfiles system.m
 3. `README.md` + `README.zh.md` if applicable
 4. All files committed together before tag
 
+## Fork Maintenance (baoyu-skills.TW)
+
+This is a fork of upstream [baoyu-skills](https://github.com/iBaoYu/baoyu-skills) with Traditional Chinese (Taiwan) localization.
+
+### After Pulling Upstream Changes
+
+1. **Re-apply Traditional Chinese localization** to any SKILL.md files that were updated upstream:
+   - Replace Simplified Chinese UI text with Traditional Chinese equivalents
+   - Update trigger keywords to Taiwan conventions (e.g. 資料 not 數據)
+
+2. **Reinstall npm dependencies** for skills that vendor their own `node_modules`:
+
+   ```bash
+   # baoyu-markdown-to-html bundles its own render engine
+   cd skills/baoyu-markdown-to-html/scripts/md && npm install
+   ```
+
+   > **Why**: `baoyu-markdown-to-html/scripts/md/` contains its own `package.json` but no `node_modules`.
+   > Bun's auto-install resolves dependencies from cache, which can fail on sub-path exports like
+   > `unist-util-visit-parents/do-not-use-color`. Running `npm install` here ensures a local
+   > `node_modules` that Bun can fall back to.
+
+3. **Reinstall skills globally** so Claude Code picks up the latest SKILL.md:
+
+   ```bash
+   npx skills install --all -g
+   ```
+
 ## Adding New Skills
 
 **IMPORTANT**: All skills MUST use `baoyu-` prefix to avoid conflicts when users import this plugin.
