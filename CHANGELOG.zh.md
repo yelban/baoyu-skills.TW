@@ -2,20 +2,27 @@
 
 [English](./CHANGELOG.md) | 中文
 
+## 1.35.0-tw - 2026-02-26
+
+### 繁體中文版同步說明
+- 同步上游 v1.34.2 及 v1.35.0 更新
+- 修正 `通義萬象` 的繁體轉換（原誤轉為「永珍」）
+- 新增 `baoyu-infographic` 關鍵詞快捷鍵的繁體/簡體雙語支援
+
 ## 1.35.0 - 2026-02-24
 
 ### 新功能
-- `baoyu-image-gen`：新增 Replicate 图片生成服务，支持自定义模型配置 (by @justnode)
-- `baoyu-infographic`：新增 `dense-modules` 高密度模块布局及 3 种新风格（`morandi-journal`、`pop-laboratory`、`retro-pop-grid`），支持关键词快捷选择。高密度信息大图提示词来自 [AJ](https://waytoagi.feishu.cn/wiki/YG0zwalijihRREkgmPzcWRInnUg)
+- `baoyu-image-gen`：新增 Replicate 圖片生成服務，支援自訂模型配置 (by @justnode)
+- `baoyu-infographic`：新增 `dense-modules` 高密度模組版型及 3 種新樣式（`morandi-journal`、`pop-laboratory`、`retro-pop-grid`），支援關鍵詞快捷選擇。高密度資訊大圖提示詞來自 [AJ](https://waytoagi.feishu.cn/wiki/YG0zwalijihRREkgmPzcWRInnUg)
 
-### 文档
-- `baoyu-image-gen`：补充 Replicate 模型配置说明文档
+### 文件
+- `baoyu-image-gen`：補充 Replicate 模型配置說明文件
 
 ## 1.34.2 - 2026-02-25
 
-### 文档
-- `baoyu-markdown-to-html`：明确主题解析优先级，先读取本技能与跨技能 EXTEND.md 的 `default_theme`，仅在未命中时询问用户。
-- `baoyu-post-to-wechat`：统一 markdown 转 HTML 的主题解析回退链（CLI `--theme` -> EXTEND.md `default_theme` -> `default`），并强制始终显式传入 `--theme` 参数。
+### 文件
+- `baoyu-markdown-to-html`：明確主題解析優先順序，先讀取本技能與跨技能 EXTEND.md 的 `default_theme`，僅在未命中時詢問使用者。
+- `baoyu-post-to-wechat`：統一 markdown 轉 HTML 的主題解析回退鏈（CLI `--theme` -> EXTEND.md `default_theme` -> `default`），並強制始終顯式傳入 `--theme` 參數。
 
 ## 1.34.1 - 2026-02-20
 

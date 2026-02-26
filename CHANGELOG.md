@@ -2,6 +2,13 @@
 
 English | [中文](./CHANGELOG.zh.md)
 
+## 1.35.0-tw - 2026-02-26
+
+### Traditional Chinese Fork Sync
+- Synced upstream v1.34.2 and v1.35.0
+- Fixed TW rendering of product name: 通義萬象 (was mistakenly rendered as 永珍)
+- Added bilingual (TW/CN) keyword support for baoyu-infographic shortcuts
+
 ## 1.35.0 - 2026-02-24
 
 ### Features
