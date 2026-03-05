@@ -2,12 +2,127 @@
 
 [English](./CHANGELOG.md) | 中文
 
+## 1.45.0-tw - 2026-03-05
+
+### 繁體中文版同步說明
+- 同步上游 v1.36.0 至 v1.45.0 更新
+- 所有新增 SKILL.md 內容轉換為繁體中文（台灣）
+- 新增 `modern` 主題的繁體中文描述
+
 ## 1.35.0-tw - 2026-02-26
 
 ### 繁體中文版同步說明
 - 同步上游 v1.34.2 及 v1.35.0 更新
 - 修正 `通義萬象` 的繁體轉換（原誤轉為「永珍」）
 - 新增 `baoyu-infographic` 關鍵詞快捷鍵的繁體/簡體雙語支援
+
+## 1.45.0 - 2026-03-05
+
+### 新功能
+- `baoyu-post-to-x`：X 文章發布後自動驗證——檢查殘留佔位符和圖片數量是否正確
+- `baoyu-post-to-x`：增加 CDP 逾時至 60 秒，圖片插入間隔增加 3 秒 DOM 穩定等待，改善長文章發布穩定性
+
+## 1.44.0 - 2026-03-05
+
+### 新功能
+- `baoyu-url-to-markdown`：新增 `--download-media` 參數，支援下載圖片和影片到本機目錄，並將 Markdown 中的連結改寫為本機路徑
+- `baoyu-url-to-markdown`：從頁面 meta 資訊（og:image）擷取封面圖，寫入 YAML front matter 的 `coverImage` 欄位
+- `baoyu-url-to-markdown`：支援 `data-src` 延遲載入圖片擷取（相容微信公眾號等站點）
+- `baoyu-url-to-markdown`：新增 EXTEND.md 偏好設定，支援首次使用引導配置媒體下載行為
+
+## 1.43.2 - 2026-03-05
+
+### 重構
+- `baoyu-url-to-markdown`：使用 defuddle 函式庫替換自訂 HTML 擷取邏輯（linkedom + Readability + Turndown），簡化內容擷取和 Markdown 轉換
+
+## 1.43.1 - 2026-03-02
+
+### 新功能
+- `baoyu-post-to-x`：自動偵測 WSL 環境，將 Chrome profile 路徑解析為 Windows 本機路徑，解決登入狀態遺失問題
+- `baoyu-post-to-wechat`：自動偵測 WSL 環境，將 Chrome profile 路徑解析為 Windows 本機路徑，解決登入狀態遺失問題
+- `baoyu-danger-gemini-web`：WSL 自動偵測 Chrome profile 路徑；新增 `GEMINI_WEB_DEBUG_PORT` 環境變數支援固定偵錯連接埠
+- `baoyu-danger-x-to-markdown`：WSL 自動偵測 Chrome profile 路徑；新增 `X_DEBUG_PORT` 環境變數支援固定偵錯連接埠
+
+## 1.43.0 - 2026-03-02
+
+### 新功能
+- `baoyu-post-to-wechat`：支援透過環境變數覆蓋瀏覽器偵錯連接埠（`WECHAT_BROWSER_DEBUG_PORT`）和設定目錄（`WECHAT_BROWSER_PROFILE_DIR`）
+- `baoyu-post-to-x`：支援透過環境變數覆蓋瀏覽器偵錯連接埠（`X_BROWSER_DEBUG_PORT`）和設定目錄（`X_BROWSER_PROFILE_DIR`）
+
+## 1.42.3 - 2026-03-02
+
+### 修復
+- `baoyu-image-gen`：DashScope 寬高比映射改用標準預設尺寸匹配，避免自由計算產生無效解析度
+
+## 1.42.2 - 2026-03-01
+
+### 新功能
+- `baoyu-markdown-to-html`：內嵌渲染管線（移除子行程），修復 CJK 強調符號處理順序，增強 modern 主題（GFM 警告區塊、排版改進）
+- `baoyu-post-to-wechat`：內建 Markdown 轉換模組化渲染器，新增顏色支援，簡化發布流程
+
+## 1.42.1 - 2026-02-28
+
+### 新功能
+- `baoyu-markdown-to-html`：將 render.ts 拆分為 cli、constants、extend-config、html-builder、renderer、themes、types 模組；本機打包程式碼高亮主題
+
+## 1.42.0 - 2026-02-28
+
+### 新功能
+- `baoyu-markdown-to-html`：合併 heritage 和 warm 為 modern 主題，新增主題預設顏色（default→藍、grace→紫、simple→綠、modern→橙）
+- `baoyu-post-to-wechat`：EXTEND.md 新增預設顏色設定，首次設定增加 modern 主題和顏色選擇
+
+## 1.41.0 - 2026-02-28
+
+### 新功能
+- `baoyu-markdown-to-html`：重新命名主題（red→heritage、orange→warm），新增 13 個顏色預設、serif-cjk 字型、主題級樣式預設值
+
+## 1.40.1 - 2026-02-28
+
+### 新功能
+- `baoyu-image-gen`：明確模型解析優先順序（EXTEND.md 優先於環境變數），產生圖片時顯示目前模型及切換方式
+
+## 1.40.0 - 2026-02-28
+
+### 新功能
+- `baoyu-image-gen`：支援 OpenAI Chat Completions 端點產生圖片 (by @zhao-newname)
+- `baoyu-markdown-to-html`：新增 CLI 自訂選項（--color、--font-family、--font-size、--code-theme、--mac-code-block、--line-number、--cite、--count、--legend）及 EXTEND.md 設定支援
+
+## 1.39.0 - 2026-02-28
+
+### 新功能
+- `baoyu-markdown-to-html`：新增紅色主題（紅金配色、宋體排版、傳統書法風格）和橘色主題（暖色調現代風、圓角裝飾、寬鬆行距）
+
+## 1.38.0 - 2026-02-28
+
+### 新功能
+- `baoyu-danger-x-to-markdown`：支援文章內嵌推文渲染，以引用區塊形式顯示作者資訊和推文摘要
+- `baoyu-danger-x-to-markdown`：`--download-media` 複用已轉換的 Markdown 檔案，跳過重複抓取
+- `baoyu-danger-x-to-markdown`：推特圖片下載升級至 4096x4096 高解析度
+
+### 修復
+- `baoyu-danger-x-to-markdown`：改進實體解析邏輯，透過邏輯鍵查找提升媒體和連結映射準確性
+- `baoyu-danger-x-to-markdown`：所有區塊類型（標題、列表、引用區塊）支援尾隨媒體展示
+
+## 1.37.1 - 2026-02-27
+
+### 修復
+- `baoyu-danger-gemini-web`：同步上游模型請求標頭並更新模型列表 (by @xkcoding)
+
+## 1.37.0 - 2026-02-27
+
+### 新功能
+- `baoyu-danger-x-to-markdown`：支援 X 文章內嵌連結渲染，將 LINK/MEDIA 實體映射為 Markdown 連結
+- `baoyu-danger-x-to-markdown`：輸出目錄使用基於內容的 slug，產生更有意義的資料夾名稱
+- `baoyu-danger-x-to-markdown`：新增 atomic 媒體佇列，支援無直接媒體參照的區塊
+
+## 1.36.0 - 2026-02-27
+
+### 新功能
+- `baoyu-image-gen`：新增 `gemini-3.1-flash-image-preview` Google 多模態圖片產生模型支援
+- `baoyu-image-gen`：最佳化首次使用引導流程，支援阻斷式偏好設定
+
+### 修復
+- `baoyu-image-gen`：偵測到 HTTP 代理時自動回退使用 curl 呼叫 Google API (by @liye71023326)
 
 ## 1.35.0 - 2026-02-24
 
