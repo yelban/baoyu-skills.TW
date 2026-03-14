@@ -34,37 +34,71 @@
 
 | 外掛 | 說明 | 包含技能 |
 |------|------|----------|
-| **content-skills** | 內容生成和發布 | xhs-images, cover-image, slide-deck, comic, article-illustrator, post-to-x, post-to-wechat |
-| **ai-generation-skills** | AI 生成後端 | gemini-web |
-| **utility-skills** | 內容處理工具 | x-to-markdown, compress-image |
+| **content-skills** | 內容生成和發布 | xhs-images, cover-image, slide-deck, comic, infographic, article-illustrator, post-to-x, post-to-wechat, post-to-weibo |
+| **ai-generation-skills** | AI 生成後端 | danger-gemini-web, image-gen |
+| **utility-skills** | 內容處理工具 | danger-x-to-markdown, compress-image, url-to-markdown, format-markdown, markdown-to-html, translate |
 
 ---
 
-## 維護者指南
+## 同步策略：Reset + Re-apply
 
-### 同步上游更新
+### 為什麼不用 Merge/Rebase？
 
-當上游 (JimLiu/baoyu-skills) 有更新時，執行：
+| 策略 | 問題 |
+|------|------|
+| Merge | 簡繁轉換涉及大量 .md 檔案，幾乎每個檔案都衝突 |
+| Rebase | 同上，且歷史更複雜 |
+| **Reset + Re-apply** | **無衝突、乾淨、可重複執行** |
 
-```bash
-./scripts/sync-upstream.sh
-```
+簡繁轉換是**冪等操作**（同一份簡體輸入永遠得到相同繁體輸出），所以每次同步後重新執行轉換是最簡潔的做法。
 
-此指令碼會自動：
-1. 備份本地 `scripts/` 資料夾
-2. 重置到上游最新版本
-3. 還原 `scripts/` 資料夾
-4. 執行繁體中文轉換（opencc s2twp）
-5. 套用自訂修改（maintainer 資訊等）
-6. 提交變更
-
-同步完成後，推送到遠端：
+### 同步流程（完整步驟）
 
 ```bash
+# 1. 備份 TW 特有檔案
+mkdir -p /tmp/baoyu-tw-backup
+cp docs/traditional-chinese-fork.md /tmp/baoyu-tw-backup/
+cp scripts/apply-customizations.sh scripts/convert-to-traditional.sh scripts/sync-upstream.sh /tmp/baoyu-tw-backup/
+
+# 2. 取得上游並重設
+git fetch upstream
+git reset --hard upstream/main
+
+# 3. 批量 opencc 轉換（排除 node_modules）
+find skills/ -name "*.md" -not -path "*/node_modules/*" -type f | while read f; do
+  converted=$(opencc -c s2twp < "$f")
+  if [ "$converted" != "$(cat "$f")" ]; then
+    echo "$f"
+    echo "$converted" > "$f"
+  fi
+done
+
+# 4. 轉換 CHANGELOG.zh.md
+opencc -c s2twp < CHANGELOG.zh.md > /tmp/changelog-tw.md && mv /tmp/changelog-tw.md CHANGELOG.zh.md
+
+# 5. 修正已知 opencc false positives（見下方清單）
+sed -i '' 's/通義永珍/通義萬象/g' skills/baoyu-image-gen/SKILL.md
+
+# 6. 套用 TW 元資料
+#    - marketplace.json: name → baoyu-skills-tw, description 加 (繁體中文版),
+#      version 加 -tw 後綴, 加 maintainer 區塊
+#    - CLAUDE.md: version 加 -tw, 加 fork 說明和 Fork Maintenance 區段
+#    - CHANGELOG.md / CHANGELOG.zh.md: 加入 TW 版本條目
+#    - .gitignore: 加入 backups/ 等 TW 特有項目
+
+# 7. 還原 TW 特有檔案
+cp /tmp/baoyu-tw-backup/traditional-chinese-fork.md docs/
+cp /tmp/baoyu-tw-backup/*.sh scripts/
+
+# 8. 提交
+git add -A
+git commit -m "chore: sync upstream vX.Y.Z through vA.B.C and convert to Traditional Chinese (Taiwan)"
+
+# 9. 推送（force-with-lease 因為 reset 改寫了歷史）
 git push --force-with-lease
 ```
 
-### 指令碼結構
+### 自動化指令碼
 
 ```
 scripts/
@@ -73,96 +107,108 @@ scripts/
 └── apply-customizations.sh   # 套用 fork 自訂修改
 ```
 
-### 手動同步流程
-
-如需手動操作：
-
-```bash
-# 1. 設定 upstream（首次）
-git remote add upstream https://github.com/JimLiu/baoyu-skills.git
-
-# 2. 取得並重置到上游
-git fetch upstream
-git reset --hard upstream/main
-
-# 3. 還原 scripts/（從備份或重新建立）
-
-# 4. 執行繁體轉換
-./scripts/convert-to-traditional.sh
-
-# 5. 套用自訂修改
-./scripts/apply-customizations.sh
-
-# 6. 提交
-git add -A && git commit -m "chore: sync upstream and convert to Traditional Chinese"
-
-# 7. 推送（強制覆蓋）
-git push --force-with-lease
-```
+執行 `./scripts/sync-upstream.sh` 可自動完成步驟 1–8。
 
 ---
 
-## 自訂修改
+## 已知 opencc False Positives
 
-### 目前的自訂內容
+opencc `s2twp` 模式會對部分詞彙做錯誤轉換。每次同步後必須手動修正。
 
-在 `.claude-plugin/marketplace.json` 中：
+| 原文（正確） | opencc 錯誤轉換 | 出現位置 | 修正方式 |
+|-------------|----------------|---------|---------|
+| 通義萬象 | 通義永珍 | `skills/baoyu-image-gen/SKILL.md` | `sed -i '' 's/通義永珍/通義萬象/g'` |
+
+> **說明**：opencc 將「万象」轉為「永珍」是因為 [永珍](https://zh.wikipedia.org/wiki/%E6%B0%B8%E7%8F%8D) 是寮國首都「萬象」的臺灣慣用譯名。但此處「萬象」是「包羅萬象」之意，非地名，應保留「萬象」。
+
+### 如何發現新的 false positive
+
+同步後執行比對：
+
+```bash
+find skills/ -name "*.md" -not -path "*/node_modules/*" -type f | while read f; do
+  diff_output=$(diff <(cat "$f") <(opencc -c s2twp < "$f") 2>/dev/null)
+  if [ -n "$diff_output" ]; then
+    echo "=== $f ==="
+    echo "$diff_output"
+  fi
+done
+```
+
+如果出現差異，代表 opencc 還想轉換某些詞。確認是 false positive 後加入上方表格和修正指令。
+
+---
+
+## 自訂修改清單
+
+### marketplace.json
 
 ```json
 {
   "name": "baoyu-skills-tw",
+  "owner": {
+    "name": "Jim Liu (寶玉)",
+    "email": "junminliu@gmail.com"
+  },
+  "metadata": {
+    "description": "Skills shared by Baoyu (繁體中文版)",
+    "version": "X.Y.Z-tw"
+  },
   "maintainer": {
     "name": "yelban",
     "note": "Traditional Chinese (Taiwan) fork"
-  },
-  "metadata": {
-    "description": "Skills shared by Baoyu (繁體中文版)"
   }
 }
 ```
 
-> **name 改為 `baoyu-skills-tw`** 是為了避免與原版 `baoyu-skills` 衝突，讓兩者可以同時安裝。
+- **name**: `baoyu-skills-tw`（避免與原版衝突）
+- **owner**: 保留原作者，尊重著作權
+- **version**: 跟隨上游版號 + `-tw` 後綴
+- **maintainer**: TW fork 維護者
 
-### 新增新的自訂修改
+### CLAUDE.md
 
-編輯 `scripts/apply-customizations.sh`，在指令碼中新增需要保留的修改邏輯。
+- Version 加 `-tw` 後綴
+- 加入 fork 說明引用區塊
+- 加入 `Fork Maintenance (baoyu-skills.TW)` 區段
+- Release Process 加入 `釋出` 觸發詞
 
-這些修改會在每次同步上游後自動套用，確保不會被上游覆蓋。
+### CHANGELOG
+
+- 在最上方加入 `X.Y.Z-tw` 版本條目
+- `CHANGELOG.zh.md` 的上游簡體內容一併轉為繁體
+
+### .gitignore
+
+- 加入 `backups/`
+
+### TW 特有檔案
+
+| 檔案 | 用途 |
+|------|------|
+| `docs/traditional-chinese-fork.md` | 本文件 |
+| `scripts/sync-upstream.sh` | 自動同步上游 |
+| `scripts/convert-to-traditional.sh` | opencc 批量轉換 |
+| `scripts/apply-customizations.sh` | 套用 TW 元資料 |
 
 ---
 
-## 技術細節
+## 前置要求
 
-### 簡繁轉換
-
-使用 [OpenCC](https://github.com/BYVoid/OpenCC) 進行轉換：
-
-```bash
-opencc -c s2twp
-```
-
-- **s2twp**: 簡體到繁體（臺灣正體）+ 詞彙轉換
-- 詞彙轉換範例：
-  - `執行` → `執行`
-  - `快取` → `快取`
-  - `載入` → `載入`
-  - `程式碼` → `程式碼`
-  - `資訊` → `資訊`
-
-### 前置要求
-
-- Node.js 環境
 - [OpenCC](https://github.com/BYVoid/OpenCC)：`brew install opencc`
 - Bun（透過 npx 自動安裝）
+- Node.js 環境
 
----
+## 轉換範圍
 
-## 為什麼選擇「重新執行」策略？
+### 會轉換的檔案
 
-| 策略 | 問題 |
-|------|------|
-| Rebase | 簡繁轉換涉及大量檔案，衝突極多 |
-| Merge | 同上 |
-| **重新執行** | ✅ 無衝突、乾淨、可自動化 |
+- `skills/**/*.md`（排除 `node_modules/`）
+- `CHANGELOG.zh.md`
 
-因為簡繁轉換是**可重複執行**的操作，每次同步後重新執行轉換是最簡潔的做法。
+### 不會轉換的檔案
+
+- `.ts`、`.css`、`.json` 等程式碼檔案（內含簡體字串是上游原始碼，不應修改）
+- `node_modules/` 下的所有檔案
+- `CHANGELOG.md`（英文版）
+- `README.md`、`README.zh.md`（跟隨上游，另外手動處理）

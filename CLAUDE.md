@@ -62,10 +62,17 @@ Priority: project `skills/` → `$HOME/.baoyu-skills/` → system-level.
 
 ## Fork Maintenance (baoyu-skills.TW)
 
-After pulling upstream changes:
-1. **Re-apply Traditional Chinese localization** — `opencc -c s2twp` on SKILL.md files, then fix false positives (e.g. 通義萬象)
-2. **Reinstall npm deps** — `cd skills/baoyu-markdown-to-html/scripts/md && npm install`
-3. **Reinstall skills globally** — `npx skills install --all -g`
+Sync strategy: **Reset + Re-apply** (not merge/rebase). Full guide: [docs/traditional-chinese-fork.md](docs/traditional-chinese-fork.md)
+
+Quick steps:
+1. `git fetch upstream && git reset --hard upstream/main`
+2. Batch opencc: `find skills/ -name "*.md" -not -path "*/node_modules/*" -type f -exec sh -c 'opencc -c s2twp < "$1" > /tmp/tc.md && mv /tmp/tc.md "$1"' _ {} \;`
+3. Fix false positives: `sed -i '' 's/通義永珍/通義萬象/g' skills/baoyu-image-gen/SKILL.md`
+4. Apply TW metadata (marketplace.json, CHANGELOG, .gitignore)
+5. Restore TW-only files (docs/traditional-chinese-fork.md, scripts/*.sh)
+6. Commit and `git push --force-with-lease`
+
+**Known opencc false positives**: 通義萬象 → ~~通義永珍~~（地名誤轉，需手動還原）
 
 ## Code Style
 
@@ -83,3 +90,4 @@ All skills MUST use `baoyu-` prefix. Details: [docs/creating-skills.md](docs/cre
 | Chrome profile platform paths | [docs/chrome-profile.md](docs/chrome-profile.md) |
 | Comic style maintenance | [docs/comic-style-maintenance.md](docs/comic-style-maintenance.md) |
 | ClawHub/OpenClaw publishing | [docs/publishing.md](docs/publishing.md) |
+| TW fork maintenance | [docs/traditional-chinese-fork.md](docs/traditional-chinese-fork.md) |
