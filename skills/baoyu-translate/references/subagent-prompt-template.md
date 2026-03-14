@@ -37,7 +37,7 @@ Apply these term translations consistently throughout. First occurrence of each 
 
 ## Comprehension Challenges
 
-The following terms or references may confuse target readers. Add translator's notes in parentheses where they appear: `译文（English original，通俗解释）`
+The following terms or references may confuse target readers. Add translator's notes in parentheses where they appear: `譯文（English original，通俗解釋）`
 
 {Inlined from 01-analysis.md comprehension challenges section if analysis exists. Each entry: term → explanation to use as note.}
 

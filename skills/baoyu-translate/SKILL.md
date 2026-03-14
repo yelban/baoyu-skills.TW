@@ -1,6 +1,6 @@
 ---
 name: baoyu-translate
-description: Translates articles and documents between languages with three modes - quick (direct), normal (analyze then translate), and refined (analyze, translate, review, polish). Supports custom glossaries and terminology consistency via EXTEND.md. Use when user asks to "translate", "翻译", "精翻", "translate article", "translate to Chinese/English", "改成中文", "改成英文", "convert to Chinese", "localize", "本地化", or needs any document translation. Also triggers for "refined translation", "精细翻译", "proofread translation", "快速翻译", "快翻", "这篇文章翻译一下", or when a URL or file is provided with translation intent.
+description: Translates articles and documents between languages with three modes - quick (direct), normal (analyze then translate), and refined (analyze, translate, review, polish). Supports custom glossaries and terminology consistency via EXTEND.md. Use when user asks to "translate", "翻譯", "精翻", "translate article", "translate to Chinese/English", "改成中文", "改成英文", "convert to Chinese", "localize", "本地化", or needs any document translation. Also triggers for "refined translation", "精細翻譯", "proofread translation", "快速翻譯", "快翻", "這篇文章翻譯一下", or when a URL or file is provided with translation intent.
 version: 1.56.1
 metadata:
   openclaw:
@@ -105,12 +105,12 @@ All configurable values in one place. EXTEND.md overrides these; CLI flags overr
 Custom style descriptions are also accepted, e.g., `--style "poetic and lyrical"`.
 
 **Auto-detection**:
-- "快翻", "quick", "直接翻译" → quick mode
+- "快翻", "quick", "直接翻譯" → quick mode
 - "精翻", "refined", "publication quality", "proofread" → refined mode
 - Otherwise → default mode (normal)
 
 **Upgrade prompt**: After normal mode completes, display:
-> Translation saved. To further review and polish, reply "继续润色" or "refine".
+> Translation saved. To further review and polish, reply "繼續潤色" or "refine".
 
 If user responds, continue with review → polish steps (same as refined mode Steps 4-6 in refined-workflow.md) on the existing output.
 
@@ -136,7 +136,7 @@ If user responds, continue with review → polish steps (same as refined mode St
 | `academic` | Researchers / scholars | Formal register, precise terminology |
 | `business` | Business professionals | Business-friendly tone, explain tech concepts |
 
-Custom audience descriptions are also accepted, e.g., `--audience "AI感兴趣的普通读者"`.
+Custom audience descriptions are also accepted, e.g., `--audience "AI感興趣的普通讀者"`.
 
 ## Workflow
 
@@ -216,7 +216,7 @@ Before translating chunks:
 - **Image-language awareness**: Preserve image references exactly during translation, but after the translation is complete, review referenced images and check whether their likely main text language still matches the translated article language
 - **Frontmatter transformation**: If the source has YAML frontmatter, preserve it in the translation with these changes: (1) Rename metadata fields that describe the *source* article — `url`→`sourceUrl`, `title`→`sourceTitle`, `description`→`sourceDescription`, `author`→`sourceAuthor`, `date`→`sourceDate`, and any similar origin-metadata fields — by adding a `source` prefix (camelCase). (2) Translate the values of text fields (title, description, etc.) and add them as new top-level fields. (3) Keep other fields (tags, categories, custom fields) as-is, translating their values where appropriate
 - **Respect original**: Maintain original meaning and intent; do not add, remove, or editorialize — but sentence structure and imagery may be adapted freely to serve the meaning
-- **Translator's notes**: For terms, concepts, or cultural references that target readers may not understand — due to jargon, cultural gaps, or domain-specific knowledge — add a concise explanatory note in parentheses immediately after the term. The note should explain *what it means* in plain language, not just provide the English original. Format: `译文（English original，通俗解释）`. Calibrate annotation depth to the target audience: general readers need more notes than technical readers. For short texts (< 5 sentences), further reduce annotations — only annotate non-common terms that the target audience is unlikely to know; skip terms that are widely recognized or self-explanatory in context. Only add notes where genuinely needed; do not over-annotate obvious terms.
+- **Translator's notes**: For terms, concepts, or cultural references that target readers may not understand — due to jargon, cultural gaps, or domain-specific knowledge — add a concise explanatory note in parentheses immediately after the term. The note should explain *what it means* in plain language, not just provide the English original. Format: `譯文（English original，通俗解釋）`. Calibrate annotation depth to the target audience: general readers need more notes than technical readers. For short texts (< 5 sentences), further reduce annotations — only annotate non-common terms that the target audience is unlikely to know; skip terms that are widely recognized or self-explanatory in context. Only add notes where genuinely needed; do not over-annotate obvious terms.
 
 #### Quick Mode
 
@@ -228,7 +228,7 @@ Translate directly → save to `translation.md`. No analysis file, but still app
 2. **Assemble prompt** → `02-prompt.md` (translation instructions with inlined style preset, content background, glossary, and comprehension challenges)
 3. **Translate** (following `02-prompt.md`) → `translation.md`
 
-After completion, prompt user: "Translation saved. To further review and polish, reply **继续润色** or **refine**."
+After completion, prompt user: "Translation saved. To further review and polish, reply **繼續潤色** or **refine**."
 
 If user continues, proceed with critical review → revision → polish (same as refined mode Steps 4-6 below), saving `03-draft.md` (rename current `translation.md`), `04-critique.md`, `05-revision.md`, and updated `translation.md`.
 

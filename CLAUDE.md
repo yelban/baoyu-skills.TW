@@ -1,6 +1,8 @@
 # CLAUDE.md
 
-Claude Code marketplace plugin providing AI-powered content generation skills. Version: **1.67.0**.
+Claude Code marketplace plugin providing AI-powered content generation skills. Version: **1.67.0-tw**.
+
+> **This is a Traditional Chinese (Taiwan) fork** of [baoyu-skills](https://github.com/iBaoYu/baoyu-skills).
 
 ## Architecture
 
@@ -52,11 +54,18 @@ Priority: project `skills/` → `$HOME/.baoyu-skills/` → system-level.
 
 ## Release Process
 
-Use `/release-skills` workflow. Never skip:
+**IMPORTANT**: When user requests release/釋出/push, ALWAYS use `/release-skills` workflow. Never skip:
 1. `CHANGELOG.md` + `CHANGELOG.zh.md`
 2. `marketplace.json` version bump
 3. `README.md` + `README.zh.md` if applicable
 4. All files committed together before tag
+
+## Fork Maintenance (baoyu-skills.TW)
+
+After pulling upstream changes:
+1. **Re-apply Traditional Chinese localization** — `opencc -c s2twp` on SKILL.md files, then fix false positives (e.g. 通義萬象)
+2. **Reinstall npm deps** — `cd skills/baoyu-markdown-to-html/scripts/md && npm install`
+3. **Reinstall skills globally** — `npx skills install --all -g`
 
 ## Code Style
 

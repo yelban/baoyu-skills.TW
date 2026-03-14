@@ -2,6 +2,14 @@
 
 English | [中文](./CHANGELOG.zh.md)
 
+## 1.67.0-tw - 2026-03-14
+
+### Traditional Chinese Fork Sync
+- Synced upstream v1.45.1 through v1.67.0
+- Reset to upstream and re-applied Traditional Chinese (Taiwan) localization via opencc
+- Added new skills: baoyu-post-to-weibo, baoyu-translate
+- Updated marketplace.json with TW metadata
+
 ## 1.67.0 - 2026-03-13
 
 ### Features

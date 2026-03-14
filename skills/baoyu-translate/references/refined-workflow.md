@@ -154,8 +154,8 @@ The main agent critically reviews the draft against the source. Save review find
 - **Passive voice abuse**: Excessive 被/由/受到 where active voice is more natural
 - **Noun pile-up**: Long modifier chains that should be broken into shorter clauses
 - **Cleft sentences**: Unnatural "是...的" structures calqued from English "It is...that"
-- **Over-nominalization**: Abstract nouns where verbs or adjectives would be more natural (e.g., "进行了讨论" → "讨论了")
-- **Awkward pronouns**: Overuse of 他/她/它/我们/你 where they can be omitted
+- **Over-nominalization**: Abstract nouns where verbs or adjectives would be more natural (e.g., "進行了討論" → "討論了")
+- **Awkward pronouns**: Overuse of 他/她/它/我們/你 where they can be omitted
 
 ### 4.3 Figurative Language & Emotional Fidelity
 - Cross-check against the metaphor mapping in `01-analysis.md`: were all flagged metaphors/idioms handled per the recommended approach (interpret/substitute/retain)?

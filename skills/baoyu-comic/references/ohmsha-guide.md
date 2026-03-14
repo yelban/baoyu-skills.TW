@@ -7,7 +7,7 @@ Guidelines for `--style ohmsha` educational manga comics.
 | Role | Default | Traits |
 |------|---------|--------|
 | Student (Role A) | 大雄 | Confused, asks basic but crucial questions, represents reader |
-| Mentor (Role B) | 哆啦A梦 | Knowledgeable, patient, uses gadgets as technical metaphors |
+| Mentor (Role B) | 哆啦A夢 | Knowledgeable, patient, uses gadgets as technical metaphors |
 | Antagonist (Role C, optional) | 胖虎 | Represents misunderstanding, or "noise" in the data |
 
 Custom characters: `--characters "Student:小明,Mentor:教授,Antagonist:Bug怪"`
@@ -25,10 +25,10 @@ For Ohmsha style, use manga/anime style with:
 Every ohmsha outline must start with:
 
 ```markdown
-【漫画规格单】
+【漫畫規格單】
 - Language: [Same as input content]
 - Style: Ohmsha (Manga Guide), Full Color
-- Layout: Vertical Scrolling Comic (竖版条漫)
+- Layout: Vertical Scrolling Comic (豎版條漫)
 - Characters: [List character names and roles]
 - Character Reference: characters/characters.png
 - Page Limit: ≤20 pages
@@ -46,16 +46,16 @@ Every ohmsha outline must start with:
 
 | Concept | Bad (Talking Heads) | Good (Visual Metaphor) |
 |---------|---------------------|------------------------|
-| Word embeddings | Characters discussing vectors | 哆啦A梦拿出"词向量压缩机"，把书本压缩成彩色小球 |
-| Gradient descent | Explaining math formula | 大雄在山谷地形上滚球，寻找最低点 |
-| Neural network | Diagram on whiteboard | 角色走进由发光节点组成的网络迷宫 |
+| Word embeddings | Characters discussing vectors | 哆啦A夢拿出"詞向量壓縮機"，把書本壓縮成彩色小球 |
+| Gradient descent | Explaining math formula | 大雄在山谷地形上滾球，尋找最低點 |
+| Neural network | Diagram on whiteboard | 角色走進由發光節點組成的網路迷宮 |
 
 ## Page Title Convention
 
 Avoid AI-style "Title: Subtitle" format. Use narrative descriptions:
 
 - ❌ "Page 3: Introduction to Neural Networks"
-- ✓ "Page 3: 大雄被海量单词淹没，哆啦A梦拿出'词向量压缩机'"
+- ✓ "Page 3: 大雄被海量單詞淹沒，哆啦A夢拿出'詞向量壓縮機'"
 
 ## Ending Requirements
 

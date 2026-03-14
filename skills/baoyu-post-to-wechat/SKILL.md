@@ -1,6 +1,6 @@
 ---
 name: baoyu-post-to-wechat
-description: Posts content to WeChat Official Account (微信公众号) via API or Chrome CDP. Supports article posting (文章) with HTML, markdown, or plain text input, and image-text posting (贴图, formerly 图文) with multiple images. Markdown article workflows default to converting ordinary external links into bottom citations for WeChat-friendly output. Use when user mentions "发布公众号", "post to wechat", "微信公众号", or "贴图/图文/文章".
+description: Posts content to WeChat Official Account (微信公眾號) via API or Chrome CDP. Supports article posting (文章) with HTML, markdown, or plain text input, and image-text posting (貼圖, formerly 圖文) with multiple images. Markdown article workflows default to converting ordinary external links into bottom citations for WeChat-friendly output. Use when user mentions "釋出公眾號", "post to wechat", "微信公眾號", or "貼圖/圖文/文章".
 version: 1.56.1
 metadata:
   openclaw:
@@ -23,7 +23,7 @@ metadata:
 
 | Script | Purpose |
 |--------|---------|
-| `scripts/wechat-browser.ts` | Image-text posts (图文) |
+| `scripts/wechat-browser.ts` | Image-text posts (圖文) |
 | `scripts/wechat-article.ts` | Article posting via browser (文章) |
 | `scripts/wechat-api.ts` | Article posting via API (文章) |
 | `scripts/md-to-wechat.ts` | Markdown → WeChat-ready HTML with image placeholders |
@@ -82,7 +82,7 @@ First-time setup: [references/config/first-time-setup.md](references/config/firs
 default_theme: default
 default_color: blue
 default_publish_method: api
-default_author: 宝玉
+default_author: 寶玉
 need_open_comment: 1
 only_fans_can_comment: 0
 chrome_profile_path: /path/to/chrome/profile
@@ -118,11 +118,11 @@ default_theme: default
 default_color: blue
 
 accounts:
-  - name: 宝玉的技术分享
+  - name: 寶玉的技術分享
     alias: baoyu
     default: true
     default_publish_method: api
-    default_author: 宝玉
+    default_author: 寶玉
     need_open_comment: 1
     only_fans_can_comment: 0
     app_id: your_wechat_app_id
@@ -227,13 +227,13 @@ Checks: Chrome, profile isolation, Bun, Accessibility, clipboard, paste keystrok
 | Paste keystroke (Linux) | Install `xdotool` (X11) or `ydotool` (Wayland) |
 | API credentials | Follow guided setup in Step 2, or manually set in `.baoyu-skills/.env` |
 
-## Image-Text Posting (图文)
+## Image-Text Posting (圖文)
 
 For short posts with multiple images (up to 9):
 
 ```bash
 ${BUN_X} {baseDir}/scripts/wechat-browser.ts --markdown article.md --images ./images/
-${BUN_X} {baseDir}/scripts/wechat-browser.ts --title "标题" --content "内容" --image img.png --submit
+${BUN_X} {baseDir}/scripts/wechat-browser.ts --title "標題" --content "內容" --image img.png --submit
 ```
 
 See [references/image-text-posting.md](references/image-text-posting.md) for details.
@@ -288,7 +288,7 @@ mkdir -p "$(pwd)/post-to-wechat/$(date +%Y-%m-%d)"
 
 **Slug Examples**:
 - "Understanding AI Models" → `understanding-ai-models`
-- "人工智能的未来" → `ai-future` (translate to English for slug)
+- "人工智慧的未來" → `ai-future` (translate to English for slug)
 
 ### Step 2: Select Publishing Method and Configure
 
@@ -320,7 +320,7 @@ WeChat API credentials not found.
 
 To obtain credentials:
 1. Visit https://mp.weixin.qq.com
-2. Go to: 开发 → 基本配置
+2. Go to: 開發 → 基本配置
 3. Copy AppID and AppSecret
 
 Where to save?
@@ -423,7 +423,7 @@ Result:
 • media_id: [media_id]
 
 Next Steps:
-→ Manage drafts: https://mp.weixin.qq.com (登录后进入「内容管理」→「草稿箱」)
+→ Manage drafts: https://mp.weixin.qq.com (登入後進入「內容管理」→「草稿箱」)
 
 Files created:
 [• post-to-wechat/yyyy-MM-dd/slug.md (if plain text)]

@@ -1,6 +1,6 @@
 ---
 name: baoyu-post-to-weibo
-description: Posts content to Weibo (微博). Supports regular posts with text, images, and videos, and headline articles (头条文章) with Markdown input via Chrome CDP. Use when user asks to "post to Weibo", "发微博", "发布微博", "publish to Weibo", "share on Weibo", "写微博", or "微博头条文章".
+description: Posts content to Weibo (微博). Supports regular posts with text, images, and videos, and headline articles (頭條文章) with Markdown input via Chrome CDP. Use when user asks to "post to Weibo", "發微博", "釋出微博", "publish to Weibo", "share on Weibo", "寫微博", or "微博頭條文章".
 version: 1.56.1
 metadata:
   openclaw:
@@ -99,7 +99,7 @@ ${BUN_X} {baseDir}/scripts/weibo-post.ts "Watch this" --video ./clip.mp4
 
 ---
 
-## Headline Articles (头条文章)
+## Headline Articles (頭條文章)
 
 Long-form Markdown articles published at `https://card.weibo.com/article/v3/editor`.
 
@@ -121,13 +121,13 @@ ${BUN_X} {baseDir}/scripts/weibo-article.ts article.md --cover ./cover.jpg
 
 **Character Limits**:
 - Title: 32 characters max (truncated with warning if longer)
-- Summary/导语: 44 characters max (auto-regenerated from content if longer)
+- Summary/導語: 44 characters max (auto-regenerated from content if longer)
 
 **Article Workflow**:
 1. Opens `https://card.weibo.com/article/v3/editor`
-2. Clicks "写文章" button, waits for editor to become editable
+2. Clicks "寫文章" button, waits for editor to become editable
 3. Fills title (validated for 32-char limit)
-4. Fills summary/导语 (validated for 44-char limit)
+4. Fills summary/導語 (validated for 44-char limit)
 5. Inserts HTML content into ProseMirror editor via paste
 6. Replaces image placeholders one by one (copy image → select placeholder → paste)
 

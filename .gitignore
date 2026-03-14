@@ -166,3 +166,6 @@ posts/
 .clawdhub/
 .release-artifacts/
 .worktrees/
+
+# Backup files (local only)
+backups/

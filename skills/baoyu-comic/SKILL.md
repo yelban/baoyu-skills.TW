@@ -1,6 +1,6 @@
 ---
 name: baoyu-comic
-description: Knowledge comic creator supporting multiple art styles and tones. Creates original educational comics with detailed panel layouts and sequential image generation. Use when user asks to create "知识漫画", "教育漫画", "biography comic", "tutorial comic", or "Logicomix-style comic".
+description: Knowledge comic creator supporting multiple art styles and tones. Creates original educational comics with detailed panel layouts and sequential image generation. Use when user asks to create "知識漫畫", "教育漫畫", "biography comic", "tutorial comic", or "Logicomix-style comic".
 version: 1.56.1
 metadata:
   openclaw:
@@ -46,27 +46,27 @@ Create original knowledge comics with flexible art style × tone combinations.
 
 Details: [references/partial-workflows.md](references/partial-workflows.md)
 
-### Art Styles (画风)
+### Art Styles (畫風)
 
 | Style | 中文 | Description |
 |-------|------|-------------|
-| `ligne-claire` | 清线 | Uniform lines, flat colors, European comic tradition (Tintin, Logicomix) |
+| `ligne-claire` | 清線 | Uniform lines, flat colors, European comic tradition (Tintin, Logicomix) |
 | `manga` | 日漫 | Large eyes, manga conventions, expressive emotions |
-| `realistic` | 写实 | Digital painting, realistic proportions, sophisticated |
+| `realistic` | 寫實 | Digital painting, realistic proportions, sophisticated |
 | `ink-brush` | 水墨 | Chinese brush strokes, ink wash effects |
-| `chalk` | 粉笔 | Chalkboard aesthetic, hand-drawn warmth |
+| `chalk` | 粉筆 | Chalkboard aesthetic, hand-drawn warmth |
 
-### Tones (基调)
+### Tones (基調)
 
 | Tone | 中文 | Description |
 |------|------|-------------|
 | `neutral` | 中性 | Balanced, rational, educational |
-| `warm` | 温馨 | Nostalgic, personal, comforting |
-| `dramatic` | 戏剧 | High contrast, intense, powerful |
+| `warm` | 溫馨 | Nostalgic, personal, comforting |
+| `dramatic` | 戲劇 | High contrast, intense, powerful |
 | `romantic` | 浪漫 | Soft, beautiful, decorative elements |
 | `energetic` | 活力 | Bright, dynamic, exciting |
-| `vintage` | 复古 | Historical, aged, period authenticity |
-| `action` | 动作 | Speed lines, impact effects, combat |
+| `vintage` | 復古 | Historical, aged, period authenticity |
+| `action` | 動作 | Speed lines, impact effects, combat |
 
 ### Preset Shortcuts
 

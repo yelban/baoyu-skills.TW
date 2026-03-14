@@ -67,11 +67,11 @@ options:
   - label: "Theme default (Recommended)"
     description: "Use the theme's built-in default color"
   - label: "blue"
-    description: "#0F4C81 经典蓝"
+    description: "#0F4C81 經典藍"
   - label: "red"
-    description: "#A93226 中国红"
+    description: "#A93226 中國紅"
   - label: "green"
-    description: "#009874 翡翠绿"
+    description: "#009874 翡翠綠"
 ```
 
 Note: User can choose "Other" to type any preset name (vermilion, yellow, purple, sky, rose, olive, black, gray, pink, orange) or hex value.

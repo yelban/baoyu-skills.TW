@@ -219,9 +219,9 @@ Put the strongest hook first and mark it (recommended).
 - **Accurate, not clickbait**: the article must deliver what the title promises
 
 **Prohibited patterns:**
-- "浅谈 XX"、"关于 XX 的思考"、"XX 的探索与实践"
-- "震惊！"、"万字长文"、"建议收藏"
-- Pure questions without direction: "AI 写作的未来在哪里？"
+- "淺談 XX"、"關於 XX 的思考"、"XX 的探索與實踐"
+- "震驚！"、"萬字長文"、"建議收藏"
+- Pure questions without direction: "AI 寫作的未來在哪裡？"
 
 If first line is H1, extract to frontmatter and remove from body. If frontmatter already has `title`, include it as context but still generate fresh candidates.
 
@@ -247,7 +247,7 @@ Enter number, or type a custom summary:
 - Use concrete details (numbers, outcomes, specific methods) over vague descriptions
 
 **Prohibited patterns:**
-- "本文介绍了..."、"本文探讨了..."
+- "本文介紹了..."、"本文探討了..."
 - Pure topic description without value proposition
 - Repeating the title in different words
 
@@ -285,7 +285,7 @@ Apply formatting guided by the Step 2 analysis. The goal is making the content s
 - Preserve the author's voice, tone, and every word
 - **Bold key conclusions and core takeaways** — the sentences a reader would highlight
 - Extract parallel items from prose into lists only when the structure is clearly there
-- Add headings where the topic genuinely shifts — prefer vivid, specific headings over generic ones (e.g., "3 天搞定 vs 传统方案" over "方案对比")
+- Add headings where the topic genuinely shifts — prefer vivid, specific headings over generic ones (e.g., "3 天搞定 vs 傳統方案" over "方案對比")
 - Use tables for comparisons or structured data buried in prose
 - Use blockquotes for golden quotes, memorable statements, or important warnings
 - Fix obvious typos (based on Step 2 findings)
