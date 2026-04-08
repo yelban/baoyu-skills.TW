@@ -269,7 +269,7 @@ Generate professional infographics with 20 layout types and 17 visual styles. An
 
 #### baoyu-cover-image
 
-Generate cover images for articles with 5 dimensions: Type × Palette × Rendering × Text × Mood. Combines 9 color palettes with 6 rendering styles for 54 unique combinations.
+Generate cover images for articles with 5 dimensions: Type × Palette × Rendering × Text × Mood. Combines 11 color palettes with 7 rendering styles for 77 unique combinations.
 
 ```bash
 # Auto-select all dimensions based on content
@@ -294,8 +294,8 @@ Generate cover images for articles with 5 dimensions: Type × Palette × Renderi
 
 **Five Dimensions**:
 - **Type**: `hero`, `conceptual`, `typography`, `metaphor`, `scene`, `minimal`
-- **Palette**: `warm`, `elegant`, `cool`, `dark`, `earth`, `vivid`, `pastel`, `mono`, `retro`
-- **Rendering**: `flat-vector`, `hand-drawn`, `painterly`, `digital`, `pixel`, `chalk`
+- **Palette**: `warm`, `elegant`, `cool`, `dark`, `earth`, `vivid`, `pastel`, `mono`, `retro`, `duotone`, `macaron`
+- **Rendering**: `flat-vector`, `hand-drawn`, `painterly`, `digital`, `pixel`, `chalk`, `screen-print`
 - **Text**: `none`, `title-only` (default), `title-subtitle`, `text-rich`
 - **Mood**: `subtle`, `balanced` (default), `bold`
 

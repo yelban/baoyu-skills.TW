@@ -269,7 +269,7 @@ clawhub install baoyu-markdown-to-html
 
 #### baoyu-cover-image
 
-为文章生成封面图，支持五维定制系统：类型 × 配色 × 渲染 × 文字 × 氛围。9 种配色方案与 6 种渲染风格组合，提供 54 种独特效果。
+为文章生成封面图，支持五维定制系统：类型 × 配色 × 渲染 × 文字 × 氛围。11 种配色方案与 7 种渲染风格组合，提供 77 种独特效果。
 
 ```bash
 # 根据内容自动选择所有维度
@@ -294,8 +294,8 @@ clawhub install baoyu-markdown-to-html
 
 **五个维度**：
 - **类型 (Type)**：`hero`、`conceptual`、`typography`、`metaphor`、`scene`、`minimal`
-- **配色 (Palette)**：`warm`、`elegant`、`cool`、`dark`、`earth`、`vivid`、`pastel`、`mono`、`retro`
-- **渲染 (Rendering)**：`flat-vector`、`hand-drawn`、`painterly`、`digital`、`pixel`、`chalk`
+- **配色 (Palette)**：`warm`、`elegant`、`cool`、`dark`、`earth`、`vivid`、`pastel`、`mono`、`retro`、`duotone`、`macaron`
+- **渲染 (Rendering)**：`flat-vector`、`hand-drawn`、`painterly`、`digital`、`pixel`、`chalk`、`screen-print`
 - **文字 (Text)**：`none`、`title-only`（默认）、`title-subtitle`、`text-rich`
 - **氛围 (Mood)**：`subtle`、`balanced`（默认）、`bold`
 
