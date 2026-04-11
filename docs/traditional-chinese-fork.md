@@ -94,8 +94,13 @@ cp /tmp/baoyu-tw-backup/*.sh scripts/
 git add -A
 git commit -m "chore: sync upstream vX.Y.Z through vA.B.C and convert to Traditional Chinese (Taiwan)"
 
-# 9. 推送（force-with-lease 因為 reset 改寫了歷史）
-git push --force-with-lease
+# 9. 建立版本 tag
+#    從 marketplace.json 取得 -tw 版本號，建立 git tag
+TW_VERSION=$(node -e "console.log(require('./.claude-plugin/marketplace.json').metadata.version)")
+git tag "v${TW_VERSION}"
+
+# 10. 推送（force-with-lease 因為 reset 改寫了歷史）
+git push --force-with-lease && git push --tags
 ```
 
 ### 自動化指令碼
@@ -107,7 +112,7 @@ scripts/
 └── apply-customizations.sh   # 套用 fork 自訂修改
 ```
 
-執行 `./scripts/sync-upstream.sh` 可自動完成步驟 1–8。
+執行 `./scripts/sync-upstream.sh` 可自動完成步驟 1–9（含自動打 tag）。
 
 ---
 

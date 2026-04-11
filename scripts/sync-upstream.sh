@@ -108,11 +108,32 @@ Sync from upstream and re-apply:
 Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>"
 fi
 
+# 步驟 11: 自動打 tag
+echo ""
+echo "=== 建立版本 tag ==="
+TW_VERSION=$(npx -y bun -e "
+const fs = require('fs');
+const data = JSON.parse(fs.readFileSync('.claude-plugin/marketplace.json', 'utf8'));
+console.log(data.metadata?.version || '');
+" 2>/dev/null)
+
+if [ -n "$TW_VERSION" ]; then
+    TAG_NAME="v${TW_VERSION}"
+    if git tag -l "$TAG_NAME" | grep -q "$TAG_NAME"; then
+        echo "tag $TAG_NAME 已存在，跳過。"
+    else
+        git tag "$TAG_NAME"
+        echo "已建立 tag: $TAG_NAME"
+    fi
+else
+    echo "警告: 無法從 marketplace.json 取得版本號，跳過 tag。"
+fi
+
 echo ""
 echo "=== 同步完成 ==="
 echo ""
 echo "本地分支狀態:"
-git log --oneline -3
+git log --oneline --decorate -3
 echo ""
 echo "如需推送到遠端（強制覆蓋）:"
-echo "  git push --force-with-lease"
+echo "  git push --force-with-lease && git push --tags"

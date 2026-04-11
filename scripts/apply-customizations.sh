@@ -33,6 +33,10 @@ data.maintainer = {
 // 更新 description
 if (data.metadata) {
   data.metadata.description = 'Skills shared by Baoyu (繁體中文版)';
+  // 版本加上 -tw 後綴
+  if (data.metadata.version && !data.metadata.version.endsWith('-tw')) {
+    data.metadata.version = data.metadata.version + '-tw';
+  }
 }
 
 fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n');
@@ -108,6 +112,54 @@ if [ -f "$README_ZH" ]; then
         {print}' "$README_ZH" > "$README_ZH.tmp" && mv "$README_ZH.tmp" "$README_ZH"
         echo "  已更新: $README_ZH (加入繁體中文版說明)"
     fi
+fi
+
+# 修改 CLAUDE.md：版本加 -tw 後綴 + fork 說明
+CLAUDE_MD="CLAUDE.md"
+if [ -f "$CLAUDE_MD" ]; then
+    # 從 marketplace.json 取得 -tw 版本號
+    TW_VERSION=$(npx -y bun -e "
+const fs = require('fs');
+const data = JSON.parse(fs.readFileSync('$MARKETPLACE_FILE', 'utf8'));
+console.log(data.metadata?.version || '');
+" 2>/dev/null)
+
+    if [ -n "$TW_VERSION" ]; then
+        # 取得上游版本號（不含 -tw）
+        UPSTREAM_VERSION="${TW_VERSION%-tw}"
+        # 替換版本號
+        sed -i '' "s|Version: \*\*${UPSTREAM_VERSION}\*\*|Version: **${TW_VERSION}**|g" "$CLAUDE_MD"
+    fi
+
+    # 加入 fork 說明（如果不存在）
+    if ! grep -q "This is a Traditional Chinese (Taiwan) fork" "$CLAUDE_MD"; then
+        sed -i '' '/^# CLAUDE.md$/a\
+\
+> **This is a Traditional Chinese (Taiwan) fork** of [baoyu-skills](https://github.com/JimLiu/baoyu-skills).' "$CLAUDE_MD"
+    fi
+
+    # 加入 Fork Maintenance 區段（如果不存在）
+    if ! grep -q "Fork Maintenance" "$CLAUDE_MD"; then
+        cat >> "$CLAUDE_MD" <<'FMEOF'
+
+## Fork Maintenance (baoyu-skills.TW)
+
+Sync strategy: **Reset + Re-apply** (not merge/rebase). Full guide: [docs/traditional-chinese-fork.md](docs/traditional-chinese-fork.md)
+
+Quick steps:
+1. `./scripts/sync-upstream.sh` (interactive: fetch, reset, convert, customize, commit, tag)
+2. `git push --force-with-lease`
+
+**Known opencc false positives**: 通義萬象 → ~~通義永珍~~（地名誤轉，需手動還原）
+FMEOF
+    fi
+
+    # Release Process 加入釋出觸發詞
+    if grep -q "^## Release Process" "$CLAUDE_MD" && ! grep -q "釋出" "$CLAUDE_MD"; then
+        sed -i '' 's|use `/release-skills` workflow|use `/release-skills` workflow. Never skip:|' "$CLAUDE_MD"
+    fi
+
+    echo "  已更新: $CLAUDE_MD"
 fi
 
 echo "✅ 自訂修改套用完成"
