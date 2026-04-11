@@ -49,7 +49,7 @@ test("serializeFrontmatter renders YAML only when fields exist", () => {
 
 test("quote and frontmatter string helpers normalize mixed scalar values", () => {
   assert.equal(stripWrappingQuotes(`" quoted "`), "quoted");
-  assert.equal(stripWrappingQuotes("“ 中文标题 ”"), "中文标题");
+  assert.equal(stripWrappingQuotes("“ 中文標題 ”"), "中文標題");
   assert.equal(stripWrappingQuotes("plain"), "plain");
 
   assert.equal(toFrontmatterString("'hello'"), "hello");

@@ -1,6 +1,8 @@
 # CLAUDE.md
 
-Claude Code marketplace plugin providing AI-powered content generation skills. Version: **1.97.0**.
+Claude Code marketplace plugin providing AI-powered content generation skills. Version: **1.98.0-tw**.
+
+> **This is a Traditional Chinese (Taiwan) fork** of [baoyu-skills](https://github.com/JimLiu/baoyu-skills).
 
 ## Architecture
 
@@ -59,7 +61,7 @@ Priority: project `skills/` → `$HOME/.baoyu-skills/` → system-level.
 
 ## Release Process
 
-Use `/release-skills` workflow. Never skip:
+**IMPORTANT**: When user requests release/釋出/push, ALWAYS use `/release-skills` workflow. Never skip:
 1. `CHANGELOG.md` + `CHANGELOG.zh.md`
 2. `marketplace.json` version bump
 3. `README.md` + `README.zh.md` if applicable
@@ -81,3 +83,14 @@ All skills MUST use `baoyu-` prefix. Details: [docs/creating-skills.md](docs/cre
 | Chrome profile platform paths | [docs/chrome-profile.md](docs/chrome-profile.md) |
 | Comic style maintenance | [docs/comic-style-maintenance.md](docs/comic-style-maintenance.md) |
 | ClawHub/OpenClaw publishing | [docs/publishing.md](docs/publishing.md) |
+| TW fork maintenance | [docs/traditional-chinese-fork.md](docs/traditional-chinese-fork.md) |
+
+## Fork Maintenance (baoyu-skills.TW)
+
+Sync strategy: **Reset + Re-apply** (not merge/rebase). Full guide: [docs/traditional-chinese-fork.md](docs/traditional-chinese-fork.md)
+
+Quick steps:
+1. `./scripts/sync-upstream.sh` (interactive: fetch, reset, convert, customize, commit)
+2. `git push --force-with-lease`
+
+**Known opencc false positives**: 通義萬象 → ~~通義永珍~~（地名誤轉，需手動還原）

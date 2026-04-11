@@ -1,6 +1,6 @@
 ---
 name: baoyu-translate
-description: Translates articles and documents between languages with three modes - quick (direct), normal (analyze then translate), and refined (analyze, translate, review, polish). Supports custom glossaries and terminology consistency via EXTEND.md. Use when user asks to "translate", "翻译", "精翻", "translate article", "translate to Chinese/English", "改成中文", "改成英文", "convert to Chinese", "localize", "本地化", or needs any document translation. Also triggers for "refined translation", "精细翻译", "proofread translation", "快速翻译", "快翻", "这篇文章翻译一下", or when a URL or file is provided with translation intent.
+description: Translates articles and documents between languages with three modes - quick (direct), normal (analyze then translate), and refined (analyze, translate, review, polish). Supports custom glossaries and terminology consistency via EXTEND.md. Use when user asks to "translate", "翻譯", "精翻", "translate article", "translate to Chinese/English", "改成中文", "改成英文", "convert to Chinese", "localize", "本地化", or needs any document translation. Also triggers for "refined translation", "精細翻譯", "proofread translation", "快速翻譯", "快翻", "這篇文章翻譯一下", or when a URL or file is provided with translation intent.
 version: 1.59.0
 metadata:
   openclaw:
@@ -105,12 +105,12 @@ All configurable values in one place. EXTEND.md overrides these; CLI flags overr
 Custom style descriptions are also accepted, e.g., `--style "poetic and lyrical"`.
 
 **Auto-detection**:
-- "快翻", "quick", "直接翻译" → quick mode
+- "快翻", "quick", "直接翻譯" → quick mode
 - "精翻", "refined", "publication quality", "proofread" → refined mode
 - Otherwise → default mode (normal)
 
 **Upgrade prompt**: After normal mode completes, display:
-> Translation saved. To further review and polish, reply "继续润色" or "refine".
+> Translation saved. To further review and polish, reply "繼續潤色" or "refine".
 
 If user responds, continue with review → polish steps (same as refined mode Steps 4-6 in refined-workflow.md) on the existing output.
 
@@ -136,7 +136,7 @@ If user responds, continue with review → polish steps (same as refined mode St
 | `academic` | Researchers / scholars | Formal register, precise terminology |
 | `business` | Business professionals | Business-friendly tone, explain tech concepts |
 
-Custom audience descriptions are also accepted, e.g., `--audience "AI感兴趣的普通读者"`.
+Custom audience descriptions are also accepted, e.g., `--audience "AI感興趣的普通讀者"`.
 
 ## Workflow
 
@@ -211,7 +211,7 @@ Before translating chunks:
 - **Natural flow**: Use idiomatic target language word order. Break long source sentences into shorter, natural ones. Interpret metaphors and idioms by intended meaning, not word-for-word
 - **Terminology**: Use standard translations consistently. First occurrence of specialized terms: annotate with original in parentheses
 - **Preserve format**: Keep all markdown formatting (headings, bold, italic, images, links, code blocks)
-- **Proactive interpretation**: For jargon or concepts the target audience may lack context for, add concise explanations in **bold parentheses** `（**解释**）`. Keep annotations few — only where genuinely needed for comprehension
+- **Proactive interpretation**: For jargon or concepts the target audience may lack context for, add concise explanations in **bold parentheses** `（**解釋**）`. Keep annotations few — only where genuinely needed for comprehension
 - **Frontmatter**: If source has YAML frontmatter, rename source-metadata fields with `source` prefix (camelCase: `url`→`sourceUrl`, `title`→`sourceTitle`, etc.), add translated values as new top-level fields (skip `title` if body has H1), keep other fields as-is
 
 #### Quick Mode
@@ -224,7 +224,7 @@ Translate directly → save to `translation.md`. Apply all translation principle
 2. **Assemble prompt** → `02-prompt.md` (translation instructions with context, glossary, challenges)
 3. **Translate** (following `02-prompt.md`) → `translation.md`
 
-After completion, prompt user: "Translation saved. To further review and polish, reply **继续润色** or **refine**."
+After completion, prompt user: "Translation saved. To further review and polish, reply **繼續潤色** or **refine**."
 
 If user continues, proceed with critical review → revision → polish (same as refined mode Steps 4-6 below), saving `03-draft.md` (rename current `translation.md`), `04-critique.md`, `05-revision.md`, and updated `translation.md`.
 

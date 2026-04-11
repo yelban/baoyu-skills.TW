@@ -28,7 +28,7 @@ chunk_max_words: 5000
 # Supports inline entries and/or file paths
 glossary:
   - from: "Reinforcement Learning"
-    to: "强化学习"
+    to: "強化學習"
   - from: "Transformer"
     to: "Transformer"
     note: "Keep English"
@@ -45,10 +45,10 @@ glossary_files:
 glossaries:
   en-zh:
     - from: "AI Agent"
-      to: "AI 智能体"
+      to: "AI 智慧體"
   ja-zh:
     - from: "人工知能"
-      to: "人工智能"
+      to: "人工智慧"
 ```
 
 ## Fields
@@ -81,14 +81,14 @@ External glossary files (`glossary_files`) support two formats:
 ```markdown
 | from | to | note |
 |------|----|------|
-| Reinforcement Learning | 强化学习 | |
+| Reinforcement Learning | 強化學習 | |
 | Transformer | Transformer | Keep English |
 ```
 
 **YAML list** (`.yaml` / `.yml`):
 ```yaml
 - from: "Reinforcement Learning"
-  to: "强化学习"
+  to: "強化學習"
 - from: "Transformer"
   to: "Transformer"
   note: "Keep English"

@@ -26,7 +26,7 @@ export function markedAlert(options: AlertOptions = {}): MarkedExtension {
   const { className = `markdown-alert`, variants = [], withoutStyle = false } = options
   const resolvedVariants = resolveVariants(variants)
 
-  // 提取公共的元数据构建逻辑
+  // 提取公共的後設資料構建邏輯
   function buildMeta(variantType: string, matchedVariant: AlertVariantItem, fromContainer = false) {
     return {
       className,
@@ -38,16 +38,16 @@ export function markedAlert(options: AlertOptions = {}): MarkedExtension {
     }
   }
 
-  // 提取公共的渲染逻辑
+  // 提取公共的渲染邏輯
   function renderAlert(token: any) {
     const { meta, tokens = [] } = token
     // @ts-expect-error marked renderer context has parser property
     const text = this.parser.parse(tokens)
-    // 新主题系统：使用 CSS 选择器而非内联样式
+    // 新主題系統：使用 CSS 選擇器而非內聯樣式
     let tmpl = `<blockquote class="${meta.className} ${meta.className}-${meta.variant}">\n`
     tmpl += `<p class="${meta.titleClassName} alert-title-${meta.variant}">`
     if (!withoutStyle) {
-      // 给 SVG 添加 class，通过 CSS 控制颜色
+      // 給 SVG 新增 class，透過 CSS 控制顏色
       tmpl += meta.icon.replace(
         `<svg`,
         `<svg class="alert-icon-${meta.variant}"`,

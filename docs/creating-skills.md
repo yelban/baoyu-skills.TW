@@ -57,7 +57,7 @@ If you add a new logical group, update the docs that present grouped skills, but
 
 ```yaml
 # Good
-description: Generates Xiaohongshu infographic series from content. Use when user asks for "小红书图片", "XHS images".
+description: Generates Xiaohongshu infographic series from content. Use when user asks for "小紅書圖片", "XHS images".
 
 # Bad
 description: I can help you create Xiaohongshu images

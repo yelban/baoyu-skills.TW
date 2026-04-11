@@ -15,12 +15,12 @@ test("bold with inline code (no underscore)", () => {
 });
 
 test("bold with inline code (contains underscore)", () => {
-  const html = render("**变成 `input_ids`。**");
+  const html = render("**變成 `input_ids`。**");
   assert.match(html, /<code[^>]*>input_ids<\/code>/);
 });
 
 test("emphasis with inline code", () => {
-  const html = render("*查看 `hidden_states`*");
+  const html = render("*檢視 `hidden_states`*");
   assert.match(html, /<code[^>]*>hidden_states<\/code>/);
 });
 
@@ -30,8 +30,8 @@ test("plain inline code (regression)", () => {
 });
 
 test("bold without code (regression)", () => {
-  const html = render("**纯粗体文本**");
-  assert.match(html, /<strong[^>]*>纯粗体文本<\/strong>/);
+  const html = render("**純粗體文字**");
+  assert.match(html, /<strong[^>]*>純粗體文字<\/strong>/);
   assert.doesNotMatch(html, /<code/);
 });
 

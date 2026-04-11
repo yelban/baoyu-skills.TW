@@ -13,7 +13,7 @@ metadata:
 
 # Image Generation (AI SDK)
 
-Official API-based image generation. Supports OpenAI, Azure OpenAI, Google, OpenRouter, DashScope (阿里通义万象), MiniMax, Jimeng (即梦), Seedream (豆包) and Replicate providers.
+Official API-based image generation. Supports OpenAI, Azure OpenAI, Google, OpenRouter, DashScope (阿里通義萬象), MiniMax, Jimeng (即夢), Seedream (豆包) and Replicate providers.
 
 ## Script Directory
 
@@ -94,14 +94,14 @@ ${BUN_X} {baseDir}/scripts/main.ts --prompt "Make blue" --image out.png --provid
 # Specific provider
 ${BUN_X} {baseDir}/scripts/main.ts --prompt "A cat" --image out.png --provider openai
 
-# DashScope (阿里通义万象)
-${BUN_X} {baseDir}/scripts/main.ts --prompt "一只可爱的猫" --image out.png --provider dashscope
+# DashScope (阿里通義萬象)
+${BUN_X} {baseDir}/scripts/main.ts --prompt "一隻可愛的貓" --image out.png --provider dashscope
 
 # DashScope Qwen-Image 2.0 Pro (recommended for custom sizes and text rendering)
-${BUN_X} {baseDir}/scripts/main.ts --prompt "为咖啡品牌设计一张 21:9 横幅海报，包含清晰中文标题" --image out.png --provider dashscope --model qwen-image-2.0-pro --size 2048x872
+${BUN_X} {baseDir}/scripts/main.ts --prompt "為咖啡品牌設計一張 21:9 橫幅海報，包含清晰中文標題" --image out.png --provider dashscope --model qwen-image-2.0-pro --size 2048x872
 
 # DashScope legacy Qwen fixed-size model
-${BUN_X} {baseDir}/scripts/main.ts --prompt "一张电影感海报" --image out.png --provider dashscope --model qwen-image-max --size 1664x928
+${BUN_X} {baseDir}/scripts/main.ts --prompt "一張電影感海報" --image out.png --provider dashscope --model qwen-image-max --size 1664x928
 
 # MiniMax
 ${BUN_X} {baseDir}/scripts/main.ts --prompt "A fashion editorial portrait by a bright studio window" --image out.jpg --provider minimax
@@ -179,11 +179,11 @@ Paths in `promptFiles`, `image`, and `ref` are resolved relative to the batch fi
 | `AZURE_OPENAI_API_KEY` | Azure OpenAI API key |
 | `OPENROUTER_API_KEY` | OpenRouter API key |
 | `GOOGLE_API_KEY` | Google API key |
-| `DASHSCOPE_API_KEY` | DashScope API key (阿里云) |
+| `DASHSCOPE_API_KEY` | DashScope API key (阿里雲) |
 | `MINIMAX_API_KEY` | MiniMax API key |
 | `REPLICATE_API_TOKEN` | Replicate API token |
-| `JIMENG_ACCESS_KEY_ID` | Jimeng (即梦) Volcengine access key |
-| `JIMENG_SECRET_ACCESS_KEY` | Jimeng (即梦) Volcengine secret key |
+| `JIMENG_ACCESS_KEY_ID` | Jimeng (即夢) Volcengine access key |
+| `JIMENG_SECRET_ACCESS_KEY` | Jimeng (即夢) Volcengine secret key |
 | `ARK_API_KEY` | Seedream (豆包) Volcengine ARK API key |
 | `OPENAI_IMAGE_MODEL` | OpenAI model override |
 | `AZURE_OPENAI_DEPLOYMENT` | Azure default deployment name |
@@ -238,7 +238,7 @@ Use `--model qwen-image-2.0-pro` or set `default_model.dashscope` / `DASHSCOPE_I
 Official DashScope model families:
 
 - `qwen-image-2.0-pro`, `qwen-image-2.0-pro-2026-03-03`, `qwen-image-2.0`, `qwen-image-2.0-2026-03-03`
-  - Free-form `size` in `宽*高` format
+  - Free-form `size` in `寬*高` format
   - Total pixels must stay between `512*512` and `2048*2048`
   - Default size is approximately `1024*1024`
   - Best choice for custom ratios such as `21:9` and text-heavy Chinese/English layouts

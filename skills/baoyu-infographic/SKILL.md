@@ -1,6 +1,6 @@
 ---
 name: baoyu-infographic
-description: Generates professional infographics with 21 layout types and 21 visual styles. Analyzes content, recommends layout×style combinations, and generates publication-ready infographics. Use when user asks to create "infographic", "信息图", "visual summary", "可视化", or "高密度信息大图".
+description: Generates professional infographics with 21 layout types and 21 visual styles. Analyzes content, recommends layout×style combinations, and generates publication-ready infographics. Use when user asks to create "infographic", "資訊圖", "visual summary", "視覺化", or "高密度資訊大圖".
 version: 1.56.1
 metadata:
   openclaw:
@@ -118,8 +118,8 @@ If a shortcut has **Prompt Notes**, append them to the generated prompt (Step 5)
 
 | User Keyword | Layout | Recommended Styles | Default Aspect | Prompt Notes |
 |--------------|--------|--------------------|----------------|--------------|
-| 高密度信息大图 / high-density-info | `dense-modules` | `morandi-journal`, `pop-laboratory`, `retro-pop-grid` | portrait | — |
-| 信息图 / infographic | `bento-grid` | `craft-handmade` | landscape | Minimalist: clean canvas, ample whitespace, no complex background textures. Simple cartoon elements and icons only. |
+| 高密度資訊大圖 / high-density-info | `dense-modules` | `morandi-journal`, `pop-laboratory`, `retro-pop-grid` | portrait | — |
+| 資訊圖 / infographic | `bento-grid` | `craft-handmade` | landscape | Minimalist: clean canvas, ample whitespace, no complex background textures. Simple cartoon elements and icons only. |
 
 ## Output Structure
 
