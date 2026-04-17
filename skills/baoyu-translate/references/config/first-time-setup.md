@@ -48,7 +48,7 @@ Use AskUserQuestion with ALL questions in ONE call:
 header: "Target Language"
 question: "Default target language?"
 options:
-  - label: "简体中文 zh-CN (Recommended)"
+  - label: "簡體中文 zh-CN (Recommended)"
     description: "Translate to Simplified Chinese"
   - label: "繁體中文 zh-TW"
     description: "Translate to Traditional Chinese"
@@ -158,9 +158,9 @@ style: [storytelling/formal/technical/literal/academic/business/humorous/convers
 # Custom glossary (optional) — add your own term translations here
 # glossary:
 #   - from: "Term"
-#     to: "翻译"
+#     to: "翻譯"
 #   - from: "Another Term"
-#     to: "另一个翻译"
+#     to: "另一個翻譯"
 #     note: "Usage context"
 ```
 

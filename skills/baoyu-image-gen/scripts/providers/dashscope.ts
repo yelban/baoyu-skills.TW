@@ -12,7 +12,7 @@ const MIN_QWEN_2_TOTAL_PIXELS = 512 * 512;
 const MAX_QWEN_2_TOTAL_PIXELS = 2048 * 2048;
 const SIZE_STEP = 16;
 const QWEN_NEGATIVE_PROMPT =
-  "低分辨率，低画质，肢体畸形，手指畸形，画面过饱和，蜡像感，人脸无细节，过度光滑，画面具有AI感，构图混乱，文字模糊，扭曲";
+  "低解析度，低畫質，肢體畸形，手指畸形，畫面過飽和，蠟像感，人臉無細節，過度光滑，畫面具有AI感，構圖混亂，文字模糊，扭曲";
 
 const QWEN_2_TARGET_PIXELS: Record<Quality, number> = {
   normal: 1024 * 1024,

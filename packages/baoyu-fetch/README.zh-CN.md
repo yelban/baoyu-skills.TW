@@ -1,42 +1,42 @@
 # baoyu-fetch
 
-[English](./README.md) | 简体中文 | [更新日志](./CHANGELOG.zh-CN.md) | [English Changelog](./CHANGELOG.md)
+[English](./README.md) | 簡體中文 | [更新日誌](./CHANGELOG.zh-CN.md) | [English Changelog](./CHANGELOG.md)
 
-`baoyu-fetch` 是一个基于 Chrome CDP 的 Bun CLI。输入 URL，它会输出高质量
-`markdown` 或 `json`；命中站点 adapter 时优先消费 API 返回或页面内结构化
-数据，未命中时回退到通用 HTML 提取。
+`baoyu-fetch` 是一個基於 Chrome CDP 的 Bun CLI。輸入 URL，它會輸出高質量
+`markdown` 或 `json`；命中站點 adapter 時優先消費 API 返回或頁面內結構化
+資料，未命中時回退到通用 HTML 提取。
 
-## 当前能力
+## 當前能力
 
-- 通过 Chrome CDP 抓取渲染后的页面内容
-- 监听网络请求与响应，按需拉取响应体
-- adapter registry，支持按 URL 自动命中站点处理器
-- 内置 `x`、`youtube`、`hn` adapters
-- 通用 fallback：Defuddle 优先，Readability + HTML to Markdown 回退；`--format markdown` 时会再尝试 `defuddle.md` 兜底
-- `stdout` 或 `--output` 输出 `markdown` / `json`
-- 可选下载提取出的图片/视频并重写 Markdown 链接
-- 提供登录/验证场景下的交互等待模式
-- Chrome profile 默认对齐 `baoyu-skills/chrome-profile`
+- 透過 Chrome CDP 抓取渲染後的頁面內容
+- 監聽網路請求與響應，按需拉取響應體
+- adapter registry，支援按 URL 自動命中站點處理器
+- 內建 `x`、`youtube`、`hn` adapters
+- 通用 fallback：Defuddle 優先，Readability + HTML to Markdown 回退；`--format markdown` 時會再嘗試 `defuddle.md` 兜底
+- `stdout` 或 `--output` 輸出 `markdown` / `json`
+- 可選下載提取出的圖片/影片並重寫 Markdown 連結
+- 提供登入/驗證場景下的互動等待模式
+- Chrome profile 預設對齊 `baoyu-skills/chrome-profile`
 
-## 安装
+## 安裝
 
 ```bash
 bun install
 ```
 
-作为包使用时，推荐直接这样运行：
+作為包使用時，推薦直接這樣執行：
 
 ```bash
 bunx baoyu-fetch https://example.com
 ```
 
-也可以全局安装：
+也可以全域性安裝：
 
 ```bash
 npm install -g baoyu-fetch
 ```
 
-npm 包发布的是 TypeScript 源码入口，不包含预编译的 `dist`，所以运行时需要
+npm 包釋出的是 TypeScript 原始碼入口，不包含預編譯的 `dist`，所以執行時需要
 Bun。
 
 ## 用法
@@ -54,53 +54,53 @@ baoyu-fetch https://x.com/jack/status/20 --wait-for force
 baoyu-fetch https://x.com/jack/status/20 --chrome-profile-dir ~/Library/Application\\ Support/baoyu-skills/chrome-profile
 ```
 
-## 主要参数
+## 主要引數
 
 ```bash
 baoyu-fetch <url> [options]
 
 Options:
-  --output <file>       保存输出内容到文件
-  --format <type>       输出格式：markdown | json
-  --json                `--format json` 的兼容别名
-  --adapter <name>      强制使用指定 adapter（如 x / hn / generic）
-  --download-media      下载 adapter 返回的媒体到 ./imgs 和 ./videos，并重写 markdown 链接
-  --media-dir <dir>     指定媒体下载根目录；默认使用输出文件所在目录
-  --debug-dir <dir>     导出调试信息（html、document.json、network.json）
-  --cdp-url <url>       连接现有 Chrome 调试地址
-  --browser-path <path> 指定 Chrome 可执行文件
+  --output <file>       儲存輸出內容到檔案
+  --format <type>       輸出格式：markdown | json
+  --json                `--format json` 的相容別名
+  --adapter <name>      強制使用指定 adapter（如 x / hn / generic）
+  --download-media      下載 adapter 返回的媒體到 ./imgs 和 ./videos，並重寫 markdown 連結
+  --media-dir <dir>     指定媒體下載根目錄；預設使用輸出檔案所在目錄
+  --debug-dir <dir>     匯出除錯資訊（html、document.json、network.json）
+  --cdp-url <url>       連線現有 Chrome 除錯地址
+  --browser-path <path> 指定 Chrome 可執行檔案
   --chrome-profile-dir <path>
-                        指定 Chrome profile 目录。默认使用 BAOYU_CHROME_PROFILE_DIR，
-                        否则回退到 baoyu-skills/chrome-profile
-  --headless            启动临时 headless Chrome（未连现有实例时）
+                        指定 Chrome profile 目錄。預設使用 BAOYU_CHROME_PROFILE_DIR，
+                        否則回退到 baoyu-skills/chrome-profile
+  --headless            啟動臨時 headless Chrome（未連現有例項時）
   --wait-for <mode>     等待模式：interaction | force
   --wait-for-interaction
-                        `--wait-for interaction` 的别名
-  --wait-for-login      `--wait-for interaction` 的别名
+                        `--wait-for interaction` 的別名
+  --wait-for-login      `--wait-for interaction` 的別名
   --interaction-timeout <ms>
-                        手动交互等待超时，默认 600000
+                        手動互動等待超時，預設 600000
   --interaction-poll-interval <ms>
-                        等待期间的轮询间隔，默认 1500
-  --login-timeout <ms>  `--interaction-timeout` 的别名
+                        等待期間的輪詢間隔，預設 1500
+  --login-timeout <ms>  `--interaction-timeout` 的別名
   --login-poll-interval <ms>
-                        `--interaction-poll-interval` 的别名
-  --timeout <ms>        页面加载超时，默认 30000
-  --help                显示帮助
+                        `--interaction-poll-interval` 的別名
+  --timeout <ms>        頁面載入超時，預設 30000
+  --help                顯示幫助
 ```
 
-## 设计
+## 設計
 
-核心链路：
+核心鏈路：
 
-1. CLI 解析 URL 和选项
-2. 建立 CDP 会话并创建受控 tab
-3. 启动 `NetworkJournal` 收集所有请求/响应
-4. 由 adapter registry 匹配站点 adapter
-5. adapter 返回结构化 `ExtractedDocument`
-6. 没命中则走通用 HTML 提取
-7. 按请求输出 Markdown，或输出包含 `document` 和 `markdown` 的 JSON
+1. CLI 解析 URL 和選項
+2. 建立 CDP 會話並建立受控 tab
+3. 啟動 `NetworkJournal` 收集所有請求/響應
+4. 由 adapter registry 匹配站點 adapter
+5. adapter 返回結構化 `ExtractedDocument`
+6. 沒命中則走通用 HTML 提取
+7. 按請求輸出 Markdown，或輸出包含 `document` 和 `markdown` 的 JSON
 
-## 开发
+## 開發
 
 ```bash
 bun run check
@@ -108,15 +108,15 @@ bun run test
 bun run build
 ```
 
-## 发版
+## 發版
 
-新增用户可见改动后，先添加一个 changeset：
+新增使用者可見改動後，先新增一個 changeset：
 
 ```bash
 bunx changeset
 ```
 
-把生成的 `.changeset/*.md` 一起合并到 `main` 后，GitHub Actions 会自动创建或
-更新 release PR；合并 release PR 之后，会自动发布到 npm。
+把生成的 `.changeset/*.md` 一起合併到 `main` 後，GitHub Actions 會自動建立或
+更新 release PR；合併 release PR 之後，會自動釋出到 npm。
 
-发布流程不会编译 `dist`，而是直接把 `src/*.ts` 发布出去供 Bun 执行。
+釋出流程不會編譯 `dist`，而是直接把 `src/*.ts` 釋出出去供 Bun 執行。

@@ -1,6 +1,6 @@
 ---
 name: baoyu-xhs-images
-description: Generates Xiaohongshu (Little Red Book) image card series with 12 visual styles, 8 layouts, and 3 color palettes. Breaks content into 1-10 cartoon-style image cards optimized for XHS engagement. Use when user mentions "小红书图片", "XHS images", "RedNote infographics", "小红书种草", "小绿书", "微信图文", "微信贴图", or wants social media infographic series for Chinese platforms.
+description: Generates Xiaohongshu (Little Red Book) image card series with 12 visual styles, 8 layouts, and 3 color palettes. Breaks content into 1-10 cartoon-style image cards optimized for XHS engagement. Use when user mentions "小紅書圖片", "XHS images", "RedNote infographics", "小紅書種草", "小綠書", "微信圖文", "微信貼圖", or wants social media infographic series for Chinese platforms.
 version: 1.56.1
 metadata:
   openclaw:
@@ -106,52 +106,52 @@ Quick-start presets by content scenario. Use `--preset <name>` or recommend duri
 
 | Preset | Style | Layout | Best For |
 |--------|-------|--------|----------|
-| `knowledge-card` | notion | dense | 干货知识卡、概念科普 |
-| `checklist` | notion | list | 清单、排行榜、必备清单 |
-| `concept-map` | notion | mindmap | 概念图、知识脉络 |
-| `swot` | notion | quadrant | SWOT分析、四象限分类 |
-| `tutorial` | chalkboard | flow | 教程步骤、操作流程 |
-| `classroom` | chalkboard | balanced | 课堂笔记、知识讲解 |
-| `study-guide` | study-notes | dense | 学习笔记、考试重点 |
-| `hand-drawn-edu` | sketch-notes | flow | 手绘教程、流程图解 |
-| `sketch-card` | sketch-notes | dense | 手绘知识卡、概念科普 |
-| `sketch-summary` | sketch-notes | balanced | 手绘总结、图文笔记 |
+| `knowledge-card` | notion | dense | 乾貨知識卡、概念科普 |
+| `checklist` | notion | list | 清單、排行榜、必備清單 |
+| `concept-map` | notion | mindmap | 概念圖、知識脈絡 |
+| `swot` | notion | quadrant | SWOT分析、四象限分類 |
+| `tutorial` | chalkboard | flow | 教程步驟、操作流程 |
+| `classroom` | chalkboard | balanced | 課堂筆記、知識講解 |
+| `study-guide` | study-notes | dense | 學習筆記、考試重點 |
+| `hand-drawn-edu` | sketch-notes | flow | 手繪教程、流程圖解 |
+| `sketch-card` | sketch-notes | dense | 手繪知識卡、概念科普 |
+| `sketch-summary` | sketch-notes | balanced | 手繪總結、圖文筆記 |
 
 **Lifestyle & Sharing**:
 
 | Preset | Style | Layout | Best For |
 |--------|-------|--------|----------|
-| `cute-share` | cute | balanced | 少女风分享、日常种草 |
-| `girly` | cute | sparse | 甜美封面、氛围感 |
+| `cute-share` | cute | balanced | 少女風分享、日常種草 |
+| `girly` | cute | sparse | 甜美封面、氛圍感 |
 | `cozy-story` | warm | balanced | 生活故事、情感分享 |
-| `product-review` | fresh | comparison | 产品对比、测评 |
-| `nature-flow` | fresh | flow | 健康流程、自然主题 |
+| `product-review` | fresh | comparison | 產品對比、測評 |
+| `nature-flow` | fresh | flow | 健康流程、自然主題 |
 
 **Impact & Opinion**:
 
 | Preset | Style | Layout | Best For |
 |--------|-------|--------|----------|
 | `warning` | bold | list | 避坑指南、重要提醒 |
-| `versus` | bold | comparison | 正反对比、强烈对照 |
-| `clean-quote` | minimal | sparse | 金句、极简封面 |
-| `pro-summary` | minimal | balanced | 专业总结、商务内容 |
+| `versus` | bold | comparison | 正反對比、強烈對照 |
+| `clean-quote` | minimal | sparse | 金句、極簡封面 |
+| `pro-summary` | minimal | balanced | 專業總結、商務內容 |
 
 **Trend & Entertainment**:
 
 | Preset | Style | Layout | Best For |
 |--------|-------|--------|----------|
-| `retro-ranking` | retro | list | 复古排行、经典盘点 |
-| `throwback` | retro | balanced | 怀旧分享、老物件 |
-| `pop-facts` | pop | list | 趣味冷知识、好玩的事 |
-| `hype` | pop | sparse | 炸裂封面、惊叹分享 |
+| `retro-ranking` | retro | list | 復古排行、經典盤點 |
+| `throwback` | retro | balanced | 懷舊分享、老物件 |
+| `pop-facts` | pop | list | 趣味冷知識、好玩的事 |
+| `hype` | pop | sparse | 炸裂封面、驚歎分享 |
 
 **Poster & Editorial**:
 
 | Preset | Style | Layout | Best For |
 |--------|-------|--------|----------|
-| `poster` | screen-print | sparse | 海报风封面、影评书评 |
-| `editorial` | screen-print | balanced | 观点文章、文化评论 |
-| `cinematic` | screen-print | comparison | 电影对比、戏剧张力 |
+| `poster` | screen-print | sparse | 海報風封面、影評書評 |
+| `editorial` | screen-print | balanced | 觀點文章、文化評論 |
+| `cinematic` | screen-print | comparison | 電影對比、戲劇張力 |
 
 Full preset definitions: [references/style-presets.md](references/style-presets.md)
 
@@ -197,13 +197,13 @@ Detailed palette definitions: `references/palettes/<palette>.md`
 | Education, tutorial, learning, teaching, classroom | `chalkboard` | balanced/dense | `tutorial`, `classroom` |
 | Notes, handwritten, study guide, knowledge, realistic, photo | `study-notes` | dense/list/mindmap | `study-guide` |
 | Movie, album, concert, poster, opinion, editorial, dramatic, cinematic | `screen-print` | sparse/comparison | `poster`, `editorial`, `cinematic` |
-| Hand-drawn, infographic, diagram, visual summary, 手绘, 图解, workflow, process | `sketch-notes` | flow/balanced/dense | `hand-drawn-edu`, `sketch-card`, `sketch-summary` |
+| Hand-drawn, infographic, diagram, visual summary, 手繪, 圖解, workflow, process | `sketch-notes` | flow/balanced/dense | `hand-drawn-edu`, `sketch-card`, `sketch-summary` |
 
 ## Outline Strategies
 
 Three differentiated outline strategies for different content goals:
 
-### Strategy A: Story-Driven (故事驱动型)
+### Strategy A: Story-Driven (故事驅動型)
 
 | Aspect | Description |
 |--------|-------------|
@@ -212,7 +212,7 @@ Three differentiated outline strategies for different content goals:
 | **Best for** | Reviews, personal shares, transformation stories |
 | **Structure** | Hook → Problem → Discovery → Experience → Conclusion |
 
-### Strategy B: Information-Dense (信息密集型)
+### Strategy B: Information-Dense (資訊密集型)
 
 | Aspect | Description |
 |--------|-------------|
@@ -221,7 +221,7 @@ Three differentiated outline strategies for different content goals:
 | **Best for** | Tutorials, comparisons, product reviews, checklists |
 | **Structure** | Core conclusion → Info card → Pros/Cons → Recommendation |
 
-### Strategy C: Visual-First (视觉优先型)
+### Strategy C: Visual-First (視覺優先型)
 
 | Aspect | Description |
 |--------|-------------|
@@ -253,7 +253,7 @@ xhs-images/{topic-slug}/
 
 **Slug Generation**:
 1. Extract main topic from content (2-4 words, kebab-case)
-2. Example: "AI工具推荐" → `ai-tools-recommend`
+2. Example: "AI工具推薦" → `ai-tools-recommend`
 
 **Conflict Resolution**:
 If `xhs-images/{topic-slug}/` already exists:
@@ -367,10 +367,10 @@ Read source content, save it if needed, and perform deep analysis.
    - **Backup rule**: If `source.md` exists, rename to `source-backup-YYYYMMDD-HHMMSS.md`
 2. Read source content
 3. **Deep analysis** following `references/workflows/analysis-framework.md`:
-   - Content type classification (种草/干货/测评/教程/避坑...)
-   - Hook analysis (爆款标题潜力)
+   - Content type classification (種草/乾貨/測評/教程/避坑...)
+   - Hook analysis (爆款標題潛力)
    - Target audience identification
-   - Engagement potential (收藏/分享/评论)
+   - Engagement potential (收藏/分享/評論)
    - Visual opportunity mapping
    - Swipe flow design
 4. Detect source language
@@ -395,15 +395,15 @@ Read source content, save it if needed, and perform deep analysis.
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📋 内容分析
-  主题：[topic] | 类型：[content_type]
-  要点：[key points summary]
-  受众：[target audience]
+📋 內容分析
+  主題：[topic] | 型別：[content_type]
+  要點：[key points summary]
+  受眾：[target audience]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎨 推荐方案（自动匹配）
+🎨 推薦方案（自動匹配）
   策略：[A/B/C] [strategy name]（[reason]）
-  风格：[style] · 布局：[layout] · 配色：[palette or "默认"] · 预设：[preset]
-  图片：[N]张（封面+[N-2]内容+结尾）
+  風格：[style] · 佈局：[layout] · 配色：[palette or "預設"] · 預設：[preset]
+  圖片：[N]張（封面+[N-2]內容+結尾）
   元素：[background] / [decorations] / [emphasis]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
@@ -412,9 +412,9 @@ Read source content, save it if needed, and perform deep analysis.
 
 | Option | Description |
 |--------|-------------|
-| 1. ✅ 确认，直接生成（推荐） | Trust auto-recommendation, proceed immediately |
-| 2. 🎛️ 自定义调整 | Modify strategy/style/layout/count in one step |
-| 3. 📋 详细模式 | Generate 3 outlines, then choose (two confirmations) |
+| 1. ✅ 確認，直接生成（推薦） | Trust auto-recommendation, proceed immediately |
+| 2. 🎛️ 自定義調整 | Modify strategy/style/layout/count in one step |
+| 3. 📋 詳細模式 | Generate 3 outlines, then choose (two confirmations) |
 
 #### Path A: Quick Confirm (Option 1)
 
@@ -424,11 +424,11 @@ Generate single outline using recommended strategy + style → save to `outline.
 
 **Use AskUserQuestion** with adjustable options (leave blank = keep recommended):
 
-1. **策略风格**: Current: [strategy + style]. Options: A Story-Driven(warm) | B Information-Dense(notion) | C Visual-First(screen-print). Or specify style directly: cute/fresh/warm/bold/minimal/retro/pop/notion/chalkboard/study-notes/screen-print/sketch-notes. Or use preset: knowledge-card / checklist / tutorial / poster / hand-drawn-edu / etc.
-2. **布局**: Current: [layout]. Options: sparse | balanced | dense | list | comparison | flow | mindmap | quadrant
-3. **配色**: Current: [palette or "默认"]. Options: 默认 | macaron | warm | neon
-4. **图片数量**: Current: [N]. Range: 2-10
-5. **补充说明**（可选）: Selling point emphasis, audience adjustment, custom color preference, etc.
+1. **策略風格**: Current: [strategy + style]. Options: A Story-Driven(warm) | B Information-Dense(notion) | C Visual-First(screen-print). Or specify style directly: cute/fresh/warm/bold/minimal/retro/pop/notion/chalkboard/study-notes/screen-print/sketch-notes. Or use preset: knowledge-card / checklist / tutorial / poster / hand-drawn-edu / etc.
+2. **佈局**: Current: [layout]. Options: sparse | balanced | dense | list | comparison | flow | mindmap | quadrant
+3. **配色**: Current: [palette or "預設"]. Options: 預設 | macaron | warm | neon
+4. **圖片數量**: Current: [N]. Range: 2-10
+5. **補充說明**（可選）: Selling point emphasis, audience adjustment, custom color preference, etc.
 
 **After response**: Generate single outline with user's choices → save to `outline.md` → Step 3.
 
@@ -473,7 +473,7 @@ image_count: 5
 
 ## P1 Cover
 **Type**: cover
-**Hook**: "入冬后脸不干了🥹终于找到对的面霜"
+**Hook**: "入冬後臉不幹了🥹終於找到對的面霜"
 **Visual**: Product hero shot with cozy winter atmosphere
 **Layout**: sparse
 

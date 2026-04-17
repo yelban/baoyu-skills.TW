@@ -403,7 +403,7 @@ English | [中文](./CHANGELOG.zh.md)
 ## 1.66.0 - 2026-03-13
 
 ### Features
-- `baoyu-image-gen`: add Jimeng (即梦) and Seedream (豆包) image generation providers (by @lindaifeng)
+- `baoyu-image-gen`: add Jimeng (即夢) and Seedream (豆包) image generation providers (by @lindaifeng)
 
 ### Fixes
 - `baoyu-image-gen`: tighten Jimeng provider behavior
@@ -614,7 +614,7 @@ English | [中文](./CHANGELOG.zh.md)
 ## 1.51.0 - 2026-03-06
 
 ### Features
-- `baoyu-post-to-weibo`: new skill for posting to Weibo — supports text posts with images and headline articles (头条文章) via Chrome CDP
+- `baoyu-post-to-weibo`: new skill for posting to Weibo — supports text posts with images and headline articles (頭條文章) via Chrome CDP
 - `baoyu-format-markdown`: add title/summary multi-candidate selection — generates 3 candidates for user to pick, with `auto_select` EXTEND.md support
 
 ## 1.50.0 - 2026-03-06
@@ -838,7 +838,7 @@ English | [中文](./CHANGELOG.zh.md)
 ## 1.31.1 - 2026-02-10
 
 ### Features
-- `baoyu-post-to-wechat`: adapt to new WeChat UI — rename 图文 to 贴图; add ProseMirror editor support with old editor fallback; add fallback file input selector; add upload progress monitoring; improve save button detection with toast verification.
+- `baoyu-post-to-wechat`: adapt to new WeChat UI — rename 圖文 to 貼圖; add ProseMirror editor support with old editor fallback; add fallback file input selector; add upload progress monitoring; improve save button detection with toast verification.
 
 ### Fixes
 - `baoyu-post-to-wechat`: truncate digest > 120 chars at punctuation boundary; fix cover image relative path resolution.

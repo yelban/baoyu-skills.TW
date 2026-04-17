@@ -1,6 +1,6 @@
 # shoujo
 
-少女预设 - Classic shoujo manga with romantic aesthetics
+少女預設 - Classic shoujo manga with romantic aesthetics
 
 ## Base Configuration
 

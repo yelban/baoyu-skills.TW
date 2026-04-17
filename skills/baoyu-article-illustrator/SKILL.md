@@ -1,6 +1,6 @@
 ---
 name: baoyu-article-illustrator
-description: Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style × Palette three-dimension approach. Use when user asks to "illustrate article", "add images", "generate images for article", or "为文章配图".
+description: Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style × Palette three-dimension approach. Use when user asks to "illustrate article", "add images", "generate images for article", or "為文章配圖".
 version: 1.57.0
 metadata:
   openclaw:

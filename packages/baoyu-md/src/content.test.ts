@@ -50,7 +50,7 @@ test("serializeFrontmatter renders YAML only when fields exist", () => {
 
 test("quote and frontmatter string helpers normalize mixed scalar values", () => {
   assert.equal(stripWrappingQuotes(`" quoted "`), "quoted");
-  assert.equal(stripWrappingQuotes("“ 中文标题 ”"), "中文标题");
+  assert.equal(stripWrappingQuotes("“ 中文標題 ”"), "中文標題");
   assert.equal(stripWrappingQuotes("plain"), "plain");
 
   assert.equal(toFrontmatterString("'hello'"), "hello");
@@ -97,14 +97,14 @@ test("summary extraction normalizes raw HTML paragraphs to plain text", () => {
   const summary = extractSummaryFromBody(
     `
 # Heading
-<p style="font-size: 16px; color: #666; margin-bottom: 20px;">2026年初，一只“龙虾”搅动了整个科技圈。腾讯楼下排起近千人长队，只为让工程师领取一份福利。</p>
+<p style="font-size: 16px; color: #666; margin-bottom: 20px;">2026年初，一隻“龍蝦”攪動了整個科技圈。騰訊樓下排起近千人長隊，只為讓工程師領取一份福利。</p>
 `,
     120,
   );
 
   assert.equal(
     summary,
-    "2026年初，一只“龙虾”搅动了整个科技圈。腾讯楼下排起近千人长队，只为让工程师领取一份福利。",
+    "2026年初，一隻“龍蝦”攪動了整個科技圈。騰訊樓下排起近千人長隊，只為讓工程師領取一份福利。",
   );
   assert.equal(cleanSummaryText("<strong>Good&nbsp;text&#33;&apos;</strong>"), "Good text!'");
 });
