@@ -189,7 +189,7 @@ async function uploadImage(
     uploadType,
   );
 
-  // media/uploadimg 接口只返回 URL，material/add_material 返回 media_id
+  // media/uploadimg 介面只返回 URL，material/add_material 返回 media_id
   if (uploadType === "body") {
     return {
       url: toHttpsUrl(result.url),
@@ -201,7 +201,7 @@ async function uploadImage(
   }
 }
 
-// 实际的微信上传函数
+// 實際的微信上傳函式
 async function uploadToWechat(
   fileBuffer: Buffer,
   filename: string,
@@ -284,7 +284,7 @@ async function uploadImagesInHtml(
     try {
       let resp = uploadedBySource.get(imagePath);
       if (!resp) {
-        // 正文图片使用 media/uploadimg 接口获取 URL
+        // 正文圖片使用 media/uploadimg 介面獲取 URL
         resp = await uploadImage(imagePath, accessToken, baseDir, "body");
         uploadedBySource.set(imagePath, resp);
       }
@@ -320,7 +320,7 @@ async function uploadImagesInHtml(
     try {
       let resp = uploadedBySource.get(imagePath);
       if (!resp) {
-        // 正文图片使用 media/uploadimg 接口获取 URL
+        // 正文圖片使用 media/uploadimg 介面獲取 URL
         resp = await uploadImage(imagePath, accessToken, baseDir, "body");
         uploadedBySource.set(imagePath, resp);
       }
@@ -484,7 +484,7 @@ Arguments:
   file                Markdown (.md) or HTML (.html) file
 
 Options:
-  --type <type>       Article type: news (文章, default) or newspic (图文)
+  --type <type>       Article type: news (文章, default) or newspic (圖文)
   --title <title>     Override title
   --author <name>     Author name (max 16 chars)
   --summary <text>    Article summary/digest (max 128 chars)
@@ -737,12 +737,12 @@ async function main(): Promise<void> {
 
   if (coverPath) {
     console.error(`[wechat-api] Uploading cover: ${coverPath}`);
-    // 封面图片使用 material/add_material 接口
+    // 封面圖片使用 material/add_material 介面
     const coverResp = await uploadImage(coverPath, accessToken, baseDir, "material");
     thumbMediaId = coverResp.media_id;
     console.error(`[wechat-api] Cover uploaded successfully, media_id: ${thumbMediaId}`);
   } else if (firstCoverMediaId && args.articleType === "news") {
-    // news 类型没有封面时，使用第一张正文图的 media_id 作为封面（兜底逻辑）
+    // news 型別沒有封面時，使用第一張正文圖的 media_id 作為封面（兜底邏輯）
     thumbMediaId = firstCoverMediaId;
     console.error(`[wechat-api] Using first body image as cover (fallback), media_id: ${thumbMediaId}`);
   }

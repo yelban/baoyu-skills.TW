@@ -173,3 +173,7 @@ diagram/
 .worktrees/
 youtube-transcript/
 .omx/
+
+# TW fork local state
+backups/
+.mcp.json

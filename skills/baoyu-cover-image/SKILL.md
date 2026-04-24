@@ -45,7 +45,7 @@ Default behavior: **confirm before generation**.
 
 - Treat explicit skill invocation, a file path, matched keywords/presets, `EXTEND.md` defaults, and any documented auto-selection as **recommendation inputs only**. None of them authorizes skipping confirmation.
 - Do **not** start Step 3 or Step 4 until the user confirms the dimensions / aspect / language / backend choices.
-- Skip confirmation only when the current request explicitly says to do so, for example: `--quick`, "直接生成", "不用确认", "跳过确认", "按默认出图", or equivalent wording. `quick_mode: true` in `EXTEND.md` counts as a standing explicit opt-out — set it only when you want every run to skip Step 2.
+- Skip confirmation only when the current request explicitly says to do so, for example: `--quick`, "直接生成", "不用確認", "跳過確認", "按默認出圖", or equivalent wording. `quick_mode: true` in `EXTEND.md` counts as a standing explicit opt-out — set it only when you want every run to skip Step 2.
 - If confirmation is skipped explicitly, state the assumed dimensions / aspect / language / backend in the next user-facing update before generating.
 
 ## Options

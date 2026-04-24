@@ -18,11 +18,11 @@ default_theme: default
 default_color: blue
 
 accounts:
-  - name: 宝玉的技术分享
+  - name: 寶玉的技術分享
     alias: baoyu
     default: true
     default_publish_method: api
-    default_author: 宝玉
+    default_author: 寶玉
     need_open_comment: 1
     only_fans_can_comment: 0
     app_id: your_wechat_app_id

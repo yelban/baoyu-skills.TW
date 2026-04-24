@@ -1,6 +1,6 @@
 ---
 name: baoyu-markdown-to-html
-description: Converts Markdown to styled HTML with WeChat-compatible themes. Supports code highlighting, math, PlantUML, footnotes, alerts, infographics, and optional bottom citations for external links. Use when user asks for "markdown to html", "convert md to html", "md 转 html", "微信外链转底部引用", or needs styled HTML output from markdown.
+description: Converts Markdown to styled HTML with WeChat-compatible themes. Supports code highlighting, math, PlantUML, footnotes, alerts, infographics, and optional bottom citations for external links. Use when user asks for "markdown to html", "convert md to html", "md 轉 html", "微信外鏈轉底部引用", or needs styled HTML output from markdown.
 version: 1.56.1
 metadata:
   openclaw:
@@ -90,10 +90,10 @@ Read `$HOME/.baoyu-skills/baoyu-post-to-wechat/EXTEND.md` if it exists and look 
 
 **Default**: Off. Do not ask by default.
 
-**Enable only if the user explicitly asks** for "微信外链转底部引用", "底部引用", "文末引用", or passes `--cite`.
+**Enable only if the user explicitly asks** for "微信外鏈轉底部引用", "底部引用", "文末引用", or passes `--cite`.
 
 **Behavior when enabled**:
-- Ordinary external links are rendered with numbered superscripts and collected under a final `引用链接` section.
+- Ordinary external links are rendered with numbered superscripts and collected under a final `引用連結` section.
 - `https://mp.weixin.qq.com/...` links stay as direct links and are not moved to the bottom.
 - Bare links where link text equals URL stay inline.
 
@@ -122,7 +122,7 @@ ${BUN_X} {baseDir}/scripts/main.ts <markdown_file> [options]
 | `--font-family <name>` | Font: sans, serif, serif-cjk, mono, or CSS value | theme default |
 | `--font-size <N>` | Font size: 14px, 15px, 16px, 17px, 18px | 16px |
 | `--title <title>` | Override title from frontmatter | |
-| `--cite` | Convert external links to bottom citations, append `引用链接` section | false (off) |
+| `--cite` | Convert external links to bottom citations, append `引用連結` section | false (off) |
 | `--keep-title` | Keep the first heading in content | false (removed) |
 | `--help` | Show help | |
 

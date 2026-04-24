@@ -1,6 +1,6 @@
 ---
 name: baoyu-infographic
-description: Generate professional infographics with 21 layout types and 21 visual styles. Analyzes content, recommends layout×style combinations, and generates publication-ready infographics. Use when user asks to create "infographic", "信息图", "visual summary", "可视化", or "高密度信息大图".
+description: Generate professional infographics with 21 layout types and 21 visual styles. Analyzes content, recommends layout×style combinations, and generates publication-ready infographics. Use when user asks to create "infographic", "資訊圖", "visual summary", "視覺化", or "高密度資訊大圖".
 version: 1.57.1
 metadata:
   openclaw:
@@ -76,7 +76,7 @@ Default behavior: **confirm before generation**.
 
 - Treat explicit skill invocation, a file path, a matched keyword shortcut, `EXTEND.md` defaults, and the documented default combination as **recommendation inputs only**. None of them authorizes skipping confirmation.
 - Do **not** start Step 5 or Step 6 until the user confirms the combination/aspect/language/backend choices.
-- Skip confirmation only when the current request explicitly says to do so, for example: `--no-confirm`, "直接生成", "不用确认", "跳过确认", "按默认出图", or equivalent wording.
+- Skip confirmation only when the current request explicitly says to do so, for example: `--no-confirm`, "直接生成", "不用確認", "跳過確認", "按默認出圖", or equivalent wording.
 - If confirmation is skipped explicitly, state the assumed combination/aspect/language/backend in the next user-facing update before generating.
 
 ## Options
@@ -176,8 +176,8 @@ When the user's input contains these keywords, use the mapped layout as the lead
 
 | User Keyword | Layout | Recommended Styles | Default Aspect | Prompt Notes |
 |--------------|--------|--------------------|----------------|--------------|
-| 高密度信息大图 / high-density-info | `dense-modules` | `morandi-journal`, `pop-laboratory`, `retro-pop-grid` | portrait | — |
-| 信息图 / infographic | `bento-grid` | `craft-handmade` | landscape | Minimalist: clean canvas, ample whitespace, no complex background textures. Simple cartoon elements and icons only. |
+| 高密度資訊大圖 / high-density-info | `dense-modules` | `morandi-journal`, `pop-laboratory`, `retro-pop-grid` | portrait | — |
+| 資訊圖 / infographic | `bento-grid` | `craft-handmade` | landscape | Minimalist: clean canvas, ample whitespace, no complex background textures. Simple cartoon elements and icons only. |
 
 ## Output Structure
 

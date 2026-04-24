@@ -119,17 +119,17 @@ export async function publishArticle(options: ArticleOptions): Promise<void> {
       return false;
     };
 
-    // Step 1: Find and click "写文章" button
-    console.log('[weibo-article] Looking for "写文章" button...');
+    // Step 1: Find and click "寫文章" button
+    console.log('[weibo-article] Looking for "寫文章" button...');
     const writeButtonFound = await waitForElement(`
-      !!Array.from(document.querySelectorAll('button, a, div[role="button"]')).find(el => el.textContent?.trim() === '写文章')
+      !!Array.from(document.querySelectorAll('button, a, div[role="button"]')).find(el => el.textContent?.trim() === '寫文章')
     `, 15_000);
 
     if (writeButtonFound) {
-      console.log('[weibo-article] Clicking "写文章" button...');
+      console.log('[weibo-article] Clicking "寫文章" button...');
       await cdp.send('Runtime.evaluate', {
         expression: `
-          const btn = Array.from(document.querySelectorAll('button, a, div[role="button"]')).find(el => el.textContent?.trim() === '写文章');
+          const btn = Array.from(document.querySelectorAll('button, a, div[role="button"]')).find(el => el.textContent?.trim() === '寫文章');
           if (btn) btn.click();
         `,
       }, { sessionId });
@@ -139,7 +139,7 @@ export async function publishArticle(options: ArticleOptions): Promise<void> {
       console.log('[weibo-article] Waiting for editor to become editable...');
       const editable = await waitForElement(`
         (() => {
-          const el = document.querySelector('textarea[placeholder="请输入标题"]');
+          const el = document.querySelector('textarea[placeholder="請輸入標題"]');
           return el && !el.readOnly && !el.disabled;
         })()
       `, 15_000);
@@ -149,9 +149,9 @@ export async function publishArticle(options: ArticleOptions): Promise<void> {
       }
     } else {
       // Maybe we're already on the editor page
-      console.log('[weibo-article] "写文章" button not found, checking if editor is already loaded...');
+      console.log('[weibo-article] "寫文章" button not found, checking if editor is already loaded...');
       const editorExists = await waitForElement(`
-        !!document.querySelector('textarea[placeholder="请输入标题"]')
+        !!document.querySelector('textarea[placeholder="請輸入標題"]')
       `, 10_000);
       if (!editorExists) {
         throw new Error('Weibo article editor not found. Please ensure you are logged in.');
@@ -164,19 +164,19 @@ export async function publishArticle(options: ArticleOptions): Promise<void> {
 
       // Check if title input exists
       const titleExists = await cdp.send<{ result: { value: boolean } }>('Runtime.evaluate', {
-        expression: `!!document.querySelector('textarea[placeholder="请输入标题"]')`,
+        expression: `!!document.querySelector('textarea[placeholder="請輸入標題"]')`,
         returnByValue: true,
       }, { sessionId });
 
       if (!titleExists.result.value) {
-        console.error('[weibo-article] Title input NOT found: textarea[placeholder="请输入标题"]');
+        console.error('[weibo-article] Title input NOT found: textarea[placeholder="請輸入標題"]');
       } else {
         console.log('[weibo-article] Title input found');
 
         // Focus and use Input.insertText via CDP (more reliable for React/Vue controlled inputs)
         await cdp.send('Runtime.evaluate', {
           expression: `(() => {
-            const el = document.querySelector('textarea[placeholder="请输入标题"]');
+            const el = document.querySelector('textarea[placeholder="請輸入標題"]');
             if (el) { el.focus(); el.value = ''; }
           })()`,
         }, { sessionId });
@@ -187,7 +187,7 @@ export async function publishArticle(options: ArticleOptions): Promise<void> {
 
         // Verify title was entered
         const titleCheck = await cdp.send<{ result: { value: string } }>('Runtime.evaluate', {
-          expression: `document.querySelector('textarea[placeholder="请输入标题"]')?.value || ''`,
+          expression: `document.querySelector('textarea[placeholder="請輸入標題"]')?.value || ''`,
           returnByValue: true,
         }, { sessionId });
 
@@ -199,14 +199,14 @@ export async function publishArticle(options: ArticleOptions): Promise<void> {
           console.warn('[weibo-article] Title input appears empty after insertion, trying execCommand fallback...');
           await cdp.send('Runtime.evaluate', {
             expression: `(() => {
-              const el = document.querySelector('textarea[placeholder="请输入标题"]');
+              const el = document.querySelector('textarea[placeholder="請輸入標題"]');
               if (el) { el.focus(); document.execCommand('insertText', false, ${JSON.stringify(title)}); }
             })()`,
           }, { sessionId });
           await sleep(300);
 
           const titleRecheck = await cdp.send<{ result: { value: string } }>('Runtime.evaluate', {
-            expression: `document.querySelector('textarea[placeholder="请输入标题"]')?.value || ''`,
+            expression: `document.querySelector('textarea[placeholder="請輸入標題"]')?.value || ''`,
             returnByValue: true,
           }, { sessionId });
           console.log(`[weibo-article] Title after fallback: "${titleRecheck.result.value}"`);
@@ -214,23 +214,23 @@ export async function publishArticle(options: ArticleOptions): Promise<void> {
       }
     }
 
-    // Step 3: Fill summary (导语)
+    // Step 3: Fill summary (導語)
     if (summary) {
       console.log('[weibo-article] Filling summary...');
 
       const summaryExists = await cdp.send<{ result: { value: boolean } }>('Runtime.evaluate', {
-        expression: `!!document.querySelector('textarea[placeholder="导语（选填）"]')`,
+        expression: `!!document.querySelector('textarea[placeholder="導語（選填）"]')`,
         returnByValue: true,
       }, { sessionId });
 
       if (!summaryExists.result.value) {
-        console.error('[weibo-article] Summary input NOT found: textarea[placeholder="导语（选填）"]');
+        console.error('[weibo-article] Summary input NOT found: textarea[placeholder="導語（選填）"]');
       } else {
         console.log('[weibo-article] Summary input found');
 
         await cdp.send('Runtime.evaluate', {
           expression: `(() => {
-            const el = document.querySelector('textarea[placeholder="导语（选填）"]');
+            const el = document.querySelector('textarea[placeholder="導語（選填）"]');
             if (el) { el.focus(); el.value = ''; }
           })()`,
         }, { sessionId });
@@ -241,7 +241,7 @@ export async function publishArticle(options: ArticleOptions): Promise<void> {
 
         // Verify summary was entered
         const summaryCheck = await cdp.send<{ result: { value: string } }>('Runtime.evaluate', {
-          expression: `document.querySelector('textarea[placeholder="导语（选填）"]')?.value || ''`,
+          expression: `document.querySelector('textarea[placeholder="導語（選填）"]')?.value || ''`,
           returnByValue: true,
         }, { sessionId });
 
@@ -253,14 +253,14 @@ export async function publishArticle(options: ArticleOptions): Promise<void> {
           console.warn('[weibo-article] Summary input appears empty, trying execCommand fallback...');
           await cdp.send('Runtime.evaluate', {
             expression: `(() => {
-              const el = document.querySelector('textarea[placeholder="导语（选填）"]');
+              const el = document.querySelector('textarea[placeholder="導語（選填）"]');
               if (el) { el.focus(); document.execCommand('insertText', false, ${JSON.stringify(summary)}); }
             })()`,
           }, { sessionId });
           await sleep(300);
 
           const summaryRecheck = await cdp.send<{ result: { value: string } }>('Runtime.evaluate', {
-            expression: `document.querySelector('textarea[placeholder="导语（选填）"]')?.value || ''`,
+            expression: `document.querySelector('textarea[placeholder="導語（選填）"]')?.value || ''`,
             returnByValue: true,
           }, { sessionId });
           console.log(`[weibo-article] Summary after fallback: "${summaryRecheck.result.value}"`);
@@ -741,12 +741,12 @@ export async function publishArticle(options: ArticleOptions): Promise<void> {
 
       if (coverBtnPos.result.value) {
         const { x, y } = coverBtnPos.result.value;
-        console.log(`[weibo-article] "设置文章封面" at (${x}, ${y}), clicking...`);
+        console.log(`[weibo-article] "設定文章封面" at (${x}, ${y}), clicking...`);
         await cdp.send('Input.dispatchMouseEvent', { type: 'mousePressed', x, y, button: 'left', clickCount: 1 }, { sessionId });
         await sleep(100);
         await cdp.send('Input.dispatchMouseEvent', { type: 'mouseReleased', x, y, button: 'left', clickCount: 1 }, { sessionId });
       } else {
-        console.warn('[weibo-article] "设置文章封面" (.cover-empty) not found');
+        console.warn('[weibo-article] "設定文章封面" (.cover-empty) not found');
       }
       await sleep(2000);
 
@@ -754,18 +754,18 @@ export async function publishArticle(options: ArticleOptions): Promise<void> {
       const dialogReady = await waitForElement(`!!document.querySelector('.n-dialog')`, 10_000);
       console.log(`[weibo-article] Dialog appeared: ${dialogReady}`);
 
-      // 2. Click "图片库" tab
+      // 2. Click "圖片庫" tab
       const tabClicked = await cdp.send<{ result: { value: boolean } }>('Runtime.evaluate', {
         expression: `(() => {
           const tabs = document.querySelectorAll('.n-tabs-tab');
           for (const t of tabs) {
-            if (t.querySelector('.n-tabs-tab__label span')?.textContent?.trim() === '图片库') { t.click(); return true; }
+            if (t.querySelector('.n-tabs-tab__label span')?.textContent?.trim() === '圖片庫') { t.click(); return true; }
           }
           return false;
         })()`,
         returnByValue: true,
       }, { sessionId });
-      console.log(`[weibo-article] "图片库" tab clicked: ${tabClicked.result.value}`);
+      console.log(`[weibo-article] "圖片庫" tab clicked: ${tabClicked.result.value}`);
       await sleep(1000);
 
       // 3. Count existing items before upload
@@ -876,7 +876,7 @@ export async function publishArticle(options: ArticleOptions): Promise<void> {
           console.log(`[weibo-article] "下一步" (select→crop): ${nextResult.result.value}`);
           await sleep(3000);
 
-          // 8. Click "确定" in crop dialog
+          // 8. Click "確定" in crop dialog
           // First check button state and dispatch full pointer event sequence
           const confirmInfo = await cdp.send<{ result: { value: string } }>('Runtime.evaluate', {
             expression: `(() => {
@@ -885,7 +885,7 @@ export async function publishArticle(options: ArticleOptions): Promise<void> {
               const buttons = dialog.querySelectorAll('.n-button');
               for (const b of buttons) {
                 const text = b.querySelector('.n-button__content')?.textContent?.trim() || '';
-                if (text === '确定' || text === '确认') {
+                if (text === '確定' || text === '確認') {
                   const disabled = b.disabled || b.classList.contains('n-button--disabled');
                   const rect = b.getBoundingClientRect();
                   return 'found:' + text + ':disabled=' + disabled + ':y=' + rect.y + ':h=' + rect.height;
@@ -906,7 +906,7 @@ export async function publishArticle(options: ArticleOptions): Promise<void> {
               const buttons = dialog.querySelectorAll('.n-button');
               for (const b of buttons) {
                 const text = b.querySelector('.n-button__content')?.textContent?.trim() || '';
-                if (text === '确定' || text === '确认') {
+                if (text === '確定' || text === '確認') {
                   b.scrollIntoView({ block: 'center' });
                   const rect = b.getBoundingClientRect();
                   const cx = rect.x + rect.width / 2;
@@ -949,7 +949,7 @@ export async function publishArticle(options: ArticleOptions): Promise<void> {
                 const buttons = dialog.querySelectorAll('.n-button');
                 for (const b of buttons) {
                   const text = b.querySelector('.n-button__content')?.textContent?.trim() || '';
-                  if (text === '确定' || text === '确认') { b.focus(); return; }
+                  if (text === '確定' || text === '確認') { b.focus(); return; }
                 }
               })()`,
             }, { sessionId });
