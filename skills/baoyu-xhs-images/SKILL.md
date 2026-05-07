@@ -1,6 +1,6 @@
 ---
 name: baoyu-xhs-images
-description: "[Deprecated: use baoyu-image-cards] Generates Xiaohongshu (Little Red Book) image card series with 12 visual styles, 8 layouts, and 3 color palettes. Breaks content into 1-10 cartoon-style image cards optimized for XHS engagement. Use when user mentions \"小红书图片\", \"XHS images\", \"RedNote infographics\", \"小红书种草\", \"小绿书\", \"微信图文\", \"微信贴图\", or wants social media infographic series for Chinese platforms."
+description: "[Deprecated: use baoyu-image-cards] Generates Xiaohongshu (Little Red Book) image card series with 12 visual styles, 8 layouts, and 3 color palettes. Breaks content into 1-10 cartoon-style image cards optimized for XHS engagement. Use when user mentions \"小紅書圖片\", \"XHS images\", \"RedNote infographics\", \"小紅書種草\", \"小綠書\", \"微信圖文\", \"微信貼圖\", or wants social media infographic series for Chinese platforms."
 version: 1.56.2
 metadata:
   openclaw:
@@ -46,7 +46,7 @@ Default behavior: **confirm before generation**.
 
 - Treat explicit skill invocation, a file path, matched signals/presets, and `EXTEND.md` defaults as **recommendation inputs only**. None of them authorizes skipping confirmation.
 - Do **not** start Step 3 until the user completes Step 2.
-- Skip confirmation only when the current request explicitly says to do so, for example: `--yes`, "直接生成", "不用确认", "跳过确认", "按默认出图", or equivalent wording.
+- Skip confirmation only when the current request explicitly says to do so, for example: `--yes`, "直接生成", "不用確認", "跳過確認", "按默認出圖", or equivalent wording.
 - If confirmation is skipped explicitly, state the assumed strategy / style / layout / palette / count / backend in the next user-facing update before generating.
 
 ## Language
@@ -132,52 +132,52 @@ Quick-start combos, grouped by scenario. Use `--preset <name>` or recommend duri
 
 | Preset | Style | Layout | Best For |
 |--------|-------|--------|----------|
-| `knowledge-card` | notion | dense | 干货知识卡、概念科普 |
-| `checklist` | notion | list | 清单、排行榜 |
-| `concept-map` | notion | mindmap | 概念图、知识脉络 |
+| `knowledge-card` | notion | dense | 乾貨知識卡、概念科普 |
+| `checklist` | notion | list | 清單、排行榜 |
+| `concept-map` | notion | mindmap | 概念圖、知識脈絡 |
 | `swot` | notion | quadrant | SWOT 分析、四象限 |
-| `tutorial` | chalkboard | flow | 教程步骤、操作流程 |
-| `classroom` | chalkboard | balanced | 课堂笔记、知识讲解 |
-| `study-guide` | study-notes | dense | 学习笔记、考试重点 |
-| `hand-drawn-edu` | sketch-notes | flow | 手绘教程、流程图解 |
-| `sketch-card` | sketch-notes | dense | 手绘知识卡 |
-| `sketch-summary` | sketch-notes | balanced | 手绘总结、图文笔记 |
+| `tutorial` | chalkboard | flow | 教程步驟、操作流程 |
+| `classroom` | chalkboard | balanced | 課堂筆記、知識講解 |
+| `study-guide` | study-notes | dense | 學習筆記、考試重點 |
+| `hand-drawn-edu` | sketch-notes | flow | 手繪教程、流程圖解 |
+| `sketch-card` | sketch-notes | dense | 手繪知識卡 |
+| `sketch-summary` | sketch-notes | balanced | 手繪總結、圖文筆記 |
 
 **Lifestyle & Sharing**:
 
 | Preset | Style | Layout | Best For |
 |--------|-------|--------|----------|
-| `cute-share` | cute | balanced | 少女风分享、日常种草 |
-| `girly` | cute | sparse | 甜美封面、氛围感 |
+| `cute-share` | cute | balanced | 少女風分享、日常種草 |
+| `girly` | cute | sparse | 甜美封面、氛圍感 |
 | `cozy-story` | warm | balanced | 生活故事、情感分享 |
-| `product-review` | fresh | comparison | 产品对比、测评 |
-| `nature-flow` | fresh | flow | 健康流程、自然主题 |
+| `product-review` | fresh | comparison | 產品對比、測評 |
+| `nature-flow` | fresh | flow | 健康流程、自然主題 |
 
 **Impact & Opinion**:
 
 | Preset | Style | Layout | Best For |
 |--------|-------|--------|----------|
 | `warning` | bold | list | 避坑指南、重要提醒 |
-| `versus` | bold | comparison | 正反对比 |
-| `clean-quote` | minimal | sparse | 金句、极简封面 |
-| `pro-summary` | minimal | balanced | 专业总结、商务内容 |
+| `versus` | bold | comparison | 正反對比 |
+| `clean-quote` | minimal | sparse | 金句、極簡封面 |
+| `pro-summary` | minimal | balanced | 專業總結、商務內容 |
 
 **Trend & Entertainment**:
 
 | Preset | Style | Layout | Best For |
 |--------|-------|--------|----------|
-| `retro-ranking` | retro | list | 复古排行、经典盘点 |
-| `throwback` | retro | balanced | 怀旧分享 |
-| `pop-facts` | pop | list | 趣味冷知识 |
-| `hype` | pop | sparse | 炸裂封面、惊叹分享 |
+| `retro-ranking` | retro | list | 復古排行、經典盤點 |
+| `throwback` | retro | balanced | 懷舊分享 |
+| `pop-facts` | pop | list | 趣味冷知識 |
+| `hype` | pop | sparse | 炸裂封面、驚歎分享 |
 
 **Poster & Editorial**:
 
 | Preset | Style | Layout | Best For |
 |--------|-------|--------|----------|
-| `poster` | screen-print | sparse | 海报风封面、影评书评 |
-| `editorial` | screen-print | balanced | 观点文章、文化评论 |
-| `cinematic` | screen-print | comparison | 电影对比、戏剧张力 |
+| `poster` | screen-print | sparse | 海報風封面、影評書評 |
+| `editorial` | screen-print | balanced | 觀點文章、文化評論 |
+| `cinematic` | screen-print | comparison | 電影對比、戲劇張力 |
 
 Full prompt-fragment definitions: `references/style-presets.md`.
 
@@ -198,7 +198,7 @@ Match content signals to the best combo. First row whose keywords appear wins; f
 | education, tutorial, learning, classroom | `chalkboard` | balanced/dense | `tutorial`, `classroom` |
 | notes, handwritten, study guide, realistic | `study-notes` | dense/list/mindmap | `study-guide` |
 | movie, poster, opinion, editorial, cinematic | `screen-print` | sparse/comparison | `poster`, `editorial`, `cinematic` |
-| hand-drawn, infographic, workflow, 手绘, 图解 | `sketch-notes` | flow/balanced/dense | `hand-drawn-edu`, `sketch-card`, `sketch-summary` |
+| hand-drawn, infographic, workflow, 手繪, 圖解 | `sketch-notes` | flow/balanced/dense | `hand-drawn-edu`, `sketch-card`, `sketch-summary` |
 
 ## Style × Layout Matrix
 
@@ -269,7 +269,7 @@ image-cards/{topic-slug}/
 └── refs/                          # only if --ref used
 ```
 
-**Slug**: 2-4 words, kebab-case. "AI 工具推荐" → `ai-tools-recommend`. On collision, append `-YYYYMMDD-HHMMSS`.
+**Slug**: 2-4 words, kebab-case. "AI 工具推薦" → `ai-tools-recommend`. On collision, append `-YYYYMMDD-HHMMSS`.
 
 **Backup rule** (applies throughout): before overwriting any file — source, outline, prompt, image — rename the existing one to `<name>-backup-YYYYMMDD-HHMMSS.<ext>`. This protects user edits.
 
@@ -316,15 +316,15 @@ Goal: present the auto-recommended plan and let the user confirm or adjust. Skip
 **Display summary** before asking:
 
 ```
-📋 内容分析
-  主题：[topic] | 类型：[content_type]
-  要点：[key points]
-  受众：[audience]
+📋 內容分析
+  主題：[topic] | 型別：[content_type]
+  要點：[key points]
+  受眾：[audience]
 
-🎨 推荐方案（自动匹配）
+🎨 推薦方案（自動匹配）
   策略：[A/B/C] [name]（[reason]）
-  风格：[style] · 布局：[layout] · 配色：[palette or 默认] · 预设：[preset]
-  图片：[N]张（封面+[N-2]内容+结尾）
+  風格：[style] · 佈局：[layout] · 配色：[palette or 預設] · 預設：[preset]
+  圖片：[N]張（封面+[N-2]內容+結尾）
   元素：[background] / [decorations] / [emphasis]
 ```
 

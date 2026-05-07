@@ -1,6 +1,6 @@
 ---
 name: baoyu-comic
-description: Knowledge comic creator supporting multiple art styles and tones. Creates original educational comics with detailed panel layouts and sequential image generation. Use when user asks to create "知识漫画", "教育漫画", "biography comic", "tutorial comic", or "Logicomix-style comic".
+description: Knowledge comic creator supporting multiple art styles and tones. Creates original educational comics with detailed panel layouts and sequential image generation. Use when user asks to create "知識漫畫", "教育漫畫", "biography comic", "tutorial comic", or "Logicomix-style comic".
 version: 1.56.1
 metadata:
   openclaw:
@@ -111,7 +111,7 @@ Details: [references/partial-workflows.md](references/partial-workflows.md)
   | `wuxia` | ink-brush + action | Qi effects, combat visuals, atmospheric |
   | `shoujo` | manga + romantic | Decorative elements, eye details, romantic beats |
   | `concept-story` | manga + warm | Visual symbol system, growth arc, dialogue+action balance |
-  | `four-panel` | minimalist + neutral + four-panel layout | 起承转合 structure, B&W + spot color, stick-figure characters |
+  | `four-panel` | minimalist + neutral + four-panel layout | 起承轉合 structure, B&W + spot color, stick-figure characters |
 
   Full rules at `references/presets/<preset>.md` — load the file when a preset is picked.
 

@@ -47,4 +47,4 @@ Retro pixel popup × pop-art collage — content rendered as a stack of 80/90s d
 
 ## Best For
 
-High-density "干货" knowledge guides, common-pitfall and debunking posts, knowledge-pop content for design-savvy or developer audiences, Xiaohongshu-style retro-tech posts, dense-modules portrait infographics.
+High-density "乾貨" knowledge guides, common-pitfall and debunking posts, knowledge-pop content for design-savvy or developer audiences, Xiaohongshu-style retro-tech posts, dense-modules portrait infographics.

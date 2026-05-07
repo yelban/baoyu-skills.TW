@@ -2,7 +2,7 @@
 
 Visual embellishments and decorative elements for Xiaohongshu infographics.
 
-## Emphasis Marks (强调标记)
+## Emphasis Marks (強調標記)
 
 Elements to draw attention to specific content.
 
@@ -36,7 +36,7 @@ Base layer treatments.
 | grid | Subtle grid pattern | Structured, organized |
 | dots | Polka dot pattern | Playful, retro |
 
-## Doodles & Emoji (涂鸦)
+## Doodles & Emoji (塗鴉)
 
 Hand-drawn decorative elements.
 
@@ -62,7 +62,7 @@ Hand-drawn decorative elements.
 | Actions | 👇 👆 ➡️ | Directional cues |
 | Nature | 🌸 🌿 ☀️ | Thematic decoration |
 
-## Frames (边框)
+## Frames (邊框)
 
 Container and border treatments.
 
@@ -77,7 +77,7 @@ Container and border treatments.
 | tape-corners | Washi tape corners | Crafty, casual |
 | stamp-border | Stamp perforated edge | Vintage, postal |
 
-## Dividers (分隔线)
+## Dividers (分隔線)
 
 Section separators.
 
@@ -89,7 +89,7 @@ Section separators.
 | dots-row | Row of dots | Decorative division |
 | ornamental | Decorative flourish | Elegant separation |
 
-## Stickers (贴纸)
+## Stickers (貼紙)
 
 Pre-composed decorative elements.
 
