@@ -1,6 +1,6 @@
 # energetic
 
-活力基调 - Bright, dynamic, exciting
+活力基調 - Bright, dynamic, exciting
 
 ## Overview
 

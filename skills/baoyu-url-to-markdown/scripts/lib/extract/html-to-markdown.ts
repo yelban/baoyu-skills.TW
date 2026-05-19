@@ -185,7 +185,7 @@ function trimKnownBoilerplate(markdown: string): string {
       continue;
     }
 
-    if (/^继续滑动看下一个$/.test(lastLine) || /^轻触阅读原文$/.test(lastLine)) {
+    if (/^繼續滑動看下一個$/.test(lastLine) || /^輕觸閱讀原文$/.test(lastLine)) {
       lines.pop();
       continue;
     }

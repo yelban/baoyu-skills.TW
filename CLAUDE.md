@@ -1,6 +1,8 @@
 # CLAUDE.md
 
-Claude Code marketplace plugin providing AI-powered content generation skills. Version: **1.107.0**.
+> **This is a Traditional Chinese (Taiwan) fork** of [baoyu-skills](https://github.com/JimLiu/baoyu-skills).
+
+Claude Code marketplace plugin providing AI-powered content generation skills. Version: **1.117.2-tw**.
 
 ## Architecture
 
@@ -99,3 +101,27 @@ All skills MUST use `baoyu-` prefix. Details: [docs/creating-skills.md](docs/cre
 | Chrome profile platform paths | [docs/chrome-profile.md](docs/chrome-profile.md) |
 | Comic style maintenance | [docs/comic-style-maintenance.md](docs/comic-style-maintenance.md) |
 | ClawHub/OpenClaw publishing | [docs/publishing.md](docs/publishing.md) |
+
+## Fork Maintenance (baoyu-skills.TW)
+
+Sync strategy: **Reset + Re-apply** (not merge/rebase). Full guide: [docs/traditional-chinese-fork.md](docs/traditional-chinese-fork.md)
+
+One-shot sync (recommended for agents):
+```bash
+./scripts/sync-upstream.sh --yes --push
+```
+Runs: fetch → reset → convert (s2twp) → customize (version `-tw`, metadata, .gitignore) → auto-fix opencc false positives (通義萬象) → commit → tag `v{version}-tw` → push + push tag.
+
+Preview without touching main workspace (recommended for agents pre-flight):
+```bash
+./scripts/sync-upstream.sh --dry-run
+```
+Runs the full flow inside an isolated git worktree at `.worktrees/sync-dryrun-{timestamp}/`. Shows the diff stat against the current `main` HEAD and the would-be tag name. Main workspace, refs, and tags are untouched.
+
+Interactive (manual confirmation):
+```bash
+./scripts/sync-upstream.sh         # prompts y/N, no push
+./scripts/sync-upstream.sh --yes   # auto-confirm, no push
+```
+
+**Known opencc false positives** (auto-fixed by script): 通義萬象 → ~~通義永珍~~

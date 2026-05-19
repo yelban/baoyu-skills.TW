@@ -10,11 +10,11 @@ Single-question confirmation presented right after the auto-recommended plan.
 header: Mode
 question: How to proceed with the recommended plan?
 options:
-  - label: 1. ✅ 确认，直接生成（推荐）
+  - label: 1. ✅ 確認，直接生成（推薦）
     description: Trust auto-recommendation and proceed immediately
-  - label: 2. 🎛️ 自定义调整
+  - label: 2. 🎛️ 自定義調整
     description: Modify strategy/style/layout/count in one step
-  - label: 3. 📋 详细模式
+  - label: 3. 📋 詳細模式
     description: Generate 3 outline variants, then choose (two confirmations)
 ```
 
@@ -39,8 +39,8 @@ options: [sparse, balanced, dense, list, comparison, flow, mindmap, quadrant]
 
 ```yaml
 header: Palette
-question: "Palette. Current: {palette or 默认}"
-options: [默认, macaron, warm, neon]
+question: "Palette. Current: {palette or 預設}"
+options: [預設, macaron, warm, neon]
 ```
 
 ```yaml
@@ -144,7 +144,7 @@ image_count: 5
 
 ## P1 Cover
 **Type**: cover
-**Hook**: "入冬后脸不干了🥹终于找到对的面霜"
+**Hook**: "入冬後臉不幹了🥹終於找到對的面霜"
 **Visual**: Product hero shot with cozy winter atmosphere
 **Layout**: sparse
 

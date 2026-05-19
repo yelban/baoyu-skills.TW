@@ -1,6 +1,6 @@
 ---
 name: baoyu-article-illustrator
-description: Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style × Palette three-dimension approach. Use when user asks to "illustrate article", "add images", "generate images for article", or "为文章配图".
+description: Analyzes article structure, identifies positions requiring visual aids, generates illustrations with Type × Style × Palette three-dimension approach. Use when user asks to "illustrate article", "add images", "generate images for article", or "為文章配圖".
 version: 1.59.0
 metadata:
   openclaw:
@@ -51,7 +51,7 @@ After every prompt file for the run has been saved and verified, generate images
 Priority order:
 
 1. Use the chosen backend's native batch / multi-task interface if it exists. Each task must keep its own prompt file, output path, aspect ratio, and direct reference images.
-2. If no native batch interface exists but the runtime can issue parallel tool calls, dispatch up to `generation_batch_size` images at a time. Default: `4`. An explicit user request in the current message, such as `--batch-size 4` or "并行4张一起生成", overrides EXTEND.md.
+2. If no native batch interface exists but the runtime can issue parallel tool calls, dispatch up to `generation_batch_size` images at a time. Default: `4`. An explicit user request in the current message, such as `--batch-size 4` or "並行4張一起生成", overrides EXTEND.md.
 3. If neither native batch nor parallel tool calls are available, generate sequentially.
 
 Rules:
@@ -66,7 +66,7 @@ Default behavior: **confirm before generation**.
 
 - Treat explicit skill invocation, a file path, matched signals/presets, and `EXTEND.md` defaults as **recommendation inputs only**. None of them authorizes skipping confirmation.
 - Do **not** start Step 4 or later until the user completes Step 3.
-- Skip confirmation only when the current request explicitly says to do so, for example: "直接生成", "不用确认", "跳过确认", "按默认出图", or equivalent wording.
+- Skip confirmation only when the current request explicitly says to do so, for example: "直接生成", "不用確認", "跳過確認", "按默認出圖", or equivalent wording.
 - If confirmation is skipped explicitly, state the assumed type / density / style / palette / language / backend in the next user-facing update before generating.
 
 ## Reference Images

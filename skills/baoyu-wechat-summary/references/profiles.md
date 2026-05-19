@@ -1,6 +1,6 @@
 # Profiles — user portrait files
 
-This reference defines the per-user profile system. Profiles let the digest carry forward observations across many days so the 群友画像 section in each new digest can show continuity (`蛙总今天罕见地没提空头`) instead of starting from scratch.
+This reference defines the per-user profile system. Profiles let the digest carry forward observations across many days so the 群友畫像 section in each new digest can show continuity (`蛙總今天罕見地沒提空頭`) instead of starting from scratch.
 
 Two parallel profile directories live alongside each group's digests:
 
@@ -56,30 +56,30 @@ Field rules:
 Section headers are plain text on their own line. Order is fixed.
 
 ```
-角色标签
+角色標籤
 
-• {4-6 短语标签}
+• {4-6 短語標籤}
 
-关注领域
+關注領域
 
-• {领域 1}
-• {领域 2}
+• {領域 1}
+• {領域 2}
 
-发言风格
+發言風格
 
 {1-3 句描述，可以多段}
 
-互动模式
+互動模式
 
-• {与某某的互动模式}
-• {另一种互动模式}
+• {與某某的互動模式}
+• {另一種互動模式}
 
-经典金句
+經典金句
 
 • [YYYY-MM-DD] 「{直接引用}」
 • [YYYY-MM-DD] 「{直接引用}」
 
-标志性事件
+標誌性事件
 
 • [YYYY-MM-DD] {事件描述}
 • [YYYY-MM-DD] {事件描述}
@@ -90,23 +90,23 @@ Section headers are plain text on their own line. Order is fixed.
 Same plain-text section header style, different sections.
 
 ```
-人设标签
+人設標籤
 
-• {4-6 放大版标签}
+• {4-6 放大版標籤}
 
-核心槽点
+核心槽點
 
-• {可吐槽点 1}
-• {可吐槽点 2}
+• {可吐槽點 1}
+• {可吐槽點 2}
 
-毒舌语录库
+毒舌語錄庫
 
-• [YYYY-MM-DD] 「{该用户说过的话} — {简短毒舌点评}」
+• [YYYY-MM-DD] 「{該使用者說過的話} — {簡短毒舌點評}」
 • [YYYY-MM-DD] 「{...}」
 
-经典翻车现场
+經典翻車現場
 
-• [YYYY-MM-DD] {翻车描述 + 引用 / 证据}
+• [YYYY-MM-DD] {翻車描述 + 引用 / 證據}
 • [YYYY-MM-DD] {...}
 ```
 
@@ -120,21 +120,21 @@ Rules differ per section. Append-only sections must never lose history; mergeabl
 
 | Section | Update mode | Notes |
 |---------|-------------|-------|
-| 角色标签 | **Merge** | Cap 4-6 tags. Can replace less representative tags with stronger ones. Always keep the most consistently-supported tag. |
-| 关注领域 | **Merge dedupe** | Add new domains; dedupe by meaning, not exact string. |
-| 发言风格 | **Refine** | Only update when a clearly new pattern emerges. Avoid rewriting on every digest. |
-| 互动模式 | **Merge** | Add new modes; can refine existing ones with more detail. |
-| 经典金句 | **Append-only** | Never delete. No cap. Each entry must be dated and quoted verbatim. |
-| 标志性事件 | **Append-only** | Never delete. No cap. Each entry dated. |
+| 角色標籤 | **Merge** | Cap 4-6 tags. Can replace less representative tags with stronger ones. Always keep the most consistently-supported tag. |
+| 關注領域 | **Merge dedupe** | Add new domains; dedupe by meaning, not exact string. |
+| 發言風格 | **Refine** | Only update when a clearly new pattern emerges. Avoid rewriting on every digest. |
+| 互動模式 | **Merge** | Add new modes; can refine existing ones with more detail. |
+| 經典金句 | **Append-only** | Never delete. No cap. Each entry must be dated and quoted verbatim. |
+| 標誌性事件 | **Append-only** | Never delete. No cap. Each entry dated. |
 
 ### 2.2 Roast profile
 
 | Section | Update mode | Notes |
 |---------|-------------|-------|
-| 人设标签 | **Merge** | Cap 4-6. Can sharpen tags as patterns repeat. |
-| 核心槽点 | **Append-only** | Never delete; recurring 槽点 build up here. |
-| 毒舌语录库 | **Append-only** | Never delete. No cap. Each entry dated, with both the quote and the roast comment. |
-| 经典翻车现场 | **Append-only** | Never delete. No cap. Each entry dated. |
+| 人設標籤 | **Merge** | Cap 4-6. Can sharpen tags as patterns repeat. |
+| 核心槽點 | **Append-only** | Never delete; recurring 槽點 build up here. |
+| 毒舌語錄庫 | **Append-only** | Never delete. No cap. Each entry dated, with both the quote and the roast comment. |
+| 經典翻車現場 | **Append-only** | Never delete. No cap. Each entry dated. |
 
 ### 2.3 Frontmatter on every update
 
@@ -161,8 +161,8 @@ Run after the digest file(s) are written. Iterate over every user with 3+ messag
 3. **Update frontmatter.** Per §2.3.
 
 4. **Update body sections.**
-   - For mergeable sections (角色标签，关注领域，发言风格，互动模式 / roast: 人设标签): read the existing content, integrate new observations from this batch, rewrite the section.
-   - For append-only sections (经典金句，标志性事件 / roast: 毒舌语录库，经典翻车现场，核心槽点): append new entries, each dated and verbatim. Never edit or remove prior entries.
+   - For mergeable sections (角色標籤，關注領域，發言風格，互動模式 / roast: 人設標籤): read the existing content, integrate new observations from this batch, rewrite the section.
+   - For append-only sections (經典金句，標誌性事件 / roast: 毒舌語錄庫，經典翻車現場，核心槽點): append new entries, each dated and verbatim. Never edit or remove prior entries.
 
 5. **Write back.** Overwrite the file.
 
@@ -172,7 +172,7 @@ Run after the digest file(s) are written. Iterate over every user with 3+ messag
 
 ## 4. Step 9 — Backfill procedure
 
-Triggered when the user says `回溯画像`, `初始化画像`, `backfill profiles`, or similar. This builds initial profiles from already-written digest files without re-fetching from wx-cli.
+Triggered when the user says `回溯畫像`, `初始化畫像`, `backfill profiles`, or similar. This builds initial profiles from already-written digest files without re-fetching from wx-cli.
 
 1. **List inputs.**
    - List every `*.md` digest file under `wechat/{group_id}-{group_name}/` (top level, not inside `profiles/` or `profiles-roast/`).
@@ -183,9 +183,9 @@ Triggered when the user says `回溯画像`, `初始化画像`, `backfill profil
 
 3. **Process in batches of 10-15 digest files.** Reading all of them at once will blow context. For each batch:
    - Read the digests.
-   - For each user appearing in the leaderboard or 群友画像 across the batch, accumulate:
+   - For each user appearing in the leaderboard or 群友畫像 across the batch, accumulate:
      - Message counts per digest (from the stats block).
-     - Role tags and observations (from the 群友画像 section).
+     - Role tags and observations (from the 群友畫像 section).
      - Quotes (from inline 「」 in the body).
      - Dated events (from category bodies — when the digest mentions specific incidents).
    - Resolve wxid for each accumulated user via `wx contacts --query "{nickname}" --json` if not already cached. Cache the wxid↔nickname mapping for the rest of the backfill.
@@ -196,7 +196,7 @@ Triggered when the user says `回溯画像`, `初始化画像`, `backfill profil
    - For the normal pass, write to `profiles/{wxid}-{nickname}.md`.
    - For the roast pass, write to `profiles-roast/{wxid}-{nickname}.md`.
    - Use the most recent nickname as the filename suffix. Push older nicknames into `aliases`.
-   - Sort 经典金句，标志性事件，毒舌语录库，经典翻车现场 entries chronologically by date.
+   - Sort 經典金句，標誌性事件，毒舌語錄庫，經典翻車現場 entries chronologically by date.
    - No cap on the size of append-only sections during backfill — let history flow in.
 
 6. **Compute frontmatter.**
@@ -220,9 +220,9 @@ These apply to both normal and roast profiles, with an extra layer for roast.
 
 ### 5.1 Forbidden (write neither in normal nor roast)
 
-- **Real-world full names** when only a nickname was used in the group. If the person introduced themselves with `我叫王二`, `王二` is on the table; `王晓明` inferred from another channel is not.
+- **Real-world full names** when only a nickname was used in the group. If the person introduced themselves with `我叫王二`, `王二` is on the table; `王曉明` inferred from another channel is not.
 - **Phone numbers, emails, ID numbers, home addresses, employer addresses, exact birth dates** — even if mentioned in the group, don't lift them into profile files.
-- **Health, medical, psychological information.** Even self-disclosed (`我最近有点抑郁`) — don't bake it into a permanent profile.
+- **Health, medical, psychological information.** Even self-disclosed (`我最近有點抑鬱`) — don't bake it into a permanent profile.
 - **Private romantic / family details** unless openly group-discussed by the person themselves. A passing mention by another member doesn't count.
 - **Embarrassing private failures.** Public ones (a take that aged badly in front of the group) are fair game; private ones (a job rejection mentioned briefly) are not.
 - **Sleep / timezone inference from timestamps.** Server time ≠ recipient's local time, and it implies surveillance.
@@ -233,7 +233,7 @@ These apply to both normal and roast profiles, with an extra layer for roast.
 - **Direct quotes** of things said in the group (these are already public to the group).
 - **Interest areas, hobbies, tool preferences** as expressed in group discussion.
 - **Interaction patterns** with other group members.
-- **Publicly mentioned consumption** (`蛙总今天又分享了买了什么书`) — fine if they themselves mentioned it.
+- **Publicly mentioned consumption** (`蛙總今天又分享了買了什麼書`) — fine if they themselves mentioned it.
 - **Publicly shared travel / life anecdotes** they told the group.
 
 ### 5.3 Roast-only extras
@@ -242,14 +242,14 @@ In addition to §5.1, the roast profile must **not** include:
 
 - **Anything about appearance, weight, body, looks.**
 - **Anything about family members** (their kids, parents, partners) — only the person themselves.
-- **Mental-health speculation**, even as a joke. No `这位需要看医生`, no `典型 ADHD`.
+- **Mental-health speculation**, even as a joke. No `這位需要看醫生`, no `典型 ADHD`.
 - **Identity-based roasts.** No mocking of orientation, religion, ethnicity, nationality, gender.
 
 The roast may mock:
 
 - Stupid takes, contradictions, factual errors.
-- Repetitive behavior (`第 47 次预测见顶`).
-- Self-undermining moments (`昨天说 X，今天说 not X`).
+- Repetitive behavior (`第 47 次預測見頂`).
+- Self-undermining moments (`昨天說 X，今天說 not X`).
 - Performative flexes that didn't land.
 
 The rule of thumb: **roast the take, not the person.**
@@ -265,9 +265,9 @@ When loading profile context for a fresh digest:
 3. If the current run also generates the roast version, **separately** read `profiles-roast/{wxid}-*.md` during the roast generation pass.
 4. Compile a condensed working-memory block:
    - The user's current `name` and `aliases` (so you can recognize them under different names).
-   - 角色标签 / 人设标签 (so you can carry forward or contrast).
-   - The 3-5 most recent 经典金句 / 毒舌语录 entries (so you can detect callbacks and repeats).
-   - The 3-5 most recent 标志性事件 / 翻车现场 entries (so you can spot recurring themes).
+   - 角色標籤 / 人設標籤 (so you can carry forward or contrast).
+   - The 3-5 most recent 經典金句 / 毒舌語錄 entries (so you can detect callbacks and repeats).
+   - The 3-5 most recent 標誌性事件 / 翻車現場 entries (so you can spot recurring themes).
 5. Don't dump the entire profile into the digest — the profile is *context*, the digest is *today*.
 
-If a profile contradicts what you see in today's batch (e.g., the profile says `从不主动发起话题`, but today they started three threads), call that out explicitly in the day's 群友画像 — that's the kind of contrast that makes the digest interesting.
+If a profile contradicts what you see in today's batch (e.g., the profile says `從不主動發起話題`, but today they started three threads), call that out explicitly in the day's 群友畫像 — that's the kind of contrast that makes the digest interesting.

@@ -254,7 +254,7 @@ Apply formatting guided by the Step 2 analysis. The goal is making the content s
 - Preserve the author's voice, tone, and every word
 - **Bold key conclusions and core takeaways** — the sentences a reader would highlight
 - Extract parallel items from prose into lists only when the structure is clearly there
-- Add headings where the topic genuinely shifts — prefer vivid, specific headings over generic ones (e.g., "3 天搞定 vs 传统方案" over "方案对比")
+- Add headings where the topic genuinely shifts — prefer vivid, specific headings over generic ones (e.g., "3 天搞定 vs 傳統方案" over "方案對比")
 - Use tables for comparisons or structured data buried in prose
 - Use blockquotes for golden quotes, memorable statements, or important warnings
 - Fix obvious typos (based on Step 2 findings)
