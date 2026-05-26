@@ -1,4 +1,11 @@
-# baoyu-skills
+# baoyu-skills-tw
+
+> **📌 This is the Traditional Chinese (Taiwan) localized fork**
+>
+> Upstream: [JimLiu/baoyu-skills](https://github.com/JimLiu/baoyu-skills) | Maintainer: [@yelban](https://github.com/yelban)
+>
+> All content has been converted to Traditional Chinese (Taiwan) using OpenCC s2twp.
+
 
 English | [中文](./README.zh.md)
 
@@ -16,7 +23,7 @@ Skills shared by Baoyu for improving daily work efficiency with AI Agents (Claud
 ### Quick Install (Recommended)
 
 ```bash
-npx skills add jimliu/baoyu-skills
+npx skills add yelban/baoyu-skills.TW
 ```
 
 ### Publish to ClawHub / OpenClaw
@@ -53,7 +60,7 @@ Run the following command in the Agent:
 **Option 1: Via Browse UI**
 
 1. Select **Browse and install plugins**
-2. Select **baoyu-skills**
+2. Select **baoyu-skills-tw**
 3. Select the **baoyu-skills** plugin
 4. Select **Install now**
 
@@ -61,14 +68,14 @@ Run the following command in the Agent:
 
 ```bash
 # Install the marketplace's single plugin
-/plugin install baoyu-skills@baoyu-skills
+/plugin install baoyu-skills@baoyu-skills-tw
 ```
 
 **Option 3: Ask the Agent**
 
 Simply tell the Agent:
 
-> Please install Skills from github.com/JimLiu/baoyu-skills
+> Please install Skills from github.com/yelban/baoyu-skills.TW
 
 ### Available Plugin
 
@@ -80,11 +87,13 @@ The marketplace now exposes a single plugin so each skill is registered exactly 
 
 ## Update Skills
 
+> **TW fork note**: Plugin updates are **two-stage** (marketplace index + plugin cache). The upstream steps below only refresh the marketplace — to actually load new content you also need to update the plugin cache and restart the Agent. Full guide with slash-command, manual force-refresh, version verification, and scope (user vs local) troubleshooting: [docs/traditional-chinese-fork.md#更新已安裝的-plugin](docs/traditional-chinese-fork.md#更新已安裝的-plugin).
+
 To update skills to the latest version:
 
 1. Run `/plugin` in the Agent
 2. Switch to **Marketplaces** tab (use arrow keys or Tab)
-3. Select **baoyu-skills**
+3. Select **baoyu-skills-tw**
 4. Choose **Update marketplace**
 
 You can also **Enable auto-update** to get the latest versions automatically.
@@ -120,7 +129,7 @@ Xiaohongshu image card series generator. Breaks down content into 1-10 cartoon-s
 /baoyu-xhs-images posts/ai-future/article.md --style notion --palette macaron
 
 # Direct content input
-/baoyu-xhs-images 今日星座运势
+/baoyu-xhs-images 今日星座運勢
 
 # Non-interactive (skip all confirmations, for scheduled tasks)
 /baoyu-xhs-images posts/ai-future/article.md --yes
@@ -288,7 +297,7 @@ Generate publication-ready SVG diagrams from source material — flowcharts, seq
 /baoyu-diagram path/to/article.md
 
 # Language and output path
-/baoyu-diagram "微服务架构" --lang zh
+/baoyu-diagram "微服務架構" --lang zh
 /baoyu-diagram "build pipeline" --out docs/build-pipeline.svg
 ```
 
@@ -592,14 +601,14 @@ Plain text input is treated as a regular post. Markdown files are treated as X A
 
 #### baoyu-post-to-wechat
 
-Post content to WeChat Official Account (微信公众号). Two modes available:
+Post content to WeChat Official Account (微信公眾號). Two modes available:
 
-**Image-Text (贴图)** - Multiple images with short title/content:
+**Image-Text (貼圖)** - Multiple images with short title/content:
 
 ```bash
-/baoyu-post-to-wechat 贴图 --markdown article.md --images ./photos/
-/baoyu-post-to-wechat 贴图 --markdown article.md --image img1.png --image img2.png --image img3.png
-/baoyu-post-to-wechat 贴图 --title "标题" --content "内容" --image img1.png --submit
+/baoyu-post-to-wechat 貼圖 --markdown article.md --images ./photos/
+/baoyu-post-to-wechat 貼圖 --markdown article.md --image img1.png --image img2.png --image img3.png
+/baoyu-post-to-wechat 貼圖 --title "標題" --content "內容" --image img1.png --submit
 ```
 
 **Article (文章)** - Full markdown/HTML with rich formatting:
@@ -621,14 +630,14 @@ Post content to WeChat Official Account (微信公众号). Two modes available:
 **API Configuration** (for faster publishing):
 
 ```bash
-# Add to .baoyu-skills/.env (project-level) or ~/.baoyu-skills/.env (user-level)
+# Add to .baoyu-skills-tw/.env (project-level) or ~/.baoyu-skills-tw/.env (user-level)
 WECHAT_APP_ID=your_app_id
 WECHAT_APP_SECRET=your_app_secret
 ```
 
 To obtain credentials:
 1. Visit https://developers.weixin.qq.com/platform/
-2. Go to: 我的业务 → 公众号 → 开发密钥
+2. Go to: 我的業務 → 公眾號 → 開發金鑰
 3. Create development key and copy AppID/AppSecret
 4. Add your machine's IP to the whitelist
 
@@ -648,10 +657,10 @@ Then publish with `--remote` (or set `default_publish_method: remote-api`). Auth
 **Multi-Account Support**: Manage multiple WeChat Official Accounts via `EXTEND.md`:
 
 ```bash
-mkdir -p .baoyu-skills/baoyu-post-to-wechat
+mkdir -p .baoyu-skills-tw/baoyu-post-to-wechat
 ```
 
-Create `.baoyu-skills/baoyu-post-to-wechat/EXTEND.md`:
+Create `.baoyu-skills-tw/baoyu-post-to-wechat/EXTEND.md`:
 
 ```yaml
 # Global settings (shared across all accounts)
@@ -688,7 +697,7 @@ Each account gets an isolated Chrome profile for independent login sessions (bro
 
 #### baoyu-post-to-weibo
 
-Post content to Weibo (微博). Supports regular posts with text, images, and videos, and headline articles (头条文章) with Markdown input. Uses real Chrome with CDP to bypass anti-automation.
+Post content to Weibo (微博). Supports regular posts with text, images, and videos, and headline articles (頭條文章) with Markdown input. Uses real Chrome with CDP to bypass anti-automation.
 
 **Regular Posts** - Text + images/videos (max 18 files):
 
@@ -703,7 +712,7 @@ Post content to Weibo (微博). Supports regular posts with text, images, and vi
 /baoyu-post-to-weibo "Watch this" --video clip.mp4
 ```
 
-**Headline Articles (头条文章)** - Long-form Markdown:
+**Headline Articles (頭條文章)** - Long-form Markdown:
 
 ```bash
 # Publish article
@@ -728,7 +737,7 @@ AI-powered generation backends.
 
 #### baoyu-image-gen
 
-AI SDK-based image generation using OpenAI GPT Image 2, Azure OpenAI, Google, OpenRouter, DashScope (Aliyun Tongyi Wanxiang), MiniMax, Jimeng (即梦), Seedream (豆包), and Replicate APIs. Supports text-to-image, reference images, aspect ratios, custom sizes, batch generation, and quality presets.
+AI SDK-based image generation using OpenAI GPT Image 2, Azure OpenAI, Google, OpenRouter, DashScope (Aliyun Tongyi Wanxiang), MiniMax, Jimeng (即夢), Seedream (豆包), and Replicate APIs. Supports text-to-image, reference images, aspect ratios, custom sizes, batch generation, and quality presets.
 
 ```bash
 # Basic generation (auto-detect provider)
@@ -753,13 +762,13 @@ AI SDK-based image generation using OpenAI GPT Image 2, Azure OpenAI, Google, Op
 /baoyu-image-gen --prompt "Make it blue" --image out.png --provider openrouter --model google/gemini-3.1-flash-image-preview --ref source.png
 
 # DashScope (Aliyun Tongyi Wanxiang)
-/baoyu-image-gen --prompt "一只可爱的猫" --image cat.png --provider dashscope
+/baoyu-image-gen --prompt "一隻可愛的貓" --image cat.png --provider dashscope
 
 # DashScope with custom size
-/baoyu-image-gen --prompt "为咖啡品牌设计一张 21:9 横幅海报，包含清晰中文标题" --image banner.png --provider dashscope --model qwen-image-2.0-pro --size 2048x872
+/baoyu-image-gen --prompt "為咖啡品牌設計一張 21:9 橫幅海報，包含清晰中文標題" --image banner.png --provider dashscope --model qwen-image-2.0-pro --size 2048x872
 
 # Z.AI GLM-Image
-/baoyu-image-gen --prompt "一张带清晰中文标题的科技海报" --image out.png --provider zai
+/baoyu-image-gen --prompt "一張帶清晰中文標題的科技海報" --image out.png --provider zai
 
 # MiniMax
 /baoyu-image-gen --prompt "A fashion editorial portrait by a bright studio window" --image out.jpg --provider minimax
@@ -776,11 +785,11 @@ AI SDK-based image generation using OpenAI GPT Image 2, Azure OpenAI, Google, Op
 # Replicate Wan 2.7 Image Pro
 /baoyu-image-gen --prompt "A concept frame" --image frame.png --provider replicate --model wan-video/wan-2.7-image-pro --size 2048x1152
 
-# Jimeng (即梦)
-/baoyu-image-gen --prompt "一只可爱的猫" --image cat.png --provider jimeng
+# Jimeng (即夢)
+/baoyu-image-gen --prompt "一隻可愛的貓" --image cat.png --provider jimeng
 
 # Seedream (豆包)
-/baoyu-image-gen --prompt "一只可爱的猫" --image cat.png --provider seedream
+/baoyu-image-gen --prompt "一隻可愛的貓" --image cat.png --provider seedream
 
 # With reference images (Google, OpenAI, Azure OpenAI, OpenRouter, Replicate, MiniMax, or Seedream 5.0/4.5/4.0)
 /baoyu-image-gen --prompt "Make it blue" --image out.png --ref source.png
@@ -1091,7 +1100,7 @@ Translate articles and documents between languages with three modes: quick (dire
 | Normal | Analyze → Translate | Articles, blog posts |
 | Refined | Analyze → Translate → Review → Polish | Publication-quality documents |
 
-After normal mode completes, you can reply "继续润色" or "refine" to continue with review and polish steps.
+After normal mode completes, you can reply "繼續潤色" or "refine" to continue with review and polish steps.
 
 **Audience Presets**:
 | Value | Description |
@@ -1132,16 +1141,16 @@ Summarize WeChat group chat highlights into a structured digest. Extracts topics
 
 ```bash
 # Summarize a group's recent messages
-/baoyu-wechat-summary 相亲相爱一家人 最近 1 天
+/baoyu-wechat-summary 相親相愛一家人 最近 1 天
 
 # Weekly summary
-/baoyu-wechat-summary AI 技术群 最近 7 天
+/baoyu-wechat-summary AI 技術群 最近 7 天
 
 # Incremental (since last digest)
-/baoyu-wechat-summary 相亲相爱一家人
+/baoyu-wechat-summary 相親相愛一家人
 
 # Roast version
-/baoyu-wechat-summary 相亲相爱一家人 最近 3 天 毒舌版
+/baoyu-wechat-summary 相親相愛一家人 最近 3 天 毒舌版
 ```
 
 **Requirements**:
@@ -1200,8 +1209,8 @@ Some skills require API keys or custom configuration. Environment variables can 
 **Load Priority** (higher priority overrides lower):
 1. CLI environment variables (e.g., `OPENAI_API_KEY=xxx /baoyu-image-gen ...`)
 2. `process.env` (system environment)
-3. `<cwd>/.baoyu-skills/.env` (project-level)
-4. `~/.baoyu-skills/.env` (user-level)
+3. `<cwd>/.baoyu-skills-tw/.env` (project-level)
+4. `~/.baoyu-skills-tw/.env` (user-level)
 
 **Setup**:
 
@@ -1210,7 +1219,7 @@ Some skills require API keys or custom configuration. Environment variables can 
 mkdir -p ~/.baoyu-skills
 
 # Create .env file
-cat > ~/.baoyu-skills/.env << 'EOF'
+cat > ~/.baoyu-skills-tw/.env << 'EOF'
 # OpenAI
 OPENAI_API_KEY=sk-xxx
 OPENAI_IMAGE_MODEL=gpt-image-2
@@ -1255,7 +1264,7 @@ REPLICATE_API_TOKEN=r8_xxx
 REPLICATE_IMAGE_MODEL=google/nano-banana-2
 # REPLICATE_BASE_URL=https://api.replicate.com
 
-# Jimeng (即梦)
+# Jimeng (即夢)
 JIMENG_ACCESS_KEY_ID=xxx
 JIMENG_SECRET_ACCESS_KEY=xxx
 JIMENG_IMAGE_MODEL=jimeng_t2i_v40
@@ -1273,8 +1282,8 @@ EOF
 
 ```bash
 mkdir -p .baoyu-skills
-# Add .baoyu-skills/.env to .gitignore to avoid committing secrets
-echo ".baoyu-skills/.env" >> .gitignore
+# Add .baoyu-skills-tw/.env to .gitignore to avoid committing secrets
+echo ".baoyu-skills-tw/.env" >> .gitignore
 ```
 
 ## Customization
@@ -1282,16 +1291,16 @@ echo ".baoyu-skills/.env" >> .gitignore
 All skills support customization via `EXTEND.md` files. Create an extension file to override default styles, add custom configurations, or define your own presets.
 
 **Extension paths** (checked in priority order):
-1. `.baoyu-skills/<skill-name>/EXTEND.md` - Project-level (for team/project-specific settings)
-2. `~/.baoyu-skills/<skill-name>/EXTEND.md` - User-level (for personal preferences)
+1. `.baoyu-skills-tw/<skill-name>/EXTEND.md` - Project-level (for team/project-specific settings)
+2. `~/.baoyu-skills-tw/<skill-name>/EXTEND.md` - User-level (for personal preferences)
 
 **Example**: To customize `baoyu-cover-image` with your brand colors:
 
 ```bash
-mkdir -p .baoyu-skills/baoyu-cover-image
+mkdir -p .baoyu-skills-tw/baoyu-cover-image
 ```
 
-Then create `.baoyu-skills/baoyu-cover-image/EXTEND.md`:
+Then create `.baoyu-skills-tw/baoyu-cover-image/EXTEND.md`:
 
 ```markdown
 ## Custom Palettes
@@ -1344,7 +1353,7 @@ This project was inspired by and builds upon the following open source projects:
 - [x-article-publisher-skill](https://github.com/wshuyi/x-article-publisher-skill) by [@wshuyi](https://github.com/wshuyi) — Inspiration for the X article publishing skill
 - [doocs/md](https://github.com/doocs/md) by [@doocs](https://github.com/doocs) — Core implementation logic for Markdown to HTML conversion
 - [High-density Infographic Prompt](https://waytoagi.feishu.cn/wiki/YG0zwalijihRREkgmPzcWRInnUg) by AJ@WaytoAGI — Inspiration for the infographic skill
-- [qiaomu-mondo-poster-design](https://github.com/joeseesun/qiaomu-mondo-poster-design) by [@joeseesun](https://github.com/joeseesun)（乔木） — Inspiration for the Mondo style
+- [qiaomu-mondo-poster-design](https://github.com/joeseesun/qiaomu-mondo-poster-design) by [@joeseesun](https://github.com/joeseesun)（喬木） — Inspiration for the Mondo style
 - [architecture-diagram-generator](https://github.com/Cocoon-AI/architecture-diagram-generator) by [@Cocoon-AI](https://github.com/Cocoon-AI) — Inspiration for the diagram skill's design system
 
 ## License

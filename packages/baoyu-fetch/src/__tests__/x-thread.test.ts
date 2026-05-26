@@ -15,7 +15,7 @@ function buildTweet(options: {
 }) {
   const userId = options.userId ?? "3178231";
   const screenName = options.screenName ?? "dotey";
-  const name = options.name ?? "宝玉";
+  const name = options.name ?? "寶玉";
 
   return {
     __typename: "Tweet",

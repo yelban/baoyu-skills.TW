@@ -1,6 +1,6 @@
 ---
 name: baoyu-comic
-description: Knowledge comic creator supporting multiple art styles and tones. Creates original educational comics with detailed panel layouts and batch-capable image generation. Use when user asks to create "知识漫画", "教育漫画", "biography comic", "tutorial comic", or "Logicomix-style comic".
+description: Knowledge comic creator supporting multiple art styles and tones. Creates original educational comics with detailed panel layouts and batch-capable image generation. Use when user asks to create "知識漫畫", "教育漫畫", "biography comic", "tutorial comic", or "Logicomix-style comic".
 version: 1.117.4
 metadata:
   openclaw:
@@ -56,7 +56,7 @@ After every prompt file for the current generation group has been saved and veri
 Priority order:
 
 1. Use the chosen backend's native batch / multi-task interface if it exists. Each task must keep its own prompt file, output path, aspect ratio, session ID, and direct reference images.
-2. If no native batch interface exists but the runtime can issue parallel tool calls, dispatch up to `generation_batch_size` images at a time. Default: `4`. An explicit user request in the current message, such as `--batch-size 4` or "并行4张一起生成", overrides EXTEND.md.
+2. If no native batch interface exists but the runtime can issue parallel tool calls, dispatch up to `generation_batch_size` images at a time. Default: `4`. An explicit user request in the current message, such as `--batch-size 4` or "並行4張一起生成", overrides EXTEND.md.
 3. If neither native batch nor parallel tool calls are available, generate sequentially.
 
 Rules:
@@ -135,7 +135,7 @@ Details: [references/partial-workflows.md](references/partial-workflows.md)
   | `wuxia` | ink-brush + action | Qi effects, combat visuals, atmospheric |
   | `shoujo` | manga + romantic | Decorative elements, eye details, romantic beats |
   | `concept-story` | manga + warm | Visual symbol system, growth arc, dialogue+action balance |
-  | `four-panel` | minimalist + neutral + four-panel layout | 起承转合 structure, B&W + spot color, stick-figure characters |
+  | `four-panel` | minimalist + neutral + four-panel layout | 起承轉合 structure, B&W + spot color, stick-figure characters |
 
   Full rules at `references/presets/<preset>.md` — load the file when a preset is picked.
 

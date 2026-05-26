@@ -1,6 +1,6 @@
 # realistic
 
-写实画风 - Digital painting with realistic proportions and lighting
+寫實畫風 - Digital painting with realistic proportions and lighting
 
 ## Overview
 
