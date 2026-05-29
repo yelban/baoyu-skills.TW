@@ -2,6 +2,11 @@
 
 English | [中文](./CHANGELOG.zh.md)
 
+## 2.4.0 - 2026-05-29
+
+### Features
+- `baoyu-wechat-summary`: add an `@bot` Q&A section to both the normal and roast digests. Messages mentioning `@bot` / `@精华bot` (customizable via the new `bot_aliases` preference) are detected during the skeleton pass and answered in a dedicated section — earnest and helpful in the normal version, snarky-but-substantive in the roast version. Answers draw only on the chat context and the model's own knowledge (no web access) and honestly flag anything that needs real-time data
+
 ## 2.3.0 - 2026-05-28
 
 ### Features
