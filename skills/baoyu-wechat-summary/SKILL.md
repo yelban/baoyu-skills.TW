@@ -1,6 +1,6 @@
 ---
 name: baoyu-wechat-summary
-description: Summarizes WeChat group chat highlights into a structured digest using the local wx-cli binary (https://github.com/jackwener/wx-cli). Generates a normal digest by default; a roast (毒舌) version is opt-in. Maintains per-group history (history.json + history-digests.jsonl) and per-user profiles across runs, with privacy guardrails baked in. Use when the user asks to "总结群聊", "群聊精华", "群聊摘要", "summarize group chat", "group chat digest", mentions a WeChat group name with a time range, says "帮我看看 XX 群最近聊了什么", "XX 群有什么值得看的", or asks to "回溯画像" / "初始化画像" / "backfill profiles". Adds the roast version when the user says "毒舌版", "roast 版", "再来个毒舌的", or similar.
+description: Summarizes WeChat group chat highlights into a structured digest using the local wx-cli binary (https://github.com/jackwener/wx-cli). Generates a normal digest by default; a roast (毒舌) version is opt-in. Maintains per-group history (history.json + history-digests.jsonl) and per-user profiles across runs, with privacy guardrails baked in. Use when the user asks to "總結群聊", "群聊精華", "群聊摘要", "summarize group chat", "group chat digest", mentions a WeChat group name with a time range, says "幫我看看 XX 群最近聊了什麼", "XX 群有什麼值得看的", or asks to "回溯畫像" / "初始化畫像" / "backfill profiles". Adds the roast version when the user says "毒舌版", "roast 版", "再來個毒舌的", or similar.
 version: 1.117.3
 metadata:
   openclaw:
@@ -12,7 +12,7 @@ metadata:
 
 # WeChat Group Summary
 
-群聊精华提取专家。把零散的微信群聊记录提炼成结构化、可读性强的简报，并维护跨次运行的群聊历史与群友画像。底层依赖外部 [wx-cli](https://github.com/jackwener/wx-cli) 二进制（`wx` 命令），不打包脚本。
+群聊精華提取專家。把零散的微信群聊記錄提煉成結構化、可讀性強的簡報，並維護跨次執行的群聊歷史與群友畫像。底層依賴外部 [wx-cli](https://github.com/jackwener/wx-cli) 二進位制（`wx` 命令），不打包指令碼。
 
 > **⚠️ Sandbox restriction**
 >
@@ -73,7 +73,7 @@ EXTEND.md is plain text with `key: value` or `key=value` lines, `#` for comments
 | `default_version` | `normal` / `roast` / `both` | `normal` | Which version(s) to generate when the user doesn't say otherwise. |
 | `default_time_range` | string (e.g. `7d`, `24h`, `1d`) | (none) | Default range when the user omits time and there's no incremental anchor. |
 | `data_root` | path | `{project_root}/wechat` | Override where digest folders live. |
-| `bot_aliases` | comma-separated strings | `bot, 精华bot` | Names that trigger the 「@bot 答疑」 section. A message containing `@<alias>` (case-insensitive) is treated as a question/request aimed at the digest bot. Pick names that do NOT match any real group member or existing bot, to avoid ambiguity. |
+| `bot_aliases` | comma-separated strings | `bot, 精華bot` | Names that trigger the 「@bot 答疑」 section. A message containing `@<alias>` (case-insensitive) is treated as a question/request aimed at the digest bot. Pick names that do NOT match any real group member or existing bot, to avoid ambiguity. |
 
 A starter template lives at [EXTEND.md.example](EXTEND.md.example).
 
@@ -96,7 +96,7 @@ For option 2, scan the sessions for any private/group thread the user has sent i
 **Step B — Confirm with one `AskUserQuestion` call (batched), pre-filling whatever auto-discovery found:**
 
 - `self_wxid` (e.g., `wxid_abc123`) — fall-back hint: the user can find it with `wx contacts --query "<own nickname>"`, or by inspecting any of their own sent messages in `wx sessions --json`
-- `self_display` (e.g., `宝玉`) — how they want their messages attributed
+- `self_display` (e.g., `寶玉`) — how they want their messages attributed
 - `default_version` — pick one of `normal` / `roast` / `both`
 - `data_root` — where digest folders live. Default: `{project_root}/wechat`. Enter a custom absolute path (e.g. `~/Documents/wechat-digests`) or leave blank for default.
 - Save location — pick one of project / XDG / home
@@ -113,15 +113,15 @@ Extract:
 - **Time range** — interpret flexibly:
   - "最近 1 天" / "今天" / "last 24 hours" → 1 day
   - "最近 3 天" → 3 days
-  - "最近 7 天" / "这周" → 7 days
-  - "最近 30 天" / "最近一个月" → 30 days
-  - "某天" (e.g. "3 月 5 号") → that specific date
-  - "某天到某天" (e.g. "3 月 1 号到 3 月 5 号") → date range
-  - "从上次开始" / "继续" / "接着上次" / "since last" → **incremental mode**: read `history.json` for this group, use `last_digest.last_message_time` as the start
+  - "最近 7 天" / "這周" → 7 days
+  - "最近 30 天" / "最近一個月" → 30 days
+  - "某天" (e.g. "3 月 5 號") → that specific date
+  - "某天到某天" (e.g. "3 月 1 號到 3 月 5 號") → date range
+  - "從上次開始" / "繼續" / "接著上次" / "since last" → **incremental mode**: read `history.json` for this group, use `last_digest.last_message_time` as the start
   - No time specified → **incremental mode**. If no `history.json` exists yet, fall back to `default_time_range` from EXTEND.md if set, else last 24 hours.
 - **Version(s) to generate**:
   - Start from `default_version` in EXTEND.md.
-  - User request overrides: keywords "毒舌"/"roast"/"挑衅"/"再来个毒的"/"sass" → force `include_roast=true`. Keywords "只要正经的"/"normal only"/"不要毒舌" → force `include_normal=true, include_roast=false`. "都来一份"/"两个版本都要"/"both" → both.
+  - User request overrides: keywords "毒舌"/"roast"/"挑釁"/"再來個毒的"/"sass" → force `include_roast=true`. Keywords "只要正經的"/"normal only"/"不要毒舌" → force `include_normal=true, include_roast=false`. "都來一份"/"兩個版本都要"/"both" → both.
   - At least one of `include_normal`/`include_roast` must end up true.
 
 Convert relative ranges into absolute `--since YYYY-MM-DD --until YYYY-MM-DD` pairs using today's local date.
@@ -171,7 +171,7 @@ Notes:
 - Filter the returned messages by their `timestamp` to be safe (some daemons may return adjacent days).
 - **Range splitting**: for ranges > 7 days OR > 500 messages, prefer generating per-3-day digests and then a meta-summary over forcing one giant digest — the categorization quality degrades sharply past a week's worth of unrelated topics.
 
-**Incremental mode**: after the fetch, drop any message whose `timestamp` is `<=` the `last_message_time` from `history.json`. If zero messages remain, tell the user "上次摘要后没有新消息，已跳过生成" and exit.
+**Incremental mode**: after the fetch, drop any message whose `timestamp` is `<=` the `last_message_time` from `history.json`. If zero messages remain, tell the user "上次摘要後沒有新訊息，已跳過生成" and exit.
 
 ### Step 3.5: Parse the message schema
 
@@ -182,11 +182,11 @@ Notes:
 - **`from_nickname`** — display name (may be the group remark or original nickname)
 - **`content`** — text payload. Examples:
   - Plain text → use as-is
-  - `[图片]` → opaque placeholder; see image handling below
+  - `[圖片]` → opaque placeholder; see image handling below
   - `[表情]` → emoji/sticker; skip in body unless surrounded by discussion
-  - `[视频]` / `[文件]` → media reference; skip unless discussed
-  - `[链接] <title>` or `[链接/文件] <title>` → shared article; the title IS the information — quote it and credit the sharer
-  - `[系统] ... revokemsg` → revoked; exclude from digest and from leaderboard
+  - `[影片]` / `[檔案]` → media reference; skip unless discussed
+  - `[連結] <title>` or `[連結/檔案] <title>` → shared article; the title IS the information — quote it and credit the sharer
+  - `[系統] ... revokemsg` → revoked; exclude from digest and from leaderboard
 - **`timestamp`** — convert to `MM-DD HH:MM` for display (and use full ISO for `generated_at`)
 - **`chat_type`** — sanity-check `group`
 - **Quote/reply** — try `quote_id`, `reply_to`, `quoted_msg_id`, or any nested `quote` object. If present, use it as strong attribution. If absent, fall back to context but flag the inferred link as uncertain.
@@ -206,35 +206,35 @@ For each unique sender appearing in this batch:
 Compile a condensed **profile context block** as internal working memory — do NOT write it into the final digest. Example shape:
 
 ```
-== 群友历史画像（来自 profiles/）==
-K. H：空中直播员 / 生活百科全书。常见话题：旅行、金融、美食。经典金句："要不要买moderna"。
-可可苏玛：...
+== 群友歷史畫像（來自 profiles/）==
+K. H：空中直播員 / 生活百科全書。常見話題：旅行、金融、美食。經典金句："要不要買moderna"。
+可可蘇瑪：...
 ```
 
 Rules:
 
 - Only load profiles for users active in this batch — never preload everyone.
 - Profile is **background**, not template. Current messages are still the primary source.
-- Use historical labels for **continuity** ("又双叒叕化身空中直播员") or **contrast** ("一向省钱的 XX 今天居然...").
+- Use historical labels for **continuity** ("又雙叒叕化身空中直播員") or **contrast** ("一向省錢的 XX 今天居然...").
 - **Strict separation**: normal pass reads only `profiles/`, roast pass reads only `profiles-roast/`. Never cross-load.
 
 See [references/profiles.md](references/profiles.md) for the full file format.
 
 ### Step 3.8: Detect existing in-chat digests (optional)
 
-Some users (e.g., the original 宝玉 workflow) post digests directly into the group as messages. If we don't notice these, the new digest will re-cover the same ground.
+Some users (e.g., the original 寶玉 workflow) post digests directly into the group as messages. If we don't notice these, the new digest will re-cover the same ground.
 
 Scan the fetched messages for signals of a prior in-chat digest:
 
 - `from_wxid == self_wxid` AND
-- `content` contains `群聊精华` OR `消息统计:` OR `📊 消息统计` OR a leaderboard pattern (e.g. `^\d+\. .+: \d+ 条`), AND
+- `content` contains `群聊精華` OR `訊息統計:` OR `📊 訊息統計` OR a leaderboard pattern (e.g. `^\d+\. .+: \d+ 條`), AND
 - `content` length > 1500 chars.
 
 If a match is found:
 
-1. Extract the digest's covered date or range from the title line (e.g., `xxx 群聊精华 · 2026-05-12` or `... · 2026-05-10 ~ 2026-05-12`).
+1. Extract the digest's covered date or range from the title line (e.g., `xxx 群聊精華 · 2026-05-12` or `... · 2026-05-10 ~ 2026-05-12`).
 2. Surface the finding to the user via `AskUserQuestion`:
-   - "Detected an in-chat digest by you covering {范围}. Use {范围 end + 1} as the start instead of `history.json`?"
+   - "Detected an in-chat digest by you covering {範圍}. Use {範圍 end + 1} as the start instead of `history.json`?"
    - Options: `Yes, skip up to {end of detected range}` / `No, use history.json` / `No, cover everything in the requested range`.
 3. Apply the chosen anchor.
 
@@ -242,23 +242,23 @@ This is a heuristic — when uncertain (multiple matches, malformed title), defa
 
 ### Step 3.9: Detect @bot requests (if any)
 
-Some group members address the digest bot directly — e.g. `@bot 帮我把昨天的讨论捋一下` or `@精华bot 这个链接讲了啥`. Catch these so each digest can answer them in a dedicated section instead of dropping them as noise.
+Some group members address the digest bot directly — e.g. `@bot 幫我把昨天的討論捋一下` or `@精華bot 這個連結講了啥`. Catch these so each digest can answer them in a dedicated section instead of dropping them as noise.
 
-**Trigger**: a message whose text contains `@<alias>` for any alias in `bot_aliases` (from EXTEND.md; default `bot`, `精华bot`; case-insensitive). Aliases are stored as bare names — match the `@` prefix plus the alias.
+**Trigger**: a message whose text contains `@<alias>` for any alias in `bot_aliases` (from EXTEND.md; default `bot`, `精華bot`; case-insensitive). Aliases are stored as bare names — match the `@` prefix plus the alias.
 
-**Extract** into an internal worklist `== @bot 请求清单 ==` (working memory only — never written to the final digest):
+**Extract** into an internal worklist `== @bot 請求清單 ==` (working memory only — never written to the final digest):
 
 - Asker's real name — after Step 3.6 resolution; substitute `self_display` for the `self_wxid` user.
 - Request body — the text after stripping the `@<alias>` prefix. If the message is a reply (per Step 3.5's quote/reply fields), include the quoted message as context.
 - Anchor `local_id` for back-reference.
 
-**Misfire filtering**: if a real member's nickname happens to equal an alias, judge by context. Keep only messages genuinely aimed at the digest bot (a question or request for it); skip clear person-to-person talk — a reply to that real person, or banter teasing them. (Choosing a `bot_aliases` value no real member uses avoids this at the source; the filter is a backstop.) Pure greetings/banter (`@bot 在吗`) may be kept with a brief reply.
+**Misfire filtering**: if a real member's nickname happens to equal an alias, judge by context. Keep only messages genuinely aimed at the digest bot (a question or request for it); skip clear person-to-person talk — a reply to that real person, or banter teasing them. (Choosing a `bot_aliases` value no real member uses avoids this at the source; the filter is a backstop.) Pure greetings/banter (`@bot 在嗎`) may be kept with a brief reply.
 
-**Answer-source constraint** (honored when rendering the section per [references/output-formats.md](references/output-formats.md)): answer from the group chat context plus your own knowledge only — **no web access**. For any request needing real-time or external information you can't verify, say so honestly (`这个我查不到实时数据，需要联网确认`) rather than fabricating.
+**Answer-source constraint** (honored when rendering the section per [references/output-formats.md](references/output-formats.md)): answer from the group chat context plus your own knowledge only — **no web access**. For any request needing real-time or external information you can't verify, say so honestly (`這個我查不到即時資料，需要聯網確認`) rather than fabricating.
 
 **No hits** → both versions omit the @bot 答疑 section entirely.
 
-Do this in the same read-through as Round 1's skeleton (via its `== @bot 请求清单 ==` block) so the messages aren't scanned twice.
+Do this in the same read-through as Round 1's skeleton (via its `== @bot 請求清單 ==` block) so the messages aren't scanned twice.
 
 Generate the digest in three rounds so nothing slips through. The methodology stays here in SKILL.md; the content/style rules live in [references/output-formats.md](references/output-formats.md) — read that file in Round 2 before drafting.
 
@@ -269,20 +269,20 @@ Read every message in order. **Skip image fetching/decoding** in this round. Lis
 Internal working format (not written to the final file):
 
 ```
-== 话题清单（共 N 条消息）==
-1. [HH:MM-HH:MM] 话题名称（参与者：A, B, C）— 一句话概括（锚点 id：54052, 54055, 54063）
-2. [HH:MM-HH:MM] 话题名称（参与者：D, E）— 一句话概括（锚点 id：54100-54112）
+== 話題清單（共 N 條訊息）==
+1. [HH:MM-HH:MM] 話題名稱（參與者：A, B, C）— 一句話概括（錨點 id：54052, 54055, 54063）
+2. [HH:MM-HH:MM] 話題名稱（參與者：D, E）— 一句話概括（錨點 id：54100-54112）
 ...
 
-== 可能需要图片上下文的话题 ==
-- 话题 3：锚点 id=49661（图片是讨论主体）
+== 可能需要圖片上下文的話題 ==
+- 話題 3：錨點 id=49661（圖片是討論主體）
 
-== 发言统计 ==
-1. XXX — N 条  2. YYY — N 条  ...
+== 發言統計 ==
+1. XXX — N 條  2. YYY — N 條  ...
 
-== @bot 请求清单（如有）==
-1. {提问者真名}（锚点 id：54080）— {去掉 @别名的请求正文}（reply 时附被回复内容）
-（本期无 @bot 请求则写「无」）
+== @bot 請求清單（如有）==
+1. {提問者真名}（錨點 id：54080）— {去掉 @別名的請求正文}（reply 時附被回覆內容）
+（本期無 @bot 請求則寫「無」）
 ```
 
 Topic principles:
@@ -292,7 +292,7 @@ Topic principles:
 - **Strict attribution**: each topic must record "who said what". Don't fuse adjacent messages from different senders just because they're close in time — when minutes apart or interleaved with others, split into separate topics. Prefer two topics over one wrongly-merged topic.
 - **Carry anchor IDs**: list the key message IDs for each topic. In Round 2, jump back to these IDs in the raw messages and verify content, don't guess from context. If `quote_id` / `reply_to` is present, use the ID chain — that's the most reliable attribution.
 
-**Flag-for-images criteria** (any one triggers): an explicit comment on an image (`看发型是X？`, `这是谁？`, `笑死`), multiple people piling onto the same image without saying what it is, an image as the core information (晒单/截图/资料), an explanatory line right after an image (`gpt-image-2`, `太可怕了`), or cross-sender ambiguity (B says "这个看着像 X" but the previous image is from A).
+**Flag-for-images criteria** (any one triggers): an explicit comment on an image (`看髮型是X？`, `這是誰？`, `笑死`), multiple people piling onto the same image without saying what it is, an image as the core information (曬單/截圖/資料), an explanatory line right after an image (`gpt-image-2`, `太可怕了`), or cross-sender ambiguity (B says "這個看著像 X" but the previous image is from A).
 
 #### Round 2 — Flesh out + write the digest
 
@@ -300,23 +300,23 @@ For each topic in the skeleton, jump back to its anchor IDs and expand into full
 
 **Image handling** (limited — wx-cli does not decode chat images):
 
-For each flagged topic, check whether a description file already exists at `{folder}/imgs/{message_id}.txt`. If yes, read it (one-line plain text) and weave its content into the topic. If no, treat the image as opaque (`[图片]`) and write around it — describe what the surrounding messages tell us, but don't invent visual content.
+For each flagged topic, check whether a description file already exists at `{folder}/imgs/{message_id}.txt`. If yes, read it (one-line plain text) and weave its content into the topic. If no, treat the image as opaque (`[圖片]`) and write around it — describe what the surrounding messages tell us, but don't invent visual content.
 
 The `imgs/` directory exists as an **extension point**: a user (or a future wx-cli capability) can drop `{message_id}.txt` files with one-line descriptions, and the skill will pick them up. The skill itself does NOT generate these files in this version.
 
 **Use the profile context block** (from Step 3.7):
 
-- Echo continuity for matching behavior ("又双叒叕直播飞行体验")
-- Highlight contrast for departures ("一向话少的 XX 今天突然爆发")
-- Callback past quotes ("继上次'要不要买 moderna'之后，这次又...")
+- Echo continuity for matching behavior ("又雙叒叕直播飛行體驗")
+- Highlight contrast for departures ("一向話少的 XX 今天突然爆發")
+- Callback past quotes ("繼上次'要不要買 moderna'之後，這次又...")
 - Don't sacrifice current material to force a callback.
 
 **Roast pass — profile usage extras** (only when generating the roast version):
 
-- 历史槽点可做 callback joke
-- Running gag 可以升级和迭代
-- 历史毒舌语录可以引用或翻新
-- 但当期素材优先，不要为了 callback 硬凑
+- 歷史槽點可做 callback joke
+- Running gag 可以升級和迭代
+- 歷史毒舌語錄可以引用或翻新
+- 但當期素材優先，不要為了 callback 硬湊
 
 **Writing order**: write the body categories first, then the opening overview based on the finished body (so the hook is accurate).
 
@@ -357,8 +357,8 @@ Always reflects only the most recent normal digest. Overwrite on each run when `
 ```json
 {
   "group_id": "12345678901@chatroom",
-  "group_name": "相亲相爱一家人",
-  "folder": "12345678901@chatroom-相亲相爱一家人",
+  "group_name": "相親相愛一家人",
+  "folder": "12345678901@chatroom-相親相愛一家人",
   "last_digest": {
     "file": "2026-03-12.md",
     "date_range": "2026-03-12",
@@ -388,7 +388,7 @@ If a normal digest with the same `file` name is regenerated, append a new line a
 
 ### Step 8.5: Update user profiles
 
-For each user with 3+ messages in this batch who appeared in the 群友画像 section:
+For each user with 3+ messages in this batch who appeared in the 群友畫像 section:
 
 - If `include_normal`, update `{folder}/profiles/{wxid}-{nickname}.md`.
 - If `include_roast`, update `{folder}/profiles-roast/{wxid}-{nickname}.md`.
@@ -410,7 +410,7 @@ If any item is unchecked, finish it before declaring success. Don't ship a diges
 
 ### Step 9: Backfill (user-triggered)
 
-When the user says "回溯画像" / "初始化画像" / "backfill profiles":
+When the user says "回溯畫像" / "初始化畫像" / "backfill profiles":
 
 1. Confirm the target group (if not specified, ask which one).
 2. List all digest files in `{folder}/` and `history-digests.jsonl`.
@@ -425,7 +425,7 @@ Full procedure in [references/profiles.md](references/profiles.md).
 
 ```
 {data_root}/                                        # default: {project_root}/wechat/
-└── {group_id}-{group_name}/                        # e.g. 12345678901@chatroom-相亲相爱一家人/
+└── {group_id}-{group_name}/                        # e.g. 12345678901@chatroom-相親相愛一家人/
     ├── history.json                                # last digest pointer (fast)
     ├── history-digests.jsonl                       # append-only archive
     ├── 2026-03-12.md                               # normal digest, single date
@@ -463,10 +463,10 @@ When a `wx` command fails, diagnose by the symptom, not by retrying blindly. Com
 | Symptom | Cause | Fix (tell the user to run these — do NOT run `sudo` for them) |
 |---------|-------|----------------------------------------------------------------|
 | `Operation not permitted` / `Access denied to ~/.wx-cli` | Sandbox is on | Re-run the command with `dangerouslyDisableSandbox: true`. Persistent fix: `/sandbox` to allow `~/.wx-cli` and the WeChat data dir. |
-| `无法写入 /Users/<u>/.wx-cli` / `Permission denied` | `~/.wx-cli` is owned by root (legacy `sudo wx init`) | `sudo chown -R $(whoami) ~/.wx-cli && sudo rm -f ~/.wx-cli/daemon.{pid,sock} && wx daemon start` |
+| `無法寫入 /Users/<u>/.wx-cli` / `Permission denied` | `~/.wx-cli` is owned by root (legacy `sudo wx init`) | `sudo chown -R $(whoami) ~/.wx-cli && sudo rm -f ~/.wx-cli/daemon.{pid,sock} && wx daemon start` |
 | `wx history` hangs / times out / returns nothing | Daemon is stuck | `wx daemon stop && rm -f ~/.wx-cli/daemon.{pid,sock} && wx daemon start`, then retry |
 | `no keys` / `init required` after the daemon was working | Keys went stale (WeChat restart, version upgrade) | Make sure WeChat is running, then `wx init --force` (non-sudo first; only `sudo` if your wx-cli version requires it) |
-| `wx contacts` returns zero rows for a group you know exists | Group is folded into 折叠群 or the daemon hasn't indexed it yet | `wx sessions --json` and search there; if missing, run `wx daemon stop && wx daemon start` and retry |
+| `wx contacts` returns zero rows for a group you know exists | Group is folded into 摺疊群 or the daemon hasn't indexed it yet | `wx sessions --json` and search there; if missing, run `wx daemon stop && wx daemon start` and retry |
 | Messages returned but `--since` / `--until` window looks wrong | Date string not in `YYYY-MM-DD` format, or off-by-one timezone | Confirm the dates are local-time `YYYY-MM-DD`. Re-filter the JSON by `timestamp` locally as a belt-and-suspenders step. |
 | Empty result for a chat that should have activity | `-n` cap too low for a noisy group | Raise `-n` (e.g. to 20000) and re-fetch |
 

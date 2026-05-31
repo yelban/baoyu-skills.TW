@@ -176,3 +176,8 @@ youtube-transcript/
 .codex-tmp/
 outputs/
 wechat/
+
+# TW fork local state
+backups/
+.mcp.json
+.claude/settings.local.json

@@ -105,16 +105,16 @@ function htmlToPlainText(html: string): string {
 
   let text = html;
 
-  // 1. 将 <br>, <br/>, <br /> 替换为换行符
+  // 1. 將 <br>, <br/>, <br /> 替換為換行符
   text = text.replace(/<br\s*\/?>/gi, "\n");
 
-  // 2. 将 </p>, </div>, </h1>, </h2>, </h3>, </h4>, </h5>, </h6>, </li> 替换为换行符
+  // 2. 將 </p>, </div>, </h1>, </h2>, </h3>, </h4>, </h5>, </h6>, </li> 替換為換行符
   text = text.replace(/<\/(?:p|div|h[1-6]|li|tr|td|th)>/gi, "\n");
 
-  // 3. 去掉所有剩余的 HTML 标签
+  // 3. 去掉所有剩餘的 HTML 標籤
   text = text.replace(/<[^>]+>/g, "");
 
-  // 4. 解码 HTML 实体
+  // 4. 解碼 HTML 實體
   const entityMap: Record<string, string> = {
     "&nbsp;": " ",
     "&lt;": "<",
@@ -144,16 +144,16 @@ function htmlToPlainText(html: string): string {
     return entity;
   });
 
-  // 5. 合并多个连续空白字符（空格、制表符、换行）为一个空格
+  // 5. 合併多個連續空白字元（空格、製表符、換行）為一個空格
   text = text.replace(/[ \t]+/g, " ");
 
-  // 6. 合并多个连续换行为一个换行
+  // 6. 合併多個連續換行為一個換行
   text = text.replace(/\n{3,}/g, "\n\n");
 
   // 7. 去掉行首行尾空白
   text = text.split("\n").map(line => line.trim()).join("\n");
 
-  // 8. 最终 trim
+  // 8. 最終 trim
   return text.trim();
 }
 
@@ -190,7 +190,7 @@ async function uploadImage(
     client,
   );
 
-  // media/uploadimg 接口只返回 URL，material/add_material 返回 media_id
+  // media/uploadimg 介面只返回 URL，material/add_material 返回 media_id
   if (uploadType === "body") {
     return {
       url: toHttpsUrl(result.url),
@@ -353,10 +353,10 @@ async function publishToDraft(
     if (!options.imageMediaIds || options.imageMediaIds.length === 0) {
       throw new Error("newspic requires at least one image");
     }
-    // newspic 的 content 应该是纯文本，需要：
-    // 1. 去掉 HTML 标签
-    // 2. 解码 HTML 实体（&nbsp;、&lt; 等）
-    // 3. 合并多余空白字符
+    // newspic 的 content 應該是純文本，需要：
+    // 1. 去掉 HTML 標籤
+    // 2. 解碼 HTML 實體（&nbsp;、&lt; 等）
+    // 3. 合併多餘空白字元
     const plainContent = htmlToPlainText(options.content);
     article = {
       article_type: "newspic",
@@ -477,11 +477,11 @@ Arguments:
   file                Markdown (.md) or HTML (.html) file
 
 Options:
-  --type <type>       Article type: news (文章, default) or newspic (图文)
+  --type <type>       Article type: news (文章, default) or newspic (圖文)
   --title <title>     Override title
   --author <name>     Author name (max 16 chars)
   --summary <text>    Article summary/digest (max 128 chars)
-  --source-url <url>  Original article URL ("阅读原文" link, max 1KB)
+  --source-url <url>  Original article URL ("閱讀原文" link, max 1KB)
   --theme <name>      Theme name for markdown (default, grace, simple, modern). Default: default
   --color <name|hex>  Primary color (blue, green, vermilion, etc. or hex)
   --cover <path>      Cover image path (local or URL)

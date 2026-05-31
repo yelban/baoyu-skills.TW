@@ -6,7 +6,7 @@ Publish Markdown articles to X Articles editor with rich text formatting and ima
 
 In Codex, choose the browser-control mode from the user's wording:
 
-1. If the user says "Codex Chrome plugin", "Codex 自带的 Chrome 插件", `@chrome`, or Chrome Extension, use **Codex Chrome Plugin Workflow**. Do not try Computer Use first.
+1. If the user says "Codex Chrome plugin", "Codex 自帶的 Chrome 外掛", `@chrome`, or Chrome Extension, use **Codex Chrome Plugin Workflow**. Do not try Computer Use first.
 2. If the user explicitly asks for Chrome Computer Use, use **Computer Use Workflow**.
 3. If the user explicitly asks for CDP/script mode, use **CDP Script Workflow**.
 4. Otherwise, use Computer Use when available; if unavailable or blocked, use CDP Script Workflow.

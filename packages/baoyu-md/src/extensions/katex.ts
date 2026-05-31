@@ -23,8 +23,8 @@ function createRenderer(display: boolean, withStyle: boolean = true) {
     const width = svg.style[`min-width`] || svg.getAttribute(`width`)
     svg.removeAttribute(`width`)
 
-    // 行内公式对齐 https://groups.google.com/g/mathjax-users/c/zThKffrrCvE?pli=1
-    // 直接覆盖 style 会覆盖 MathJax 的样式，需要手动设置
+    // 行內公式對齊 https://groups.google.com/g/mathjax-users/c/zThKffrrCvE?pli=1
+    // 直接覆蓋 style 會覆蓋 MathJax 的樣式，需要手動設定
     // svg.style = `max-width: 300vw !important; display: initial; flex-shrink: 0;`
 
     if (withStyle) {
@@ -35,7 +35,7 @@ function createRenderer(display: boolean, withStyle: boolean = true) {
     }
 
     if (!display) {
-      // 新主题系统：使用 class 而非内联样式
+      // 新主題系統：使用 class 而非內聯樣式
       return `<span class="katex-inline">${svg.outerHTML}</span>`
     }
 

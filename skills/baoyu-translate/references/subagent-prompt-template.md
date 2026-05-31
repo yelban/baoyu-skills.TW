@@ -47,7 +47,7 @@ Rewrite the content into natural, engaging {target_lang} — not merely translat
 - **Natural flow**: Use idiomatic {target_lang} word order. Break long source sentences into shorter, natural ones. Interpret metaphors and idioms by intended meaning, not word-for-word
 - **Terminology**: Use glossary translations consistently. Annotate with original in parentheses on first occurrence of specialized terms
 - **Preserve format**: Keep all markdown formatting (headings, bold, italic, images, links, code blocks)
-- **Proactive interpretation**: For jargon or concepts the target audience may lack context for, add concise explanations in **bold parentheses** `（**解释**）`. Keep annotations few — only where genuinely needed
+- **Proactive interpretation**: For jargon or concepts the target audience may lack context for, add concise explanations in **bold parentheses** `（**解釋**）`. Keep annotations few — only where genuinely needed
 ```
 
 ---
