@@ -105,6 +105,18 @@ clawhub install baoyu-markdown-to-html
 
 技能分为三大类：
 
+### 设计技能推荐：baoyu-design
+
+如果你想让本地 Agent 直接做设计，可以试试 [JimLiu/baoyu-design](https://github.com/JimLiu/baoyu-design)。这是一个独立项目，它把 Claude Design 打包成可移植的 Agent Skill，可在 Cursor、Claude Code、Codex、Claude Desktop 或其他能读写文件的编码 Agent 中运行，用来生成精致 UI 稿、可交互原型、线框图、落地页、仪表盘、移动 App 和幻灯片，产物都是自包含 HTML，留在你自己的仓库里。
+
+<a href="https://github.com/JimLiu/baoyu-design">
+  <img src="https://raw.githubusercontent.com/JimLiu/baoyu-design/main/assets/screenshots/cursor-reader-mac-app.webp" alt="Cursor 运行 baoyu-design" width="720">
+</a>
+
+```bash
+npx skills add JimLiu/baoyu-design
+```
+
 ### 内容技能 (Content Skills)
 
 内容生成和发布技能。

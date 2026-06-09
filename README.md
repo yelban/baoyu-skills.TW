@@ -95,6 +95,18 @@ You can also **Enable auto-update** to get the latest versions automatically.
 
 Skills are organized into three categories:
 
+### Featured Design Skill: baoyu-design
+
+If you want a design-focused Agent Skill, check out [JimLiu/baoyu-design](https://github.com/JimLiu/baoyu-design). It is a separate project that runs Claude Design locally in Cursor, Claude Code, Codex, Claude Desktop, or any file-capable coding agent, producing polished UI mockups, interactive prototypes, wireframes, landing pages, dashboards, mobile apps, and slide decks as self-contained HTML.
+
+<a href="https://github.com/JimLiu/baoyu-design">
+  <img src="https://raw.githubusercontent.com/JimLiu/baoyu-design/main/assets/screenshots/cursor-reader-mac-app.webp" alt="Cursor running baoyu-design" width="720">
+</a>
+
+```bash
+npx skills add JimLiu/baoyu-design
+```
+
 ### Content Skills
 
 Content generation and publishing skills.
