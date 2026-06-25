@@ -181,3 +181,4 @@ wechat/
 backups/
 .mcp.json
 .claude/settings.local.json
+.serena/

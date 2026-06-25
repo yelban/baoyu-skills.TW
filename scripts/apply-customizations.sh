@@ -243,6 +243,7 @@ if [ -f "$GITIGNORE_FILE" ]; then
 backups/
 .mcp.json
 .claude/settings.local.json
+.serena/
 GIEOF
         echo "  已更新: $GITIGNORE_FILE (加入 TW 本地狀態項目)"
     fi
