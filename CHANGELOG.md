@@ -21,7 +21,7 @@ English | [中文](./CHANGELOG.zh.md)
 - `baoyu-wechat-summary`: add per-group fact memory (`memory.md`). Objective facts corrected or confirmed by group members (e.g., the real cause behind an error message, the correct name of a product) persist across digests, so a mistake corrected once is never repeated. Writes are conservative — three-part threshold (specific fact + evidence + unchallenged), strict injection guardrails (statements only, never instructions to the bot; `@bot` is not a whitelist channel), provenance on every entry, and revision/expiry/dedup rules with a 30-entry cap. Memory is shared by the normal and roast versions
 - `baoyu-image-gen`: add Agnes AI image generation provider (by @Davidlaizz)
 - `baoyu-image-gen`: default to GA Gemini image endpoints and allow reference images with them (by @hypn4)
-- `baoyu-post-to-wechat`: add `content_source_url` support for the "阅读原文" link (by @NTLx)
+- `baoyu-post-to-wechat`: add `content_source_url` support for the "閱讀原文" link (by @NTLx)
 
 ### Fixes
 - `baoyu-image-gen`: remove gcd from `resolveSize` so decimal aspect ratios are no longer distorted (by @Davidlaizz)
@@ -40,7 +40,7 @@ English | [中文](./CHANGELOG.zh.md)
 ## 2.4.0 - 2026-05-29
 
 ### Features
-- `baoyu-wechat-summary`: add an `@bot` Q&A section to both the normal and roast digests. Messages mentioning `@bot` / `@精华bot` (customizable via the new `bot_aliases` preference) are detected during the skeleton pass and answered in a dedicated section — earnest and helpful in the normal version, snarky-but-substantive in the roast version. Answers draw only on the chat context and the model's own knowledge (no web access) and honestly flag anything that needs real-time data
+- `baoyu-wechat-summary`: add an `@bot` Q&A section to both the normal and roast digests. Messages mentioning `@bot` / `@精華bot` (customizable via the new `bot_aliases` preference) are detected during the skeleton pass and answered in a dedicated section — earnest and helpful in the normal version, snarky-but-substantive in the roast version. Answers draw only on the chat context and the model's own knowledge (no web access) and honestly flag anything that needs real-time data
 
 ## 2.3.0 - 2026-05-28
 
@@ -237,7 +237,7 @@ English | [中文](./CHANGELOG.zh.md)
 ## 1.114.0 - 2026-05-05
 
 ### Features
-- `baoyu-infographic`: add `retro-popup-pop` style — retro pixel popup × pop-art collage. Renders content as a stack of 80/90s desktop popup windows (title bars, close buttons, ERROR / ALERT dialogs, file windows like `PROBLEMS.EXE`, progress bars, OK / CANCEL / FIX IT buttons) with thick black outlines, flat color fills, and bright cyan (#12B8DE) or vintage cream (#F5F0E6) backgrounds. Pairs especially well with the `dense-modules` layout; promoted as a recommended style for the `高密度信息大图` keyword shortcut and the `Product/Buying Guide` content type. Style Gallery count goes from 21 to 22.
+- `baoyu-infographic`: add `retro-popup-pop` style — retro pixel popup × pop-art collage. Renders content as a stack of 80/90s desktop popup windows (title bars, close buttons, ERROR / ALERT dialogs, file windows like `PROBLEMS.EXE`, progress bars, OK / CANCEL / FIX IT buttons) with thick black outlines, flat color fills, and bright cyan (#12B8DE) or vintage cream (#F5F0E6) backgrounds. Pairs especially well with the `dense-modules` layout; promoted as a recommended style for the `高密度資訊大圖` keyword shortcut and the `Product/Buying Guide` content type. Style Gallery count goes from 21 to 22.
   Credit to AJ@WaytoAGI.
 
 ### Documentation
@@ -696,7 +696,7 @@ English | [中文](./CHANGELOG.zh.md)
 ## 1.66.0 - 2026-03-13
 
 ### Features
-- `baoyu-image-gen`: add Jimeng (即梦) and Seedream (豆包) image generation providers (by @lindaifeng)
+- `baoyu-image-gen`: add Jimeng (即夢) and Seedream (豆包) image generation providers (by @lindaifeng)
 
 ### Fixes
 - `baoyu-image-gen`: tighten Jimeng provider behavior
@@ -907,7 +907,7 @@ English | [中文](./CHANGELOG.zh.md)
 ## 1.51.0 - 2026-03-06
 
 ### Features
-- `baoyu-post-to-weibo`: new skill for posting to Weibo — supports text posts with images and headline articles (头条文章) via Chrome CDP
+- `baoyu-post-to-weibo`: new skill for posting to Weibo — supports text posts with images and headline articles (頭條文章) via Chrome CDP
 - `baoyu-format-markdown`: add title/summary multi-candidate selection — generates 3 candidates for user to pick, with `auto_select` EXTEND.md support
 
 ## 1.50.0 - 2026-03-06
@@ -1131,7 +1131,7 @@ English | [中文](./CHANGELOG.zh.md)
 ## 1.31.1 - 2026-02-10
 
 ### Features
-- `baoyu-post-to-wechat`: adapt to new WeChat UI — rename 图文 to 贴图; add ProseMirror editor support with old editor fallback; add fallback file input selector; add upload progress monitoring; improve save button detection with toast verification.
+- `baoyu-post-to-wechat`: adapt to new WeChat UI — rename 圖文 to 貼圖; add ProseMirror editor support with old editor fallback; add fallback file input selector; add upload progress monitoring; improve save button detection with toast verification.
 
 ### Fixes
 - `baoyu-post-to-wechat`: truncate digest > 120 chars at punctuation boundary; fix cover image relative path resolution.

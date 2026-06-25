@@ -1,4 +1,4 @@
-# DashScope (阿里通义万象)
+# DashScope (阿里通義萬象)
 
 Read when the user picks `--provider dashscope`, sets `default_model.dashscope`, or asks for Qwen-Image behavior. The SKILL.md only names the default — this file covers model families, sizing rules, and limits.
 
@@ -6,7 +6,7 @@ Read when the user picks `--provider dashscope`, sets `default_model.dashscope`,
 
 **`qwen-image-2.0*`** — recommended modern family. Members: `qwen-image-2.0-pro`, `qwen-image-2.0-pro-2026-03-03`, `qwen-image-2.0`, `qwen-image-2.0-2026-03-03`.
 
-- Free-form `size` in `宽*高` format
+- Free-form `size` in `寬*高` format
 - Total pixels must be between `512*512` and `2048*2048`
 - Default ≈ `1024*1024`
 - Best choice for custom ratios (e.g. `21:9`) and text-heavy Chinese/English layouts
@@ -19,7 +19,7 @@ Read when the user picks `--provider dashscope`, sets `default_model.dashscope`,
 
 **`wan2.7-image*`** — multimodal Wan 2.7 family. Members: `wan2.7-image-pro`, `wan2.7-image`.
 
-- Free-form `size` in `宽*高` format, plus aspect-ratio inference
+- Free-form `size` in `寬*高` format, plus aspect-ratio inference
 - `wan2.7-image-pro` text-to-image (no `--ref`): total pixels in `[768*768, 4096*4096]`, ratio in `[1:8, 8:1]`
 - `wan2.7-image-pro` with reference images and `wan2.7-image` (all scenarios): total pixels in `[768*768, 2048*2048]`, ratio in `[1:8, 8:1]`
 - Default: `1024*1024` (`--quality normal`) or `2048*2048` (`--quality 2k`); 4K requires explicit `--size`

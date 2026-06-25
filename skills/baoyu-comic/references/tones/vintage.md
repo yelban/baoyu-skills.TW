@@ -1,6 +1,6 @@
 # vintage
 
-复古基调 - Historical, aged, period authenticity
+復古基調 - Historical, aged, period authenticity
 
 ## Overview
 

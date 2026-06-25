@@ -19,13 +19,13 @@ async function renderInfographic(containerId: string, code: string, options?: In
       if (container) {
         const isDark = options?.themeMode === 'dark'
 
-        // 从 CSS 变量中读取主题颜色
+        // 從 CSS 變數中讀取主題顏色
         const root = document.documentElement
         const computedStyle = getComputedStyle(root)
         const primaryColor = computedStyle.getPropertyValue('--md-primary-color').trim()
         const backgroundColor = computedStyle.getPropertyValue('--background').trim()
 
-        // 转换 HSL 格式
+        // 轉換 HSL 格式
         const toHSLString = (variant: string) => {
           const vars = variant.split(' ')
           if (vars.length === 3)
@@ -74,7 +74,7 @@ async function renderInfographic(containerId: string, code: string, options?: In
     console.error('Failed to render Infographic:', error)
     const container = document.getElementById(containerId)
     if (container) {
-      container.innerHTML = `<div style="color: red; padding: 10px; border: 1px solid red;">Infographic 渲染失败: ${error instanceof Error ? error.message : String(error)}</div>`
+      container.innerHTML = `<div style="color: red; padding: 10px; border: 1px solid red;">Infographic 渲染失敗: ${error instanceof Error ? error.message : String(error)}</div>`
     }
   }
 }
@@ -106,7 +106,7 @@ export function markedInfographic(options?: InfographicOptions): MarkedExtension
 
           renderInfographic(id, code, options)
 
-          return `<div id="${id}" class="${className}" style="width: 100%;">正在加载 Infographic...</div>`
+          return `<div id="${id}" class="${className}" style="width: 100%;">正在載入 Infographic...</div>`
         },
       },
     ],

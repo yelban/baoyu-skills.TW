@@ -1,6 +1,6 @@
 # baoyu-fetch
 
-English | [简体中文](./README.zh-CN.md) | [Changelog](./CHANGELOG.md) | [中文更新日志](./CHANGELOG.zh-CN.md)
+English | [簡體中文](./README.zh-CN.md) | [Changelog](./CHANGELOG.md) | [中文更新日誌](./CHANGELOG.zh-CN.md)
 
 `baoyu-fetch` is a Bun CLI built on Chrome CDP. Give it a URL and it returns
 high-quality `markdown` or `json`. When a site adapter matches, it prefers API

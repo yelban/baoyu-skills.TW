@@ -1,4 +1,4 @@
-// Markdown 扩展导出
+// Markdown 擴充套件匯出
 export * from './alert.js'
 export * from './footnotes.js'
 export * from './infographic.js'
