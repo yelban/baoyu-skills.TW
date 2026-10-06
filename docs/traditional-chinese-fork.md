@@ -337,11 +337,12 @@ scripts/
 
 ## 已知 opencc False Positives
 
-opencc `s2twp` 模式會對部分詞彙做錯誤轉換。每次同步後必須手動修正。
+opencc `s2twp` 模式會對部分詞彙做錯誤轉換。`sync-upstream.sh` 會在繁轉之後，依 `FALSE_POSITIVES` 陣列自動修正下表的詞，不需要手動處理。`CLAUDE.md` 裡的誤轉清單也由同一個陣列自動產生，新增規則時把它加進陣列，並在下表補一列。
 
 | 原文（正確） | opencc 錯誤轉換 | 出現位置 | 修正方式 |
 |-------------|----------------|---------|---------|
 | 通義萬象 | 通義永珍 | `skills/baoyu-image-gen/SKILL.md` | `sed -i '' 's/通義永珍/通義萬象/g'` |
+| 了解釋（「給出了解釋」） | 瞭解釋 | `skills/baoyu-wechat-summary/references/group-memory.md` | `sed -i '' 's/瞭解釋/了解釋/g'` |
 
 > **說明**：opencc 將「萬象」轉為「永珍」，是因為 [永珍](https://zh.wikipedia.org/wiki/%E6%B0%B8%E7%8F%8D) 是寮國首都 Vientiane 的台灣慣用譯名，中國譯名是「萬象」。但「通義萬象」是阿里雲產品名 Tongyi Wanxiang，不是地名，應保留「萬象」。同步指令碼會自動修正此誤轉。
 
