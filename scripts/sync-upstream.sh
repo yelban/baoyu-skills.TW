@@ -112,6 +112,18 @@ if [ "$AUTO_YES" != true ]; then
     fi
 fi
 
+# 步驟 4.2: 未追蹤檔案檢查（在 reset 前執行，中止時不留下任何變更）
+# reset --hard 不會清除未追蹤檔案，之後的 git add -A 會把它們一起 commit 進 TW fork
+UNTRACKED=$(git ls-files --others --exclude-standard)
+if [ -n "$UNTRACKED" ]; then
+    echo ""
+    echo "錯誤: 工作區有不在 .gitignore 裡的未追蹤檔案，同步會把它們 commit 進 TW fork："
+    echo "$UNTRACKED" | sed 's/^/  - /'
+    echo ""
+    echo "請刪除或移走這些檔案；要長期忽略的項目加進 scripts/apply-customizations.sh 的 .gitignore 區段（直接改 .gitignore 會在同步時被覆寫）。"
+    exit 1
+fi
+
 # 步驟 4.5: Dry-run — 切換到隔離 worktree
 if [ "$DRY_RUN" = true ]; then
     echo ""
