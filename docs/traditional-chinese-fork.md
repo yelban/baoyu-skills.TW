@@ -262,14 +262,14 @@ opencc -c s2twp < CHANGELOG.zh.md > /tmp/changelog-tw.md && mv /tmp/changelog-tw
 # 5. 修正已知 opencc false positives（見下方清單）
 find . -name "*.md" -not -path "./.git/*" -not -path "*/node_modules/*" \
   -not -path "./docs/traditional-chinese-fork.md" \
-  -exec sed -i '' 's/通義永珍/通義永珍/g' {} +
+  -exec sed -i '' 's/通義永珍/通義萬象/g' {} +
 
 # 6. 套用 TW 元資料
 #    - marketplace.json: name → baoyu-skills-tw, description 加 (繁體中文版),
 #      version 加 -tw 字尾, 加 maintainer 區塊
 #    - CLAUDE.md: version 加 -tw, 加 fork 說明和 Fork Maintenance 區段
 #    - CHANGELOG.md / CHANGELOG.zh.md: 加入 TW 版本條目
-#    - .gitignore: 加入 backups/ 等 TW 特有專案
+#    - .gitignore: 加入 backups/ 等 TW 特有項目
 
 # 7. 還原 TW 特有檔案
 cp /tmp/baoyu-tw-backup/traditional-chinese-fork.md docs/
@@ -331,7 +331,7 @@ scripts/
 
 處理方式是刪除或移走列出的檔案。個人用的 Claude Code 設定放 `.claude/settings.local.json`，它已被忽略。需要長期忽略的檔案要加進 `apply-customizations.sh` 的 `.gitignore` 區段，因為直接改 `.gitignore` 會在下次同步時被上游版本覆寫。
 
-指令碼自動處理：步驟 1–10（含自動打 tag、自動修正已知 opencc false positives）。加上 `--push` 連步驟 11 也一起完成。
+指令碼自動處理上面的步驟 0–9（含自動打 tag、自動修正已知 opencc false positives）。加上 `--push` 會連步驟 10 的推送一起完成。
 
 ---
 
@@ -341,9 +341,9 @@ opencc `s2twp` 模式會對部分詞彙做錯誤轉換。每次同步後必須�
 
 | 原文（正確） | opencc 錯誤轉換 | 出現位置 | 修正方式 |
 |-------------|----------------|---------|---------|
-| 通義永珍 | 通義永珍 | `skills/baoyu-image-gen/SKILL.md` | `sed -i '' 's/通義永珍/通義永珍/g'` |
+| 通義萬象 | 通義永珍 | `skills/baoyu-image-gen/SKILL.md` | `sed -i '' 's/通義永珍/通義萬象/g'` |
 
-> **說明**：opencc 將「永珍」轉為「永珍」是因為 [永珍](https://zh.wikipedia.org/wiki/%E6%B0%B8%E7%8F%8D) 是寮國首都「Vientiane」的臺灣慣用譯名（對應大陸譯名「永珍」）。但「通義永珍」是阿里雲產品名「Tongyi Wanxiang」，非地名，應保留「永珍」。同步指令碼會自動修正此誤轉。
+> **說明**：opencc 將「萬象」轉為「永珍」，是因為 [永珍](https://zh.wikipedia.org/wiki/%E6%B0%B8%E7%8F%8D) 是寮國首都 Vientiane 的台灣慣用譯名，中國譯名是「萬象」。但「通義萬象」是阿里雲產品名 Tongyi Wanxiang，不是地名，應保留「萬象」。同步指令碼會自動修正此誤轉。
 
 ### 如何發現新的 false positive
 

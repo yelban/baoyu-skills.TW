@@ -66,7 +66,8 @@ convert_files() {
             rm -f "$tmp"
             echo "  失敗: $file"
         fi
-    done < <(find . -name "*.$ext" -not -path "./.git/*" -not -path "./node_modules/*" -print0)
+    # 排除 docs/traditional-chinese-fork.md：TW 自寫的正體文件，轉換會誤改用詞與誤轉範例
+    done < <(find . -name "*.$ext" -not -path "./.git/*" -not -path "./node_modules/*" -not -path "./docs/traditional-chinese-fork.md" -print0)
 
     echo "  $ext 檔案轉換完成: $count 個檔案有變更"
 }
