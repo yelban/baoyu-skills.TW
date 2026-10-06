@@ -234,6 +234,10 @@ flowchart LR
 ### 同步流程（完整步驟）
 
 ```bash
+# 0. 確認沒有不在 .gitignore 裡的未追蹤檔案（輸出應為空）
+#    reset 不會清掉它們，步驟 8 的 git add -A 會一併提交；有的話先刪除或移走
+git ls-files --others --exclude-standard
+
 # 1. 備份 TW 特有檔案
 mkdir -p /tmp/baoyu-tw-backup
 cp docs/traditional-chinese-fork.md /tmp/baoyu-tw-backup/
@@ -320,6 +324,12 @@ scripts/
 - 變更 diff stat
 - 檢視完整 diff 的指令
 - 清理 worktree 的指令（`git worktree remove --force ...`）
+
+**未追蹤檔案檢查（步驟 4.2）**：
+
+`git reset --hard` 不會清除未追蹤檔案，之後的 `git add -A` 會把它們一起 commit 進 fork 並推送出去。所以指令碼在確認之後、reset 之前執行 `git ls-files --others --exclude-standard`。只要有不在 `.gitignore` 裡的未追蹤檔案，就列出檔名並中止。中止時工作區和 HEAD 都還沒被改動，`--dry-run` 也會在這一步中止。
+
+處理方式是刪除或移走列出的檔案。個人用的 Claude Code 設定放 `.claude/settings.local.json`，它已被忽略。需要長期忽略的檔案要加進 `apply-customizations.sh` 的 `.gitignore` 區段，因為直接改 `.gitignore` 會在下次同步時被上游版本覆寫。
 
 指令碼自動處理：步驟 1–10（含自動打 tag、自動修正已知 opencc false positives）。加上 `--push` 連步驟 11 也一起完成。
 

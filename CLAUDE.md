@@ -121,7 +121,7 @@ One-shot sync (recommended for agents):
 ```bash
 ./scripts/sync-upstream.sh --yes --push
 ```
-Runs: fetch → reset → convert (s2twp) → auto-fix opencc false positives → customize (version `-tw`, metadata, .gitignore) → commit → tag `v{version}-tw` → push + push tag.
+Runs: fetch → abort if untracked files are not gitignored → reset → convert (s2twp) → auto-fix opencc false positives → customize (version `-tw`, metadata, .gitignore) → commit → tag `v{version}-tw` → push + push tag.
 
 Preview without touching main workspace (recommended for agents pre-flight):
 ```bash
