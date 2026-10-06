@@ -18,7 +18,7 @@ Use the same language as the transcription for the title and ToC.
 
 ### Transcription Fidelity
 - Preserve every spoken word exactly, including filler words (`um`, `uh`, `like`) and stutters
-- **NEVER translate.** If the audio mixes languages (e.g., "这个 feature 很酷"), replicate that mix exactly
+- **NEVER translate.** If the audio mixes languages (e.g., "這個 feature 很酷"), replicate that mix exactly
 
 ### Speaker Identification
 - **Priority 1: Use metadata.** Analyze the video's title, channel name, and description to identify speakers

@@ -2,7 +2,7 @@
 
 Visual effects applied to image elements in Xiaohongshu infographics.
 
-## AI Cutout (抠图)
+## AI Cutout (摳圖)
 
 Subject extraction styles for product/figure isolation.
 
@@ -12,7 +12,7 @@ Subject extraction styles for product/figure isolation.
 | soft | Soft transition, feathered edges | Portrait cutout, organic subjects |
 | stylized | Hand-drawn edge treatment | Artistic compositions |
 
-## Stroke Effects (描边)
+## Stroke Effects (描邊)
 
 Border treatments for cutout elements.
 
@@ -30,20 +30,20 @@ Border treatments for cutout elements.
 - Medium: 5-8px - Standard visibility
 - Thick: 10-15px - Bold emphasis
 
-## Filters (滤镜)
+## Filters (濾鏡)
 
 Color grading and mood presets popular on XHS.
 
 | Name | Chinese | Description | Mood |
 |------|---------|-------------|------|
 | clear-glow | 清透感 | Transparent, radiant, luminous | Fresh, youthful |
-| film-grain | 胶片感 | Vintage film aesthetic, grain texture | Nostalgic, artistic |
+| film-grain | 膠片感 | Vintage film aesthetic, grain texture | Nostalgic, artistic |
 | cream-skin | 奶油肌 | Smooth, creamy complexion tones | Soft, flattering |
-| japanese-magazine | 日杂感 | Lifestyle magazine aesthetic | Curated, aspirational |
-| high-saturation | 高饱和 | Vibrant, punchy colors | Energetic, eye-catching |
-| muted-tones | 莫兰迪 | Morandi-style desaturated palette | Sophisticated, calm |
-| warm-tone | 暖色调 | Golden hour warmth | Cozy, inviting |
-| cool-tone | 冷色调 | Blue-shifted coolness | Modern, clean |
+| japanese-magazine | 日雜感 | Lifestyle magazine aesthetic | Curated, aspirational |
+| high-saturation | 高飽和 | Vibrant, punchy colors | Energetic, eye-catching |
+| muted-tones | 莫蘭迪 | Morandi-style desaturated palette | Sophisticated, calm |
+| warm-tone | 暖色調 | Golden hour warmth | Cozy, inviting |
+| cool-tone | 冷色調 | Blue-shifted coolness | Modern, clean |
 
 ## Texture Overlays
 

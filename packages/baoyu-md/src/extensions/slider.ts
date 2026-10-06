@@ -39,20 +39,20 @@ export function markedSlider(): MarkedExtension {
             const alt = altMatch[1] || ``
             const src = srcMatch[1] || ``
 
-            // 新主题系统：不再需要内联样式
+            // 新主題系統：不再需要內聯樣式
             return { src, alt }
           })
 
-          // 使用微信公众号兼容的滑动容器布局
-          // 使用微信支持的section标签和特殊样式组合
+          // 使用微信公眾號相容的滑動容器佈局
+          // 使用微信支援的section標籤和特殊樣式組合
 
           return `
             <section style="box-sizing: border-box; font-size: 16px;">
-              <section data-role="outer" style="font-family: 微软雅黑; font-size: 16px;">
+              <section data-role="outer" style="font-family: 微軟雅黑; font-size: 16px;">
                 <section data-role="paragraph" style="margin: 0px auto; box-sizing: border-box; width: 100%;">
                   <section style="margin: 0px auto; text-align: center;">
                     <section style="display: inline-block; width: 100%;">
-                      <!-- 微信公众号支持的滑动图片容器 -->
+                      <!-- 微信公眾號支援的滑動圖片容器 -->
                       <section style="overflow-x: scroll; -webkit-overflow-scrolling: touch; white-space: nowrap; width: 100%; text-align: center;">
                         ${images.map((img: { src: string, alt: string }, _index: number) => `<section style="display: inline-block; width: 100%; margin-right: 0; vertical-align: top;">
                           <img src="${img.src}" alt="${img.alt}" title="${img.alt}" style="width: 100%; height: auto; border-radius: 4px; vertical-align: top;"/>
@@ -63,7 +63,7 @@ export function markedSlider(): MarkedExtension {
                   </section>
                 </section>
               </section>
-              <p style="font-size: 14px; color: #999; text-align: center; margin-top: 5px;"><<< 左右滑动看更多 >>></p>
+              <p style="font-size: 14px; color: #999; text-align: center; margin-top: 5px;"><<< 左右滑動看更多 >>></p>
             </section>
           `
         },

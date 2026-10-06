@@ -42,10 +42,10 @@ When a `wx` command fails, diagnose by the symptom, not by retrying blindly. Com
 | Symptom | Cause | Fix (tell the user to run these — do NOT run `sudo` for them) |
 |---------|-------|----------------------------------------------------------------|
 | `Operation not permitted` / `Access denied to ~/.wx-cli` | Sandbox is on | Re-run the command with `dangerouslyDisableSandbox: true`. Persistent fix: `/sandbox` to allow `~/.wx-cli` and the WeChat data dir. |
-| `无法写入 /Users/<u>/.wx-cli` / `Permission denied` | `~/.wx-cli` is owned by root (legacy `sudo wx init`) | `sudo chown -R $(whoami) ~/.wx-cli && sudo rm -f ~/.wx-cli/daemon.{pid,sock} && wx daemon start` |
+| `無法寫入 /Users/<u>/.wx-cli` / `Permission denied` | `~/.wx-cli` is owned by root (legacy `sudo wx init`) | `sudo chown -R $(whoami) ~/.wx-cli && sudo rm -f ~/.wx-cli/daemon.{pid,sock} && wx daemon start` |
 | `wx history` hangs / times out / returns nothing | Daemon is stuck | `wx daemon stop && rm -f ~/.wx-cli/daemon.{pid,sock} && wx daemon start`, then retry |
 | `no keys` / `init required` after the daemon was working | Keys went stale (WeChat restart, version upgrade) | Make sure WeChat is running, then `wx init --force` (non-sudo first; only `sudo` if your wx-cli version requires it) |
-| `wx contacts` returns zero rows for a group you know exists | Group is folded into 折叠群 or the daemon hasn't indexed it yet | `wx sessions --json` and search there; if missing, run `wx daemon stop && wx daemon start` and retry |
+| `wx contacts` returns zero rows for a group you know exists | Group is folded into 摺疊群 or the daemon hasn't indexed it yet | `wx sessions --json` and search there; if missing, run `wx daemon stop && wx daemon start` and retry |
 | Messages returned but `--since` / `--until` window looks wrong | Date string not in `YYYY-MM-DD` format, or off-by-one timezone | Confirm the dates are local-time `YYYY-MM-DD`. Re-filter the JSON by `timestamp` locally as a belt-and-suspenders step. |
 | Empty result for a chat that should have activity | `-n` cap too low for a noisy group | Raise `-n` (e.g. to 20000) and re-fetch |
 

@@ -36,7 +36,7 @@ export async function detectXLogin(context: AdapterContext): Promise<AdapterLogi
   if (
     /\/i\/flow\/login|\/login/i.test(snapshot.currentUrl) ||
     snapshot.hasLoginInputs ||
-    /sign in to x|join x today|登录 x|注册 x|登录到 x/i.test(snapshot.bodyText)
+    /sign in to x|join x today|登入 x|註冊 x|登入到 x/i.test(snapshot.bodyText)
   ) {
     return {
       provider: "x",

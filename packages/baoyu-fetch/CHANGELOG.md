@@ -1,6 +1,6 @@
 # Changelog
 
-English | [简体中文](./CHANGELOG.zh-CN.md)
+English | [簡體中文](./CHANGELOG.zh-CN.md)
 
 The format is inspired by Keep a Changelog, and the project follows Semantic
 Versioning.

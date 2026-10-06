@@ -806,7 +806,7 @@ async function waitForDraftSaved(session: ChromeSession, timeoutMs = 60_000): Pr
     lastStatus = await getDraftSaveStatus(session);
     if (lastStatus.appmsgid && !lastStatus.isLoading) return lastStatus.appmsgid;
 
-    const relevantFailure = lastStatus.messages.find((message) => /保存.*失败|草稿.*失败|save.*fail/i.test(message));
+    const relevantFailure = lastStatus.messages.find((message) => /儲存.*失敗|草稿.*失敗|save.*fail/i.test(message));
     if (relevantFailure) throw new Error(`Draft save failed: ${relevantFailure}`);
 
     await sleep(1000);
@@ -1121,8 +1121,8 @@ Examples:
   npx -y bun wechat-article.ts --markdown article.md
   npx -y bun wechat-article.ts --markdown article.md --theme grace --submit
   npx -y bun wechat-article.ts --markdown article.md --no-cite
-  npx -y bun wechat-article.ts --title "标题" --content "内容" --image img.png
-  npx -y bun wechat-article.ts --title "标题" --html article.html --submit
+  npx -y bun wechat-article.ts --title "標題" --content "內容" --image img.png
+  npx -y bun wechat-article.ts --title "標題" --html article.html --submit
 
 Markdown mode:
   Images in markdown are converted to placeholders. After pasting HTML,

@@ -109,15 +109,15 @@ test('parseMarkdown renders CJK-adjacent bold and italics (no literal asterisks)
   await fs.writeFile(
     markdownPath,
     [
-      '# 标题',
+      '# 標題',
       '',
-      '分工在变细。**国际大厂卷基础设施，中文项目卷场景落地。**这其实是生态成熟的表现。',
+      '分工在變細。**國際大廠卷基礎設施，中文專案卷場景落地。**這其實是生態成熟的表現。',
       '',
-      '半角场景 **Top 10 里平均有 8 个** 项目。',
+      '半形場景 **Top 10 裡平均有 8 個** 專案。',
       '',
-      '斜体 *数据来源 GitHub* 收尾。',
+      '斜體 *資料來源 GitHub* 收尾。',
       '',
-      '参考 **[docs][d]** 了解更多。',
+      '參考 **[docs][d]** 瞭解更多。',
       '',
       '[d]: https://example.com',
     ].join('\n'),
@@ -126,10 +126,10 @@ test('parseMarkdown renders CJK-adjacent bold and italics (no literal asterisks)
   const result = await parseMarkdown(markdownPath, { tempDir });
 
   // Bold directly adjacent to CJK (closing ** followed by CJK) must render.
-  assert.match(result.html, /<strong>国际大厂卷基础设施，中文项目卷场景落地。<\/strong>/);
-  assert.match(result.html, /<strong>Top 10 里平均有 8 个<\/strong>/);
+  assert.match(result.html, /<strong>國際大廠卷基礎設施，中文專案卷場景落地。<\/strong>/);
+  assert.match(result.html, /<strong>Top 10 裡平均有 8 個<\/strong>/);
   // Italics.
-  assert.match(result.html, /<em>数据来源 GitHub<\/em>/);
+  assert.match(result.html, /<em>資料來源 GitHub<\/em>/);
   // Reference-style links inside emphasis must render as links, not plain text.
   assert.match(result.html, /<strong><a href="https:\/\/example\.com" rel="noopener noreferrer nofollow">docs<\/a><\/strong>/);
   // No literal emphasis delimiters should leak into the output.
@@ -147,11 +147,11 @@ test('parseMarkdown does not decode author-written literal HTML entities into ta
   await fs.writeFile(
     markdownPath,
     [
-      '# 标题',
+      '# 標題',
       '',
-      '正文中写 &#x3C;b&#x3E;literal&#x3C;/b&#x3E; 想显示字面标签。**加粗**收尾。',
+      '正文中寫 &#x3C;b&#x3E;literal&#x3C;/b&#x3E; 想顯示字面標籤。**加粗**收尾。',
       '',
-      '代码里写 `&#x3C;b&#x3E;` 同样保留。',
+      '程式碼裡寫 `&#x3C;b&#x3E;` 同樣保留。',
     ].join('\n'),
   );
 

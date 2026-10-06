@@ -21,7 +21,7 @@ WeChat API credentials not found.
 
 To obtain credentials:
 1. Visit https://mp.weixin.qq.com
-2. Go to: 开发 → 基本配置
+2. Go to: 開發 → 基本配置
 3. Copy AppID and AppSecret
 
 Where to save?

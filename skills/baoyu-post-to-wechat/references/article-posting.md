@@ -1,4 +1,4 @@
-# Article Posting (文章发表)
+# Article Posting (文章發表)
 
 Post markdown articles to WeChat Official Account with full formatting support.
 

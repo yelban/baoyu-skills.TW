@@ -133,8 +133,8 @@ async function clickVisibleShowReplies(context: AdapterContext): Promise<ClickTe
         /^Show replies$/i,
         /^Show more replies$/i,
         /^Show additional replies$/i,
-        /^显示回复$/,
-        /^展开回复$/,
+        /^顯示回覆$/,
+        /^展開回復$/,
       ];
       const isVisible = (element) => {
         if (!(element instanceof HTMLElement)) {

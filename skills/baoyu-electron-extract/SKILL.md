@@ -1,6 +1,6 @@
 ---
 name: baoyu-electron-extract
-description: Extracts resources and JavaScript from any installed Electron app (`.asar` bundle), restoring original sources from `.js.map` files when available or formatting minified code with Prettier otherwise. Use when user wants to "extract Electron app", "decompile Electron", "get the source code of <app>", "inspect app.asar", "看 Electron 应用源码", "提取 .asar", or asks how a desktop Electron app is built. Skips `node_modules` and supports both macOS and Windows.
+description: Extracts resources and JavaScript from any installed Electron app (`.asar` bundle), restoring original sources from `.js.map` files when available or formatting minified code with Prettier otherwise. Use when user wants to "extract Electron app", "decompile Electron", "get the source code of <app>", "inspect app.asar", "看 Electron 應用原始碼", "提取 .asar", or asks how a desktop Electron app is built. Skips `node_modules` and supports both macOS and Windows.
 version: 1.119.0
 metadata:
   openclaw:
@@ -40,7 +40,7 @@ Use this skill whenever the user wants to look inside an installed Electron appl
 - "extract Electron app", "decompile this Electron app", "unpack app.asar"
 - "show me the source of <app>", "look inside <app>", "how is <app> built"
 - "get the source code of Codex / Cursor / Discord / Slack / VS Code / Notion / Obsidian / ChatGPT desktop"
-- "提取 Electron 应用", "看 <app> 的源码", "反编译 Electron", "解包 app.asar", "还原 source map"
+- "提取 Electron 應用", "看 <app> 的原始碼", "反編譯 Electron", "解包 app.asar", "還原 source map"
 
 Both **app name** (e.g., `Codex`) and **absolute path** (e.g., `/Applications/Codex.app`, a `.asar` file, or a Windows install dir) are accepted. The script handles discovery for both platforms.
 

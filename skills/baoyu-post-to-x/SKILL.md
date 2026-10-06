@@ -16,7 +16,7 @@ metadata:
 Posts text, images, videos, and long-form articles to X via a real Chrome browser.
 
 In Codex, do not conflate these browser paths:
-- **Codex Chrome plugin / `@chrome` / Chrome Extension**: use the bundled `chrome:Chrome` skill and its Node REPL browser client. This is required whenever the user says "Codex Chrome plugin", "Codex 自带的 Chrome 插件", `@chrome`, or similar.
+- **Codex Chrome plugin / `@chrome` / Chrome Extension**: use the bundled `chrome:Chrome` skill and its Node REPL browser client. This is required whenever the user says "Codex Chrome plugin", "Codex 自帶的 Chrome 外掛", `@chrome`, or similar.
 - **Chrome Computer Use**: use `mcp__computer_use__.*` against the visible Google Chrome UI only when the user asks for Computer Use or no Chrome-plugin preference is stated and Computer Use is available.
 - **CDP script mode**: use only as a fallback when the selected mode is unavailable or the user explicitly asks for CDP/script mode.
 
@@ -46,7 +46,7 @@ In Codex, do not conflate these browser paths:
 
 Choose exactly one mode before interacting with X:
 
-1. If the user explicitly asks for the Codex Chrome plugin, `@chrome`, the Chrome extension, or "Codex 自带的 Chrome 插件", use **Codex Chrome Plugin Mode**. Do not call Computer Use first.
+1. If the user explicitly asks for the Codex Chrome plugin, `@chrome`, the Chrome extension, or "Codex 自帶的 Chrome 外掛", use **Codex Chrome Plugin Mode**. Do not call Computer Use first.
 2. If the user explicitly asks for Chrome Computer Use, use **Chrome Computer Use Mode**. Do not fall back to CDP, Playwright, the in-app Browser, or the Chrome plugin without telling the user and getting approval.
 3. If the user explicitly asks for CDP/script mode, use **CDP Script Mode**.
 4. Otherwise, prefer **Chrome Computer Use Mode**. For Markdown **X Articles with local content images**, use the tested X editor flow: insert each body image from the toolbar (`Insert` -> `Media` -> dialog icon button `Add photos or video`) at its placeholder, then delete the placeholder text. Use CDP Script Mode only when the selected browser-control mode is unavailable or the UI upload/selection flow is unreliable.
